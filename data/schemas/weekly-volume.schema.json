@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-paper-archive/schemas/weekly-volume.schema.json",
+  "title": "WeeklyVolume",
+  "description": "每周卷宗（PRD 3.3）。与 src/lib/types.ts 的 WeeklyVolume 保持同步。",
+  "type": "object",
+  "required": [
+    "isoWeek",
+    "startDate",
+    "endDate",
+    "windowStart",
+    "windowEnd",
+    "poolTotal",
+    "paperCount",
+    "curatedCount",
+    "sourceCount",
+    "selectionRule",
+    "papers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "isoWeek": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-W[0-9]{2}$",
+      "description": "如 2026-W35"
+    },
+    "startDate": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "endDate": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "windowStart": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "windowEnd": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "poolTotal": { "type": "integer", "minimum": 0 },
+    "paperCount": { "type": "integer", "minimum": 0 },
+    "curatedCount": { "type": "integer", "minimum": 0 },
+    "sourceCount": { "type": "integer", "minimum": 0 },
+    "selectionRule": { "type": "string", "minLength": 1 },
+    "papers": {
+      "type": "array",
+      "description": "PaperRecord.id 的有序数组（时间倒序）",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" }
+    }
+  }
+}

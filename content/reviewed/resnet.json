@@ -1,0 +1,134 @@
+{
+  "abstract": "提出残差学习框架，把每层改造成学习输入与输出的残差，并用跨层快捷连接传递信号。该设计让上百甚至上千层的网络都能稳定训练，彻底解决了深层网络的退化问题。",
+  "keyPoints": [
+    "残差块让网络学习残差映射，而非直接拟合目标映射",
+    "快捷连接提供恒等通路，梯度可直接回传",
+    "网络加深不再导致训练误差上升",
+    "152 层网络在 ImageNet 上取得 3.57% 的 top-5 错误率"
+  ],
+  "method": {
+    "problem": "网络加深后训练误差反而上升，这不是过拟合，而是深层网络难以优化的结构性退化问题。",
+    "approach": "让每个堆叠块拟合残差函数 F(x)=H(x)-x，原始输入通过快捷连接加到输出上，使恒等映射成为容易学到的解。",
+    "design": [
+      "快捷连接：输入直接与块输出相加，不引入额外参数与计算量",
+      "瓶颈结构：1x1 卷积先降维再升维，控制深层网络的计算开销",
+      "批量归一化：每个卷积后接归一化，稳定训练",
+      "两种残差块：浅层用两层卷积，深层用三层瓶颈结构"
+    ],
+    "setup": "在 ImageNet 2012 分类集上训练 18 至 152 层的网络，用多尺度裁剪做测试。"
+  },
+  "conclusion": {
+    "findings": "152 层 ResNet 取得 3.57% 的 top-5 错误率，赢得 ILSVRC 2015 冠军，且深度增加时训练误差持续下降。",
+    "impact": "残差连接成为几乎所有深层网络的标准组件，包括 Transformer，是现代深度学习的地基之一。",
+    "limitations": "极深网络的收益逐渐饱和，且恒等快捷连接在输入输出维度不一致时需要额外的投影参数。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "ResNet",
+    "type": "root",
+    "note": "残差学习框架",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "深层网络退化",
+            "type": "problem",
+            "note": "加深后训练误差反而上升"
+          },
+          {
+            "id": "p2",
+            "label": "梯度难以回传",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "残差映射",
+            "type": "method",
+            "note": "拟合 H(x)-x 而非 H(x)"
+          },
+          {
+            "id": "m2",
+            "label": "快捷连接",
+            "type": "method",
+            "note": "输入直接加到输出，恒等通路"
+          },
+          {
+            "id": "m3",
+            "label": "瓶颈块",
+            "type": "method",
+            "note": "1x1 卷积降维再升维"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "千层可训练",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "零额外参数",
+            "type": "contribution",
+            "note": "快捷连接不引入参数"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "3.57% top-5",
+            "type": "result",
+            "note": "152 层，ILSVRC 2015 冠军"
+          },
+          {
+            "id": "r2",
+            "label": "越深越优",
+            "type": "result",
+            "note": "训练误差随深度持续下降"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "深层网络标准组件",
+        "children": [
+          {
+            "id": "i1",
+            "label": "Transformer",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "视觉与语音通用",
+            "type": "impact"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

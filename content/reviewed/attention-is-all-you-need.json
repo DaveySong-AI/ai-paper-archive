@@ -1,0 +1,142 @@
+{
+  "abstract": "提出完全基于自注意力的 Transformer 架构，彻底移除循环与卷积。序列内任意两位置直接相连，训练可充分并行，在机器翻译上同时取得更好的效果与更低的训练成本，成为后续大模型的统一底座。",
+  "keyPoints": [
+    "用自注意力取代循环结构，任意两位置的依赖路径缩短为常数级",
+    "多头机制并行捕捉不同子空间的依赖模式",
+    "彻底摆脱时序依赖，训练可完全并行",
+    "用正弦位置编码注入顺序信息，无需额外学习位置参数"
+  ],
+  "method": {
+    "problem": "RNN 必须按时间步顺序计算，无法并行，且长距离依赖的信号在逐步传播中容易衰减。",
+    "approach": "编码器与解码器各堆叠 6 层，每层由多头自注意力子层与逐位置前馈子层组成，配残差连接与层归一化。",
+    "design": [
+      "缩放点积注意力：QK 点积后除以根号 d_k 再 softmax，避免点积过大导致梯度饱和",
+      "多头并行：把维度切成 h 份各算一次注意力，再拼接后线性投影",
+      "正弦位置编码：用不同频率的三角函数表示位置，可外推到更长序列",
+      "前馈子层：每个位置独立的两层全连接，中间维度放大 4 倍"
+    ],
+    "setup": "在 WMT 2014 英德与英法翻译任务上训练，基座模型用 8 块 P100 训练约 12 小时。"
+  },
+  "conclusion": {
+    "findings": "英德翻译达到 28.4 BLEU，超过当时最好的循环与卷积模型，而训练算力开销显著更低。",
+    "impact": "成为 BERT、GPT 及后续几乎所有大语言模型的统一架构，并扩散到视觉、语音、蛋白质结构预测等领域。",
+    "limitations": "注意力的计算与显存随序列长度呈平方增长，长上下文需要稀疏化或分块等额外优化。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "Transformer",
+    "type": "root",
+    "note": "纯注意力编码器-解码器",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "循环不可并行",
+            "type": "problem",
+            "note": "RNN 需按时间步顺序计算"
+          },
+          {
+            "id": "p2",
+            "label": "长程依赖衰减",
+            "type": "problem",
+            "note": "梯度沿时间步传播易消失"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "缩放点积",
+            "type": "method",
+            "note": "除以根号 d_k 防止 softmax 饱和"
+          },
+          {
+            "id": "m2",
+            "label": "多头注意力",
+            "type": "method",
+            "note": "并行捕捉不同子空间依赖"
+          },
+          {
+            "id": "m3",
+            "label": "位置编码",
+            "type": "method",
+            "note": "正弦余弦函数注入顺序"
+          },
+          {
+            "id": "m4",
+            "label": "残差与归一",
+            "type": "method",
+            "note": "每个子层后接残差与层归一化"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "note": "彻底移除循环与卷积结构",
+        "children": [
+          {
+            "id": "c1",
+            "label": "常数依赖路径",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "完全并行训练",
+            "type": "contribution"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "28.4 BLEU",
+            "type": "result",
+            "note": "英德翻译，超越此前最佳"
+          },
+          {
+            "id": "r2",
+            "label": "训练成本更低",
+            "type": "result",
+            "note": "同等效果下算力开销大幅下降"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "大模型统一架构底座",
+        "children": [
+          {
+            "id": "i1",
+            "label": "BERT 与 GPT",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "跨模态扩散",
+            "type": "impact",
+            "note": "视觉、语音、科学计算"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

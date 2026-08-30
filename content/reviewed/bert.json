@@ -1,0 +1,127 @@
+{
+  "abstract": "提出双向 Transformer 编码器预训练方法，用掩码语言模型让模型同时看到左右上下文，配合下一句预测任务，在十一项自然语言理解任务上取得当时最优，确立预训练加微调范式。",
+  "keyPoints": [
+    "掩码语言模型随机遮住部分词并预测，实现真正的双向上下文建模",
+    "预训练加微调两阶段，下游只需加一层输出头",
+    "证明深层双向表示对句级与词级任务都关键",
+    "同一套预训练权重可迁移到问答、推理、序列标注等多种任务"
+  ],
+  "method": {
+    "problem": "此前的语言模型只能单向建模（左到右或右到左），词向量缺乏融合双向上下文的能力。",
+    "approach": "先用掩码语言模型与下一句预测在大规模无标注语料上预训练深层 Transformer 编码器，再在下游任务上整体微调。",
+    "design": [
+      "掩码语言模型：随机遮住 15% 的词，用深层双向表示还原被遮的词",
+      "下一句预测：判断两个句子是否相邻，学习句对关系",
+      "输入表示：词嵌入、段嵌入与位置嵌入三者相加",
+      "微调：仅替换输出层，全部参数端到端微调"
+    ],
+    "setup": "在 BooksCorpus 与英文维基百科上预训练，BASE 为 12 层，LARGE 为 24 层。"
+  },
+  "conclusion": {
+    "findings": "在 GLUE、SQuAD 等十一项任务上刷新纪录，GLUE 得分提升到 80.5%，SQuAD v1.1 的 F1 达 93.2。",
+    "impact": "预训练加微调成为 NLP 的标准范式，此后数年几乎所有理解类模型都建立在 BERT 及其变体之上。",
+    "limitations": "预训练时引入的掩码符号在微调阶段并不存在，造成预训练与微调的分布不一致。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "BERT",
+    "type": "root",
+    "note": "双向预训练语言表示",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "单向建模受限",
+            "type": "problem",
+            "note": "此前语言模型只看一侧上下文"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "预训练任务",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "掩码语言模型",
+            "type": "method",
+            "note": "遮住 15% 的词再预测还原"
+          },
+          {
+            "id": "m2",
+            "label": "下一句预测",
+            "type": "method",
+            "note": "判断两句是否相邻"
+          },
+          {
+            "id": "m3",
+            "label": "三类嵌入相加",
+            "type": "method",
+            "note": "词嵌入加段嵌入加位置嵌入"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "深层双向表示",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "预训练加微调",
+            "type": "contribution",
+            "note": "一套权重迁移多种任务"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "GLUE 80.5",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "十一项任务刷新",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "确立 NLP 预训练微调范式",
+        "children": [
+          {
+            "id": "i1",
+            "label": "RoBERTa 等变体",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "理解类任务标配",
+            "type": "impact"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

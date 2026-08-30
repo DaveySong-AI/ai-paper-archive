@@ -1,0 +1,139 @@
+{
+  "abstract": "提出用浅层神经网络高效学习词向量的两套模型，并给出负采样等加速技巧。学到的向量能捕捉语义与句法关系，词类比任务上出现国王减男人加女人约等于女王的现象，奠定了分布式表示的基础。",
+  "keyPoints": [
+    "CBOW 用上下文预测中心词，Skip-gram 反过来用中心词预测上下文",
+    "负采样与层次 softmax 把训练复杂度大幅降低",
+    "词向量可捕捉类比关系，语义运算在向量空间成立",
+    "让高质量词向量能在亿级语料上训练并被广泛使用"
+  ],
+  "method": {
+    "problem": "此前学习词表示的神经网络模型计算复杂度过高，难以在大规模语料上训练，而分布式表示尚未被广泛应用。",
+    "approach": "设计只含一个投影层的极简神经结构，用两种预测任务学习词向量，并用负采样近似 softmax 归一化。",
+    "design": [
+      "CBOW：用两侧上下文词的平均向量预测中心词，训练更快",
+      "Skip-gram：用中心词预测上下文，在稀有词上表现更好",
+      "负采样：只更新少数负样本，避开全词表归一化",
+      "层次 softmax：用霍夫曼树把归一化分解为若干二分类"
+    ],
+    "setup": "在大规模新闻语料上训练，用词类比与词相似度基准评测。"
+  },
+  "conclusion": {
+    "findings": "在词类比任务上大幅超过此前的神经网络模型，同时训练速度提升数个量级，可在数十亿词语料上完成训练。",
+    "impact": "让分布式词向量成为 NLP 的基础设施，直接影响了后续 GloVe、ELMo 与整个预训练范式。",
+    "limitations": "每个词只有一个静态向量，无法区分一词多义，也无法建模词序与句子级语义。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "word2vec",
+    "type": "root",
+    "note": "高效词向量学习",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "词表示训练太慢",
+            "type": "problem",
+            "note": "全词表归一化开销过大"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "CBOW",
+            "type": "method",
+            "note": "上下文预测中心词"
+          },
+          {
+            "id": "m2",
+            "label": "Skip-gram",
+            "type": "method",
+            "note": "中心词预测上下文"
+          },
+          {
+            "id": "m3",
+            "label": "负采样",
+            "type": "method",
+            "note": "只更新少量负样本"
+          },
+          {
+            "id": "m4",
+            "label": "层次 softmax",
+            "type": "method",
+            "note": "霍夫曼树分解归一化"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "训练提速数个量级",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "语义可运算",
+            "type": "contribution",
+            "note": "类比关系在向量空间成立"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "词类比大幅领先",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "可训练亿级语料",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "分布式表示成为基础设施",
+        "children": [
+          {
+            "id": "i1",
+            "label": "GloVe 与 ELMo",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "预训练范式",
+            "type": "impact"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "静态向量，无法区分多义"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

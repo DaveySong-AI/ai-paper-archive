@@ -1,0 +1,134 @@
+{
+  "abstract": "用深层卷积神经网络赢得 ImageNet 2012 竞赛，top-5 错误率 15.3%，远低于第二名的 26.2%。它把 ReLU、Dropout 与 GPU 训练组合在一起，直接开启了深度学习在计算机视觉的十年。",
+  "keyPoints": [
+    "用 GPU 训练大型卷积网络，使深层模型首次变得可工程化",
+    "ReLU 激活显著加快收敛，替代饱和的 sigmoid 与 tanh",
+    "Dropout 与数据增强共同抑制全连接层的过拟合",
+    "在 ImageNet 上大幅超越传统手工特征方法"
+  ],
+  "method": {
+    "problem": "当时的视觉方法依赖手工设计的特征，在百万级图像、千类分类的大规模数据集上效果有限。",
+    "approach": "设计一个 8 层的卷积神经网络，用两块 GPU 并行训练，并引入一系列稳定深层训练的技巧。",
+    "design": [
+      "ReLU 激活：非饱和非线性，收敛速度明显快于 tanh",
+      "双 GPU 并行：按通道分组，两块显卡分担计算",
+      "局部响应归一化：模拟生物侧向抑制，提升泛化",
+      "重叠池化与 Dropout：抑制过拟合，配合平移翻转等数据增强"
+    ],
+    "setup": "在 ImageNet 2012 的一百二十万张训练图上训练，使用两块 GTX 580 显卡，训练约五到六天。"
+  },
+  "conclusion": {
+    "findings": "top-5 错误率降到 15.3%，比第二名低超过十个百分点，证明端到端学习的特征远强于手工特征。",
+    "impact": "确立了深度学习在计算机视觉的主导地位，后续 VGG、GoogLeNet、ResNet 都沿着这条路线演进。",
+    "limitations": "网络结构与训练技巧多为经验性选择，且当时对为何有效缺乏系统性的理论解释。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "AlexNet",
+    "type": "root",
+    "note": "深度卷积网络开山之作",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "手工特征受限",
+            "type": "problem",
+            "note": "难以应对百万级千类数据"
+          },
+          {
+            "id": "p2",
+            "label": "深层难以训练",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "关键技术",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "ReLU 激活",
+            "type": "method",
+            "note": "非饱和，收敛更快"
+          },
+          {
+            "id": "m2",
+            "label": "双 GPU 并行",
+            "type": "method",
+            "note": "按通道分组分担计算"
+          },
+          {
+            "id": "m3",
+            "label": "Dropout",
+            "type": "method",
+            "note": "随机失活抑制过拟合"
+          },
+          {
+            "id": "m4",
+            "label": "数据增强",
+            "type": "method",
+            "note": "平移翻转与颜色扰动"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "端到端学习",
+            "type": "contribution",
+            "note": "从像素直接学特征"
+          },
+          {
+            "id": "c2",
+            "label": "GPU 训练可行",
+            "type": "contribution"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "15.3% top-5",
+            "type": "result",
+            "note": "第二名 26.2%"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "开启视觉深度学习十年",
+        "children": [
+          {
+            "id": "i1",
+            "label": "VGG 与 ResNet",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "端到端特征学习",
+            "type": "impact"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

@@ -14,12 +14,23 @@
 
 ```bash
 npm install
-npm run validate:data   # 校验 data/ 与 volumes/ 下的 JSON
+npm run validate:data   # 校验 data/、volumes/、content/ 下的 JSON
 npm run dev             # http://localhost:3000
 npm run typecheck       # 类型检查
-npm test                # 单元测试
-npm run build           # 静态构建
+npm test                # 单元测试（时间轴、选篇、导图布局）
+npm run build           # 生成 RSS + 静态导出到 out/
+npm run fetch:volume    # 抓取最新一周论文并生成卷宗
 ```
+
+预览静态产物：
+
+```bash
+npm run build
+python3 -m http.server 4173 --directory out
+# 打开 http://127.0.0.1:4173
+```
+
+部署到正式域名时设置 `NEXT_PUBLIC_SITE_URL`，否则 sitemap 与 RSS 里的链接为占位域名。
 
 ## 文档
 
@@ -34,11 +45,44 @@ npm run build           # 静态构建
 
 ## 当前进度
 
-M0 已完成：需求文档、95 篇经典论文数据集、单文件视觉原型、JSON Schema。
+第一版（v0.1）已完成，三个模块均可浏览。
 
 ```
-[x] M0 仓库就绪   [ ] M1 项目骨架   [ ] M2 数据层   [ ] M3 每周档案库
-[ ] M4 经典论文库 [ ] M5 阅读器     [ ] M6 内容与优化
+[x] M0 仓库就绪   [x] M1 项目骨架   [x] M2 数据层   [x] M3 每周档案库
+[x] M4 经典论文库 [x] M5 阅读器     [ ] M6 内容扩充与优化
+```
+
+**已交付**
+
+| 项 | 数量 |
+|---|---|
+| 静态页面 | 250 个（1 首页 + 2 卷宗 + 95 经典详情 + 146 阅读页 + 索引页） |
+| 卷宗 | 2 个（2026-W35 完整 50 篇、2026-W36 进行中） |
+| 经典论文 | 95 篇，覆盖 11 个方向 |
+| 深度解读 | 24 篇，含完整思维导图 |
+| 单元测 | 24 项，全部通过 |
+
+**M6 待办**：把深度解读从 24 篇扩展到更多经典论文与每周论文；接入第二个数据源（arXiv）；补充术语浮层与深浅色切换。
+
+## 目录导览
+
+```
+src/
+├── app/                 路由（全部构建期静态生成）
+│   ├── page.tsx                 首页：统计 + 站内搜索 + 最新卷宗预览
+│   ├── archive/                 卷宗索引与 /archive/[isoWeek]
+│   ├── classics/                经典论文库与 /classics/[id]
+│   ├── paper/[id]/              统一阅读器
+│   └── about/                   数据源与选篇规则说明
+├── components/          UI 组件（Badges / PaperCard / ArchiveBrowser /
+│                        ClassicBrowser / Mindmap / ReaderContent / ReaderToc ...）
+├── lib/                 纯逻辑：types / timeline / select / mindmap / data
+└── styles/tokens.css    设计令牌
+scripts/
+├── sources/aihot.ts     AI HOT 适配器（分页 + ETag + 重试）
+├── build-volume.ts      抓取 → 归一 → 选篇 → 写卷宗
+├── generate-rss.ts      生成 public/feed.xml
+└── validate-data.ts     Schema 与跨文件一致性校验
 ```
 
 ## 数据源

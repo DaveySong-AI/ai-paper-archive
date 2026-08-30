@@ -1,0 +1,90 @@
+/*
+ * 设计令牌
+ * 提取自 reference/weekly-archive-prototype.html（浅色科技蓝学术档案库风）
+ * 约定：所有颜色必须引用本文件的变量，不得在组件里写裸色值。
+ */
+
+:root {
+  /* ---- 基础色 ---- */
+  --bg: #eef3fa;
+  --bg-soft: #e3ebf7;
+  --surface: #ffffff;
+  --surface-2: #f7fafd;
+  --ink: #0d1b2e;
+  --ink-2: #33475f;
+  --muted: #6b7f99;
+  --line: #d9e4f2;
+  --line-strong: #c2d4ea;
+
+  /* ---- 主色 / 辅助色 ---- */
+  --blue: #1560d8;
+  --blue-dark: #0e3f96;
+  --blue-soft: #e7f0ff;
+  --cyan: #0e93a8;
+  --cyan-soft: #e0f5f8;
+
+  /* ---- 形状 ---- */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(13, 27, 46, 0.04), 0 4px 16px rgba(13, 27, 46, 0.06);
+  --shadow-lift: 0 2px 6px rgba(13, 27, 46, 0.06), 0 12px 32px rgba(13, 27, 46, 0.1);
+
+  /* ---- 来源徽章配色（按 source.family）---- */
+  --badge-x-bg: #e8ecfd;
+  --badge-x-fg: #2b3d8f;
+  --badge-x-line: #c3ccf7;
+
+  --badge-huggingface-bg: #fdf3dc;
+  --badge-huggingface-fg: #8a5a06;
+  --badge-huggingface-line: #f3e0ad;
+
+  --badge-hackernews-bg: #fde8d7;
+  --badge-hackernews-fg: #a2450c;
+  --badge-hackernews-line: #f6cdad;
+
+  --badge-lab-bg: #dcecff;
+  --badge-lab-fg: #0e4fa8;
+  --badge-lab-line: #bcd9f7;
+
+  --badge-media-bg: #d6f1ec;
+  --badge-media-fg: #0a6b5c;
+  --badge-media-line: #aee0d6;
+
+  --badge-other-bg: #eef2f7;
+  --badge-other-fg: #33475f;
+  --badge-other-line: #d5dde7;
+
+  /* ---- 重要度分级（经典论文 tier）---- */
+  --tier-seminal-bg: #0e3f96;
+  --tier-seminal-fg: #ffffff;
+  --tier-milestone-bg: #e3edff;
+  --tier-milestone-fg: #0e4fa8;
+  --tier-essential-bg: #eef2f7;
+  --tier-essential-fg: #33475f;
+
+  /* ---- 精选标记 ---- */
+  --curated-bg: #fff4d6;
+  --curated-fg: #8a5a06;
+  --curated-line: #f0dca6;
+
+  /* ---- 思维导图节点配色（按 node.type）---- */
+  --mm-root: #1560d8;
+  --mm-problem: #c2410c;
+  --mm-method: #0e93a8;
+  --mm-contribution: #7c3aed;
+  --mm-result: #15803d;
+  --mm-impact: #b45309;
+}
+
+/* 尊重减少动效偏好：关闭所有过渡与渐入 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

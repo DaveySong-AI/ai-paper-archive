@@ -31,6 +31,10 @@ Thumbs.db
 # 测试与覆盖率
 coverage/
 
+# 构建期生成的订阅源与站点地图（npm run build 会重新生成）
+public/feed.xml
+public/sitemap.xml
+
 # 本地缓存
 .cache/
 .vercel/

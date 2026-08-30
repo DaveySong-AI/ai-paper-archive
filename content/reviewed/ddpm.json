@@ -1,0 +1,145 @@
+{
+  "abstract": "提出去噪扩散概率模型：前向过程逐步把图像加噪成纯高斯噪声，反向过程训练网络逐步去噪还原。用预测噪声这一简单目标，生成质量首次超过GAN，成为新一代生成模型主流。",
+  "keyPoints": [
+    "前向扩散逐步加噪，反向过程学逐步去噪",
+    "训练目标简化为预测所加噪声，等价于加权变分下界",
+    "生成质量超过当时的 GAN，且训练极其稳定",
+    "采样需要上千步去噪，推理速度是主要瓶颈"
+  ],
+  "method": {
+    "problem": "GAN 训练不稳定且易模式崩塌，而基于似然的模型在生成质量上长期落后。",
+    "approach": "定义一个逐步加高斯噪声的前向马尔可夫链，再训练神经网络逆转这个过程，从纯噪声逐步还原出样本。",
+    "design": [
+      "前向过程：按预设方差表逐步加噪，最终退化为标准高斯分布",
+      "反向过程：用 U-Net 预测每一步加入的噪声",
+      "简化目标：直接最小化预测噪声与真实噪声的均方误差",
+      "时间步嵌入：把步数编码进网络，让同一套权重处理所有噪声水平"
+    ],
+    "setup": "在 CIFAR-10 与 CelebA-HQ 等数据集上训练，用 FID 等指标评估生成质量。"
+  },
+  "conclusion": {
+    "findings": "在无条件 CIFAR-10 生成上取得当时最好的 FID，且训练过程比 GAN 稳定得多，不需要对抗博弈。",
+    "impact": "取代 GAN 成为图像生成的主流范式，后续加速采样与潜在空间扩散的工作都建立在它之上。",
+    "limitations": "采样需要成百上千次网络前向，推理速度远慢于 GAN，催生了后续大量的加速研究。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "DDPM",
+    "type": "root",
+    "note": "去噪扩散概率模型",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "GAN 训练不稳",
+            "type": "problem",
+            "note": "对抗博弈易崩塌"
+          },
+          {
+            "id": "p2",
+            "label": "似然模型质量差",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "前向加噪",
+            "type": "method",
+            "note": "按方差表逐步加高斯噪声"
+          },
+          {
+            "id": "m2",
+            "label": "反向去噪",
+            "type": "method",
+            "note": "U-Net 预测所加噪声"
+          },
+          {
+            "id": "m3",
+            "label": "预测噪声目标",
+            "type": "method",
+            "note": "简化为均方误差，等价变分下界"
+          },
+          {
+            "id": "m4",
+            "label": "时间步嵌入",
+            "type": "method",
+            "note": "一套权重复用所有噪声水平"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "质量超越 GAN",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "训练极稳定",
+            "type": "contribution",
+            "note": "无需对抗博弈"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "CIFAR-10 最优",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "高分辨率可用",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "图像生成新主流",
+        "children": [
+          {
+            "id": "i1",
+            "label": "潜在扩散",
+            "type": "impact",
+            "note": "在压缩 latent 上做扩散"
+          },
+          {
+            "id": "i2",
+            "label": "加速采样研究",
+            "type": "impact"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "采样需上千步，推理慢"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

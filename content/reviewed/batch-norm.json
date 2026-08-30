@@ -1,0 +1,138 @@
+{
+  "abstract": "提出批量归一化层，在每个小批量上对中间激活做标准化并保留可学习的缩放与平移。它极大稳定了深层网络的训练，允许使用更大的学习率，同时带来轻微的正则化效果。",
+  "keyPoints": [
+    "对每个小批量做标准化，缓解内部协变量偏移",
+    "引入可学习的缩放与平移，保留网络表达能力",
+    "允许更大的学习率，显著加快收敛",
+    "自带轻微正则化，部分场景下可减少对 Dropout 的依赖"
+  ],
+  "method": {
+    "problem": "深层网络中前面层参数的更新会不断改变后面层输入的分布，迫使后续层反复适应，导致训练缓慢且需要小心设置学习率。",
+    "approach": "在网络每一层的激活之后、非线性之前，对批量内每个维度做标准化，再用可学习参数恢复其表达能力。",
+    "design": [
+      "批量统计：在小批量上计算均值与方差并做标准化",
+      "可学习仿射：缩放与平移参数让网络能恢复原始分布",
+      "推理期用全局统计：训练时维护滑动平均供推断使用",
+      "置于非线性前：对线性输出归一化以稳定分布"
+    ],
+    "setup": "在 ImageNet 分类任务上训练 Inception 等网络，与未归一化的基线对比收敛速度。"
+  },
+  "conclusion": {
+    "findings": "大幅加快收敛，用更少训练步数达到同等精度，并允许使用显著更高的学习率。",
+    "impact": "成为几乎所有现代深度网络的标准层，是残差网络等超深结构得以训练的前提之一。",
+    "limitations": "依赖批量统计量，在小批量或循环网络上表现不稳定，催生了层归一化等替代方案。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "批量归一化",
+    "type": "root",
+    "note": "Batch Normalization",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "分布持续漂移",
+            "type": "problem",
+            "note": "前层更新改变后层输入分布"
+          },
+          {
+            "id": "p2",
+            "label": "学习率敏感",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "批量标准化",
+            "type": "method",
+            "note": "按批次统计均值方差归一"
+          },
+          {
+            "id": "m2",
+            "label": "可学习仿射",
+            "type": "method",
+            "note": "缩放平移保留表达能力"
+          },
+          {
+            "id": "m3",
+            "label": "推理用滑动平均",
+            "type": "method",
+            "note": "训练期维护全局统计量"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "收敛大幅加快",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "可用更大学习率",
+            "type": "contribution"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "更少步数达同等精度",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "轻微正则化效果",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "现代网络标准层",
+        "children": [
+          {
+            "id": "i1",
+            "label": "支撑超深网络",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "催生层归一化",
+            "type": "impact",
+            "note": "Transformer 采用后者"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "小批量与循环网络不稳定"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

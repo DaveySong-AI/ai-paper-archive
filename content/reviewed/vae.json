@@ -1,0 +1,139 @@
+{
+  "abstract": "提出变分自编码器，用神经网络近似后验分布并借助重参数化技巧实现低方差梯度估计。它把生成建模纳入标准的反向传播框架，与对抗式方法并列为深度生成模型的两大路线。",
+  "keyPoints": [
+    "重参数化技巧把随机采样变成可导的确定性变换",
+    "优化证据下界，同时学习编码器与解码器",
+    "得到结构化的连续潜空间，支持插值与可控生成",
+    "训练稳定，与对抗训练相比无需博弈过程"
+  ],
+  "method": {
+    "problem": "带隐变量的生成模型需要对难解的后验分布做推断，而传统的采样式梯度估计方差过大，无法有效训练。",
+    "approach": "用一个识别网络近似后验分布，把目标转成可优化的下界，并通过重参数化让采样过程对参数可导。",
+    "design": [
+      "重参数化：把采样写成均值加标准差乘以标准噪声",
+      "证据下界：由重建项与先验的 KL 散度两项组成",
+      "识别网络：用编码器输出高斯分布的均值与方差",
+      "小批量训练：下界可在小批量上做随机梯度估计"
+    ],
+    "setup": "在 MNIST 与 Frey Face 等数据集上训练，考察潜空间结构与生成样本质量。"
+  },
+  "conclusion": {
+    "findings": "能在标准反向传播下高效训练，学到的潜空间连续可插值，生成样本质量接近同期其他生成模型。",
+    "impact": "成为深度生成模型的两大支柱之一，其重参数化技巧被广泛用于各类含随机节点的模型。",
+    "limitations": "用高斯假设与 KL 散度做近似，生成的样本往往偏模糊，不如对抗式方法锐利。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "VAE",
+    "type": "root",
+    "note": "变分自编码器",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "后验难以推断",
+            "type": "problem",
+            "note": "隐变量后验无解析解"
+          },
+          {
+            "id": "p2",
+            "label": "采样梯度方差大",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "重参数化",
+            "type": "method",
+            "note": "均值加标准差乘噪声，可导"
+          },
+          {
+            "id": "m2",
+            "label": "证据下界",
+            "type": "method",
+            "note": "重建项加 KL 散度"
+          },
+          {
+            "id": "m3",
+            "label": "识别网络",
+            "type": "method",
+            "note": "编码器输出均值与方差"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "可端到端训练",
+            "type": "contribution",
+            "note": "纳入标准反向传播"
+          },
+          {
+            "id": "c2",
+            "label": "连续潜空间",
+            "type": "contribution",
+            "note": "支持插值与可控生成"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "训练高效稳定",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "潜空间可插值",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "生成模型两大支柱之一",
+        "children": [
+          {
+            "id": "i1",
+            "label": "重参数化被广泛复用",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "潜空间扩散基础",
+            "type": "impact"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "生成样本偏模糊"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

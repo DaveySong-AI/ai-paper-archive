@@ -1,0 +1,138 @@
+{
+  "abstract": "提出让语言模型交替生成推理轨迹与具体行动的范式：思考指导行动，行动获得的观察反过来修正思考。这种推理与行动协同的方式在问答与决策任务上同时提升成功率，并让决策过程可解释可干预。",
+  "keyPoints": [
+    "交替生成思考、行动与观察，形成闭环",
+    "行动获取的外部信息可纠正推理中的幻觉",
+    "思考过程让策略可解释，便于人工检查与干预",
+    "同一套提示范式同时适用于问答与交互决策任务"
+  ],
+  "method": {
+    "problem": "此前的方法要么只做纯推理、容易在长链中累积事实错误，要么只做纯行动、缺乏规划与异常处理能力。",
+    "approach": "把模型的输出空间扩展为思考与行动两类：思考用于规划与信息整理，行动用于调用外部工具并带回观察结果。",
+    "design": [
+      "思考轨迹：用自然语言做子目标分解与进展追踪",
+      "行动空间：调用外部接口，如搜索、查询或环境操作",
+      "观察反馈：把工具返回的结果写回上下文再继续推理",
+      "少量示例提示：用几个完整轨迹示范交替格式"
+    ],
+    "setup": "在 HotpotQA 多跳问答与 ALFWorld、WebShop 交互决策环境上评测。"
+  },
+  "conclusion": {
+    "findings": "在多跳问答上缓解了思维链的幻觉累积问题，在交互决策任务上大幅超过仅行动或仅推理的基线。",
+    "impact": "奠定了智能体「推理加工具调用」的基本范式，是后续各类 Agent 框架的思想源头。",
+    "limitations": "长轨迹容易在循环或错误分支中卡住，且每次行动都需额外调用外部接口，成本与延迟较高。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "ReAct",
+    "type": "root",
+    "note": "推理与行动协同",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "纯推理易幻觉",
+            "type": "problem",
+            "note": "长链中事实错误会累积"
+          },
+          {
+            "id": "p2",
+            "label": "纯行动缺规划",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "思考轨迹",
+            "type": "method",
+            "note": "子目标分解与进展追踪"
+          },
+          {
+            "id": "m2",
+            "label": "行动调用",
+            "type": "method",
+            "note": "调用外部工具与环境交互"
+          },
+          {
+            "id": "m3",
+            "label": "观察回写",
+            "type": "method",
+            "note": "工具结果写回上下文继续推理"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "推理行动闭环",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "决策可解释",
+            "type": "contribution",
+            "note": "思考过程可供人工检查"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "多跳问答缓解幻觉",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "交互决策大幅领先",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "智能体范式思想源头",
+        "children": [
+          {
+            "id": "i1",
+            "label": "工具调用框架",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "各类 Agent 系统",
+            "type": "impact"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "长轨迹易卡住，成本较高"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

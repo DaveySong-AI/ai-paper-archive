@@ -1,0 +1,141 @@
+{
+  "abstract": "证明大规模强化学习本身就能激发语言模型的长链推理能力，无需人工标注的推理过程做冷启动。模型自发涌现出反思、验证与自我纠正行为，在数学与代码任务上达到与顶尖闭源模型相当的水平。",
+  "keyPoints": [
+    "R1-Zero 完全跳过监督微调，纯强化学习直接激发推理能力",
+    "推理过程中自发涌现反思与自我验证行为",
+    "多阶段流程解决纯强化学习的可读性与语言混杂问题",
+    "开源权重并公开训练方法，推动推理模型研究透明化"
+  ],
+  "method": {
+    "problem": "此前的推理能力主要依赖人工标注的长链思维数据做监督微调，成本高且受限于人类示范的质量。",
+    "approach": "先用纯强化学习从基座模型直接激发推理能力，再用少量高质量冷启动数据与多轮强化学习修正可读性和语言一致性。",
+    "design": [
+      "GRPO 算法：用组内相对得分估计优势，省去与策略同规模的价值网络",
+      "规则化奖励：以答案正确性与格式约束作为奖励信号，避免奖励被钻空子",
+      "冷启动数据：少量高质量长链示例稳定早期训练",
+      "多阶段训练：推理强化学习后再做通用对齐，兼顾能力与安全性"
+    ],
+    "setup": "在数学、代码与科学推理基准上评测，包括 AIME 2024、MATH-500 与 Codeforces。"
+  },
+  "conclusion": {
+    "findings": "AIME 2024 的 pass@1 从 R1-Zero 的 71.0% 提升到 R1 的 79.8%，MATH-500 达到 97.3%，达到当时顶尖闭源推理模型的水平。",
+    "impact": "证明了强化学习可直接激发推理能力，开源权重与训练细节极大推动了推理模型的复现与研究。",
+    "limitations": "长链推理带来显著的推理成本，且模型在通用写作与多轮对话上仍需额外的对齐训练。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "DeepSeek-R1",
+    "type": "root",
+    "note": "强化学习激发推理",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "依赖人工推理数据",
+            "type": "problem",
+            "note": "冷启动需人工标注长链思维"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "GRPO",
+            "type": "method",
+            "note": "组内相对得分，免价值网络"
+          },
+          {
+            "id": "m2",
+            "label": "规则化奖励",
+            "type": "method",
+            "note": "答案正确性与格式约束"
+          },
+          {
+            "id": "m3",
+            "label": "冷启动数据",
+            "type": "method",
+            "note": "少量高质量示例稳定早期训练"
+          },
+          {
+            "id": "m4",
+            "label": "多阶段训练",
+            "type": "method",
+            "note": "先推理强化再做通用对齐"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "纯 RL 激发推理",
+            "type": "contribution",
+            "note": "无需监督微调冷启动"
+          },
+          {
+            "id": "c2",
+            "label": "能力自发涌现",
+            "type": "contribution",
+            "note": "反思与自我验证自然出现"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "AIME 79.8%",
+            "type": "result",
+            "note": "R1-Zero 为 71.0%"
+          },
+          {
+            "id": "r2",
+            "label": "MATH 97.3%",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "推动推理模型开源复现",
+        "children": [
+          {
+            "id": "i1",
+            "label": "GRPO 被广泛采用",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "推理规模研究",
+            "type": "impact"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "长链推理成本较高"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

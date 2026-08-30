@@ -1,0 +1,140 @@
+{
+  "abstract": "针对循环网络的梯度消失问题，提出带门控机制的长短期记忆单元。通过一条误差恒定流通的细胞状态通路，模型能跨越成百上千个时间步保留信息，成为此后二十年序列建模的标准组件。",
+  "keyPoints": [
+    "细胞状态提供梯度恒定流通的高速通路",
+    "输入门、遗忘门与输出门精细控制信息写入与读出",
+    "梯度不再随时间步指数衰减，可学习超长依赖",
+    "在语音识别、机器翻译与时间序列上长期占据主导"
+  ],
+  "method": {
+    "problem": "标准循环网络在反向传播时误差信号会随时间步指数衰减或爆炸，导致无法学习相隔较远的依赖关系。",
+    "approach": "引入一条线性自连接的细胞状态作为信息主干，用三个门控单元决定保留多少旧记忆、写入多少新信息、输出多少到外部。",
+    "design": [
+      "遗忘门：用一个 sigmoid 决定细胞状态中旧信息的保留比例",
+      "输入门：控制新候选信息写入细胞状态的量",
+      "输出门：控制细胞状态有多少输出到隐藏状态",
+      "截断梯度：反向传播时不对细胞状态求导，保持误差恒定流动"
+    ],
+    "setup": "在需要长距离依赖的合成任务上验证，与传统循环网络做对比。"
+  },
+  "conclusion": {
+    "findings": "在跨越数百时间步的依赖任务上大幅优于传统循环网络，而后者的误差信号几乎无法回传。",
+    "impact": "在 Transformer 出现前一直是序列建模的默认选择，其门控思想也影响了 GRU 等后续结构。",
+    "limitations": "本质上仍是按时间步串行计算，无法并行，且超长序列上的记忆能力仍有上限。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "LSTM",
+    "type": "root",
+    "note": "长短期记忆网络",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "梯度指数衰减",
+            "type": "problem",
+            "note": "误差信号无法长距离回传"
+          },
+          {
+            "id": "p2",
+            "label": "学不会长依赖",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "门控结构",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "细胞状态",
+            "type": "method",
+            "note": "线性主干，误差恒定流通"
+          },
+          {
+            "id": "m2",
+            "label": "遗忘门",
+            "type": "method",
+            "note": "决定旧记忆保留比例"
+          },
+          {
+            "id": "m3",
+            "label": "输入门",
+            "type": "method",
+            "note": "控制新信息写入量"
+          },
+          {
+            "id": "m4",
+            "label": "输出门",
+            "type": "method",
+            "note": "控制状态对外输出量"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "跨越千步依赖",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "误差恒定流动",
+            "type": "contribution",
+            "note": "细胞状态不被逐层缩放"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "长依赖任务胜出",
+            "type": "result",
+            "note": "传统 RNN 几乎无法学习"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "序列建模二十年标配",
+        "children": [
+          {
+            "id": "i1",
+            "label": "GRU 等变体",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "语音与翻译",
+            "type": "impact"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "串行计算，无法并行"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

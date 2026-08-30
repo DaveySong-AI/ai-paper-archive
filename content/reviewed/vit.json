@@ -1,0 +1,139 @@
+{
+  "abstract": "把图像切成固定大小的图块序列，直接送入标准 Transformer 编码器做分类。在大规模数据上预训练后，纯注意力架构不依赖卷积也能达到甚至超过最好的卷积网络，且预训练算力更省。",
+  "keyPoints": [
+    "把图像当作图块序列，完全复用标准 Transformer",
+    "在足够大的数据上预训练后效果超越卷积网络",
+    "大规模预训练胜过归纳偏置，数据量是关键",
+    "预训练所需算力显著低于同等水平的卷积网络"
+  ],
+  "method": {
+    "problem": "卷积网络自带局部性与平移等变性等强归纳偏置，但难以高效利用超大规模数据，也无法复用 NLP 的 Transformer 成果。",
+    "approach": "把图像切成 16x16 的图块，每个图块线性投影成向量并加上位置嵌入，作为一个序列输入标准 Transformer 编码器。",
+    "design": [
+      "图块嵌入：16x16 图块展平后线性投影为 token",
+      "分类标记：在序列前加入可学习的类别 token 用于分类",
+      "位置嵌入：一维可学习位置编码注入空间顺序",
+      "混合架构可选：也可用 CNN 特征图作为 token 输入"
+    ],
+    "setup": "在 ImageNet-21k 与 JFT-300M 上预训练，再迁移到 ImageNet 及多个下游分类任务微调。"
+  },
+  "conclusion": {
+    "findings": "在 JFT-300M 预训练后，ViT 在多个图像分类基准上达到或超过最好的 ResNet，且预训练算力更少。",
+    "impact": "统一了视觉与语言的模型架构，直接催生了 MAE、CLIP 与各类多模态大模型。",
+    "limitations": "在中小规模数据上训练时明显弱于卷积网络，必须依赖超大规模预训练才能发挥优势。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "ViT",
+    "type": "root",
+    "note": "视觉 Transformer",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "卷积难以规模化",
+            "type": "problem",
+            "note": "强归纳偏置限制数据利用"
+          },
+          {
+            "id": "p2",
+            "label": "视觉语言架构割裂",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "图块嵌入",
+            "type": "method",
+            "note": "16x16 图块线性投影成 token"
+          },
+          {
+            "id": "m2",
+            "label": "分类标记",
+            "type": "method",
+            "note": "序列前加可学习类别 token"
+          },
+          {
+            "id": "m3",
+            "label": "位置嵌入",
+            "type": "method",
+            "note": "一维可学习位置编码"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "纯注意力做视觉",
+            "type": "contribution",
+            "note": "不依赖卷积结构"
+          },
+          {
+            "id": "c2",
+            "label": "架构统一",
+            "type": "contribution",
+            "note": "视觉与语言共用 Transformer"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "持平或超越 ResNet",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "预训练更省算力",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "多模态架构基础",
+        "children": [
+          {
+            "id": "i1",
+            "label": "MAE 自监督",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "CLIP 与多模态",
+            "type": "impact"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "小数据上弱于卷积网络"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

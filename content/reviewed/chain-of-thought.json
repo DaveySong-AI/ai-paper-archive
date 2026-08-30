@@ -1,0 +1,131 @@
+{
+  "abstract": "发现足够大的语言模型只要在提示中给出一步步的推理过程，就能显著提升算术与逻辑推理能力。这种思维链提示无需微调，却让数学应用题的正确率从 17.9% 提升到 58.1%。",
+  "keyPoints": [
+    "在提示中展示中间推理步骤，引导模型逐步求解",
+    "无需微调，仅靠提示即可解锁多步推理能力",
+    "是规模涌现能力：小模型用思维链反而变差",
+    "推理步骤可观测，为检查错误提供了窗口"
+  ],
+  "method": {
+    "problem": "大模型擅长单步的模式匹配，但面对需要多步推导的算术、常识与符号推理任务时表现很差。",
+    "approach": "在少样本提示中把示例的答案替换为完整的自然语言推理过程，让模型在作答前先生成中间步骤。",
+    "design": [
+      "思维链示例：每个示范样本写出完整推导再给答案",
+      "少样本提示：给八个带推理链的示例引导模型",
+      "仅推理时生效：不改变模型参数，纯提示层技术",
+      "消融对照：与只给答案的标准提示做严格对比"
+    ],
+    "setup": "在 GSM8K 数学应用题、SVAMP 以及常识与符号推理基准上，用 PaLM 540B 等模型评测。"
+  },
+  "conclusion": {
+    "findings": "PaLM 540B 在 GSM8K 上从标准提示的 17.9% 提升到 58.1%，刷新该基准的最优成绩。",
+    "impact": "成为大模型推理的基础技术，直接启发了自一致性、思维树以及后来的推理模型研究。",
+    "limitations": "只在百亿参数以上的模型上明显有效，小模型生成思维链反而会引入错误并降低准确率。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "思维链",
+    "type": "root",
+    "note": "Chain-of-Thought 提示",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "多步推理能力弱",
+            "type": "problem",
+            "note": "模型只会单步模式匹配"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "示例写出推导",
+            "type": "method",
+            "note": "示范样本含完整推理过程"
+          },
+          {
+            "id": "m2",
+            "label": "少样本提示",
+            "type": "method",
+            "note": "给八个带推理链的示例"
+          },
+          {
+            "id": "m3",
+            "label": "仅推理时生效",
+            "type": "method",
+            "note": "不改参数，纯提示技术"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "无需微调",
+            "type": "contribution",
+            "note": "提示层即可解锁推理"
+          },
+          {
+            "id": "c2",
+            "label": "推理可观测",
+            "type": "contribution",
+            "note": "中间步骤可检查"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "GSM8K 58.1%",
+            "type": "result",
+            "note": "标准提示仅 17.9%"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "大模型推理基础技术",
+        "children": [
+          {
+            "id": "i1",
+            "label": "自一致性",
+            "type": "impact"
+          },
+          {
+            "id": "i2",
+            "label": "推理模型",
+            "type": "impact",
+            "note": "启发后来的长思考模型"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "小模型用思维链反而变差"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

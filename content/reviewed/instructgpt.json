@@ -1,0 +1,135 @@
+{
+  "abstract": "用人类反馈强化学习把语言模型对齐到用户意图：先监督微调，再训练奖励模型拟合人类偏好，最后用强化学习优化。仅 13 亿参数的模型在人工评测中胜过 1750 亿参数的原始 GPT-3。",
+  "keyPoints": [
+    "三阶段流程：监督微调、奖励模型、强化学习优化",
+    "用人类偏好排序训练奖励模型，替代难以定义的指标",
+    "小得多的对齐模型在人工评测中胜过原始大模型",
+    "对齐成本远低于继续堆规模，是性价比极高的方向"
+  ],
+  "method": {
+    "problem": "语言模型的目标是预测下一个词，与「有用、诚实、无害地遵循用户指令」这一目标并不一致。",
+    "approach": "先用人工撰写的示范数据做监督微调，再用人类对多个输出的排序训练奖励模型，最后用 PPO 针对奖励模型优化策略。",
+    "design": [
+      "示范微调：用标注员写的理想回答做监督训练",
+      "奖励模型：对同一提示的多个输出做两两排序，学打分函数",
+      "PPO 优化：以奖励模型为信号更新策略，加 KL 惩罚防止跑偏",
+      "人工评测：以标注员对输出的偏好率作为主要指标"
+    ],
+    "setup": "在 GPT-3 系列上做对齐，收集数万条示范与数十万条偏好排序数据。"
+  },
+  "conclusion": {
+    "findings": "标注员明显更偏好 13 亿参数 InstructGPT 的输出，而非 1750 亿参数 GPT-3，且在真实性与降低有害输出上都有改善。",
+    "impact": "确立了 RLHF 这一对齐范式，成为此后数年对话模型训练的标准流程。",
+    "limitations": "奖励模型可能被策略钻空子，导致过度优化；且标注员的偏好并不代表所有用户群体。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "InstructGPT",
+    "type": "root",
+    "note": "人类反馈强化学习对齐",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "目标与意图错位",
+            "type": "problem",
+            "note": "预测下个词不等于听懂指令"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "三阶段流程",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "监督微调",
+            "type": "method",
+            "note": "用人工撰写的示范回答"
+          },
+          {
+            "id": "m2",
+            "label": "奖励模型",
+            "type": "method",
+            "note": "拟合人类对输出的两两排序"
+          },
+          {
+            "id": "m3",
+            "label": "PPO 强化学习",
+            "type": "method",
+            "note": "以奖励为信号，加 KL 约束"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "对齐范式确立",
+            "type": "contribution",
+            "note": "RLHF 成为标准流程"
+          },
+          {
+            "id": "c2",
+            "label": "小模型胜大模型",
+            "type": "contribution",
+            "note": "1.3B 胜过 175B 原始模型"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "人工偏好率更高",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "真实性改善",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "对话模型标准训练流程",
+        "children": [
+          {
+            "id": "i1",
+            "label": "DPO 等简化",
+            "type": "impact",
+            "note": "去掉奖励模型的直接优化"
+          },
+          {
+            "id": "i2",
+            "label": "对齐研究兴起",
+            "type": "impact"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "奖励模型可被钻空子"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}

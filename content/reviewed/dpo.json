@@ -1,0 +1,140 @@
+{
+  "abstract": "发现带 KL 约束的强化学习目标存在解析最优解，可把偏好优化直接写成对策略的简单分类损失。DPO 去掉奖励模型与在线采样，用一次监督训练就能达到甚至超过 RLHF 的效果。",
+  "keyPoints": [
+    "把 RLHF 的约束优化问题化为闭式解，无需显式奖励模型",
+    "损失函数只含策略与参考模型对优选 / 拒绝回答的对数概率差",
+    "实现简单、训练稳定，省去奖励模型与在线采样环节",
+    "效果与 PPO 系方法相当，且在可控性任务上常更好"
+  ],
+  "method": {
+    "problem": "RLHF 需要先训练奖励模型再做强化学习，流程复杂、超参敏感，且训练过程不稳定、算力开销大。",
+    "approach": "利用 RLHF 最优策略与奖励函数的解析对应关系，把奖励反解为策略的函数，代回偏好模型后得到只依赖策略的损失。",
+    "design": [
+      "变量替换：用策略表示奖励，消去显式的奖励模型",
+      "闭式最优解：带 KL 约束的目标存在解析形式的解",
+      "偏好损失：拉大优选与拒绝回答的相对对数概率差",
+      "参考模型：冻结的初始策略提供 KL 约束的锚点"
+    ],
+    "setup": "在情感生成、摘要与单轮对话等任务上评测，与 PPO 及多种基线对比。"
+  },
+  "conclusion": {
+    "findings": "在多个任务上达到或超过基于 PPO 的 RLHF，且在奖励与 KL 权衡上表现更好，实现与训练成本大幅降低。",
+    "impact": "成为开源社区事实上的对齐标准方法，此后大量偏好优化算法都是它的变体或改进。",
+    "limitations": "依赖离线偏好数据，对分布外样本的泛化不如带在线采样的方法，且对数据质量较为敏感。"
+  },
+  "mindmap": {
+    "id": "root",
+    "label": "DPO",
+    "type": "root",
+    "note": "直接偏好优化",
+    "children": [
+      {
+        "id": "p",
+        "label": "问题",
+        "type": "problem",
+        "children": [
+          {
+            "id": "p1",
+            "label": "RLHF 流程复杂",
+            "type": "problem",
+            "note": "奖励模型加强化学习，超参敏感"
+          },
+          {
+            "id": "p2",
+            "label": "训练不稳定",
+            "type": "problem"
+          }
+        ]
+      },
+      {
+        "id": "m",
+        "label": "核心方法",
+        "type": "method",
+        "children": [
+          {
+            "id": "m1",
+            "label": "变量替换",
+            "type": "method",
+            "note": "用策略反解奖励，消去奖励模型"
+          },
+          {
+            "id": "m2",
+            "label": "闭式最优解",
+            "type": "method",
+            "note": "约束优化存在解析解"
+          },
+          {
+            "id": "m3",
+            "label": "偏好损失",
+            "type": "method",
+            "note": "拉大优选与拒绝的相对概率差"
+          },
+          {
+            "id": "m4",
+            "label": "参考模型锚定",
+            "type": "method",
+            "note": "冻结初始策略提供 KL 约束"
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "label": "核心贡献",
+        "type": "contribution",
+        "children": [
+          {
+            "id": "c1",
+            "label": "免去奖励模型",
+            "type": "contribution"
+          },
+          {
+            "id": "c2",
+            "label": "实现极简稳定",
+            "type": "contribution",
+            "note": "退化为一次监督训练"
+          }
+        ]
+      },
+      {
+        "id": "r",
+        "label": "实验结果",
+        "type": "result",
+        "children": [
+          {
+            "id": "r1",
+            "label": "比肩或超过 PPO",
+            "type": "result"
+          },
+          {
+            "id": "r2",
+            "label": "奖励 KL 权衡更优",
+            "type": "result"
+          }
+        ]
+      },
+      {
+        "id": "i",
+        "label": "后续影响",
+        "type": "impact",
+        "note": "开源对齐事实标准",
+        "children": [
+          {
+            "id": "i1",
+            "label": "众多变体涌现",
+            "type": "impact",
+            "note": "KTO、SimPO 等"
+          }
+        ]
+      },
+      {
+        "id": "l",
+        "label": "已知局限",
+        "type": "result",
+        "note": "离线数据，分布外泛化较弱"
+      }
+    ]
+  },
+  "status": "reviewed",
+  "generatedBy": "manual",
+  "reviewedAt": "2026-08-31T00:00:00Z"
+}
