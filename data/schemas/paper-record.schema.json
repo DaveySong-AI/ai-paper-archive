@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-paper-archive/schemas/paper-record.schema.json",
+  "title": "PaperRecord",
+  "description": "站内所有论文（每周档案库 + 经典论文库）的统一记录模型",
+  "type": "object",
+  "required": ["id", "kind", "title", "source", "timelineAt", "curated", "tags", "links", "summary"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "全局唯一 slug，如 attention-is-all-you-need 或 2026-w35-07"
+    },
+    "kind": { "enum": ["weekly", "classic"] },
+    "title": { "type": "string", "minLength": 1, "description": "中文展示主标题" },
+    "titleEn": { "type": ["string", "null"], "description": "英文原标题" },
+    "authors": { "type": "array", "items": { "type": "string" } },
+    "year": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2100 },
+    "venue": { "type": ["string", "null"], "description": "会议或期刊，如 NeurIPS / CVPR / arXiv preprint" },
+    "arxivId": { "type": ["string", "null"], "pattern": "^[0-9]{4}\\.[0-9]{4,5}$" },
+    "source": {
+      "type": "object",
+      "required": ["name", "family"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "description": "来源显示名，用于徽章文本" },
+        "family": { "type": "string", "description": "家族标识，决定徽章配色" },
+        "url": { "type": ["string", "null"], "format": "uri" }
+      }
+    },
+    "timelineAt": { "type": "string", "format": "date-time", "description": "ISO 8601，排序与时间轴归位依据" },
+    "publishedAt": { "type": ["string", "null"], "format": "date-time", "description": "第三方原文发布时间，可能缺失" },
+    "curated": { "type": "boolean", "description": "是否进入编辑精选" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "links": {
+      "type": "object",
+      "required": ["reader", "original"],
+      "additionalProperties": false,
+      "properties": {
+        "reader": { "type": "string", "description": "站内阅读器路径，如 /paper/xxx" },
+        "original": { "type": "string", "format": "uri", "description": "第三方原文，必填" },
+        "detail": { "type": ["string", "null"], "format": "uri", "description": "数据源详情页/中文阅读页" }
+      }
+    },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 200, "description": "中文摘要，不超过 200 字" },
+    "reading": { "$ref": "#/definitions/ReadingContent" }
+  },
+  "definitions": {
+    "ReadingContent": {
+      "type": "object",
+      "required": ["abstract", "keyPoints", "method", "conclusion", "mindmap", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "abstract": { "type": "string", "maxLength": 200 },
+        "keyPoints": { "type": "array", "minItems": 3, "maxItems": 5, "items": { "type": "string", "minLength": 1 } },
+        "method": {
+          "type": "object",
+          "required": ["problem", "approach", "design"],
+          "additionalProperties": false,
+          "properties": {
+            "problem": { "type": "string", "minLength": 1 },
+            "approach": { "type": "string", "minLength": 1 },
+            "design": { "type": "array", "minItems": 2, "maxItems": 5, "items": { "type": "string", "minLength": 1 } },
+            "setup": { "type": ["string", "null"] }
+          }
+        },
+        "conclusion": {
+          "type": "object",
+          "required": ["findings", "impact"],
+          "additionalProperties": false,
+          "properties": {
+            "findings": { "type": "string", "minLength": 1, "description": "论文自身得出的结论" },
+            "impact": { "type": "string", "minLength": 1, "description": "对领域的后续影响" },
+            "limitations": { "type": ["string", "null"] }
+          }
+        },
+        "mindmap": { "$ref": "#/definitions/MindmapNode" },
+        "status": { "enum": ["draft", "reviewed"] },
+        "generatedBy": { "enum": ["llm", "manual"] },
+        "reviewedAt": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "MindmapNode": {
+      "type": "object",
+      "required": ["id", "label", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1, "maxLength": 12 },
+        "type": { "enum": ["root", "problem", "method", "contribution", "result", "impact"] },
+        "note": { "type": ["string", "null"], "maxLength": 60 },
+        "children": { "type": "array", "items": { "$ref": "#/definitions/MindmapNode" } }
+      }
+    }
+  }
+}

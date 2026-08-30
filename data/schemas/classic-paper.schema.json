@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-paper-archive/schemas/classic-paper.schema.json",
+  "title": "ClassicPaper",
+  "description": "经典论文库条目（人工策划，长期维护）",
+  "type": "object",
+  "required": ["id", "title", "titleZh", "authors", "year", "venue", "track", "tier", "contribution", "whyItMatters", "prerequisites", "related"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "title": { "type": "string", "minLength": 1, "description": "英文原题" },
+    "titleZh": { "type": "string", "minLength": 1, "description": "中文标题" },
+    "authors": { "type": "string", "minLength": 1, "description": "作者串，多人用逗号分隔，长列表可用 et al." },
+    "year": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+    "venue": { "type": "string", "minLength": 1 },
+    "arxiv": { "type": ["string", "null"], "pattern": "^[0-9]{4}\\.[0-9]{4,5}$" },
+    "url": { "type": "string", "format": "uri" },
+    "track": {
+      "enum": ["foundation", "architecture", "pretrain", "scaling", "alignment", "reasoning", "efficiency", "generation", "vision", "rl-agent", "interpretability"]
+    },
+    "tier": { "enum": ["seminal", "milestone", "essential"] },
+    "contribution": { "type": "string", "minLength": 1, "maxLength": 200, "description": "一句话核心贡献" },
+    "whyItMatters": { "type": "string", "minLength": 1, "description": "为什么必读 / 后续影响" },
+    "prerequisites": { "type": "array", "items": { "type": "string" }, "description": "前置论文 id，必须存在于本文件" },
+    "related": { "type": "array", "items": { "type": "string" }, "description": "相关论文 id，必须存在于本文件" }
+  }
+}
