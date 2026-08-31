@@ -76,7 +76,9 @@ npm run validate:data
 # 3. 提交数据变更回 main
 if [ "${COMMIT}" = "1" ]; then
   echo "==> [4/6] 提交数据变更"
-  git add volumes data content/reviewed content/draft
+  # content/draft 仅在存在待审草稿时才出现，目录不存在会让 git add 因 pathspec 报错（set -e 下整步中断）
+  git add volumes data content/reviewed
+  [ -d content/draft ] && git add content/draft
   if git diff --cached --quiet; then
     echo "    数据无变化，跳过提交"
   else
