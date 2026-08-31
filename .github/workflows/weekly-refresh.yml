@@ -30,11 +30,17 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 整条流水线（抓取 + 61 篇 LLM 解读 + 校验 + 构建 + 发布）在云端可能跑较久，
+    # 给足 60 分钟；改小会触发 job 级超时（exit 128）。
+    timeout-minutes: 60
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NEXT_BASE_PATH: /ai-paper-archive
       NEXT_PUBLIC_SITE_URL: https://daveysong-ai.github.io/ai-paper-archive
+      # 构建内存保护：避免大批量页面静态导出时 OOM 被 kill
+      NODE_OPTIONS: --max-old-space-size=4096
+      # 深度解读并发数（默认 6，可按 DashScope 配额调整）
+      DEEP_DIVE_CONCURRENCY: "6"
       # 深度解读自动生成：在仓库 Settings → Secrets 中添加 DEEP_DIVE_API_KEY
       # （可选：DEEP_DIVE_API_BASE 默认 DashScope/Qwen 兼容端点，DEEP_DIVE_MODEL 默认 qwen-plus）
       DEEP_DIVE_API_KEY: ${{ secrets.DEEP_DIVE_API_KEY }}

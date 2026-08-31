@@ -283,6 +283,22 @@ async function callModel(p: PaperRecordLite): Promise<Record<string, unknown>> {
   return JSON.parse(content) as Record<string, unknown>;
 }
 
+/**
+ * 带指数退避重试的模型调用，吸收 DashScope 等云端的瞬时 429 / 网络抖动，
+ * 避免并发时少量失败直接丢论文（失败仍非致命，最终会在 generateFor 处跳过）。
+ */
+async function callModelWithRetry(p: PaperRecordLite, attempt = 0): Promise<Record<string, unknown>> {
+  try {
+    return await callModel(p);
+  } catch (err) {
+    if (attempt >= 3) throw err;
+    const backoff = 600 * Math.pow(2, attempt);
+    console.warn(`    · ${p.id} 调用失败，第 ${attempt + 1} 次重试（${backoff}ms 后）：${(err as Error).message}`);
+    await new Promise((r) => setTimeout(r, backoff));
+    return callModelWithRetry(p, attempt + 1);
+  }
+}
+
 /** Mock：不调接口，用论文标题填一份最小合法模板，用于本地验证整条流水线 */
 function mockGenerate(p: PaperRecordLite): Record<string, unknown> {
   const name = p.title.slice(0, 10);
@@ -322,7 +338,7 @@ async function generateFor(p: PaperRecordLite): Promise<boolean> {
     raw = mockGenerate(p);
   } else {
     try {
-      raw = await callModel(p);
+      raw = await callModelWithRetry(p);
     } catch (err) {
       console.error(`    ✗ ${p.id} 调用失败：${(err as Error).message}`);
       return false;
@@ -330,15 +346,13 @@ async function generateFor(p: PaperRecordLite): Promise<boolean> {
   }
 
   let content = sanitize(raw);
-  if (!isValidReading(content)) {
-    // 重试一次（让模型修正结构）
-    if (!FLAGS.mock) {
-      try {
-        raw = await callModel(p);
-        content = sanitize(raw);
-      } catch {
-        /* ignore */
-      }
+  if (!isValidReading(content) && !FLAGS.mock) {
+    // 校验不过再让模型修正一次结构
+    try {
+      raw = await callModelWithRetry(p);
+      content = sanitize(raw);
+    } catch {
+      /* ignore */
     }
   }
 
@@ -388,17 +402,25 @@ async function main(): Promise<void> {
   console.log(`  候选论文：${targets.length} 篇，待生成：${pending.length} 篇${FLAGS.force ? '（含已存在）' : ''}`);
   if (FLAGS.dryRun) console.log('  [dry-run] 仅校验不写盘');
 
+  const concurrency = Math.max(1, Number(process.env.DEEP_DIVE_CONCURRENCY) || 6);
+  console.log(`  并发数：${concurrency}`);
   let ok = 0;
   let fail = 0;
-  for (const id of pending) {
-    const record = records.get(id);
-    if (!record) continue;
-    const success = await generateFor(record);
-    if (success) ok += 1;
-    else fail += 1;
-    // 简单限速，避免触发云端 QPS 限制
-    if (!FLAGS.mock) await new Promise((r) => setTimeout(r, 400));
-  }
+  let index = 0;
+  const workers = Array.from(
+    { length: Math.min(concurrency, pending.length) },
+    async () => {
+      while (index < pending.length) {
+        const cur = index++;
+        const record = records.get(pending[cur]);
+        if (!record) continue;
+        const success = await generateFor(record);
+        if (success) ok += 1;
+        else fail += 1;
+      }
+    },
+  );
+  await Promise.all(workers);
 
   console.log(`=== 完成：成功 ${ok} 篇，跳过/失败 ${fail} 篇 ===`);
 }
