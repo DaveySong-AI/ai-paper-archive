@@ -35,6 +35,11 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NEXT_BASE_PATH: /ai-paper-archive
       NEXT_PUBLIC_SITE_URL: https://daveysong-ai.github.io/ai-paper-archive
+      # 深度解读自动生成：在仓库 Settings → Secrets 中添加 DEEP_DIVE_API_KEY
+      # （可选：DEEP_DIVE_API_BASE 默认 DashScope/Qwen 兼容端点，DEEP_DIVE_MODEL 默认 qwen-plus）
+      DEEP_DIVE_API_KEY: ${{ secrets.DEEP_DIVE_API_KEY }}
+      DEEP_DIVE_API_BASE: ${{ secrets.DEEP_DIVE_API_BASE }}
+      DEEP_DIVE_MODEL: ${{ secrets.DEEP_DIVE_MODEL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

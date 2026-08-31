@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 每周刷新全流程：抓取 → 校验 → 提交数据 → 构建 → 发布
+# 每周刷新全流程：抓取 → 深度解读 → 校验 → 提交数据 → 构建 → 发布
 #
 # 用法：
 #   ./scripts/refresh-weekly.sh                  # 全流程
@@ -59,19 +59,23 @@ echo ""
 
 # 1. 抓取近 7 天
 if [ "${FETCH}" = "1" ]; then
-  echo "==> [1/5] 抓取近 7 天论文"
+  echo "==> [1/6] 抓取近 7 天论文"
   npm run fetch:volume
 else
-  echo "==> [1/5] 跳过抓取（--no-fetch）"
+  echo "==> [1/6] 跳过抓取（--no-fetch）"
 fi
 
+# 1.5 生成深度解读（全自动；无 DEEP_DIVE_API_KEY 时优雅跳过，不阻断流程）
+echo "==> [2/6] 生成深度解读（AI 全自动，无 key 则跳过）"
+npm run generate:deepdive || echo "    深度解读生成未产出（可能未配置 key 或接口异常），继续后续步骤"
+
 # 2. 数据校验（不通过则中止，保住上一版）
-echo "==> [2/5] 校验数据"
+echo "==> [3/6] 校验数据"
 npm run validate:data
 
 # 3. 提交数据变更回 main
 if [ "${COMMIT}" = "1" ]; then
-  echo "==> [3/5] 提交数据变更"
+  echo "==> [4/6] 提交数据变更"
   git add volumes data
   if git diff --cached --quiet; then
     echo "    数据无变化，跳过提交"
@@ -87,7 +91,7 @@ fi
 
 # 4. 构建
 if [ "${BUILD}" = "1" ]; then
-  echo "==> [4/5] 构建静态站点"
+  echo "==> [5/6] 构建静态站点"
   "${ROOT}/scripts/build-tmp.sh"
 else
   echo "==> [4/5] 跳过构建（--no-build）"
@@ -95,7 +99,7 @@ fi
 
 # 5. 发布
 if [ "${DEPLOY}" = "1" ]; then
-  echo "==> [5/5] 发布到 GitHub Pages"
+  echo "==> [6/6] 发布到 GitHub Pages"
   "${ROOT}/scripts/push-pages.sh"
 else
   echo "==> [5/5] 跳过发布（--no-deploy）"

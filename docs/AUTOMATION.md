@@ -100,22 +100,64 @@ crontab -e
 
 ---
 
-## 五、半自动环节：深度解读
+## 五、深度解读：已接全自动生成（方案 1）
 
-每周抓取的只是**论文元信息**（标题、来源、摘要原文、相对时间等）。每篇论文的「深度解读」（#1 摘要 / #2 创新点 / #3 方法 / #4 结论 + 思维导图）由 LLM 生成、**需要人工审核**。
+已选定 **全自动生成**：每周新论文的「深度解读」（#1 摘要 / #2 创新点 / #3 方法 / #4 结论 + 思维导图）由 LLM 自动生成，无需人工审核，接受自动质量。
 
-当前状态：
+### 它是怎么跑的
 
-- 经典论文库（`data/classic-papers.json`，95 篇）已预先写好深度解读。
-- 每周档案库（AI HOT 近 7 天）的「新论文」默认走**轻量卡片**（摘要原文 + 来源 + 时间），尚未自动生成深度解读，避免误发未审内容。
+刷新流水线新增一步（`refresh-weekly.sh` 第 2 步）：
 
-### 想让每周也自动出深度解读？
+```
+抓取近 7 天 → 生成深度解读 → 校验数据 → 提交数据 → 构建 → 发布
+```
 
-告诉我以下任一种方案，我来接上：
+- 脚本 `scripts/generate-deepdive.ts`：读 `data/weekly-papers.json`，
+  对**最近两周卷宗**里还缺 `content/reviewed/<id>.json` 的论文，调用 LLM 生成 `ReadingContent`，
+  做长度裁剪 + `ajv` 校验后写入 `content/reviewed/`（`status: reviewed`、`generatedBy: llm`）。
+- 生成的内容经 `validate:data` 门禁（要求 `status: reviewed`），与站点一并构建发布。
+- 阅读器对 `generatedBy: llm` 的内容会显示「AI 自动生成·未人工审核」提示，保持透明。
 
-1. **全自动生成**：让脚本对每周新论文调用 LLM 生成解读并写入数据（需配置 API key，且接受自动生成质量）。
-2. **半自动生成 + 你审**：脚本生成一份「待审」草稿到 `content/draft/`，你确认后并入 `content/reviewed/`，再构建发布。
-3. **维持现状**：每周只自动更新「元信息」，深度解读仅限经典论文库。
+### 配置 API key（必须，否则这步自动跳过）
+
+接口走 **OpenAI 兼容协议**，默认对接**阿里云百炼（DashScope）的 Qwen** 模型（与你的现有 key 一致）：
+
+| 环境变量 | 默认值 | 说明 |
+| --- | --- | --- |
+| `DEEP_DIVE_API_KEY` | （无） | **必填**，缺失则跳过生成 |
+| `DEEP_DIVE_API_BASE` | `https://dashscope.aliyuncs.com/compatible-mode/v1` | 任意 OpenAI 兼容端点皆可换 |
+| `DEEP_DIVE_MODEL` | `qwen-plus` | 例如 `qwen-max`、`gpt-4o-mini` 等 |
+
+**本地**：
+
+```bash
+export DEEP_DIVE_API_KEY=sk-xxxx        # 或写入 ~/.workbuddy/credentials/deepdive_key
+npm run generate:deepdive               # 只生成，不发布
+./scripts/refresh-weekly.sh             # 全流程（含生成）
+```
+
+**GitHub Actions（推荐，云端自动）**：
+
+仓库 `Settings → Secrets and variables → Actions → New repository secret`，添加：
+- `DEEP_DIVE_API_KEY`（必填）
+- `DEEP_DIVE_API_BASE`（可选，留空用默认 DashScope）
+- `DEEP_DIVE_MODEL`（可选，留空用默认 qwen-plus）
+
+添加后，每天 09:00（北京）的定时任务会自动带上 key 生成深度解读。
+
+### 其它用法
+
+```bash
+npm run generate:deepdive -- --all       # 回填：处理全部缺失者（首次启用时一次性补齐历史）
+npm run generate:deepdive -- --id 2026-w36-01
+npm run generate:deepdive -- --dry-run   # 只校验不写盘
+npm run generate:deepdive -- --force     # 已存在也重新生成
+```
+
+### 兜底
+
+- 无 key / 接口异常 / 单篇校验不过：**优雅跳过该篇**，绝不发坏数据，也不阻断整周更新。
+- 想退回「仅元信息」：删除 `DEEP_DIVE_API_KEY` 即可，深度解读生成这步会自动跳过。
 
 ---
 

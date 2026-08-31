@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit",
     "validate:data": "tsx scripts/validate-data.ts",
     "fetch:volume": "tsx scripts/build-volume.ts",
+    "generate:deepdive": "tsx scripts/generate-deepdive.ts",
     "test": "tsx --test src/lib/*.test.ts",
     "preview": "next build && python3 -m http.server 4173 --directory out"
   },

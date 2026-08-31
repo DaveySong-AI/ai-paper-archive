@@ -32,6 +32,12 @@ export function ReaderContent({ reading }: { reading: ReadingContent }) {
         </p>
       ) : null}
 
+      {reading.generatedBy === 'llm' ? (
+        <p className="m-0 rounded-lg border border-amber-300/50 bg-amber-50 px-4 py-2.5 text-[13px] text-amber-700">
+          本节内容由 AI 自动生成，未经人工审核，可能存在偏差，仅供参考。
+        </p>
+      ) : null}
+
       <section aria-labelledby="abstract">
         <SectionHeading id="abstract">摘要</SectionHeading>
         <p className="mt-3 text-[14.5px] leading-relaxed text-ink-2">
