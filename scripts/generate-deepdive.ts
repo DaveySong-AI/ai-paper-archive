@@ -47,10 +47,11 @@ function resolveApiKey(): string {
 }
 
 const API_KEY = resolveApiKey();
+// 用 || 而非 ??：workflow 在 secret 未设置时会传入空字符串，必须回退默认值
 const API_BASE =
-  process.env.DEEP_DIVE_API_BASE ??
+  process.env.DEEP_DIVE_API_BASE ||
   'https://dashscope.aliyuncs.com/compatible-mode/v1';
-const MODEL = process.env.DEEP_DIVE_MODEL ?? 'qwen-plus';
+const MODEL = process.env.DEEP_DIVE_MODEL || 'qwen-plus';
 
 interface PaperRecordLite {
   id: string;
