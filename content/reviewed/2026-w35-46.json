@@ -1,0 +1,73 @@
+{
+  "abstract": "MemUse提出将长期人机对话中的记忆评估范式从传统的直接问答（Direct QA）转向自然融入（Natural Integration），通过为期4个月、40名用户、1872次真实会话的部署研究发现：现有基准的Direct QA准确率（19.7%–70.1%）与用户满意度无显著相关性，揭示其生态效度不足。",
+  "keyPoints": [
+    "挑战Direct QA作为记忆评估金标准的生态效度",
+    "提出Natural Integration新范式：记忆需在对话流中自然触发与使用",
+    "实证发现Direct QA准确率与用户满意度无关",
+    "构建基于真实长期交互的部署研究框架",
+    "强调记忆评估应聚焦功能有效性而非事实复述准确率"
+  ],
+  "method": {
+    "problem": "现有记忆评估方法（如Direct QA）无法反映记忆在真实长期对话中的实际效用",
+    "approach": "通过大规模真实用户部署研究，对比Direct QA性能与自然对话中记忆使用效果",
+    "design": [
+      "设计7种可控记忆依赖条件进行对照",
+      "采集1872次跨4个月的自然会话数据",
+      "同步记录系统记忆调用行为与用户满意度反馈",
+      "引入记忆自然融入度（Integration Fluency）作为新指标",
+      "采用混合方法分析（定量统计+定性会话编码）"
+    ],
+    "setup": "40名真实用户，平均每人46.8次会话；覆盖多轮、跨天、主题漂移等长期对话特征"
+  },
+  "conclusion": {
+    "findings": "Direct QA准确率不能预测用户满意度；记忆是否被自然、适时、恰当融入对话流才是关键影响因素",
+    "impact": "推动记忆评估从静态事实检验转向动态交互效能评估，影响对话系统评测标准与记忆建模方向",
+    "limitations": "用户群体偏重技术熟悉者；未覆盖极端长周期（>3个月）记忆衰减效应"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MemUse",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "评估生态效度低",
+        "note": "Direct QA脱离真实对话场景，无法衡量记忆的实际功能价值",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "真实部署研究",
+        "note": "40用户×1872会话，7条件对照，同步采集行为与满意度数据",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "自然融入范式",
+        "note": "提出Memory Integration Fluency指标，强调记忆在对话流中的适时、隐蔽、有效使用",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "准确率≠满意度",
+        "note": "Direct QA准确率区间19.7%-70.1%，但与用户满意度无统计相关性",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重塑评测标准",
+        "note": "推动对话系统记忆能力评估从‘能否答对’转向‘是否用得恰到好处’",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

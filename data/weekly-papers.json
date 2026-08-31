@@ -1093,6 +1093,30 @@
       "arxivId": "2608.24845"
     },
     {
+      "id": "2026-w35-40",
+      "kind": "weekly",
+      "title": "Meta^n：通过涌现深度实现递归自我改进",
+      "titleEn": "Meta^n： Recursive Self-Improvement through Emergent Depth",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-08-26T03:07:16.172Z",
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w35-40",
+        "original": "https://arxiv.org/abs/2608.24735",
+        "detail": "https://aihot.virxact.com/items/cmt9ijioj0l6hrolyp6lxnamu"
+      },
+      "summary": "Meta^n 提出一种固定元操作 Ω 并对其输入递归的自我改进方法，将元深度从约两层扩展至由收敛决定的动态深度。在两种骨干模型上，Meta^n 在全部八个基准家族上超越此前自我改进智能体，其中在 ARC-AGI-2 上唯一取得非零分数。消融实验显示，递归收益主要来自各层传递给下一层的条件，且深度增加时会涌现出不同层角色。",
+      "arxivId": "2608.24735"
+    },
+    {
       "id": "2026-w35-39",
       "kind": "weekly",
       "title": "OPDVR：无需额外超参数的无监督策略蒸馏与可验证奖励结合方法",
@@ -1165,7 +1189,7 @@
       "arxivId": "2608.24876"
     },
     {
-      "id": "2026-w35-40",
+      "id": "2026-w35-41",
       "kind": "weekly",
       "title": "NVIDIA ACES：技能文档高分不等于运行时有效",
       "titleEn": "New Nvidia paper. A high-scoring skill document is not evidence that the skill helps the agent at …",
@@ -1181,14 +1205,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-40",
+        "reader": "/paper/2026-w35-41",
         "original": "https://x.com/rohanpaul_ai/status/2092289147616539018",
         "detail": "https://aihot.virxact.com/items/cmt8wfk980215roly4t3o4b6o"
       },
       "summary": "NVIDIA 新论文提出 ACES 评估框架，指出技能文档得分高不代表智能体运行时真能受益--技能主要贡献是发现与工作流顺序，而非最终答案质量。ACES 固定任务、模型、沙箱等变量，仅对比有无目标技能两次运行的奖励差，定义为 Skill Lift。在生产技能实测中，结构与裁判评分与 Skill Lift 相关性仅 −0.0181 和 −0.0266，几乎为零。"
     },
     {
-      "id": "2026-w35-41",
+      "id": "2026-w35-42",
       "kind": "weekly",
       "title": "单个污染页面即可影响LLM推荐：FORGE基准揭示检索增强推荐系统的脆弱性",
       "titleEn": "One Polluted Page Is Enough： Evaluating Web Content Pollution in LLM Recommenders",
@@ -1204,7 +1228,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-41",
+        "reader": "/paper/2026-w35-42",
         "original": "https://arxiv.org/abs/2606.13610",
         "detail": "https://aihot.virxact.com/items/cmt8bo2db30oaro735zu90tig"
       },
@@ -1212,7 +1236,7 @@
       "arxivId": "2606.13610"
     },
     {
-      "id": "2026-w35-42",
+      "id": "2026-w35-43",
       "kind": "weekly",
       "title": "多跳 RAG 如何放大上游 ASR 错误：实体图谱链接与迭代改写反而加剧鲁棒性下降",
       "titleEn": "Better Retrieval， Worse Robustness：How Multi-hop RAG Amplifies Upstream ASR Errors",
@@ -1228,7 +1252,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-42",
+        "reader": "/paper/2026-w35-43",
         "original": "https://arxiv.org/abs/2608.22872",
         "detail": "https://aihot.virxact.com/items/cmt89ixa72xy9ro73leplhxiw"
       },
@@ -1236,7 +1260,7 @@
       "arxivId": "2608.22872"
     },
     {
-      "id": "2026-w35-43",
+      "id": "2026-w35-44",
       "kind": "weekly",
       "title": "同一智能体不同答案：检索增强问答中语料库引发的答案更替审计",
       "titleEn": "Same Agent， Different Answers： A Repeat-Aware Audit of Corpus-Induced Answer Churn in Retrieval-Augmented QA",
@@ -1252,7 +1276,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-43",
+        "reader": "/paper/2026-w35-44",
         "original": "https://arxiv.org/abs/2608.22856",
         "detail": "https://aihot.virxact.com/items/cmt833ddr2phiro73f4nvr8nr"
       },
@@ -1260,7 +1284,7 @@
       "arxivId": "2608.22856"
     },
     {
-      "id": "2026-w35-47",
+      "id": "2026-w35-48",
       "kind": "weekly",
       "title": "FrontierChallenge：评估科学智能体端到端工作流完成度的新基准",
       "titleEn": "FrontierChallenge： Evaluating Scientific Workflow Completion",
@@ -1276,7 +1300,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-47",
+        "reader": "/paper/2026-w35-48",
         "original": "https://arxiv.org/abs/2608.24979",
         "detail": "https://aihot.virxact.com/items/cmtaxzs6k0d3aroam53z2zszq"
       },
@@ -1284,7 +1308,7 @@
       "arxivId": "2608.24979"
     },
     {
-      "id": "2026-w35-46",
+      "id": "2026-w35-47",
       "kind": "weekly",
       "title": "Luce：面向3D资产生成的可重打光高斯表示",
       "titleEn": "Luce： Relightable Gaussians for 3D Asset Generation",
@@ -1300,7 +1324,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-46",
+        "reader": "/paper/2026-w35-47",
         "original": "https://arxiv.org/abs/2608.23943",
         "detail": "https://aihot.virxact.com/items/cmtdn3pz201gyro2mwhvm5r5i"
       },
@@ -1308,7 +1332,7 @@
       "arxivId": "2608.23943"
     },
     {
-      "id": "2026-w35-45",
+      "id": "2026-w35-46",
       "kind": "weekly",
       "title": "MemUse：将长期人机对话中的记忆评估从直接问答转向自然融入",
       "titleEn": "MemUse： Moving Memory Evaluation from Direct QA to Natural Integration in Long-Term Human-AI Conversation",
@@ -1324,7 +1348,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-45",
+        "reader": "/paper/2026-w35-46",
         "original": "https://arxiv.org/abs/2608.24189",
         "detail": "https://aihot.virxact.com/items/cmtatp8hj097troamews3wovm"
       },
@@ -1332,7 +1356,7 @@
       "arxivId": "2608.24189"
     },
     {
-      "id": "2026-w35-44",
+      "id": "2026-w35-45",
       "kind": "weekly",
       "title": "The Handoff Tax：LLM 智能体延续非原生轨迹的代价",
       "titleEn": "The Handoff Tax： Continuing Non-Native Trajectories in LLM Agents",
@@ -1348,7 +1372,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-44",
+        "reader": "/paper/2026-w35-45",
         "original": "https://arxiv.org/abs/2608.24358",
         "detail": "https://aihot.virxact.com/items/cmtb4fbld0ko8roamxphhzkfx"
       },
@@ -1356,7 +1380,7 @@
       "arxivId": "2608.24358"
     },
     {
-      "id": "2026-w35-48",
+      "id": "2026-w35-49",
       "kind": "weekly",
       "title": "逆向工程发现 MS Paint 和\"照片\"为本地 AI 生成图片添加不可见 GUID 水印",
       "titleEn": "MS Paint 和\"照片\"会甚至对使用 GUID 本地生成的输出文件添加不可见的水印",
@@ -1372,14 +1396,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-48",
+        "reader": "/paper/2026-w35-49",
         "original": "https://xusheng.dev/posts/reversing/mspaint_invisible_watermark/main",
         "detail": "https://aihot.virxact.com/items/cmt7llq5b2a1hro73ev68bs8v"
       },
       "summary": "逆向工程显示，MS Paint 和\"照片\"应用会将服务器下发的 GUID 以不可见方式嵌入本地生成的 AI 图像像素中。该水印由服务器签发，用于追踪图片来源，但用户无法直接察觉其存在。"
     },
     {
-      "id": "2026-w35-49",
+      "id": "2026-w35-50",
       "kind": "weekly",
       "title": "皮尤研究：ChatGPT 发布后网络 AI 生成文本激增",
       "titleEn": "Pew study confirms sharp rise of AI-written text on the web since ChatGPT's launch",
@@ -1395,34 +1419,11 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w35-49",
+        "reader": "/paper/2026-w35-50",
         "original": "https://the-decoder.com/pew-study-shows-ai-written-text-has-surged-across-the-web-since-late-2022",
         "detail": "https://aihot.virxact.com/items/cmt7km6da296vro7317eqmm9t"
       },
       "summary": "皮尤研究中心分析近 50 万个英文网页发现，ChatGPT 发布后发布的页面中超过三分之一带有 AI 生成文本痕迹。商业 .com 域名出现 AI 文本的比例约为 .edu 或 .gov 网站的十倍。分析工具 Open Pangram 难以区分完全自动生成与部分 AI 辅助的文本，且\"delve\"等 AI 常用词及破折号、牛津逗号的使用频率自 2023 年以来显著上升。"
-    },
-    {
-      "id": "2026-w35-50",
-      "kind": "weekly",
-      "title": "AlgorithmWatch 调查：ChatGPT、Gemini、Grok 和 Claude 频繁向孕妇推荐反堕胎网站且不披露立场",
-      "titleEn": "AI chatbots regularly link pregnant users to anti-abortion websites without disclosure",
-      "source": {
-        "name": "The Decoder：AI News",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-08-24T10:29:36.523Z",
-      "publishedAt": "2026-08-24T10:00:51.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w35-50",
-        "original": "https://the-decoder.com/ai-chatbots-regularly-link-pregnant-users-to-anti-abortion-websites-without-disclosure",
-        "detail": "https://aihot.virxact.com/items/cmt73gp8g1s9fro736maq8kej"
-      },
-      "summary": "AlgorithmWatch 调查发现，ChatGPT、Gemini、Grok 和 Claude 在回答意外怀孕问题时，至少每四次查询中就有一次会附上反堕胎网站链接，且通常不披露这些来源的意识形态立场。"
     }
   ]
 }

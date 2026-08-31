@@ -1,0 +1,72 @@
+{
+  "abstract": "V-Rubrics 提出一种基于评分标准的强化学习方法，提升视觉语言模型回答的视觉忠实度。该方法将参考回答分解为原子命题，从视觉忠实度、推理一致性和指令遵循三维度进行细粒度评分，并提供结构化部分奖励。在 Qwen3-VL-8B-Instruct 上微调，使用 50,248 条训练样本，实验表明其 GRPO 算法显著优于 SFT 基线和仅答案级 GRPO，在知识导向与视觉推理任务上提升最显著。",
+  "keyPoints": [
+    "首创将视觉忠实度建模为可分解的原子命题验证问题",
+    "提出三维度结构化评分标准（视觉忠实度/推理一致性/指令遵循）",
+    "设计基于 rubric 的部分奖励机制，支持细粒度强化信号",
+    "采用 GRPO 算法实现 rubric-aware 策略优化",
+    "在真实 VL 模型（Qwen3-VL-8B-Instruct）上验证有效性"
+  ],
+  "method": {
+    "problem": "视觉语言模型生成回答与图像内容不一致（视觉不忠实）",
+    "approach": "将参考回答分解为原子命题，构建多维 rubric 进行细粒度评分，并通过 rubric-guided 强化学习优化生成策略",
+    "design": [
+      "原子命题分解：将完整回答切分为语义独立、可视觉验证的最小单元",
+      "三维度 rubric 设计：分别评估视觉证据支持性、逻辑链完整性、指令响应准确性",
+      "部分奖励分配：对每个原子命题按 rubric 维度打分并加权求和",
+      "GRPO 适配：修改优势估计与策略更新以兼容 rubric 结构化奖励"
+    ],
+    "setup": "基于 Qwen3-VL-8B-Instruct 微调；训练集含 50,248 条图像-问题-原子命题标注三元组；评估涵盖知识导向与视觉推理基准"
+  },
+  "conclusion": {
+    "findings": "rubric-based RL 显著提升视觉忠实度，尤其在需跨模态推理的任务中效果突出；结构化部分奖励比全局奖励更稳定有效",
+    "impact": "为视觉语言模型可信生成提供新范式，推动评估-优化闭环向可解释、可分解方向演进",
+    "limitations": "原子命题标注成本高；rubric 泛化性依赖领域适配；未覆盖长程视觉依赖场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "V-Rubrics",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "视觉不忠实",
+        "note": "VL模型生成流畅但与图像证据矛盾的回答，核心挑战在于缺乏细粒度监督信号",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Rubric-RL框架",
+        "note": "将回答分解为原子命题，按三维度评分，驱动GRPO策略优化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "结构化评分标准",
+        "note": "首次定义视觉忠实度、推理一致性、指令遵循三维度rubric，支持可解释奖励建模",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能显著提升",
+        "note": "在知识导向与视觉推理基准上超越SFT及答案级GRPO，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "可信VL生成范式",
+        "note": "推动评估与优化解耦为可验证原子单元，增强模型行为可追溯性",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

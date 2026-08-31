@@ -1,0 +1,72 @@
+{
+  "abstract": "Google AI 提出 EnvHarness，一种可编程中间层，通过标准 reset()/step() 接口封装静态智能体环境，在不修改底层模拟器或人工验证逻辑的前提下，动态重构任务结构、奖励函数与终止条件，实现训练世界的自适应演化。",
+  "keyPoints": [
+    "提出轻量级、非侵入式可编程层，兼容现有 RL 环境接口",
+    "支持运行时动态重定义任务目标、奖励信号与 episode 结束逻辑",
+    "无需修改模拟器源码或人工验证器即可实现环境行为演化",
+    "提供声明式配置与 Python API 双模式任务编排能力",
+    "已在多个基准环境（如 ProcGen、MiniGrid）中验证其任务泛化性"
+  ],
+  "method": {
+    "problem": "静态环境难以支持多样化、渐进式、任务驱动的智能体训练需求",
+    "approach": "构建位于智能体与原始环境之间的可编程适配层，解耦环境语义与执行实现",
+    "design": [
+      "基于观察-动作-奖励-截断四元组的通用接口桥接机制",
+      "任务图（Task Graph）抽象：节点为子任务，边为依赖与触发条件",
+      "奖励合成器：支持组合、缩放、延迟、稀疏化等可配置奖励变换",
+      "状态感知终止控制器：依据内部状态或历史轨迹动态判定 episode 结束"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "EnvHarness 显著提升环境复用率与任务定制效率，使单个静态环境可支撑数百种变体训练场景",
+    "impact": "推动强化学习环境工程范式从‘硬编码任务’转向‘可编程世界’，降低高质量训练环境构建门槛",
+    "limitations": "对强耦合状态-动作语义的专有模拟器支持有限；实时性开销未量化"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "EnvHarness",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "静态环境僵化",
+        "note": "传统RL环境任务固定，难以支持动态演化训练需求",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "可编程中间层",
+        "note": "在agent与env间插入标准接口桥接层，解耦语义与实现",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "任务图与奖励合成",
+        "note": "提供声明式任务编排与可组合奖励变换能力",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "多环境验证",
+        "note": "在ProcGen、MiniGrid等基准中实现任务变体快速生成",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "环境工程新范式",
+        "note": "推动RL环境从硬编码向可编程、可演化的世界建模转变",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

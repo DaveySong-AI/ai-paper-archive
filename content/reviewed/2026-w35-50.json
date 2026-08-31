@@ -1,0 +1,73 @@
+{
+  "abstract": "皮尤研究中心分析近50万个英文网页发现，ChatGPT发布后新页面中逾三分之一含AI生成文本痕迹；商业网站（.com）AI文本比例约为教育（.edu）或政府（.gov）网站的十倍；研究指出检测工具Open Pangram存在局限，难以区分全自动生成与部分AI辅助文本，且特定词汇与标点使用频率自2023年起显著上升。",
+  "keyPoints": [
+    "ChatGPT发布后网络AI生成文本占比激增，新网页中超1/3含AI痕迹",
+    ".com域名AI文本密度约为.edu/.gov域名的10倍，反映领域应用差异",
+    "现有检测工具Open Pangram无法可靠区分纯AI生成与AI辅助写作",
+    "‘delve’等高频AI用词及破折号、牛津逗号使用率自2023年起明显上升",
+    "研究基于大规模真实网页语料（近50万页），聚焦文本表层特征而非内容真实性"
+  ],
+  "method": {
+    "problem": "量化评估ChatGPT发布后全球英文网页中AI生成文本的扩散程度与分布特征",
+    "approach": "基于大规模网页采样与文本表层特征分析，结合现有AI检测工具进行统计性探测",
+    "design": [
+      "采集2022年11月前后的近50万个英文网页作为时间对照样本",
+      "使用Open Pangram工具识别AI生成文本痕迹（非确定性判别）",
+      "按域名后缀（.com/.edu/.gov等）分类统计AI文本出现频率",
+      "分析特定词汇（如'delve'）、标点（破折号、牛津逗号）的时序使用趋势",
+      "明确声明方法局限：不验证文本真实性，仅捕捉统计可辨识模式"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "AI生成文本在开放网络中已快速规模化渗透，呈现显著领域异质性与语言风格印记",
+    "impact": "为AI内容治理、信息素养教育及检测技术发展提供实证基准，推动对‘AI辅助’边界的再审视",
+    "limitations": "依赖启发式特征而非语义/生成溯源，无法区分人类主导与AI主导创作比例"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "皮尤AI文本研究",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "AI文本扩散量化",
+        "note": "评估ChatGPT发布后网络AI内容增长规模与分布规律",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "网页特征分析",
+        "note": "基于50万英文网页采样，用Open Pangram探测表层AI痕迹",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "领域差异揭示",
+        "note": ".com网站AI文本密度达.edu/.gov的约10倍，凸显商业驱动特征",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "语言印记上升",
+        "note": "'delve'等词及破折号、牛津逗号使用频率自2023年起显著增加",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "检测范式警示",
+        "note": "揭示当前工具难以区分全自动生成与AI辅助，呼吁方法论升级",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

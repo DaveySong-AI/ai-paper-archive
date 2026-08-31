@@ -1,0 +1,72 @@
+{
+  "abstract": "本文通过逆向工程发现，Windows 系统内置的 MS Paint 和“照片”应用在保存本地 AI 生成图像时，会将服务器下发的 GUID 以不可见方式嵌入像素数据（如 LSB 隐写），实现溯源追踪。该水印无需联网生成，但依赖初始获取的服务器签发 GUID，用户完全无感知。",
+  "keyPoints": [
+    "MS Paint 与“照片”应用对本地 AI 生成图强制嵌入不可见 GUID 水印",
+    "水印基于服务器签发的 GUID，非本地随机生成，具备唯一可追溯性",
+    "嵌入机制采用像素级隐写（如 LSB），不改变图像视觉表现",
+    "水印在保存时自动注入，用户无提示、无禁用选项",
+    "该行为揭示微软在客户端侧实施隐蔽内容溯源的基础设施"
+  ],
+  "method": {
+    "problem": "识别 Windows 应用对本地 AI 图像输出施加的隐蔽标识机制",
+    "approach": "对 MS Paint 和'照片'应用进行二进制逆向分析，结合动态调试与图像文件结构比对",
+    "design": [
+      "定位图像保存路径中的水印注入函数调用链",
+      "提取并验证嵌入 GUID 的编码格式与位置（如 PNG tEXt 块或像素 LSB）",
+      "确认 GUID 来源为微软服务器下发的设备/会话级令牌",
+      "构造控制实验：对比有无网络连接时水印存在性"
+    ],
+    "setup": "使用 x64dbg 动态调试、Ghidra 反编译、PNG 分析工具；测试环境为 Windows 11 23H2"
+  },
+  "conclusion": {
+    "findings": "证实 MS Paint 和'照片'应用存在默认启用的、不可关闭的隐式水印机制，用于绑定图像与用户设备/会话",
+    "impact": "引发对本地 AI 工具隐私边界、客户端可控性及平台内容治理透明度的广泛讨论",
+    "limitations": "未公开水印解码工具细节；GUID 绑定粒度（设备级/会话级）需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Paint GUID水印",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "隐蔽溯源需求",
+        "note": "平台需追踪AI图像来源，但避免用户感知",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "逆向+动态分析",
+        "note": "结合 Ghidra 反编译与 x64dbg 调试定位水印注入点",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "发现隐式水印机制",
+        "note": "首次披露 MS Paint/'照片'对本地生成图强制嵌入服务器GUID",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "LSB像素隐写",
+        "note": "GUID 编码后嵌入图像最低有效位，视觉无损",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "隐私与可控性质疑",
+        "note": "用户无法禁用，挑战'本地AI'的自主性承诺",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

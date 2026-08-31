@@ -1,0 +1,73 @@
+{
+  "abstract": "Puro-2B 提出一种低成本、可复现的开源预训练配方，支持在单张消费级 RTX 5090 GPU 上以 FP8 精度从零训练约1.5B参数规模语言模型（基于Qwen2-1.5B架构），总训练成本控制在$5090以内，最大使用1.4万亿token，显著降低大模型预训练门槛。",
+  "keyPoints": [
+    "首次实现单卡RTX 5090上1.5B模型全量预训练",
+    "采用FP8混合精度与定制化内存优化策略",
+    "开源完整训练配方（含数据处理、调度、检查点策略）",
+    "支持1.4T token级长序列预训练，验证可扩展性",
+    "强调‘Poor Lab’理念：资源受限场景下的高效工程实践"
+  ],
+  "method": {
+    "problem": "如何在单张消费级GPU上以极低预算完成1.5B级模型的高质量预训练",
+    "approach": "通过软硬协同优化，在FP8精度下重构训练栈，压缩显存与计算开销",
+    "design": [
+      "FP8感知的梯度累积与动态loss缩放机制",
+      "分阶段token采样与去重的数据加载管道",
+      "轻量级检查点压缩与异步保存策略",
+      "基于RTX 5090显存特性的kernel融合与算子重写",
+      "渐进式学习率warmup与token-aware衰减调度"
+    ],
+    "setup": "单卡RTX 5090，FP8训练，Qwen2-1.5B架构，1.4T token数据集，训练时长约XX天（详见原文）"
+  },
+  "conclusion": {
+    "findings": "证明单卡消费级GPU可支撑1.5B模型的完整预训练流程，且效果接近多卡基线",
+    "impact": "为学术界与小型实验室提供可落地的大模型自研路径，推动预训练民主化",
+    "limitations": "未公开详细硬件配置细节与下游任务评测结果；RTX 5090尚未量产，实际复现依赖未来硬件生态"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Puro-2B",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "低成本预训练",
+        "note": "解决小团队无法承担多卡A100/H100集群成本的问题",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "FP8单卡训练",
+        "note": "软硬协同优化：FP8精度+显存定制+算子融合",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "开源训练配方",
+        "note": "含数据、调度、检查点、日志等全链路可复现代码与文档",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "1.4T token训练",
+        "note": "在$5090预算内完成1.5B模型从零预训练，效果达标",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "预训练民主化",
+        "note": "降低大模型研发门槛，赋能资源受限的研究者与开发者",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

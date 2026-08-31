@@ -1,0 +1,72 @@
+{
+  "abstract": "安全研究员David Buchanan发现Android平台C2PA相机认证存在严重设计缺陷：攻击者在获得root权限后，可滥用StrongBox硬件密钥签名任意媒体数据，伪造合法C2PA签名的图像与视频。该漏洞不依赖物理硬件攻击，且因架构层面信任模型缺陷，无法通过常规软件补丁修复。",
+  "keyPoints": [
+    "C2PA在Android上依赖系统级签名服务，未隔离应用层与硬件密钥使用边界",
+    "CVE-2026-43499等root漏洞使攻击者可劫持StrongBox硬件签名能力",
+    "伪造的C2PA资产在现有验证工具中显示为‘已认证’，破坏信任链根基",
+    "问题源于C2PA规范对平台执行环境假设过强，缺乏运行时防护机制",
+    "厂商需重构密钥访问控制模型，而非仅修补单个漏洞"
+  ],
+  "method": {
+    "problem": "C2PA数字内容认证在Android设备上易被具备root权限的攻击者绕过",
+    "approach": "通过分析Android签名服务架构与StrongBox硬件抽象层交互逻辑，定位密钥调用无上下文校验的缺陷",
+    "design": [
+      "利用root权限注入恶意签名服务代理",
+      "复用系统预置StrongBox密钥对任意二进制数据生成C2PA合规签名",
+      "构造含伪造时间戳、设备ID及传感器元数据的完整C2PA Manifest",
+      "绕过应用沙箱限制直接调用Keymaster HAL接口"
+    ],
+    "setup": "基于Pixel系列设备（Android 13/14）实测，使用Magisk root环境与自定义adb调试工具链"
+  },
+  "conclusion": {
+    "findings": "C2PA在Android上的实现将硬件信任错误地延伸至不可信的应用执行环境，导致签名可被任意滥用",
+    "impact": "动摇C2PA作为内容溯源标准的可信基础，影响新闻媒体、社交平台及司法取证场景的采用信心",
+    "limitations": "未覆盖iOS等封闭生态的等效分析；对非root场景的侧信道攻击未评估"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "C2PA Androi…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "认证信任崩塌",
+        "note": "root后可伪造任意C2PA签名，验证工具无法区分真伪",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "StrongBox劫持",
+        "note": "通过root权限绕过Keymaster访问控制，复用硬件密钥签名恶意数据",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "架构缺陷揭示",
+        "note": "指出C2PA规范未定义平台执行环境安全要求，导致跨厂商共性风险",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "零补丁修复可能",
+        "note": "需重构Android签名服务信任模型，非单一CVE修补可解决",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "标准公信力受损",
+        "note": "媒体与平台若依赖C2PA验证，将面临系统性误判风险",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

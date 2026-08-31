@@ -1,0 +1,72 @@
+{
+  "abstract": "微软提出TailSFT方法，指出标准监督微调（SFT）会持续在模型已拟合的头部序列上更新梯度，压缩后续强化学习（RL）所需的探索空间；TailSFT通过动态过滤高置信度/高拟合序列，聚焦于数据分布尾部的欠拟合样本进行训练，从而提升RL阶段的收敛速度与最终性能。",
+  "keyPoints": [
+    "标准SFT存在梯度冗余：反复优化模型已掌握的序列，抑制RL探索多样性",
+    "TailSFT引入动态过滤机制，识别并排除高置信度、低信息量的‘头部’样本",
+    "训练重心转向数据分布尾部——即模型当前表现差、不确定性高的难例",
+    "在OLMo-3 7B上验证有效：编程pass@16最高提升16.8点，数学提升3.1点",
+    "与GRPO结合后，最终pass@1提升3.9点，早期奖励增长速率加快2.5倍"
+  ],
+  "method": {
+    "problem": "标准SFT导致策略分布过早收缩，削弱RL阶段的探索能力与优化潜力",
+    "approach": "在SFT阶段主动识别并剔除模型已充分拟合的样本，保留并加权欠拟合尾部样本进行训练",
+    "design": [
+      "基于模型输出置信度或logit熵动态估计样本拟合程度",
+      "设定阈值过滤高置信度序列，构建‘tail-only’训练子集",
+      "支持在线更新过滤阈值，适配训练进程中的能力演化",
+      "兼容现有SFT流程，无需修改损失函数或架构"
+    ],
+    "setup": "实验基于OLMo-3 7B，在编程与数学任务上评估；RL阶段采用GRPO算法"
+  },
+  "conclusion": {
+    "findings": "TailSFT显著缓解SFT对RL探索空间的压缩效应，加速RL收敛并提升最终性能",
+    "impact": "为SFT与RL协同设计提供新范式，揭示数据分布建模对对齐流程的关键影响",
+    "limitations": "过滤策略依赖置信度估计质量，未明确分析不同任务尾部定义的一致性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "TailSFT",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "SFT压缩RL探索",
+        "note": "标准SFT反复优化头部样本，收窄策略分布，损害后续RL多样性",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "动态尾部过滤",
+        "note": "基于置信度/熵实时筛选欠拟合样本，构建tail-only训练集",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "轻量高效SFT改进",
+        "note": "无需改模型或RL算法，仅调整SFT数据分布，即显著提升RL效果",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能显著提升",
+        "note": "编程pass@16↑16.8，数学↑3.1；GRPO后pass@1↑3.9，早期奖励增速↑2.5×",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重审SFT角色",
+        "note": "推动SFT从‘全量拟合’转向‘定向补缺’，强化其作为RL前置准备的定位",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

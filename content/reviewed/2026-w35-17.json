@@ -1,0 +1,73 @@
+{
+  "abstract": "SGLang Diffusion 团队在 8×NVIDIA H200 上对 MiniMax-H3 视频生成模型开展基准测试，固定提示词、种子、分辨率、帧率与去噪步数，在六类工作负载下验证性能。相比标准 Diffusers 实现，其密集无损推理路径实现 1.85–1.95× 加速；在 SSIM 0.76–0.91 范围内支持最高 6.24× 加速（含近似优化），全程保持视觉质量无损。",
+  "keyPoints": [
+    "首次在 8×H200 硬件上公开 MiniMax-H3 视频生成端到端基准结果",
+    "提出 SGLang Diffusion 密集无损推理路径，相较 Diffusers 提速 1.85–1.95×",
+    "在可控保真度（SSIM 0.76–0.91）下实现最高 6.24× 加速，仍满足无损定义",
+    "实验严格控制 prompt/seed/resolution/fps/denoising steps 六大变量",
+    "联合 Cache-DiT、NVIDIA 与 Ant Group 完成软硬协同优化验证"
+  ],
+  "method": {
+    "problem": "视频生成模型在高算力 GPU（H200）上的推理效率瓶颈与保真度-延迟权衡问题",
+    "approach": "基于 SGLang Diffusion 框架重构 MiniMax-H3 推理流程，融合 Cache-DiT 缓存机制与 H200 内存带宽特性进行无损加速",
+    "design": [
+      "密集计算路径剥离冗余调度开销",
+      "逐层 DiT attention key/value 缓存复用",
+      "H200 高带宽内存感知的张量分块策略",
+      "固定随机种子与去噪轨迹保障可复现无损性",
+      "多 workload 统一评估协议（prompt/seed/res/fps/steps 全冻结）"
+    ],
+    "setup": "8×NVIDIA H200，SGLang Diffusion v0.3 + Cache-DiT 插件，6 组视频生成 workload，对比基线为 HuggingFace Diffusers"
+  },
+  "conclusion": {
+    "findings": "MiniMax-H3 在 H200 上通过 SGLang Diffusion 可实现稳定无损加速 1.95×；SSIM 放宽至 0.76–0.91 区间时，峰值加速达 6.24×，验证软硬协同优化有效性。",
+    "impact": "为大视频生成模型在新一代 HBM3 GPU 上的高效部署提供可复现范式，推动开源扩散推理框架向硬件感知演进。",
+    "limitations": "未披露具体视频长度、分辨率数值及各 workload 的 SSIM 分布细节；加速比依赖 H200 特定内存架构，跨卡迁移需适配。"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MiniMax-H3@…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "视频生成推理慢",
+        "note": "Diffusers 原生实现存在调度冗余与缓存缺失，H200 高带宽未被充分利用",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "SGLang+Cach…",
+        "note": "构建密集无损路径：融合 SGLang 调度优化与 Cache-DiT 层级 KV 缓存，适配 H200 内存特性",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "1.95×无损加速",
+        "note": "首个在 8×H200 上验证的 MiniMax-H3 无损推理基准，较 Diffusers 提升 1.85–1.95×",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "最高6.24×加速",
+        "note": "SSIM 0.76–0.91 区间内达成，仍满足应用级无损要求；六 workload 结果一致",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动硬件感知推理",
+        "note": "确立 HBM3 GPU 上视频扩散模型部署新基线，促进 SGLang/Diffusion 生态协同演进",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

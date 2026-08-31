@@ -1,0 +1,87 @@
+{
+  "abstract": "GeoRA是美团与北大提出的面向RLVR（强化学习验证推理）任务的LoRA改进方法，通过显式建模参数更新的几何结构，结合谱先验与欧氏先验定位稀疏更新区域，并利用SVD压缩为低秩适配器，同时冻结残差锚点。在Qwen与Llama系列模型（1.5B–32B）上验证，其在数学、医学、代码三类RLVR任务中稳定优于LoRA、PiSSA、MiLoRA等基线，Qwen3-8B在AIME24上达23.75%，可…",
+  "keyPoints": [
+    "首次将低秩适配显式对齐RLVR任务的参数更新几何结构",
+    "引入谱先验与欧氏先验联合定位稀疏、关键的梯度更新区域",
+    "采用SVD压缩构建低秩稠密适配器，提升表达效率",
+    "冻结残差锚点以稳定训练并抑制过拟合",
+    "在多尺寸开源模型及三类高难度RLVR任务上实现一致性能领先"
+  ],
+  "method": {
+    "problem": "传统LoRA在RLVR任务中难以捕捉稀疏、非均匀、几何敏感的参数更新模式，导致适配效率与泛化性受限",
+    "approach": "基于更新几何先验引导低秩适配器设计：先定位再压缩，兼顾稀疏性与结构一致性",
+    "design": [
+      "谱先验：利用Hessian或梯度协方差谱特征识别主导更新方向",
+      "欧氏先验：在参数空间中约束更新区域的局部欧氏距离分布",
+      "双阶段适配：先稀疏定位 → 后SVD低秩稠密化",
+      "残差锚点冻结机制：固定基础模型中被激活参数的初始值作为参考锚点"
+    ],
+    "setup": "在Qwen（1.5B/7B/32B）与Llama（3-8B/32B）上评估；任务覆盖AIME24（数学）、MedQA（医学）、CodeContests（代码）；使用PPO+reward modeling标准RLVR流程"
+  },
+  "conclusion": {
+    "findings": "GeoRA显著提升RLVR场景下低秩适配的精度与稳定性，在多模型、多任务上持续超越主流LoRA变体",
+    "impact": "为RLVR等几何敏感的微调范式提供新设计范式，推动高效对齐从‘统计匹配’走向‘几何对齐’",
+    "limitations": "依赖Hessian近似计算，大模型下谱先验获取开销较高；未在纯监督微调场景做横向对比"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GeoRA",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "RLVR更新几何失配",
+        "note": "传统LoRA忽略RLVR中梯度更新的稀疏性与流形结构，导致适配低效",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "几何感知双阶段适配",
+        "note": "先用谱+欧氏先验定位关键更新区，再SVD压缩为低秩稠密适配器",
+        "children": [
+          {
+            "type": "method",
+            "label": "谱先验定位",
+            "note": "基于梯度协方差谱分析识别主导更新子空间",
+            "children": [],
+            "id": "n2-3-4"
+          },
+          {
+            "type": "method",
+            "label": "欧氏距离约束",
+            "note": "在参数空间限制更新区域的局部欧氏分布，增强几何一致性",
+            "children": [],
+            "id": "n2-4-5"
+          }
+        ],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "残差锚点冻结",
+        "note": "固定被激活参数初始值为锚点，提升训练稳定性与泛化鲁棒性",
+        "children": [],
+        "id": "n5-6"
+      },
+      {
+        "type": "result",
+        "label": "多任务SOTA",
+        "note": "Qwen3-8B在AIME24达23.75%，参数量仅全参微调0.5%",
+        "children": [],
+        "id": "n6-7"
+      },
+      {
+        "type": "impact",
+        "label": "几何对齐新范式",
+        "note": "推动高效微调从统计建模转向参数空间几何建模，影响RLVR与安全对齐研究",
+        "children": [],
+        "id": "n7-8"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

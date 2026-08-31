@@ -1,0 +1,87 @@
+{
+  "abstract": "Infer-forge 是一套面向 SGLang 推理优化的内部工程系统，提出 MonoRepo、Harness、Task Loop 与 Task Graph 四种结构化机制，将模型、SLO、硬件拓扑、运行时及加速平台等多维部署点约束，转化为可复现、可审计的端到端工程流程。",
+  "keyPoints": [
+    "提出‘部署点约束链’概念，强调推理优化有效性依赖全局部署上下文而非局部代码变更",
+    "引入 Harness 作为标准化测试与验证接口，统一评估不同配置下的性能与合规性",
+    "设计 Task Loop 结构支持迭代式调优闭环，实现配置-执行-反馈-修正的自动化循环",
+    "构建 Task Graph 表达跨组件依赖关系，显式建模模型、调度器、通信路径与硬件间的耦合",
+    "采用 MonoRepo 统一管理所有工程资产（模型、脚本、配置、指标），保障可复现性与可审计性"
+  ],
+  "method": {
+    "problem": "推理优化在局部代码层面看似独立，但其实际有效性高度依赖全局部署上下文（如模型特性、SLO要求、网络拓扑、运行时行为、加速平台能力）",
+    "approach": "将部署点约束链工程化：通过四层抽象（MonoRepo→Harness→Loop→Graph）将隐式依赖显式建模为可组合、可追踪、可重放的系统流程",
+    "design": [
+      "Harness：定义标准化输入/输出契约与断言接口，封装模型加载、请求注入、指标采集与SLO校验",
+      "Task Loop：以配置驱动的闭环执行引擎，支持基于指标反馈的自动参数搜索与策略切换",
+      "Task Graph：DAG形式描述任务间数据流与约束依赖，支持跨层级（模型→调度→通信→内核）影响分析",
+      "MonoRepo：单一代码仓库集成全部配置模板、基准脚本、验证规则与历史快照，绑定Git commit与部署点元数据"
+    ],
+    "setup": "基于SGLang v0.3+框架，在LMSYS组织的多厂商GPU集群（A100/H100）上开展端到端推理服务验证；覆盖LLaMA-2/3、Qwen、Phi系列模型及vLLM/SGLang后端对比"
+  },
+  "conclusion": {
+    "findings": "推理优化的有效性必须锚定于具体部署点；脱离约束链的孤立优化易导致线上失效，而结构化工程流程可显著提升优化迁移成功率与问题归因效率",
+    "impact": "为大模型推理系统工程提供了可复现范式，推动从‘经验调参’向‘约束驱动开发’演进，对MLOps与AI Infra领域具方法论启示",
+    "limitations": "当前Task Graph依赖人工建模，自动化依赖图推断能力尚未集成；多租户隔离与动态SLO适配未在原文详述"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Infer-forge",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "优化有效性全局性",
+        "note": "局部代码变更需匹配全局部署点约束链才有效，否则易失效",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "四层工程结构",
+        "note": "MonoRepo统一资产，Harness标准化验证，Loop闭环调优，Graph建模依赖",
+        "children": [
+          {
+            "type": "contribution",
+            "label": "Harness接口契约",
+            "note": "定义输入/输出、SLO断言与可观测性接入标准",
+            "children": [],
+            "id": "n2-3-4"
+          },
+          {
+            "type": "contribution",
+            "label": "Task Loop引擎",
+            "note": "支持配置驱动、指标反馈、自动策略修正的迭代闭环",
+            "children": [],
+            "id": "n2-4-5"
+          }
+        ],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "部署点约束链",
+        "note": "将模型、SLO、拓扑、运行时、加速平台五要素联合建模为工程输入",
+        "children": [],
+        "id": "n5-6"
+      },
+      {
+        "type": "result",
+        "label": "可复现可审计流程",
+        "note": "Git commit绑定完整部署上下文，支持任意历史点精确重放与比对",
+        "children": [],
+        "id": "n6-7"
+      },
+      {
+        "type": "impact",
+        "label": "推理工程范式升级",
+        "note": "推动从经验调参转向约束驱动开发，增强MLOps与AI Infra系统性",
+        "children": [],
+        "id": "n7-8"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
