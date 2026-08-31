@@ -76,7 +76,7 @@ npm run validate:data
 # 3. 提交数据变更回 main
 if [ "${COMMIT}" = "1" ]; then
   echo "==> [4/6] 提交数据变更"
-  git add volumes data
+  git add volumes data content/reviewed content/draft
   if git diff --cached --quiet; then
     echo "    数据无变化，跳过提交"
   else
