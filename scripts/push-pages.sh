@@ -60,7 +60,19 @@ git -c user.name="Davey's workbuddy agent" -c user.email="agent@davey.local" \
   commit -q -m "部署: 发布静态站点 ${STAMP} · 本提交由 Davey's workbuddy agent 提交"
 
 echo "==> 推送 gh-pages"
-git push --force "https://${TOKEN}@github.com/${REPO}.git" HEAD:gh-pages
+
+# GitHub Actions 提供的 GITHUB_TOKEN / OAuth token 必须以 x-access-token 作为用户名
+# （否则 git 会误把 token 当作用户名并索要密码，在无 TTY 的 CI 里直接失败）。
+# 个人 classic PAT（ghp_ 开头）则直接作为用户名即可。二者均支持空密码。
+case "${TOKEN}" in
+  github_pat_*|gho_*|ghs_*|ghr_*|ghu_*)
+    AUTH="x-access-token:${TOKEN}" ;;
+  *)
+    AUTH="${TOKEN}" ;;
+esac
+
+git remote add origin "https://${AUTH}@github.com/${REPO}.git"
+git push --force origin HEAD:gh-pages
 
 echo "==> 完成：https://${OWNER}.github.io/${NAME}/"
 
