@@ -1,0 +1,72 @@
+{
+  "abstract": "斯坦福大学提出Prefix Sliding方法，在推理阶段动态滑动保留关键前缀（指令与工具调用）及末尾数千token，丢弃中间冗余token，实现内存占用恒定、无需微调即可提速3倍，性能媲美全注意力机制，并支持超10万token的强化学习rollout。",
+  "keyPoints": [
+    "无需训练或模型修改，即插即用适配现有大模型",
+    "通过前缀+滑动窗口策略实现O(1)级内存增长",
+    "保持长程依赖建模能力，关键指令与工具调用始终保留在上下文",
+    "在RL rollout等长推理场景中支持>100k token序列",
+    "实测推理速度提升约3倍，准确率与全注意力基线持平"
+  ],
+  "method": {
+    "problem": "长上下文推理中自回归生成导致内存爆炸与延迟激增",
+    "approach": "在解码时动态维护精简上下文窗口，保留语义关键片段而非完整历史",
+    "design": [
+      "定义‘语义前缀’：含系统指令、工具描述、初始任务约束的固定头部",
+      "滑动窗口仅保留最近K个token（K为可调超参，通常数千）",
+      "禁止丢弃前缀区域与最新动作/观察token，保障指令一致性与状态连贯性",
+      "在KV缓存层面实现token级裁剪，避免重计算"
+    ],
+    "setup": "在LLM-based RL agents和多步工具调用任务上验证；序列长度覆盖10k–120k token"
+  },
+  "conclusion": {
+    "findings": "Prefix Sliding在零训练成本下实现内存恒定与推理加速，长程任务性能无损。",
+    "impact": "为Agent系统、长链推理、在线RL等实时长上下文场景提供轻量部署新范式。",
+    "limitations": "对中间步骤存在强跨步依赖的任务未充分验证；前缀定义依赖人工提示工程"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Prefix Slid…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "长推理内存爆炸",
+        "note": "自回归生成导致KV缓存随长度线性增长，难以支撑10万+token rollout",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "前缀+滑动窗口",
+        "note": "固定保留指令前缀与末尾K token，中间token动态丢弃，KV缓存恒定",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "零训练提速方案",
+        "note": "无需微调/重训练，兼容任意Decoder-only LLM，开箱即用",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "3倍加速+性能持平",
+        "note": "在长链工具调用与RL rollout中实测加速~3x，准确率与full attention一致",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "Agent系统实用化",
+        "note": "使基于LLM的智能体能在资源受限设备上运行超长思考链",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出NPO（单线提示优化器），仅通过单条提示谱系的迭代优化，在3500和6800次rollout下即追平GEPA的性能（3593/6871次），并在22个TextArena游戏中表现相当；实验表明其优势随教师模型能力增强而扩大，暗示传统多谱系方法可能主要在补偿弱教师的推理缺陷。",
+  "keyPoints": [
+    "首创单线谱系提示优化范式，摒弃复杂多分支搜索",
+    "以极简结构实现与GEPA相当的优化效率与游戏性能",
+    "揭示教师模型质量是提示优化瓶颈的关键因素",
+    "在TextArena 22个文本交互游戏中验证泛化性",
+    "挑战了‘越复杂搜索越优’的提示优化默认假设"
+  ],
+  "method": {
+    "problem": "提示优化中多谱系搜索开销大、依赖强教师模型",
+    "approach": "构建单一、连续演化的提示谱系，通过轻量rollout评估驱动迭代改进",
+    "design": [
+      "基于教师反馈的单向提示变异与筛选机制",
+      "rollout预算动态分配策略",
+      "谱系稳定性约束防止语义漂移",
+      "教师能力感知的终止条件"
+    ],
+    "setup": "TextArena基准，22个文本游戏，rollout预算设为3500/6800，对比GEPA"
+  },
+  "conclusion": {
+    "findings": "单线谱系足以逼近多谱系优化上限；教师模型越强，NPO相对增益越显著",
+    "impact": "推动提示优化向轻量、可解释、教师自适应方向演进，降低部署门槛",
+    "limitations": "未公开谱系演化细节与教师-提示耦合度量化方法"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "NPO",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "提示优化高成本",
+        "note": "多谱系搜索计算开销大，依赖强教师推理能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "单线谱系优化",
+        "note": "一条提示链持续迭代，轻量rollout驱动进化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "极简高效范式",
+        "note": "3500/6800 rollout追平GEPA，22游戏表现相当",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "教师增强放大优势",
+        "note": "证实传统复杂搜索本质是在弥补弱教师缺陷",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "提示优化新范式",
+        "note": "推动轻量、可解释、低预算提示工程实用化",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
