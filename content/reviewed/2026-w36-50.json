@@ -1,0 +1,73 @@
+{
+  "abstract": "Redwood 是一个端到端AI芯片开发系统，能在两周内从自然语言规格说明出发，自主完成架构设计、RTL生成、验证、物理实现、固件编写、Linux内核适配及真实硬件部署。仅需2名人类工程师撰写初始规格，规格更新后48小时内即可在硅片上运行。",
+  "keyPoints": [
+    "首次实现AI全流程自主芯片开发（规格→流片→运行）",
+    "人类仅参与规格定义，其余环节零人工干预",
+    "支持规格动态变更，48小时内完成全栈重生成与部署",
+    "集成AI驱动的验证、综合、布局布线与系统软件栈生成",
+    "已在真实硅片上成功运行Linux并执行用户程序"
+  ],
+  "method": {
+    "problem": "传统芯片设计周期长、人力密集、迭代成本高，难以响应快速变化的规格需求",
+    "approach": "构建统一AI代理系统，将芯片开发全链路建模为多阶段协同推理任务",
+    "design": [
+      "基于LLM的规格解析与架构空间搜索",
+      "AI-guided RTL生成与形式化验证闭环",
+      "强化学习优化的物理设计流程调度",
+      "自动生成设备树、BSP、轻量级Linux内核补丁",
+      "硬件在环（HIL）反馈驱动的迭代精炼机制"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Redwood证明AI可替代人类完成复杂SoC全栈开发，且具备高鲁棒性与快速迭代能力",
+    "impact": "或将重塑芯片设计范式，推动‘Spec-to-Silicon’自动化成为新标准，降低硬件创新门槛",
+    "limitations": "当前仅支持特定RISC-V微架构规模，对超大规模/高性能/模拟混合信号芯片泛化性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Redwood",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "芯片开发效率瓶颈",
+        "note": "传统流程需数月，人力密集，规格变更成本极高",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "AI全栈代理系统",
+        "note": "多模型协同：LLM+RL+符号求解器+EDA插件集成",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "端到端自主闭环",
+        "note": "覆盖规格→RTL→验证→PnR→固件→内核→硅片运行全链条",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "两周交付真实芯片",
+        "note": "RISC-V SoC在FPGA及ASIC流片验证，运行Linux基础服务",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "硬件开发范式变革",
+        "note": "为AI for EDA提供首个工业级端到端实证，加速领域AGI进程",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

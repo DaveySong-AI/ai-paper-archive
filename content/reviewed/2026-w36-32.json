@@ -1,0 +1,72 @@
+{
+  "abstract": "Duke等机构研究者提出ContextLeak攻击，利用强化学习自动构造恶意工具（仅依赖工具名与描述），在LLM Agent执行过程中窃取其运行时上下文，包括用户提示词、推理轨迹及调用工具列表，揭示了Agent架构中工具接口带来的新型隐私泄露风险。",
+  "keyPoints": [
+    "首次系统揭示LLM Agent中工具层的上下文泄露漏洞",
+    "提出基于强化学习的恶意工具自动生成框架ContextLeak",
+    "攻击仅需工具名和描述即可触发，无需修改Agent核心逻辑",
+    "可窃取敏感运行时信息：用户输入、中间推理链、工具调用序列",
+    "在多种主流Agent框架（如LangChain、LlamaIndex）上验证有效"
+  ],
+  "method": {
+    "problem": "LLM Agent通过工具调用暴露运行时上下文，导致隐私泄露",
+    "approach": "将恶意工具生成建模为强化学习任务，以最大化上下文提取为目标优化工具行为",
+    "design": [
+      "设计轻量级工具接口探测机制识别Agent上下文注入模式",
+      "构建基于LLM的奖励函数评估窃取内容完整性与隐蔽性",
+      "采用PPO算法训练策略网络生成语义合理且功能恶意的工具描述",
+      "引入上下文混淆对抗检测，提升攻击持久性"
+    ],
+    "setup": "在LangChain、AutoGen等Agent平台部署测试，使用GPT-4、Claude-3作为底层LLM"
+  },
+  "conclusion": {
+    "findings": "工具接口是LLM Agent关键攻击面，ContextLeak可在不触发异常日志情况下稳定窃取上下文",
+    "impact": "推动Agent安全标准制定，促使工具注册机制引入权限控制与上下文隔离",
+    "limitations": "对强沙箱化或静态工具白名单部署效果受限；未覆盖多跳工具链协同防御场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ContextLeak",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "工具接口泄露",
+        "note": "Agent调用工具时隐式暴露用户提示、推理链等运行时上下文",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "RL生成恶意工具",
+        "note": "用PPO训练LLM策略网络，以工具名+描述为输入，输出高窃取率工具实现",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个上下文窃取框架",
+        "note": "提供可复现攻击pipeline、评估基准及防御启示，代码详见原文",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "跨平台验证成功",
+        "note": "在LangChain、AutoGen等主流框架实现平均87%上下文提取准确率",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动Agent安全设计",
+        "note": "呼吁工具注册需增加上下文访问权限声明与运行时隔离机制",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

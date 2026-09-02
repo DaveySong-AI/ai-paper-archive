@@ -1,0 +1,72 @@
+{
+  "abstract": "Stanford 提出 Prefix Sliding 方法，在长推理生成过程中动态滑动保留关键前缀（指令与工具调用）及末尾数千 token，丢弃中间冗余 token，实现内存占用恒定、无需微调即可提速 3 倍，性能媲美全注意力机制，并支持超 100k token 的强化学习 rollout。",
+  "keyPoints": [
+    "无需训练或模型修改，即插即用适配现有大模型",
+    "通过前缀+尾部滑动窗口机制实现 O(1) 内存增长",
+    "在长推理任务中吞吐量提升约 3 倍，精度无损",
+    "显式保留指令与工具调用前缀，保障推理连贯性",
+    "首次验证其在超长 RL rollout（>100k token）中的可行性"
+  ],
+  "method": {
+    "problem": "长上下文推理中全注意力导致的内存爆炸与延迟激增",
+    "approach": "运行时动态截断中间 token，仅维护语义关键片段",
+    "design": [
+      "定义指令-工具前缀为不可丢弃核心",
+      "设置固定大小尾部滑动窗口保留最新推理状态",
+      "在生成每步后触发 token 重映射与 KV 缓存压缩",
+      "采用位置偏移补偿机制维持注意力相对位置感知"
+    ],
+    "setup": "测试基于 Llama-3 和 Qwen 的长思维链与工具调用任务；序列长度覆盖 32k–128k；对比全注意力与 StreamingLLM 等基线"
+  },
+  "conclusion": {
+    "findings": "Prefix Sliding 在零训练成本下实现恒定内存与 3 倍加速，性能与全注意力持平",
+    "impact": "为 LLM 智能体、长程规划与在线 RL 推理提供实用化部署新范式",
+    "limitations": "对高度依赖中间隐状态回溯的任务（如反事实修正）未充分验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Prefix Slid…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "长推理内存瓶颈",
+        "note": "全注意力随长度平方增长，无法支撑100k+ token rollout",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "前缀滑动压缩",
+        "note": "保留指令/工具前缀+动态尾窗，丢弃中间token，零训练",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "恒定内存+3倍加速",
+        "note": "无需微调，兼容现有模型，支持超长RL rollout",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能持平全注意",
+        "note": "在ToT、ReAct等长推理基准上准确率无损，延迟下降67%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "智能体部署新基线",
+        "note": "降低Agent推理成本，推动长程自主决策实用化",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

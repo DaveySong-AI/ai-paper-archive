@@ -1,0 +1,72 @@
+{
+  "abstract": "本实证研究分析了Claude Code插件市场早期发展态势，基于1926个仓库、8351个插件、2018个市场及77773次commit数据，发现插件相关commit活动在上线后六个月内增长8.8倍，揭示自然语言与代码能力正加速协同演化。",
+  "keyPoints": [
+    "首次对Claude Code插件生态开展系统性实证测量",
+    "插件相关commit活动在六个月窗口内实现8.8倍增长",
+    "自然语言接口与代码执行能力呈现显著共同演化趋势",
+    "插件生态活跃度以commit为代理指标，反映开发者实际采用强度",
+    "多源数据（仓库/插件/市场）交叉验证生态扩张规模"
+  ],
+  "method": {
+    "problem": "量化Claude Code插件市场早期增长速率与演化特征",
+    "approach": "基于公开GitHub仓库与插件注册元数据，采集并清洗commit级行为日志，以插件关联commit频次为关键指标进行时序分析",
+    "design": [
+      "定义'plugin-touching commit'为修改插件配置、调用逻辑或集成代码的提交",
+      "按插件上线时间对齐各项目生命周期，构建统一六个月观察窗口",
+      "聚合跨仓库、跨市场、跨插件的commit活动，消除重复计数",
+      "结合插件数量、市场数量与commit总量进行多维归一化对比"
+    ],
+    "setup": "数据覆盖上线首六个月，样本含1926仓库、8351插件、2018市场、77773次commit；分析工具为Python+Pandas，未说明具体统计检验方法"
+  },
+  "conclusion": {
+    "findings": "Claude Code插件生态呈现超线性早期增长，commit活动增速远超插件数量增速，表明开发者正快速深化集成深度而非仅增加接入广度。",
+    "impact": "为LLM工具化演进提供首个实证锚点，支持‘NL-Code co-evolution’假说，影响插件架构设计、安全审计与平台治理策略。",
+    "limitations": "数据源自公开仓库，未覆盖私有部署与非GitHub托管场景；commit频次不能完全等价于功能有效性或用户采纳率"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Claude插件增长研究",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "生态增长量化难",
+        "note": "缺乏LLM插件市场的客观测量基准，传统指标（如下载量）不适用",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Commit行为分析",
+        "note": "以plugin-touching commit为代理指标，对齐上线时间窗做时序聚合",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "8.8倍增长实证",
+        "note": "首次报告Claude Code插件生态六个月增长倍数，确立早期演化速度基准",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "NL-Code共演化",
+        "note": "commit激增反映自然语言指令与代码执行正形成反馈闭环，驱动双向优化",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "插件范式验证",
+        "note": "佐证LLM插件是可行技术路径，推动平台方加强插件沙箱、权限与发现机制建设",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,73 @@
+{
+  "abstract": "Google 提出 SKILL.state 方法，通过引入显式、可变的执行状态替代传统追加式对话历史，缓解长程智能体任务中的上下文膨胀与状态污染问题。模型每步仅处理技能规范、当前结构化状态和最新观察，中间推理结果不保留，提示长度恒定，显著提升任务准确率并降低 token 消耗，且兼容现有技能运行时架构。",
+  "keyPoints": [
+    "用结构化、可变的执行状态取代无限增长的对话历史",
+    "每步输入严格限定为技能规范、当前状态和最新观察，实现上下文可控",
+    "中间推理结果生成后即丢弃，避免历史污染与冗余计算",
+    "提示词长度恒定，不随任务步数增加而增长",
+    "架构无关设计，可无缝集成至现有技能运行时系统"
+  ],
+  "method": {
+    "problem": "长程智能体任务中因持续追加对话历史导致的上下文膨胀、推理缓慢与状态污染问题",
+    "approach": "将执行过程解耦为不可变技能定义与可变执行状态，分离逻辑与状态演化",
+    "design": [
+      "定义 SKILL.state 作为轻量级、结构化的可变执行状态容器",
+      "每步仅注入技能规范（静态）、当前 state（动态）和最新 observation（外部输入）",
+      "强制中间推理输出为 state 更新操作，原生支持状态版本管理",
+      "丢弃非状态相关中间 token，确保 prompt 长度恒定",
+      "提供状态序列化/反序列化接口，保障跨环境可移植性"
+    ],
+    "setup": "在多数据集（如 ALFWorld、WebShop）、多模型（Llama-3、Gemma-2）、多执行环境（CLI、Browser）下验证"
+  },
+  "conclusion": {
+    "findings": "SKILL.state 在多个基准上提升任务完成准确率，同时降低累计 token 消耗，状态抽象有效抑制长程衰减",
+    "impact": "为长程智能体提供通用状态抽象范式，推动技能模块化、可验证与可组合的工程实践",
+    "limitations": "状态设计依赖人工定义 schema；复杂状态迁移的可解释性有待加强"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SKILL.state",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "长程上下文污染",
+        "note": "传统对话历史追加导致推理变慢、状态混淆、token 爆炸",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "显式状态抽象",
+        "note": "用可变 state 替代隐式 history，输入三元组：skill+state+obs",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "恒定长度提示",
+        "note": "中间推理即用即弃，prompt 不随步数增长，提升效率与稳定性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "准确率提升",
+        "note": "多数据集、多模型、多环境验证任务成功率上升，token 消耗下降",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "架构无关迁移",
+        "note": "无需修改底层模型或运行时，可插拔集成至现有技能系统",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

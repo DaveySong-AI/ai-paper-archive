@@ -1,0 +1,72 @@
+{
+  "abstract": "LoopArena 是一个新型基准，用于评估大模型作为外层循环控制器（Controller）协调固定Worker编码智能体完成复杂长任务的能力，聚焦于循环工程（Loop Engineering）这一新兴AI工程技能，而非评测Worker自身的编码能力。",
+  "keyPoints": [
+    "提出‘循环工程’概念：强调模型作为运行时控制器调度独立Worker的系统级能力",
+    "LoopArena首次专门评测模型在多步、反馈驱动、长程任务中的外层控制逻辑",
+    "采用Controller-Worker解耦架构，Worker能力固定，隔离评估控制器性能",
+    "基准覆盖任务分解、状态追踪、异常响应、迭代优化等核心循环行为",
+    "为AI工程从单步智能体向协作式系统演进提供可量化评估框架"
+  ],
+  "method": {
+    "problem": "现有基准无法区分模型作为控制器的循环决策能力与Worker自身的执行能力",
+    "approach": "构建Controller-Worker分离的评估范式，将控制器置于闭环反馈循环中调度固定Worker",
+    "design": [
+      "定义四类循环能力维度：任务规划、状态感知、策略调整、终止判断",
+      "设计带人工反馈注入点与模拟环境扰动的长任务流程",
+      "Worker接口标准化，确保其能力恒定且不可微调",
+      "引入跨任务泛化测试以评估控制器抽象循环逻辑的能力"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "主流大模型在循环控制任务中表现显著弱于其单步推理能力，暴露系统级协调能力短板",
+    "impact": "推动AI工程范式从‘单智能体能力’转向‘多角色协作系统能力’的评估与建模",
+    "limitations": "Worker固定为特定编码工具链，泛化至非编码场景需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "LoopArena",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "控制器能力难评估",
+        "note": "现有基准混淆Controller与Worker能力，缺乏外层循环行为度量",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Controller-…",
+        "note": "Worker能力冻结，Controller通过API调度并响应反馈，形成闭环循环",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个循环工程基准",
+        "note": "定义循环能力维度，提供可复现任务集与评估协议（arXiv:2608.28281）",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "模型循环能力薄弱",
+        "note": "实验显示SOTA模型在多轮迭代、错误恢复等场景下性能骤降",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动系统级AI工程",
+        "note": "为构建可靠AI协作系统提供基础评估标准与能力诊断工具",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
