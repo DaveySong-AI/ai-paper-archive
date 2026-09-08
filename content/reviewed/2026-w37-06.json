@@ -1,0 +1,72 @@
+{
+  "abstract": "SMART 是由 Google DeepMind、MIT、Stanford 等机构提出的新型 ML 性能建模库，主张以结构化自然语言设计文档为核心产物，取代传统代码作为主干；整个仓库以设计文档的有向图组织，所有实现均由编码子智能体在版本更新时动态生成，实现‘文档即源码’范式。",
+  "keyPoints": [
+    "提出‘设计文档即源码’（Design Docs Are All You Need）新范式",
+    "SMART 仓库 main 分支几乎不含可执行代码，核心为自然语言设计文档",
+    "文档以有向图形式组织，表达模块依赖、接口契约与性能假设",
+    "引入编码子智能体（coding sub-agents），按需从文档自动合成可运行实现",
+    "聚焦 ML 性能建模任务，强调可解释性、可验证性与跨团队协作性"
+  ],
+  "method": {
+    "problem": "传统 ML 库中代码与设计意图脱节，导致性能建模难以复现、验证和协作",
+    "approach": "将设计文档升格为一等公民，构建文档驱动的建模生命周期",
+    "design": [
+      "设计文档采用标准化 schema（含 performance contract、assumption graph、interface spec）",
+      "文档间通过语义边（如 'refines'、'constrains'、'extends'）构成有向图",
+      "编码子智能体基于 LLM+形式化校验器，将文档节点映射为类型安全的 Python/TensorFlow 实现",
+      "每次 git push 触发文档图拓扑排序与增量代码生成/测试/部署流水线"
+    ],
+    "setup": "实验基于典型 ML 性能预测任务（如训练时间、显存占用建模），对比 SMART 与 PyTorch Profiler、DeepSpeed Estimator 等基线"
+  },
+  "conclusion": {
+    "findings": "SMART 显著提升建模规范性与跨团队理解一致性；文档变更可追溯、可审计；生成代码通过全部单元与性能回归测试",
+    "impact": "推动 ML 系统工程向‘声明式建模’演进，为 AI 基础设施提供新型可维护性范式",
+    "limitations": "当前依赖高质量文档撰写能力；对非结构化性能假设支持有限；生成代码的极端边界性能未充分验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SMART",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "代码-设计脱节",
+        "note": "ML 性能建模缺乏统一意图表达，导致复现难、验证弱、协作低效",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "文档有向图",
+        "note": "设计文档结构化建模，节点表模块，边表语义关系，支撑自动化生成",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "文档即源码",
+        "note": "main 分支纯文档，代码由子智能体按需生成，实现范式根本性转变",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "可验证建模",
+        "note": "文档驱动使性能假设显式化、可推理、可端到端验证，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "声明式ML基建",
+        "note": "为AI系统工程提供新抽象层，影响工具链、协作流程与教育范式",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

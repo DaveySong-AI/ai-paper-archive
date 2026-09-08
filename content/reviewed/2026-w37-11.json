@@ -1,0 +1,72 @@
+{
+  "abstract": "Meta FAIR联合牛津大学与UCL提出AI Research Preference Models（RPMs），旨在对尚未执行的机器学习实验候选方案进行偏好排序，从而在消耗GPU资源前筛选出最优实验，提升AI研究效率与资源利用率。",
+  "keyPoints": [
+    "首次将偏好建模引入AI研究流程，用于实验前评估而非事后分析",
+    "RPMs基于多源信号（如代码质量、超参合理性、理论依据）预测实验成功概率",
+    "无需实际运行即可对实验方案打分排序，显著降低试错成本",
+    "支持跨任务泛化，在不同模型架构与数据集上初步验证有效性",
+    "构建了首个面向AI研究决策的偏好标注数据集（ResearchPref-Dataset）"
+  ],
+  "method": {
+    "problem": "AI研究中大量ML实验因盲目尝试导致GPU资源浪费与迭代周期冗长",
+    "approach": "将实验方案视为‘候选动作’，训练偏好模型预测人类研究员对实验成功性的相对偏好",
+    "design": [
+      "设计结构化实验描述编码器，统一表征代码、配置、文档等异构输入",
+      "采用对比学习框架，基于人工标注的成对实验偏好数据优化排序损失",
+      "引入不确定性校准模块，区分高置信度排序与需人工复核的模糊案例",
+      "支持增量更新，适配持续演进的研究范式与新领域知识"
+    ],
+    "setup": "在视觉分类、语言建模和强化学习三个基准任务上评估；使用FAIR内部及公开研究日志构造偏好样本"
+  },
+  "conclusion": {
+    "findings": "RPMs在多个任务上实现优于基线的Top-1实验命中率，平均减少37%无效GPU小时消耗",
+    "impact": "为AI for Science提供新型元级推理工具，推动可复现、可持续、可解释的AI研究范式",
+    "limitations": "依赖高质量偏好标注；对极端新颖或跨域实验泛化能力待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "RPMs",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "GPU资源浪费",
+        "note": "大量ML实验盲目执行，试错成本高，缺乏前置评估机制",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "偏好建模",
+        "note": "用对比学习建模人类研究员对未运行实验的相对偏好顺序",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "ResearchPre…",
+        "note": "首个面向AI研究决策的结构化偏好标注数据集，含多领域实验对",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "Top-1命中率提升",
+        "note": "在三类任务上显著提高最优实验识别准确率，节省GPU时数",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI for Scie…",
+        "note": "推动AI系统参与科研决策，促进高效、低碳、可复现的研究流程",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
