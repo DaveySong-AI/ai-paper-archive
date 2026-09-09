@@ -1,0 +1,72 @@
+{
+  "abstract": "Meta FAIR 联合牛津大学与 UCL 提出 AI Research Preference Models（RPMs），一种在实际运行前对未执行的机器学习实验进行偏好排序的模型。RPMs 利用历史实验元数据、代码片段、超参数配置及初步指标预测，对候选实验打分并排序，从而优先执行高潜力方案，显著减少无效 GPU 计算消耗。",
+  "keyPoints": [
+    "首次提出面向AI研究过程的偏好建模范式（RPMs），聚焦实验前排序而非训练后评估",
+    "不依赖完整训练，仅需轻量级特征（如架构描述、超参、代码摘要）即可预测实验相对优劣",
+    "基于人类专家反馈与自动化代理信号构建偏好数据集，支持监督式偏好学习",
+    "在多个子领域（如视觉、NLP）验证有效性，可提升单位GPU时的科学发现效率",
+    "开源了基准数据集与评估协议，推动AI for Science方向的方法标准化"
+  ],
+  "method": {
+    "problem": "如何在ML实验执行前高效筛选高潜力候选，避免大量低回报GPU资源浪费",
+    "approach": "将实验选择建模为成对偏好学习问题，训练模型预测两个未运行实验的相对成功概率",
+    "design": [
+      "构建多源实验元数据编码器（代码AST嵌入、超参向量化、任务描述编码）",
+      "设计双塔对比结构，联合建模实验对的语义差异与上下文一致性",
+      "引入不确定性感知损失函数，缓解稀疏人类标注带来的噪声影响",
+      "采用课程学习策略，从高置信度历史实验对逐步过渡到难分样本"
+    ],
+    "setup": "在ImageNet/CIFAR/LM-Harness等基准上复现实验流程；使用FAIR内部12个月ML研发日志构建偏好数据集"
+  },
+  "conclusion": {
+    "findings": "RPMs 在零训练成本下实现平均Top-3实验命中率提升37%，GPU小时节省达42%（详见原文）",
+    "impact": "为AI驱动的科研自动化提供新范式，推动ML系统向‘实验智能体’演进",
+    "limitations": "对全新任务域泛化能力有限；依赖高质量实验元数据采集基础设施"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "RPMs",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "实验选择低效",
+        "note": "传统试错法导致大量GPU资源浪费于低潜力实验",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "偏好学习建模",
+        "note": "将实验排序转化为成对比较任务，用轻量特征预测相对优劣",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个研究偏好模型",
+        "note": "定义RPMs范式，发布数据集、基线与评估协议",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "GPU效率显著提升",
+        "note": "实测节省超四成GPU时，Top-3命中率大幅提升",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI for Scie…",
+        "note": "推动ML研发流程自动化，加速假设验证周期",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

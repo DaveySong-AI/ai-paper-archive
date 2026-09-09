@@ -1,0 +1,72 @@
+{
+  "abstract": "论文指出当前技能增强型LLM智能体的评估存在选择偏差：聚合指标可能掩盖技能检索在具体任务上的实际负向效果。作者将该现象形式化为Skill Following（SF）问题，并提出Retrieval-Invoked Actual-Use Effect（RAE）度量方法，以准确评估技能被真实调用并产生正向影响的程度。",
+  "keyPoints": [
+    "揭示技能增强智能体常规评估中的选择偏差问题",
+    "提出Skill Following（SF）问题形式化框架",
+    "设计RAE指标量化技能检索的真实有效增益",
+    "强调需区分‘技能被检索’与‘技能被正确使用并提升性能’",
+    "挑战现有基于整体性能提升的聚合式评估范式"
+  ],
+  "method": {
+    "problem": "技能增强智能体中技能检索效果被高估，因常规评估未区分检索发生与实际有效使用",
+    "approach": "构建因果可解释的度量框架，解耦检索行为与真实任务收益",
+    "design": [
+      "定义Skill Following问题：技能是否在检索后被实际采纳并改善结果",
+      "提出RAE：基于反事实对比，计算技能调用带来的净性能变化",
+      "引入控制变量设计，隔离检索动作对下游任务的影响",
+      "设计任务级细粒度分析，避免聚合指标掩盖局部负收益"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "RAE能有效识别技能检索的虚假增益，揭示部分技能调用反而降低任务表现",
+    "impact": "推动LLM智能体评估从粗粒度整体指标转向细粒度因果归因范式",
+    "limitations": "实验设置与基准任务细节未公开，泛化性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "RAE",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "评估选择偏差",
+        "note": "聚合指标掩盖技能检索在具体任务上的真实负收益",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "RAE度量框架",
+        "note": "基于反事实对比，量化技能被真实调用并生效的净效应",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Skill Follo…",
+        "note": "形式化技能检索、采纳与任务增益之间的因果链",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "揭示虚假增益",
+        "note": "部分技能虽被检索，但实际使用导致性能下降",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "评估范式革新",
+        "note": "推动从整体性能评估转向任务级因果归因评估",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

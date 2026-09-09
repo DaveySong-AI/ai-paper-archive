@@ -1,0 +1,72 @@
+{
+  "abstract": "Axis Robotics 联合多所高校发布 AXIS——一个基于浏览器的机器人操作数据引擎，支持在网页端通过 WebAssembly 运行 MuJoCo 实现 Franka Research 3 机械臂遥操作，采集涵盖 207 个操作任务、50,129 条轨迹、超 6 万种任务/场景变体的数据集，由全球逾 7 万名社区成员协作贡献。",
+  "keyPoints": [
+    "首创浏览器原生支持的机器人遥操作数据采集框架，无需本地仿真环境",
+    "集成 MuJoCo WebAssembly 前端，实现低延迟、跨平台实时交互控制",
+    "覆盖 207 个多样化机器人操作任务，强调真实场景泛化性与组合性",
+    "发布迄今规模最大的开源浏览器端机器人操作轨迹数据集（50,129 条）",
+    "采用众包模式，由 7 万+全球用户参与采集，显著提升数据多样性与长尾覆盖"
+  ],
+  "method": {
+    "problem": "传统机器人操作数据采集依赖本地仿真或实体硬件，门槛高、可扩展性差、社区参与受限",
+    "approach": "构建轻量级、全栈 Web 化数据引擎，将物理仿真、人机交互、数据标注与上传全流程迁移至浏览器端",
+    "design": [
+      "基于 WebAssembly 编译 MuJoCo 实现高性能前端物理仿真",
+      "设计低延迟遥操作协议，支持实时力反馈与关节状态同步",
+      "定义统一任务模板与场景变体生成规则，保障数据结构一致性",
+      "构建去中心化贡献者认证与轨迹质量校验流水线"
+    ],
+    "setup": "使用 Franka Research 3 机械臂作为标准执行平台；任务覆盖抓取、堆叠、工具使用、容器操作等类别；数据采集平台部署于公共 Web 服务，支持 Chrome/Firefox/Edge"
+  },
+  "conclusion": {
+    "findings": "AXIS 验证了浏览器端高保真机器人操作数据采集的可行性与可扩展性，众包轨迹在任务完成率与动作合理性上达到实用基准",
+    "impact": "为具身智能研究提供首个大规模、开放、可复现的 Web-native 操作数据基础设施，降低领域准入门槛并加速数据驱动方法迭代",
+    "limitations": "Web 端仿真精度与真实硬件存在微小动力学偏差；复杂接触事件建模能力受限于当前 WebAssembly 性能瓶颈"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AXIS",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "数据采集门槛高",
+        "note": "本地仿真依赖强、硬件接入难、社区难以规模化参与",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Web原生遥操作",
+        "note": "MuJoCo WASM + Franka Web接口 + 实时状态同步协议",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "207任务50K轨迹",
+        "note": "含6万+场景变体，7万+用户众包贡献，开源可下载",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高可用操作数据集",
+        "note": "轨迹完成率与动作合理性达基准要求，支持下游训练",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动具身AI平民化",
+        "note": "成为首个Web-native机器人操作数据基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
