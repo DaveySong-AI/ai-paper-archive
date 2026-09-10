@@ -1,0 +1,72 @@
+{
+  "abstract": "Insilico Medicine 利用生成式 AI 设计的肺纤维化候选药物 rentosertib，在一项含 42 名受试者的早期临床试验新分析中，显示出可降低基于多组学数据预测的生物学年龄，相关结果发表于《Nature Biotechnology》。",
+  "keyPoints": [
+    "rentosertib 是首个由生成式 AI 全流程设计并进入临床的抗纤维化候选药物",
+    "新分析发现该药干预与预测生物学年龄下降存在统计关联",
+    "生物学年龄评估基于血液多组学（如甲基化、转录组）模型",
+    "研究为 AI 驱动的‘衰老干预’药物开发提供了初步临床证据",
+    "结果尚未证实因果机制，需更大规模随机对照试验验证"
+  ],
+  "method": {
+    "problem": "验证 AI 设计药物是否具有潜在抗衰老生物学效应",
+    "approach": "对已完成的 rentosertib 早期临床试验数据进行二次分析，聚焦生物学年龄指标变化",
+    "design": [
+      "采用经验证的多模态生物学年龄预测模型（如 DNAmAge、Transcriptomic Age）",
+      "在给药前后采集纵向血液样本进行组学测序",
+      "使用协变量校正的混合效应模型评估年龄指标变化趋势",
+      "探索药效与基线衰老特征的亚组关联"
+    ],
+    "setup": "42 名特发性肺纤维化患者参与的 I/IIa 期试验，开放标签设计，详见原文"
+  },
+  "conclusion": {
+    "findings": "rentosertib 干预与预测生物学年龄显著降低相关，提示其可能影响衰老相关通路",
+    "impact": "推动 AI 原创药物向健康寿命延伸领域拓展，强化‘衰老作为可药化靶标’的范式",
+    "limitations": "样本量小、非随机、无安慰剂对照；生物学年龄模型的临床意义尚待功能验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Rentosertib",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "抗衰老药效验证",
+        "note": "评估AI设计药物是否影响人体生物学年龄这一衰老量化指标",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "多组学二次分析",
+        "note": "基于原有临床试验血液样本，应用甲基化/转录组等模型重分析生物学年龄变化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个AI抗衰线索",
+        "note": "首次报告AI设计小分子在人体中与生物学年龄降低相关的临床信号",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "年龄预测值下降",
+        "note": "干预后多个生物学年龄模型显示统计显著降低，幅度因模型而异",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重塑药物研发范式",
+        "note": "为AI驱动的衰老干预药物从概念走向临床提供关键早期支点",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,81 @@
+{
+  "abstract": "AXIS 是 Axis Robotics 联合多所高校发布的浏览器端机器人操作数据引擎，支持基于 WebAssembly 的 MuJoCo 前端遥操作 Franka Research 3 机械臂，实现轻量级、可扩展的远程演示采集；发布含 207 个操作任务、50,129 条轨迹及超 6 万种任务/场景变体的大规模数据集，由全球逾 7 万名社区成员协作贡献。",
+  "keyPoints": [
+    "首创纯浏览器端机器人遥操作与演示采集框架，无需本地仿真环境",
+    "集成 MuJoCo WebAssembly 实现高保真物理仿真与实时交互",
+    "覆盖 207 种多样化操作任务（如开抽屉、插线、叠积木等）",
+    "数据集含 50,129 条高质量轨迹与超 6 万种任务-场景组合变体",
+    "依托全球分布式社区（7 万+贡献者）实现低成本、高多样性数据共建"
+  ],
+  "method": {
+    "problem": "传统机器人操作数据采集依赖本地仿真或实体硬件，门槛高、扩展难、多样性不足",
+    "approach": "构建基于 Web 浏览器的端到端遥操作数据引擎，将物理仿真、人机交互与数据上传全流程迁移至前端",
+    "design": [
+      "MuJoCo WebAssembly 前端仿真内核，支持实时力反馈与低延迟控制",
+      "Franka Research 3 远程硬件接口协议，实现浏览器直连真实机械臂",
+      "模块化任务配置系统，支持动态生成任务变体与场景参数",
+      "去中心化数据提交与验证机制，保障轨迹质量与元数据一致性",
+      "轻量级 Web UI 支持零安装参与，降低社区贡献门槛"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "AXIS 验证了浏览器端大规模机器人操作数据采集的可行性与有效性，显著提升数据多样性、可访问性与社区参与度。",
+    "impact": "为具身智能、模仿学习与机器人泛化研究提供新型开放基础设施，推动数据驱动范式向普惠化演进。",
+    "limitations": "真实硬件遥操作受网络延迟与带宽限制；WebAssembly 仿真精度略低于原生 MuJoCo；任务覆盖仍以桌面级操作为主。"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AXIS",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "数据采集门槛高",
+        "note": "本地仿真/硬件依赖强，阻碍规模化与多样性数据获取",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "浏览器端遥操作",
+        "note": "MuJoCo WASM + Franka Web 接口 + 模块化任务配置",
+        "children": [
+          {
+            "type": "method",
+            "label": "WASM仿真内核",
+            "note": "前端实时物理仿真与力反馈",
+            "children": [],
+            "id": "n2-3-4"
+          }
+        ],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "207任务50K轨迹",
+        "note": "含6万+任务-场景变体，7万+社区贡献者共建",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "result",
+        "label": "开源数据引擎",
+        "note": "支持零安装采集、在线标注、API接入与复现实验",
+        "children": [],
+        "id": "n5-6"
+      },
+      {
+        "type": "impact",
+        "label": "普惠具身智能",
+        "note": "降低机器人数据基建门槛，加速模仿学习与泛化研究",
+        "children": [],
+        "id": "n6-7"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
