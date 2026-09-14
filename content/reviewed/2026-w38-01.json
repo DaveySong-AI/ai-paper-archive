@@ -1,0 +1,72 @@
+{
+  "abstract": "普林斯顿团队提出shadow evaluation方法，评估AI智能体独立开展开放式AI研究的能力。实验中，Claude Opus 4.8在OpenClaw平台上耗时六天、花费3000美元API与GPU资源，尝试复现两篇未发表NeurIPS 2026论文，结果表明当前AI尚无法稳定、自主完成从问题定义到成果验证的完整研究闭环。",
+  "keyPoints": [
+    "首次系统性评估AI智能体在开放式AI研究中的端到端自主能力",
+    "提出shadow evaluation：通过人类专家隐式监督下的受限环境评估AI研究行为",
+    "实验揭示AI在问题重构、实验设计权衡、负结果归因等关键环节存在显著缺陷",
+    "复现失败主因非计算资源不足，而是规划不一致与元认知缺失",
+    "挑战‘快速递归自我改进’假设，强调人类协作仍为当前AI研究不可替代环节"
+  ],
+  "method": {
+    "problem": "评估大语言模型能否在无直接人类干预下，独立完成开放式AI研究全流程",
+    "approach": "构建受限但真实的AI研究沙盒（OpenClaw），结合shadow evaluation框架进行过程化、多维度评估",
+    "design": [
+      "Shadow evaluation：人类专家仅提供初始任务与最终验收，不参与中间决策",
+      "OpenClaw平台集成代码执行、文献检索、实验调度与日志审计功能",
+      "双盲复现设计：目标论文未公开，避免信息泄露与过拟合",
+      "多粒度失败归因：记录每步推理链、资源消耗与决策分支偏离度"
+    ],
+    "setup": "使用Claude Opus 4.8；预算3000美元（含API调用与GPU租用）；时限6天；评估指标包括复现完整性、方法忠实度、可复现性报告质量"
+  },
+  "conclusion": {
+    "findings": "AI智能体在开放式研究中表现出高资源消耗、低规划鲁棒性与弱负反馈处理能力，未能达成有效科学产出",
+    "impact": "为AI自主科研设下现实基线，推动评估范式从‘结果导向’转向‘过程可信’",
+    "limitations": "实验局限于NeurIPS风格理论+实验混合论文；未覆盖纯理论推导或硬件协同场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ShadowEval",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "AI自主科研能力",
+        "note": "评估LLM能否独立完成从问题发现到验证的完整AI研究闭环",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Shadow Eval…",
+        "note": "人类仅设初始任务与终验标准，全程隐式监督，强调过程可审计",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "OpenClaw平台",
+        "note": "开源研究沙盒，集成代码执行、文献检索、实验调度与日志追踪",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "复现未成功",
+        "note": "六天内未完整复现任一NeurIPS 2026论文，主因规划断裂与归因失效",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "质疑快速RSP",
+        "note": "表明递归自我改进需更坚实的基础能力，非单纯算力或规模可突破",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
