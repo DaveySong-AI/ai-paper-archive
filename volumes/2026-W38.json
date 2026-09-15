@@ -3,14 +3,19 @@
   "startDate": "2026-09-14",
   "endDate": "2026-09-20",
   "windowStart": "2026-09-14",
-  "windowEnd": "2026-09-14",
-  "poolTotal": 2,
-  "paperCount": 2,
-  "curatedCount": 0,
-  "sourceCount": 2,
-  "selectionRule": "窗口内共 2 篇，按综合评分取前 2 篇（含全部 0 篇编辑精选），按时间倒序展示，不按评分排序。 本周尚未结束，数据仍在累积中。",
+  "windowEnd": "2026-09-15",
+  "poolTotal": 7,
+  "paperCount": 7,
+  "curatedCount": 1,
+  "sourceCount": 5,
+  "selectionRule": "窗口内共 7 篇，按综合评分取前 7 篇（含全部 1 篇编辑精选），按时间倒序展示，不按评分排序。 本周尚未结束，数据仍在累积中。",
   "papers": [
     "2026-w38-01",
-    "2026-w38-02"
+    "2026-w38-02",
+    "2026-w38-03",
+    "2026-w38-04",
+    "2026-w38-05",
+    "2026-w38-06",
+    "2026-w38-07"
   ]
 }

@@ -1,0 +1,72 @@
+{
+  "abstract": "Amazon 提出 GAUGE 框架，系统分析 LLM-as-judge 在任务型智能体评估中的可信边界。研究发现用户满意度与任务完成率存在显著脱钩：57.5% 被判‘满意’的对话实际未完成任务；在能力相近智能体比较中，LLM judge 错误选择奖励更低者比例达31%，而能力差距大时该错误率低于1%。",
+  "keyPoints": [
+    "揭示 LLM judge 评估中‘满意度’与‘任务成功’的结构性脱钩",
+    "提出 GAUGE 实证框架，量化 LLM judge 的失效边界与置信区间",
+    "发现能力相近智能体间 LLM judge 判别鲁棒性急剧下降",
+    "指出当前基于 LLM judge 的偏好优化易引入隐性偏差",
+    "倡导任务完成率等客观指标与主观判断协同验证"
+  ],
+  "method": {
+    "problem": "LLM-as-judge 在任务型智能体评估中何时失效及为何失效",
+    "approach": "构建多维度实证基准，对比 LLM judge 判定、人工标注与真实任务执行日志",
+    "design": [
+      "定义任务完成率（objective）与用户满意度（subjective）双轴评估协议",
+      "设计能力梯度配对实验，控制智能体性能差作为关键变量",
+      "引入混淆矩阵分析 judge 决策一致性与任务结果一致性",
+      "构建反事实扰动测试以定位 judge 敏感性来源"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "LLM judge 的可靠性高度依赖智能体能力差异程度与任务可判定性，非普适评估工具",
+    "impact": "为任务型智能体评估范式提供关键警示，推动客观指标嵌入 RLHF 流程",
+    "limitations": "实验覆盖任务类型有限，未涵盖多轮复杂意图迁移场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GAUGE",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "LLM judge 失…",
+        "note": "当满意度≠任务成功、智能体能力相近时，judge 可靠性骤降",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "双轴实证框架",
+        "note": "同步采集任务完成日志、LLM judge 打分、人工标注，构建一致性分析矩阵",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "失效边界量化",
+        "note": "首次给出能力差阈值与 judge 错误率的实证关系，如31% vs <1%",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "57.5%满意未完成",
+        "note": "揭示主观满意度作为代理指标的重大偏差风险",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "评估范式警示",
+        "note": "呼吁任务型系统弃用单一 LLM judge，转向混合验证机制",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

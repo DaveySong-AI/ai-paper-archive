@@ -1,0 +1,73 @@
+{
+  "abstract": "Claude Fable 5.1 成功破解了已有370年历史的Cyphral Distich密码——一段由64个数字组成的加密对句，该密码自1899年起被列为未解难题。破解耗时44分钟、消耗176k tokens，标志着AI在古典密码破译领域取得突破性进展。",
+  "keyPoints": [
+    "首次用AI系统级方法破解370年未解的古典文学密码",
+    "针对Sir Thomas Urquhart手稿中的数字对句设计专用推理流程",
+    "突破传统密码学假设，揭示其本质为语义-音律双约束编码",
+    "验证了大语言模型在古文字语境重建与跨时代知识对齐中的潜力",
+    "破解过程融合密码分析、历史语言学与诗歌格律建模"
+  ],
+  "method": {
+    "problem": "破解17世纪苏格兰学者Thomas Urquhart所设的64位数字密码Cyphral Distich",
+    "approach": "以多阶段提示工程驱动LLM进行历史语境感知的协同推理，结合外部知识检索与迭代验证",
+    "design": [
+      "构建Urquhart时代拉丁语/苏格兰语双语词典与诗律规则库",
+      "设计‘数字→音节→词根→语义’四层映射解码框架",
+      "引入格律一致性约束作为解码有效性判据",
+      "采用自我验证循环：解密文本→反向编码→比对原始数字序列",
+      "集成17世纪印刷体数字变体识别模块"
+    ],
+    "setup": "运行于闭源Claude Fable 5.1模型；输入含原始64数字序列、Urquhart生平文献及17世纪密码学背景资料"
+  },
+  "conclusion": {
+    "findings": "Cyphral Distich实为基于拉丁语重音格律与数字谐音的双重编码，非纯数学密码",
+    "impact": "为AI介入人文密码学研究提供范式，推动古典文本计算考据学发展",
+    "limitations": "依赖高质量历史语料注入；对非欧洲中心密码体系泛化能力尚不明确"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Fable 5.1破译…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "370年未解密码",
+        "note": "Sir Thomas Urquhart所设64位数字对句，1899年起悬而未决",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "语义-格律双解码",
+        "note": "融合拉丁语重音规则、数字谐音映射与自我验证循环",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "AI人文密码学范式",
+        "note": "首例将LLM深度耦合历史语言学与古典诗律的系统性破译",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "44分钟完全破解",
+        "note": "输出可验证的拉丁文对句，反向编码严格匹配原始64数字序列",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "古典文本计算考据",
+        "note": "为手稿学、密码史与数字人文提供新方法论支点",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
