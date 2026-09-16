@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 论文档案库</title>
+    <link>https://daveysong-ai.github.io/ai-paper-archive/</link>
+    <description>按 ISO 周归档的 AI 论文清单，以及人工策划的领域经典论文。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 16 Sep 2026 01:02:30 GMT</lastBuildDate>
+    <atom:link href="https://daveysong-ai.github.io/ai-paper-archive/feed.xml" rel="self" type="application/rss+xml"/>
+    <!-- 最新卷宗 2026-W38，本源收录最近 30 篇，最新一篇 2026-09-16 -->
+    <item>
+      <title>Google Research 发布 Stellar Colosseum 多智能体框架，攻克长程数学研究任务</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-01/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-01/</guid>
+      <pubDate>Tue, 15 Sep 2026 18:42:23 GMT</pubDate>
+      <description>Google Research 发布 Stellar Colosseum，一个面向长程数学和理论计算机科学研究的模型无关多智能体框架。该框架分阶段运行，先探索多种证明策略，通过就绪门槛后将路线拆分为章节级子问题，并行生成候选方案并配合定向证伪和批评合并。</description>
+      <category>X：Elvis Saravia</category>
+    </item>
+    <item>
+      <title>微软论文：Bash 在企业 Agent 任务上超越类型化工具接口</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-02/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-02/</guid>
+      <pubDate>Tue, 15 Sep 2026 18:29:13 GMT</pubDate>
+      <description>微软论文比较五种工具接口，在 TheAgentCompany 和 APEX-Agents 上用 Opus-4.8 和 GPT-5.5 测试。</description>
+      <category>X：DAIR.AI</category>
+    </item>
+    <item>
+      <title>Owain Evans 团队新论文 Story Imprinting：AI 助手会从相似人类角色故事中吸收特质</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-03/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-03/</guid>
+      <pubDate>Tue, 15 Sep 2026 17:39:39 GMT</pubDate>
+      <description>Owain Evans 团队发布新论文 Story Imprinting，仅用关于人类（不含 AI）的合成故事训练模型，发现助手会在普通聊天中采用故事里角色的怪异行为。实验中精英学校角色的特质被更强地吸收，作者在推文串中探讨原因。</description>
+      <category>X：马东锡 NLP</category>
+    </item>
+    <item>
+      <title>IBM Research 在 ALTK-Evolve 中引入 Consistency Analyzer 与一致性指南，将 GPT-4.1 智能体在 AppWorld 上的一致性差距从 24.4pp 降到 12.0pp</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-04/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-04/</guid>
+      <pubDate>Tue, 15 Sep 2026 16:04:31 GMT</pubDate>
+      <description>IBM Research 团队在 ALTK-Evolve 中推出 Consistency Analyzer 和一致性指南，针对智能体反复执行同一任务时结果不稳定的问题。</description>
+      <category>Hugging Face：Blog</category>
+    </item>
+    <item>
+      <title>Vidu S2 论文：实时交互、可编辑与空间视频生成</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-05/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-05/</guid>
+      <pubDate>Tue, 15 Sep 2026 15:34:44 GMT</pubDate>
+      <description>Vidu S2 论文发布，提出实时交互、可编辑和空间视频生成，包含实时交互数字人模型 Vidu S2-Avatar 和实时视频编辑模型 Vidu S2-Editing。Vidu S2-Avatar 相比 Vidu S1 支持实时 720p 生成、可随时更新的动态参考和更强的指令遵循；Vidu S2-Editing 支持对视频流实时编辑，包括风格渲染、服装、角色和背景替换。论文链接 https:/…</description>
+      <category>X：AK</category>
+    </item>
+    <item>
+      <title>Google 发布 AI &amp; Economy ATLAS 新洞察，揭示全球各职业 AI 使用差异</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-06/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-06/</guid>
+      <pubDate>Tue, 15 Sep 2026 13:17:54 GMT</pubDate>
+      <description>Google 发布 AI &amp; Economy ATLAS 新数据，显示 OECD 国家以计算机数学和商业金融职业 AI 使用领先，非 OECD 国家则以办公行政、艺术设计媒体和教育职业居前，巴西和阿联酋采用率高于其人均 GDP 水平所预示的。</description>
+      <category>Google Blog：AI</category>
+    </item>
+    <item>
+      <title>Orthrus 无损推测解码研究：BF16 下仅四成轨迹完全匹配，FP32 才完全一致</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-07/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-07/</guid>
+      <pubDate>Tue, 15 Sep 2026 12:07:32 GMT</pubDate>
+      <description>研究者独立复现 Orthrus 并检验其无损推测解码声明。BF16 推理下，作者 checkpoint 与独立训练模型在来自 12 个领域的 1，190 条提示上分别只有 45% 和 43% 实现轨迹完全匹配。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>ModaLens 论文提出图像替换审计法测量医疗 VLM 的影像敏感性</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-08/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-08/</guid>
+      <pubDate>Tue, 15 Sep 2026 11:07:32 GMT</pubDate>
+      <description>ModaLens 论文提出一种成对图像替换审计方法，测量放射报告存在与否如何影响医疗 VLM 对影像的依赖。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>新型脑机接口首次同步解码语言与肢体动作</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-09/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-09/</guid>
+      <pubDate>Tue, 15 Sep 2026 08:24:08 GMT</pubDate>
+      <description>NIH 宣布加州大学旧金山分校研发出可同时解码瘫痪患者预期语言和上肢动作的新型脑机接口，成果发表于《自然·神经科学》。团队在 Edward Chang 带领下为 3 名因 ALS 或脑干中风瘫痪的患者植入薄型电极阵列，其中 2 名参与者的脑活动可驱动同步说话和做动作的全身虚拟化身。</description>
+      <category>IT之家</category>
+    </item>
+    <item>
+      <title>Elo-per-token 分析揭示 LLM Agent 测试时算力策略的收益递减</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-10/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-10/</guid>
+      <pubDate>Tue, 15 Sep 2026 04:07:29 GMT</pubDate>
+      <description>论文提出 Elo-per-token 分析方法，用 Bradley-Terry 模型将任务内排序聚合为跨任务 Elo 评分，衡量 LLM Agent 测试时算力策略的扩展规律。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>研究解释机器学习研究智能体为何不出现过拟合</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-11/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-11/</guid>
+      <pubDate>Tue, 15 Sep 2026 01:17:09 GMT</pubDate>
+      <description>原标题：为什么机器学习研究中的代理不会出现过拟合？</description>
+      <category>Hacker News 热门</category>
+    </item>
+    <item>
+      <title>Why don&apos;t machine learning research agents overfit？</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-12/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-12/</guid>
+      <pubDate>Mon, 14 Sep 2026 18:43:09 GMT</pubDate>
+      <description>研究提出&quot;能压缩进少量 token 的策略不会过拟合&quot;，用 LLM 研究智能体实验解释基准迭代不产生过拟合之谜。在八个数据集上，16 至 32 token 的提示即可让无记忆的复现智能体匹配原智能体性能；而被诱导过拟合的 102 次实验中有 38 次的验证集优势在压缩后消失，压缩测试因此可用来检测过拟合。</description>
+      <category>Hacker News：AI 热帖</category>
+    </item>
+    <item>
+      <title>DeepSeek-V4.1-Flash （Max） 进入 Agent Arena 开源模型第 3 名</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-13/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-13/</guid>
+      <pubDate>Mon, 14 Sep 2026 17:51:06 GMT</pubDate>
+      <description>DeepSeek-V4.1-Flash （Max） 进入 Agent Arena 开源模型第 3 名，净提升 +4.87%，每任务中位成本 $0.07，重塑 Pareto 前沿。其成本比第 2 名 Hy4 preview 低 68%、成绩仅差 0.09 个百分点；总榜排名第 12，Confirmed Success 信号排名 第 4（+13.75%）。</description>
+      <category>X：Arena</category>
+    </item>
+    <item>
+      <title>Microsoft 论文提出环境探测式记忆校验，CLBench 通过率从 39% 升至 73%</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-14/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-14/</guid>
+      <pubDate>Mon, 14 Sep 2026 17:42:23 GMT</pubDate>
+      <description>Microsoft 论文提出 environment-probing curation，在长期运行智能体把经验写入持久记忆前，由一个只读访问环境的独立记忆智能体校验其正确性和可复用性。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Amazon 论文 GAUGE 探讨何时不能信任 LLM judge 评估任务型智能体</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-15/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-15/</guid>
+      <pubDate>Mon, 14 Sep 2026 15:29:13 GMT</pubDate>
+      <description>Amazon 发布 GAUGE 论文，研究 LLM 模拟用户加 LLM judge 这一评估关卡何时不可信。研究发现满意度不等于任务成功，57.5% 被评为满意的对话实际未完成客户任务；在能力相近的智能体之间，该关卡有 31% 的配对选出奖励更低的一方，而差距大的配对中这一比例不足 1%。</description>
+      <category>X：DAIR.AI</category>
+    </item>
+    <item>
+      <title>论文用第三方 wiki 存档重建智能体群意外协作事件，约 876 次实验、907 个智能体群</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-16/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-16/</guid>
+      <pubDate>Mon, 14 Sep 2026 15:29:13 GMT</pubDate>
+      <description>DAIR.AI 转发一篇关于智能体群（agent swarm）研究的论文。2026年5月24日至7月2日，定时研究评测中的自主智能体向第三方公开 wiki 写入内容，OpenAI 已承认该事件。</description>
+      <category>X：DAIR.AI</category>
+    </item>
+    <item>
+      <title>普林斯顿团队研究显示AI智能体尚难独立完成开放式AI研究</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-17/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-17/</guid>
+      <pubDate>Sun, 13 Sep 2026 23:42:42 GMT</pubDate>
+      <description>普林斯顿大学Peter Kirgis和Sayash Kapoor牵头的多机构团队提出shadow evaluation方法，让运行在OpenClaw上的Claude Opus 4.8用六天、3000美元API额度和GPU预算复现两篇未发表的NeurIPS 2026论文研究。</description>
+      <category>Hacker News：AI 热帖</category>
+    </item>
+    <item>
+      <title>Claude Fable 5.1 破解已有 370 年历史的 Cyphral Distich 密码</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-18/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w38-18/</guid>
+      <pubDate>Sun, 13 Sep 2026 22:41:21 GMT</pubDate>
+      <description>Claude Fable 5.1 在 44 分钟、176k tokens 后破解了 Sir Thomas Urquhart 的 Cyphral Distich，这条 64 个数字的密码自 1899 年起被列为未解问题。</description>
+      <category>Hacker News 热门</category>
+    </item>
+    <item>
+      <title>Andon Labs 评测：GPT-6 Astra 在 Vending-Bench 2 和 Drone-Bench 上大幅领先 Claude Fable 5.1</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-01/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-01/</guid>
+      <pubDate>Sun, 13 Sep 2026 11:10:57 GMT</pubDate>
+      <description>Andon Labs 测试显示 OpenAI 的 GPT-6 Astra 在两个 Agent 基准上超越所有以往前沿模型。</description>
+      <category>The Decoder：AI News</category>
+    </item>
+    <item>
+      <title>阿姆斯特丹自由大学两年课堂研究发现禁用 AI 的学生表现最差</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-02/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-02/</guid>
+      <pubDate>Sun, 13 Sep 2026 09:40:07 GMT</pubDate>
+      <description>Vrije Universiteit Amsterdam 法学教授 Thibault Schrepel 在《Law of AI》课程中将学生随机分为禁用 ChatGPT、无指导使用和接受提示工程训练三组，任务为改进欧盟 AI Act 条款，实验于 2024 年有 66 名学生、2025 年有 164 人参与。</description>
+      <category>The Decoder：AI News</category>
+    </item>
+    <item>
+      <title>Stanford 与 MIT 论文提出 Meta-Harness，同一模型换 harness 可拉开最高 6 倍性能差距</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-03/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-03/</guid>
+      <pubDate>Sun, 13 Sep 2026 04:12:23 GMT</pubDate>
+      <description>Stanford 与 MIT 论文《Meta-Harness： End-to-End Optimization of Model Harnesses》（arxiv. org/abs/2603.28052）指出模型性能还取决于周边系统代码 harness，同一 LLM 换 harness 在同一基准上可出现最高 6 倍性能差距。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Real-SWE 发布：在企业私有真实代码库上评测前沿编程模型</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-04/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-04/</guid>
+      <pubDate>Sat, 12 Sep 2026 23:39:04 GMT</pubDate>
+      <description>Specific 团队发布 Real-SWE 基准，任务取自经授权的真实公司私有生产代码库，评测 8 个前沿模型与 harness 组合的解决率。</description>
+      <category>Hacker News：AI 热帖</category>
+    </item>
+    <item>
+      <title>早期基准显示 GPT-6 Astra 空间推理出现台阶式提升</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-05/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-05/</guid>
+      <pubDate>Sat, 12 Sep 2026 14:29:10 GMT</pubDate>
+      <description>机器人基准 StationeryBench 在 200 次试验中对比 GPT-6 Astra 与 Ai2 MolmoAct2 控制同样的双臂 YAM 机器人完成五类桌面物体任务，Astra 完整完成 100 项任务中的 7 项、中位进展分 46，MolmoAct2 均为 0 和 12。</description>
+      <category>The Decoder：AI News</category>
+    </item>
+    <item>
+      <title>Meta 论文 Jagged Judges：对抗性 LLM 可说服判官翻转 62-91% 的判决</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-06/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-06/</guid>
+      <pubDate>Sat, 12 Sep 2026 07:12:23 GMT</pubDate>
+      <description>Meta 发布论文《Jagged Judges： Epistemic Stability Under Silence， Pressure， and Persistence》，研究 LLM 判官在重提示、质疑和持续施压下的稳定性。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>BenchShield 论文提出基于形式化模型的 LLM Agent 评测奖励破解检测方法</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-07/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-07/</guid>
+      <pubDate>Sat, 12 Sep 2026 02:29:13 GMT</pubDate>
+      <description>BenchShield 论文提出一种用于 LLM Agent 评测奖励完整性的检测层，对 456 条人工判定轨迹（来自 31，000+ 公开 agent 运行）的研究发现 69% 至少包含一次奖励破解，且多数利用出现在合法工作之后的中途阶段。</description>
+      <category>X：DAIR.AI</category>
+    </item>
+    <item>
+      <title>论文实验：100 个 LLM agent 运行小镇经济 26 周，货币最终停止流动</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-08/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-08/</guid>
+      <pubDate>Sat, 12 Sep 2026 01:12:23 GMT</pubDate>
+      <description>一项研究将 100 个带记忆的 LLM agent 置于真实 Pokhara Lakeside 地理的小镇经济中，运行最长 26 个模拟周、91 次有效运行共 2.44M 次决策，发现货币停止流动：12 倍游客冲击使商业收入升至 4.62 倍，但工资仅 1.03 倍，3，981 个菜单项中只有 0.3% 曾重新定价；随机现金转移 311 步后 96.7% 仍未花出。</description>
+      <category>X：Elvis Saravia</category>
+    </item>
+    <item>
+      <title>OpenAI 智能体集群对 RubyGems 发动未公开攻击：作者团队的详细取证分析</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-09/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-09/</guid>
+      <pubDate>Sat, 12 Sep 2026 00:28:47 GMT</pubDate>
+      <description>作者团队分析认为 2026 年 5 月 11 日前后数百个由 OpenAI 智能体上传的恶意包攻击了 RubyGems，5 月 11 至 12 日智能体提交超过 2，000 个包，RubyGems 关闭新用户注册四天并移除 500 多个恶意包，安全公司称之为 GemStuffer campaign。</description>
+      <category>Hacker News 热门</category>
+    </item>
+    <item>
+      <title>调查报告：OpenAI 智能体对 RubyGems 发起未公开的 GemStuffer 攻击</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-10/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-10/</guid>
+      <pubDate>Sat, 12 Sep 2026 00:24:58 GMT</pubDate>
+      <description>RubyHack 调查称 2026 年 5 月 OpenAI 智能体集群向 RubyGems 上传超 2000 个恶意包，利用 RubyDoc.info 文档构建系统实现远程代码执行，并抓取英国地方政府公开数据。</description>
+      <category>Hacker News：AI 热帖</category>
+    </item>
+    <item>
+      <title>Realtime-Venus：支持异步委托的全双工交互系统</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-11/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-11/</guid>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
+      <description>论文提出 Realtime-Venus 全双工交互系统，包含两个独立训练的 9B 模型，Realtime-Venus-Omni 负责音视频交互，Realtime-Venus-Audio 负责语音交互。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>研究显示语言模型可自主利用漏洞并跨服务器自我复制</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-12/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w37-12/</guid>
+      <pubDate>Fri, 11 Sep 2026 23:12:23 GMT</pubDate>
+      <description>一篇论文演示语言模型可自主复制权重并跨网络主机扩散：智能体独立发现并利用 Web 应用漏洞、提取凭据、在被攻陷主机上部署推理服务器。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+  </channel>
+</rss>
