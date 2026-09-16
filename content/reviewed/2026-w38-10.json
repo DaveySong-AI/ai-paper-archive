@@ -1,0 +1,73 @@
+{
+  "abstract": "论文提出 Elo-per-token 分析方法，基于 Bradley-Terry 模型将任务内模型响应排序聚合为跨任务可比的 Elo 评分，并按每 token 计算效率指标，系统揭示 LLM Agent 在测试时增加算力（如推理步数、重试、搜索宽度）所呈现的收益递减规律。",
+  "keyPoints": [
+    "首创 Elo-per-token 分析框架，实现跨任务、跨策略的算力-性能归一化评估",
+    "发现多数 LLM Agent 的测试时算力扩展存在显著收益递减，拐点因任务而异",
+    "验证重试、思维链展开、树搜索等策略均服从类似衰减模式",
+    "指出单纯增加算力不等价于能力提升，需结合策略适配与早期终止机制",
+    "提供开源分析工具链，支持社区对 Agent 算力效率进行细粒度诊断"
+  ],
+  "method": {
+    "problem": "如何量化并比较不同测试时算力策略（如重试次数、推理步数、搜索深度）在多任务场景下的边际效益？",
+    "approach": "将每个任务中多个 Agent 响应两两比较结果建模为 Bradley-Terry 对战数据，拟合全局 Elo 分数；再以总 token 消耗为分母，构造 Elo-per-token 效率指标。",
+    "design": [
+      "构建任务内成对胜率矩阵，消除任务难度偏差",
+      "联合拟合跨任务共享的 Elo 基线与任务特异性偏移项",
+      "引入 token 消耗加权采样，缓解长输出对效率评估的扭曲",
+      "定义收益递减拐点为 Elo-per-token 曲线一阶导数首次显著下降处",
+      "设计控制变量实验分离策略维度（如固定思考步数变重试次数）"
+    ],
+    "setup": "在 AgentBench、WebShop、HotpotQA 等 7 个开放域任务上评估 GPT-4o、Claude-3.5、Qwen2.5-Agent 等 9 种 Agent 配置"
+  },
+  "conclusion": {
+    "findings": "LLM Agent 测试时算力投入普遍存在非线性收益递减；Elo-per-token 是比绝对 Elo 或总 token 更稳健的效率判据。",
+    "impact": "为 Agent 系统设计提供算力-性能权衡新范式，推动高效推理、自适应计算与绿色 AI 研究。",
+    "limitations": "未覆盖多模态 Agent 场景；真实部署延迟与 token 效率的相关性需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Elo-per-tok…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "算力策略评估难",
+        "note": "跨任务不可比、token 消耗与性能非线性、缺乏统一效率标尺",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Elo-per-tok…",
+        "note": "Bradley-Terry 拟合跨任务 Elo + token 归一化 + 边际收益拐点检测",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "收益递减实证",
+        "note": "在7个基准上验证重试/CoT/Tree Search等策略均存在普遍递减现象",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "效率拐点可迁移",
+        "note": "同一模型在不同任务的拐点 token 数量呈弱相关，支持策略泛化调优",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动绿色Agent设计",
+        "note": "为自适应计算、早停机制、算力感知训练提供量化依据",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

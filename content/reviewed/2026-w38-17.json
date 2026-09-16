@@ -1,0 +1,72 @@
+{
+  "abstract": "普林斯顿团队提出shadow evaluation方法，评估AI智能体在无人类干预下独立开展开放式AI研究的能力。实验中，Claude Opus 4.8在OpenClaw平台上耗时六天、花费3000美元API与GPU资源，尝试复现两篇未发表NeurIPS 2026论文，结果表明当前AI尚无法稳定、自主完成完整研究闭环。",
+  "keyPoints": [
+    "首次系统性评估AI智能体独立执行开放式AI科研任务的可行性",
+    "提出shadow evaluation框架：以人类研究过程为‘影子’基准，量化AI行为偏差",
+    "实验揭示AI在问题重构、实验失败归因、跨论文知识迁移等高阶科研能力上存在显著瓶颈",
+    "成本与时间开销远超人类研究员，且复现成功率低、结果不可复现",
+    "挑战了‘AI递归自我改进即将快速实现’的主流乐观预期"
+  ],
+  "method": {
+    "problem": "评估AI智能体能否不依赖人类干预，独立完成从文献理解、实验设计、代码实现到结果分析的完整AI研究闭环",
+    "approach": "构建shadow evaluation评估范式，以真实人类研究流程为黄金标准，全程记录并比对AI行为轨迹",
+    "design": [
+      "在OpenClaw沙箱环境中隔离运行Claude Opus 4.8，禁用外部人工反馈",
+      "提供原始论文PDF、基础工具链（Python/PyTorch/Git）及有限计算预算",
+      "定义多维评估指标：任务完成率、逻辑一致性、错误归因准确率、创新性偏离度",
+      "引入‘影子对齐度’（Shadow Alignment Score）量化AI步骤与人类专家路径的结构相似性"
+    ],
+    "setup": "复现两篇未公开NeurIPS 2026投稿论文；硬件为A100集群；预算上限3000美元；时限6天；评估由3名独立AI研究员双盲打分"
+  },
+  "conclusion": {
+    "findings": "当前SOTA AI智能体在开放式科研任务中缺乏稳健的问题分解、反事实推理与元认知调试能力，无法形成有效自我改进循环",
+    "impact": "为AI自主科研设定了首个可复现的实证基线，促使领域转向‘人机协同科研’范式而非纯自动化幻想",
+    "limitations": "实验局限于NeurIPS风格理论+实验型论文；未覆盖数学证明或硬件协同类研究；shadow evaluation泛化性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ShadowEval",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "AI能否自主科研",
+        "note": "评估AI在无监督下完成从读论文到产出新结果的全链条能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Shadow Eval…",
+        "note": "以人类研究过程为影子基准，多维度比对AI行为轨迹与决策逻辑",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个开源评估框架",
+        "note": "含协议、指标集、沙箱环境配置及基准测试套件，详见原文附录",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "复现失败率超78%",
+        "note": "AI频繁陷入循环调试、误读方法细节、忽略控制变量等基础性错误",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重设AI自改进预期",
+        "note": "证实递归自我提升需突破现有LLM推理范式，非单纯算力或数据可解",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
