@@ -1,0 +1,73 @@
+{
+  "abstract": "普林斯顿团队提出shadow evaluation评估框架，测试AI智能体在无人类干预下独立复现前沿AI研究的能力。实验中，Claude Opus 4.8在OpenClaw平台上耗时六天、花费3000美元API与GPU资源，仍未能完整复现两篇未发表的NeurIPS 2026论文，表明当前AI尚不具备可靠的递归自我改进能力。",
+  "keyPoints": [
+    "首次构建面向开放式AI研究任务的shadow evaluation评估范式",
+    "实证表明主流大模型智能体无法在真实研究闭环中自主完成复现实验",
+    "揭示现有工具链（如OpenClaw）、推理能力与科研元认知间的显著鸿沟",
+    "成本与时间开销远超人类研究员，凸显自动化科研的效率瓶颈",
+    "挑战了‘AI快速实现递归自我改进’的乐观预期"
+  ],
+  "method": {
+    "problem": "评估AI智能体是否能独立完成开放式AI研究全流程（问题理解、方法复现、实验调试、结果验证）",
+    "approach": "设计shadow evaluation：将人类研究员操作作为‘影子基准’，让AI在相同环境与约束下同步执行相同研究任务",
+    "design": [
+      "基于OpenClaw构建隔离化AI研究沙箱环境",
+      "限定预算（3000美元API+GPU）与时间窗（6天）",
+      "选取两篇未公开的NeurIPS 2026投稿论文作为盲测任务",
+      "全程记录AI决策日志、失败节点与资源消耗轨迹",
+      "采用多维指标评估：复现完整性、代码可运行性、结果一致性"
+    ],
+    "setup": "运行平台：OpenClaw；模型：Claude Opus 4.8；任务：复现两篇NeurIPS 2026未发表论文；预算：3000美元；时限：6天"
+  },
+  "conclusion": {
+    "findings": "AI智能体在当前技术条件下无法稳定完成开放式AI研究闭环，失败集中于实验设计偏差、超参敏感性误判及负结果归因缺失",
+    "impact": "为AI自主科研设定了首个可量化的实证基线，推动评估范式从单点任务向全流程研究能力演进",
+    "limitations": "仅测试单一模型与两个任务，未覆盖开源模型或更长周期迭代场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ShadowEval",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "AI能否自主科研",
+        "note": "检验AI在无监督下完成问题理解、复现、调试、验证的全流程能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Shadow Eval…",
+        "note": "以人类操作为影子基准，在相同约束下同步评估AI研究行为",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个研究级评估框架",
+        "note": "定义环境、预算、任务、指标四维标准化协议，支持跨模型可比性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "复现失败",
+        "note": "Claude Opus 4.8未能完整复现两篇NeurIPS 2026论文，关键卡点在实验归因与负反馈处理",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重设AI自我改进预期",
+        "note": "为AGI发展路径提供实证锚点，警示递归自我改进需突破科研元认知瓶颈",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

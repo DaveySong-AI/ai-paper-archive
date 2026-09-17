@@ -1,0 +1,72 @@
+{
+  "abstract": "论文提出 Elo-per-token 分析方法，基于 Bradley-Terry 模型将任务内模型响应排序聚合为跨任务、归一化的 Elo 评分，用于量化 LLM Agent 在测试时增加算力（如推理步数、重试、搜索宽度）的边际收益。实验发现多数策略存在显著收益递减现象，且不同任务类型衰减模式差异明显。",
+  "keyPoints": [
+    "提出 Elo-per-token 新指标，实现跨任务、token-efficiency-aware 的性能归一化评估",
+    "首次系统揭示 LLM Agent 测试时算力扩展（如思考步数、重试次数）普遍存在收益递减规律",
+    "发现任务复杂度与收益衰减速率强相关：规划类任务比简单问答更早进入平台期",
+    "Elo-per-token 可分离策略有效性与成本，支持细粒度算力-性能权衡分析",
+    "方法不依赖绝对准确率，适用于少样本/无标准答案的开放性 Agent 任务"
+  ],
+  "method": {
+    "problem": "如何客观比较不同测试时算力策略在多样化任务上的性价比与扩展极限",
+    "approach": "将每 token 视为独立竞技单元，用 Bradley-Terry 模型拟合响应对之间的相对胜率，生成统一 Elo 尺度",
+    "design": [
+      "构建响应对采样框架：同一任务下不同策略生成的响应两两配对",
+      "引入 token-level 胜率建模：胜出响应的总 token 数作为归一化分母",
+      "跨任务 Elo 校准：通过共享 anchor 响应实现任务间分数可比",
+      "收益递减量化：拟合 Elo-per-token 关于算力预算的幂律/饱和曲线"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "LLM Agent 的测试时算力投入普遍呈现 Elo-per-token 收益递减；多数策略在 2–5 倍基线算力后增速骤降",
+    "impact": "为 Agent 系统设计提供可量化的算力分配理论依据，推动高效、自适应测试时策略研究",
+    "limitations": "依赖高质量响应对偏好标注；未建模多步推理中 token 语义权重异质性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Elo-per-tok…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "算力策略评估难",
+        "note": "跨任务不可比、忽略token成本、缺乏边际收益刻画",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Elo-per-tok…",
+        "note": "Bradley-Terry+token归一化+跨任务anchor校准",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "收益递减实证",
+        "note": "首次系统揭示多策略、多任务下的普遍衰减规律",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "算力-性能权衡图谱",
+        "note": "不同任务类型对应 distinct 衰减拐点与平台期",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "Agent效率新基准",
+        "note": "推动轻量级推理、自适应预算分配等方向发展",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

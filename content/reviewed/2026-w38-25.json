@@ -1,0 +1,72 @@
+{
+  "abstract": "Amazon GAUGE 论文系统探究 LLM-as-judge 在任务型智能体评估中的可信边界，发现其存在显著偏差：满意度与任务成功不一致（57.5%‘满意’对话未完成任务），且在能力相近智能体比较中错误率高达31%，远高于能力差异大时的<1%。",
+  "keyPoints": [
+    "LLM judge 的‘满意度’评分不能等价于真实任务成功",
+    "评估偏差集中出现在能力相近的智能体对比场景",
+    "GAUGE 提出结构化诊断框架识别 judge 失效条件",
+    "实证揭示当前主流评估范式存在系统性信任风险",
+    "强调需结合任务完成度等客观指标进行多维验证"
+  ],
+  "method": {
+    "problem": "LLM judge 在任务型智能体评估中何时失效",
+    "approach": "构建可控实验环境，通过人工标注真值、控制智能体能力差、分析 judge 判定一致性",
+    "design": [
+      "定义任务成功与用户满意度两个独立评估维度",
+      "设计能力梯度智能体对进行成对比较实验",
+      "引入混淆矩阵量化 judge 判定错误类型",
+      "提出 GAUGE 诊断指标衡量 judge 可靠性"
+    ],
+    "setup": "基于真实客服任务数据集，使用 GPT-4 和 Claude 3 作为 judge，人工标注 2000+ 对话真值"
+  },
+  "conclusion": {
+    "findings": "LLM judge 在任务完成度判断上存在高误判率，尤其在细粒度能力区分场景下可靠性骤降",
+    "impact": "为任务型智能体评估提供首个系统性可信度诊断框架，推动评估范式从单一 judge 向混合验证演进",
+    "limitations": "实验覆盖任务类型有限；judge 模型未涵盖开源小模型；真实部署延迟影响未建模"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GAUGE",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "judge 可信边界",
+        "note": "何时 LLM judge 会系统性误判任务成功？",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "双维诊断法",
+        "note": "解耦满意度与任务完成度，构建能力梯度测试集",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "GAUGE 框架",
+        "note": "首个面向任务型智能体的 judge 可靠性诊断工具",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "57.5% 满意≠成功",
+        "note": "大量对话被 judge 判为满意但实际未完成核心任务",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "评估范式警示",
+        "note": "呼吁放弃单一 LLM judge，转向多源、多维验证体系",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

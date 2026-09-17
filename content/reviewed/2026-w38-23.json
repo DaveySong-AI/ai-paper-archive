@@ -1,0 +1,72 @@
+{
+  "abstract": "DeepSeek-V4.1-Flash（Max）在Agent Arena开源模型排行榜中位列第3，净性能提升+4.87%，单任务中位成本仅0.07美元，显著优化Pareto前沿；其成本较第2名Hy4 preview低68%，性能差距仅0.09个百分点，总榜排名第12，Confirmed Success信号排名升至第4（+13.75%）。",
+  "keyPoints": [
+    "在Agent Arena开源模型中综合排名第三，刷新性价比标杆",
+    "单任务中位成本低至0.07美元，成本较第二名降低68%",
+    "净性能提升+4.87%，与顶尖闭源模型差距进一步收窄",
+    "Confirmed Success信号排名第四，可靠性指标显著提升",
+    "重塑Agent能力评估的Pareto前沿，兼顾性能与成本"
+  ],
+  "method": {
+    "problem": "在保持高Agent任务成功率的同时大幅降低推理成本",
+    "approach": "通过模型架构轻量化、推理优化与任务自适应调度协同提升性价比",
+    "design": [
+      "Flash（Max）版本采用动态计算路径压缩技术",
+      "集成任务感知的token预算分配机制",
+      "强化多步推理中的状态缓存与复用策略",
+      "针对Arena评测任务集进行定向蒸馏与后训练"
+    ],
+    "setup": "基于Agent Arena公开评测协议，涵盖规划、工具调用、多跳推理等20+任务"
+  },
+  "conclusion": {
+    "findings": "DeepSeek-V4.1-Flash（Max）在开源模型中首次实现接近闭源SOTA的Agent性能与远优成本的平衡",
+    "impact": "为开源Agent系统提供可部署、可持续演进的新基准，推动低成本智能体落地",
+    "limitations": "评测局限于Arena当前任务集，真实场景泛化性需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "DeepSeek-V4…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Agent高成本瓶颈",
+        "note": "开源模型在复杂多步任务中推理开销大，制约实际部署",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Flash轻量架构",
+        "note": "融合动态计算压缩、token预算调度与状态复用设计",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Pareto前沿突破",
+        "note": "以0.07美元/任务成本达成开源模型第三名，成本性能双优",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "Arena排名第3",
+        "note": "净提升+4.87%，Confirmed Success信号排名第四（+13.75%）",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "开源Agent新基准",
+        "note": "为低成本、高可靠智能体提供可复现、可部署的参考实现",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
