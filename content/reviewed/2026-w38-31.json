@@ -1,0 +1,72 @@
+{
+  "abstract": "微软论文探讨工具接口设计对Agent性能的影响，在TheAgentCompany和APEX-Agents基准上评估Bash、REST API、函数调用等五种接口形式，发现未经类型约束的Bash接口在企业级任务中表现优于强类型化工具接口，尤其在复杂系统交互与容错性方面优势显著。",
+  "keyPoints": [
+    "Bash接口在企业Agent任务中整体性能超越类型化工具接口（如OpenAPI、JSON Schema）",
+    "弱类型、脚本化接口更适配真实世界工具链的异构性与演化性",
+    "实验覆盖多模型（Opus-4.8、GPT-5.5）与双基准（TheAgentCompany、APEX-Agents）",
+    "Bash的错误恢复能力与组合灵活性是关键优势来源",
+    "类型化接口虽提升可验证性，但牺牲了动态适应性与开发效率"
+  ],
+  "method": {
+    "problem": "工具接口设计如何影响LLM Agent在企业级复杂任务中的有效性与鲁棒性",
+    "approach": "系统性对比五类工具接口在统一Agent框架下的任务完成率、容错性与泛化能力",
+    "design": [
+      "构建标准化工具调用沙箱，统一执行环境与可观测性",
+      "定义跨基准的原子操作集与复合任务流，覆盖权限管理、日志分析、CI/CD等企业场景",
+      "引入‘接口失配率’与‘恢复步数’作为类型化接口的关键评估维度",
+      "采用多轮交互日志回放与人工校验结合的方式评估结果正确性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Bash接口在任务成功率、平均修复延迟与跨工具链迁移能力上均领先；类型化接口在简单单步任务中略有优势，但在多跳、状态依赖任务中显著退化",
+    "impact": "挑战当前主流工具编排范式，推动Agent系统向轻量、可组合、运维友好的脚本化接口演进",
+    "limitations": "未覆盖低资源设备部署场景；Bash安全性与审计追踪机制有待加强"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Bash-All-Yo…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "工具接口瓶颈",
+        "note": "类型化接口难以应对企业工具链异构、版本漂移与权限动态变化",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "五接口对比",
+        "note": "Bash/REST/Function/CLI/SDK五类，在统一Agent框架下测试",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Bash优势实证",
+        "note": "首次在企业级Agent基准中系统验证Bash接口的鲁棒性与泛化性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "Bash全面领先",
+        "note": "在TheAgentCompany与APEX-Agents上任务完成率平均高12.3%，恢复速度快2.1倍",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "范式转向",
+        "note": "推动Agent工具层从强契约向轻量脚本化演进，降低企业集成门槛",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

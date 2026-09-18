@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出 Elo-per-token 分析方法，基于 Bradley-Terry 模型将任务内响应排序聚合为跨任务可比的 Elo 评分，并按 token 消耗归一化，系统刻画 LLM Agent 在测试时算力策略（如推理步数、重试、搜索深度）的收益递减规律，揭示性能提升与计算成本间非线性关系。",
+  "keyPoints": [
+    "首创 Elo-per-token 指标，实现跨任务、跨模型、跨策略的算力效率量化比较",
+    "发现多数 LLM Agent 的测试时算力扩展存在显著收益递减拐点",
+    "验证重试与思维链扩展等策略在低 token 预算下增益明显，高预算时边际效益骤降",
+    "指出当前 Agent 基准测试常忽略计算成本，导致策略评估偏差",
+    "提供开源分析框架，支持对任意 Agent 日志进行 Elo-per-token 追踪"
+  ],
+  "method": {
+    "problem": "如何客观衡量 LLM Agent 测试时算力策略（如重试、反思、搜索）的真实性价比",
+    "approach": "将每轮交互建模为成对比较样本，用 Bradley-Terry 模型拟合响应质量序关系，生成 token 归一化 Elo 分数",
+    "design": [
+      "构建任务内响应两两比较数据集，标注胜/负/平",
+      "引入 token 消耗作为分母，定义 Elo-per-token 效率指标",
+      "采用滑动窗口拟合收益曲线，识别边际收益拐点",
+      "设计控制变量实验分离不同策略（如反思步数、重试上限）的独立影响"
+    ],
+    "setup": "在 ALFWorld、WebShop、HotpotQA 等多领域 Agent 基准上复现主流策略，采集 10K+ 轨迹日志"
+  },
+  "conclusion": {
+    "findings": "LLM Agent 的测试时算力投入普遍呈现先快后慢的收益衰减；Elo-per-token 在中等预算区达峰值，过高投入反致效率下降",
+    "impact": "推动 Agent 评估范式从‘纯性能导向’转向‘性能-成本联合优化’，为高效推理算法与轻量级 Agent 设计提供实证依据",
+    "limitations": "依赖高质量成对比较标注；未覆盖硬件层能耗建模；对非确定性策略的方差估计有待加强"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Elo-per-tok…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "算力策略评估失准",
+        "note": "现有基准忽略计算成本，无法识别收益递减现象",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Elo-per-tok…",
+        "note": "Bradley-Terry 拟合响应序 + token 归一化 + 拐点检测",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个跨任务效率指标",
+        "note": "支持横向对比不同 Agent、策略、模型在单位 token 下的表现",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "普遍收益递减",
+        "note": "多数策略在 512–2048 token 区间达效率峰值，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动成本感知评估",
+        "note": "促使社区建立算力-Accuracy Pareto 前沿基准",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

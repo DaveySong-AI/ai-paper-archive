@@ -1,0 +1,72 @@
+{
+  "abstract": "Amazon GAUGE 论文系统探究 LLM 作为 judge 评估任务型智能体的可靠性边界。研究发现：用户满意度与任务完成度存在显著脱钩（57.5% 满意对话未完成任务）；在能力相近智能体比较中，LLM judge 错误选择奖励更低者达31%，而能力差距大时错误率不足1%，揭示其判别能力具有强依赖性。",
+  "keyPoints": [
+    "LLM judge 的满意度评分不能可靠代理任务成功，二者存在本质偏差",
+    "LLM judge 在细粒度区分能力相近智能体时鲁棒性严重不足",
+    "评估失效主要发生在智能体性能接近、任务结构复杂或用户意图模糊场景",
+    "提出 GAUGE 框架用于诊断和量化 LLM judge 的可信区间",
+    "强调需结合多维指标（如任务完成率、步骤正确性）替代单一满意度判断"
+  ],
+  "method": {
+    "problem": "LLM judge 在任务型智能体评估中何时失效及其失效模式",
+    "approach": "构建可控实验平台，系统扰动智能体能力、任务难度与用户表达，量化 judge 判定与真实任务结果的偏差",
+    "design": [
+      "设计双层评估协议：LLM 模拟用户交互 + LLM judge 打分 vs. 人工标注真实任务完成状态",
+      "构造能力梯度智能体对，测量 judge 一致性与真实奖励排序的偏离率",
+      "引入任务复杂度、用户表达歧义度、响应步骤数等可解释性维度进行归因分析",
+      "定义 GAUGE 可信度指标：基于偏差分布与置信区间识别 judge 失效阈值"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "LLM judge 的可信性高度依赖智能体性能差异程度与任务可观测性；满意度非充分任务成功代理；细粒度评估需谨慎使用纯 LLM judge",
+    "impact": "为任务型智能体评估范式提供关键警示，推动混合评估（LLM+规则+人工采样）与可解释性诊断工具发展",
+    "limitations": "实验覆盖任务类型与用户行为分布有限；未系统测试不同 judge LLM 架构的影响"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GAUGE",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "LLM judge 失…",
+        "note": "何时不能信任LLM judge？核心是识别其评估盲区与偏差边界",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "可控偏差分析",
+        "note": "通过能力梯度智能体对与多维任务扰动，量化judge判定与真实结果的偏离",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "GAUGE 可信度框架",
+        "note": "提供可计算的judge失效诊断指标与适用条件判定方法",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "满意度≠任务成功",
+        "note": "57.5%满意对话未完成任务；能力相近时31%错选低奖励智能体",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动混合评估范式",
+        "note": "警示纯LLM judge风险，倡导任务完成率、步骤正确性等多维验证",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

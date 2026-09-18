@@ -1,0 +1,72 @@
+{
+  "abstract": "本研究独立复现 Orthrus 推测解码框架，系统检验其‘无损’声明。在 BF16 精度下，作者提供的 checkpoint 与独立训练模型在 1190 条跨领域提示上仅分别实现 45% 和 43% 的 token-level 轨迹完全匹配；FP32 下才达到 100% 一致，揭示数值精度对推测解码无损性具有决定性影响。",
+  "keyPoints": [
+    "Orthrus 声称的‘无损推测解码’在 BF16 下不成立，轨迹匹配率不足一半",
+    "FP32 精度下可实现 100% 轨迹一致性，证实无损性高度依赖浮点精度",
+    "实验覆盖 12 个领域共 1190 条提示，验证结果具有跨领域鲁棒性",
+    "独立复现发现 checkpoint 与自训模型表现接近，排除实现偏差主导因素",
+    "首次将数值稳定性问题明确归因为推测解码无损性失效的核心原因"
+  ],
+  "method": {
+    "problem": "验证 Orthrus 推测解码在实际部署精度（BF16）下是否真正无损",
+    "approach": "通过独立复现+多精度对比+大规模跨领域轨迹比对，量化匹配率差异",
+    "design": [
+      "构建统一评估 pipeline，严格对齐采样策略与缓存机制",
+      "在 BF16 与 FP32 下分别运行相同提示，逐 token 比较推测-验证轨迹",
+      "采用 12 领域 1190 条提示集，覆盖多样性与难度梯度",
+      "对比官方 checkpoint 与独立训练模型，控制实现变量"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "BF16 下 Orthrus 轨迹匹配率仅约 44%，FP32 下达 100%；无损性非算法固有属性，而是精度敏感现象",
+    "impact": "为推测解码实际部署敲响精度警钟，推动硬件感知的无损性定义与评估标准重构",
+    "limitations": "未系统测试 INT8/FP16 混合精度场景；未分析具体数值误差传播路径"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Orthrus无损性再…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "无损声明可信度",
+        "note": "BF16下轨迹匹配率远低于100%，质疑‘无损’前提",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "多精度轨迹比对",
+        "note": "在BF16/FP32下对1190条提示逐token比对推测-验证序列",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "精度敏感性揭示",
+        "note": "首次明确定义并验证数值精度是Orthrus无损性的决定性因素",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "BF16仅44%匹配",
+        "note": "官方checkpoint与自训模型分别45%/43%，FP32下100%一致",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动硬件感知评估",
+        "note": "促使社区建立精度分层的无损性基准与部署规范",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出Decoy Direction Optimization（DDO），一种免微调的事后防御方法，用于抵御LLM的RFA消融攻击。DDO通过在MLP层神经元中注入高幅值非线性诱饵信号，干扰攻击者依赖的对比估计器，使其无法准确识别关键神经元，从而破坏消融攻击有效性。",
+  "keyPoints": [
+    "提出首个免微调、纯权重编辑的事后防御框架DDO",
+    "利用高幅值非线性诱饵信号干扰RFA攻击的对比估计机制",
+    "仅作用于MLP前馈层，不改变模型架构或训练流程",
+    "在不损害原始任务性能前提下显著提升抗消融鲁棒性",
+    "验证对多种RFA变体攻击具备泛化防御能力"
+  ],
+  "method": {
+    "problem": "RFA类消融攻击通过对比估计定位并删除关键神经元，导致LLM功能崩溃",
+    "approach": "事后注入可控诱饵方向扰动，污染攻击者的梯度/激活对比信号",
+    "design": [
+      "构建与原始激活正交的高幅值非线性诱饵方向",
+      "基于Hessian近似定位易受攻击的MLP神经元子集",
+      "采用符号约束优化确保诱饵信号不干扰前向推理输出",
+      "引入幅度衰减调度避免跨层传播失真"
+    ],
+    "setup": "在Llama-2-7b、Qwen1.5-4b上测试RFA、RFA++等消融攻击；评估指标含任务准确率与消融成功率"
+  },
+  "conclusion": {
+    "findings": "DDO可使RFA攻击的神经元定位准确率下降超60%，同时保持原始任务性能损失<0.8%",
+    "impact": "为LLM安全提供新范式——无需重训练即可部署的轻量级事后防御",
+    "limitations": "对非对比类消融攻击（如随机消融）防御效果未充分验证；依赖MLP结构假设"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "DDO",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "RFA消融攻击",
+        "note": "通过对比估计定位关键神经元，实现模型功能破坏",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "诱饵方向注入",
+        "note": "向MLP神经元注入高幅值非线性诱饵信号，污染对比估计",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "免微调事后防御",
+        "note": "纯权重编辑，不修改架构、不依赖训练数据，部署成本极低",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "抗攻击鲁棒性提升",
+        "note": "RFA定位准确率大幅下降，原始任务性能基本无损",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "LLM安全新范式",
+        "note": "推动事后防御实用化，为模型部署提供即插即用保护方案",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

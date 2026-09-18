@@ -1,0 +1,72 @@
+{
+  "abstract": "IBM Research 在 ALTK-Evolve 框架中提出 Consistency Analyzer 与一致性指南，旨在解决大模型智能体在重复执行同一任务时输出不一致的问题。该方法将 GPT-4.1 智能体在 AppWorld 基准上的任务一致性差距从 24.4 个百分点显著降低至 12.0 个百分点，提升了智能体行为的可预测性与可靠性。",
+  "keyPoints": [
+    "首次系统定义并量化智能体在重复任务中的‘一致性差距’指标",
+    "提出 Consistency Analyzer：自动检测、归因与可视化智能体不一致行为",
+    "设计轻量级一致性指南（Consistency Guidelines），嵌入推理过程以引导稳定决策",
+    "在 AppWorld 环境中验证有效性，GPT-4.1 一致性差距下降超 50%",
+    "方法无需微调模型，兼容现有 LLM 智能体架构"
+  ],
+  "method": {
+    "problem": "大语言模型智能体在重复执行相同任务时输出结果不稳定，缺乏行为一致性保障",
+    "approach": "通过分析-诊断-引导三阶段框架提升智能体一致性：先用 Consistency Analyzer 识别不一致模式，再归因至提示、工具调用或状态依赖等环节，最后注入结构化一致性指南进行推理约束",
+    "design": [
+      "Consistency Analyzer：基于多轮轨迹对比与差异路径挖掘的自动化分析模块",
+      "一致性差距量化：定义为同一任务下成功/失败结果波动率，以百分点（pp）衡量",
+      "一致性指南：含上下文重用、状态显式声明、工具调用校验等 5 类可插拔规则",
+      "零样本适配机制：指南以自然语言指令形式注入，不依赖额外训练"
+    ],
+    "setup": "实验基于 AppWorld 多步应用操作基准，使用 GPT-4.1 作为主干智能体，评估 100+ 任务的 5 轮重复执行表现"
+  },
+  "conclusion": {
+    "findings": "Consistency Analyzer 与一致性指南协同显著缓解智能体行为漂移，尤其在状态敏感型任务中效果突出；一致性差距降幅达 12.4pp，验证了分析驱动引导范式的有效性",
+    "impact": "为智能体可靠性评估提供新维度与可复现工具链，推动从‘单次正确’向‘持续可靠’的智能体开发范式演进",
+    "limitations": "当前指南泛化性依赖任务领域知识，跨环境迁移需人工适配；未覆盖长周期记忆衰减引发的一致性退化"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ALTK-Evolve",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "一致性缺失",
+        "note": "智能体重复执行同一任务时结果波动，影响可信部署",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "分析-诊断-引导",
+        "note": "Consistency Analyzer 自动归因 + 自然语言指南实时约束",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "一致性指南",
+        "note": "5类可插拔规则，零样本注入，不依赖模型微调",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "差距下降12.4pp",
+        "note": "GPT-4.1在AppWorld上一致性差距从24.4pp降至12.0pp",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "可靠性新范式",
+        "note": "推动智能体评估从单次准确转向持续稳定行为验证",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

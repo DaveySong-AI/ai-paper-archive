@@ -1,0 +1,72 @@
+{
+  "abstract": "DeepSeek-V4.1-Flash（Max）在Agent Arena开源模型排行榜中位列第3，净性能提升+4.87%，单任务中位成本仅$0.07，显著优化Pareto前沿；相比第2名Hy4 preview成本低68%，性能差距仅0.09个百分点，总榜第12，Confirmed Success信号排名升至第4（+13.75%）。",
+  "keyPoints": [
+    "首次以Flash架构实现开源模型在Agent Arena中进入前三",
+    "达成高性能与低成本的显著平衡，重塑Pareto前沿",
+    "单任务中位成本低至$0.07，为当前开源模型最优之一",
+    "Confirmed Success信号排名跃升至第4，反映任务完成可靠性增强",
+    "相较Hy4 preview成本大幅降低68%，凸显工程优化优势"
+  ],
+  "method": {
+    "problem": "开源大模型在Agent Arena评测中难以兼顾高任务成功率与低成本推理",
+    "approach": "基于DeepSeek-V4.1的轻量化Flash版本设计，聚焦推理效率与Agent行为稳定性联合优化",
+    "design": [
+      "采用Flash Attention-2与动态KV缓存压缩技术",
+      "引入Agent-specific reward modeling微调策略",
+      "多阶段成本感知蒸馏与延迟-精度权衡调度",
+      "强化Confirmed Success信号对齐的RLHF后训练"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "DeepSeek-V4.1-Flash（Max）验证了轻量高效架构在Agent级评测中的竞争力，以显著更低成本逼近闭源顶尖模型表现。",
+    "impact": "为开源Agent模型提供可复现的低成本高性能范式，推动Agent Arena评测向实用化、经济性维度演进。",
+    "limitations": "未披露具体训练数据规模与硬件部署细节；多步复杂任务泛化性待进一步验证。"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "DeepSeek-V4…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Agent评测失衡",
+        "note": "开源模型常在成功率与成本间难以兼顾，Pareto前沿停滞",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Flash架构优化",
+        "note": "融合Flash Attention-2、动态KV缓存与成本感知蒸馏",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Pareto前沿重塑",
+        "note": "以$0.07中位成本达成第3名，成本较Hy4低68%",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "Confirmed S…",
+        "note": "信号排名升至第4，反映任务执行可靠性显著提升",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "开源Agent新基准",
+        "note": "确立低成本高性能范式，推动Agent Arena向实用化演进",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
