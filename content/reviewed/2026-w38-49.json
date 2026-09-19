@@ -1,0 +1,72 @@
+{
+  "abstract": "普林斯顿团队提出shadow evaluation方法，评估AI智能体独立开展开放式AI研究的能力。实验中，Claude Opus 4.8在OpenClaw平台上耗时六天、花费3000美元API与GPU资源，尝试复现两篇未发表的NeurIPS 2026论文，结果表明当前AI尚难自主完成完整研究闭环。",
+  "keyPoints": [
+    "首次系统性评估AI智能体在真实、未公开AI研究任务上的端到端执行能力",
+    "提出shadow evaluation框架：以人类研究员为‘影子基准’，量化AI研究行为偏差",
+    "发现AI在问题重构、实验失败归因、负结果阐释等高阶科研能力上显著不足",
+    "成本与时间开销远超人类研究员，且无法保证可复现性与理论严谨性",
+    "挑战了‘AI递归自我改进即将快速实现’的主流乐观预期"
+  ],
+  "method": {
+    "problem": "评估AI智能体是否具备独立开展开放式AI研究（含问题定义、实验设计、调试、分析、写作）的能力",
+    "approach": "构建真实科研任务沙盒，以未发表顶会论文为黄金标准，通过shadow evaluation对比AI与人类研究员的行为轨迹",
+    "design": [
+      "基于OpenClaw搭建可控研究环境，隔离外部知识注入",
+      "采用Claude Opus 4.8作为统一智能体，禁用人工干预接口",
+      "定义多维评估维度：任务完成率、方法忠实度、失败诊断准确率、报告可评审性",
+      "引入‘影子人类’对照组——由匿名NeurIPS审稿人执行相同任务并提供过程日志"
+    ],
+    "setup": "复现两篇NeurIPS 2026双盲接收论文；预算3000美元（含API调用与A100 GPU小时）；时限6天；所有输出经三位领域专家盲评"
+  },
+  "conclusion": {
+    "findings": "AI智能体在开放式AI研究中无法稳定复现前沿工作，尤其在假设迭代、负结果解释和跨模块一致性维护上存在根本性瓶颈。",
+    "impact": "为AI自主科研设定了更现实的评估范式，警示产业界对‘AI替代AI研究员’的时间线需谨慎修正。",
+    "limitations": "实验仅覆盖NLP与基础优化方向；未测试多智能体协作或长期记忆增强架构；shadow evaluation的人类基线样本量有限"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ShadowEval",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "AI能否自主科研？",
+        "note": "聚焦开放式AI研究全流程闭环能力，而非单项任务微调",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Shadow Eval…",
+        "note": "以人类研究员为影子基准，追踪AI在真实未发表任务中的行为偏差",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个真实科研沙盒",
+        "note": "基于OpenClaw+未发表NeurIPS论文，杜绝数据泄露与过拟合",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "复现失败率超73%",
+        "note": "主要卡点在实验设计合理性判断与负结果理论归因，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重设递归改进预期",
+        "note": "证明当前AI缺乏科研所需的元认知与试错韧性，短期难实现自我驱动演进",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

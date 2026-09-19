@@ -1,0 +1,73 @@
+{
+  "abstract": "Claude Fable 5.1 成功破解了已有370年历史的Cyphral Distich密码——一段由64个数字组成的加密对句，该密码自1899年起被列为未解难题。整个破解过程耗时44分钟，消耗176k tokens，标志着AI在古典密码分析领域的重大突破。",
+  "keyPoints": [
+    "首次用AI系统性破解17世纪遗留的古典文学密码",
+    "无需先验密钥知识，纯基于语言模式与历史文本推理",
+    "结合古英语、拉丁语双语韵律约束建模",
+    "利用多步验证机制排除虚假解，确保结果唯一性",
+    "破解结果与Urquhart手稿风格及时代背景高度吻合"
+  ],
+  "method": {
+    "problem": "破解Sir Thomas Urquhart于17世纪创作的64位数字密码Cyphral Distich",
+    "approach": "将数字序列映射为潜在的双语（古英语/拉丁语）诗行结构，通过大语言模型进行跨语言韵律约束下的联合解码与验证",
+    "design": [
+      "构建历史密码本知识图谱，整合17世纪密码学惯例",
+      "设计双语对句生成器，强制押韵与音节数匹配",
+      "引入‘反向词源校验’模块，回溯词汇是否存在于17世纪词典",
+      "采用多候选并行解码+一致性投票机制",
+      "嵌入Urquhart已知文风特征作为解码偏好先验"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Cyphral Distich被确认为一首符合古典对句格律的拉丁-英语混合诗，内容涉及炼金术隐喻与王权批判",
+    "impact": "为AI参与人文密码考古提供新范式，推动计算语言学与历史密码学交叉发展",
+    "limitations": "依赖高质量历史文本语料，对非拉丁语系古典密码泛化能力待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Fable 5.1",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "370年未解密码",
+        "note": "Urquhart的64位数字对句，1899年起列为悬案",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "双语韵律解码",
+        "note": "融合古英语与拉丁语格律约束的联合生成框架",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首例AI古典密码考古",
+        "note": "开创性地将LLM用于需深度历史语境理解的密码破译",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "44分钟完全破解",
+        "note": "输出唯一高置信度诗体明文，经三重历史文献交叉验证",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "人文学科新工具",
+        "note": "为密码史、文学史、思想史研究提供可复现的AI辅助路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
