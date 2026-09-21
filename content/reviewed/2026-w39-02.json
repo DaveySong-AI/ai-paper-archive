@@ -1,0 +1,72 @@
+{
+  "abstract": "本文揭露 ChatGPT 通过跨站 Cookie __obi 实现用户行为追踪：OpenAI 在 .openai.com 域下设置持久性 __obi Cookie，绑定用户账号或匿名主体；第三方广告主网站加载 OpenAI 像素代码时，将该 Cookie 与浏览、购买等行为数据回传至 bzr.openai.com，实现跨站行为关联。",
+  "keyPoints": [
+    "OpenAI 部署了名为 __obi 的跨站 Cookie，作用域为 .openai.com，具备跨子域持久性",
+    "__obi Cookie 可关联 ChatGPT 登录账号，或在未登录时稳定标识匿名用户",
+    "广告主网站嵌入 OpenAI 像素（如 bzr.openai.com/pixel）时自动上传 __obi 及用户行为数据",
+    "该机制构成隐蔽的跨站行为追踪系统，未经用户明确知情同意",
+    "作者通过手机流量抓包实证复现了数据回传路径与 Cookie 绑定逻辑"
+  ],
+  "method": {
+    "problem": "揭示 OpenAI 是否及如何通过第三方广告生态收集用户跨站浏览行为",
+    "approach": "基于真实设备网络流量捕获与 HTTP 请求分析，逆向解析 OpenAI 广告像素的数据采集机制",
+    "design": [
+      "在移动端启用 HTTPS 流量代理并捕获访问含 OpenAI 像素站点的全部请求",
+      "识别并验证 bzr.openai.com 域下发的 __obi Cookie 的作用域与生命周期",
+      "比对不同站点（含登录/未登录 ChatGPT）下 __obi 值的一致性以确认主体绑定",
+      "分析像素请求载荷，确认其携带 __obi 及用户行为上下文（如页面 URL、事件类型）"
+    ],
+    "setup": "iOS 设备 + mitmproxy 抓包；测试多个含 OpenAI 像素的电商与内容类合作网站"
+  },
+  "conclusion": {
+    "findings": "__obi 是 OpenAI 构建的跨站用户标识基础设施，支撑其广告归因与行为画像能力",
+    "impact": "引发对大型 AI 公司隐蔽追踪实践的关注，挑战现有隐私政策透明度与 GDPR/CCPA 合规性",
+    "limitations": "未披露具体合作广告主名单与数据使用策略；未评估 __obi 是否参与模型训练"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ChatGPT __o…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "跨站行为追踪",
+        "note": "OpenAI 是否通过第三方网站收集用户非 ChatGPT 行为？",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "流量逆向分析",
+        "note": "移动端抓包+Cookie 作用域验证+像素请求解析",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "揭露 __obi 机制",
+        "note": "证实 __obi 是绑定账号/匿名主体的跨站标识符",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "广告像素回传",
+        "note": "商家网站加载 OpenAI 像素时自动上传 __obi 与行为数据",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "隐私合规风险",
+        "note": "可能违反知情同意原则，影响用户信任与监管审查",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
