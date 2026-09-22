@@ -1,0 +1,72 @@
+{
+  "abstract": "本文揭示 ChatGPT 通过跨站 Cookie __obi 实现用户行为追踪：OpenAI 在 .openai.com 域下设置持久性 __obi Cookie，绑定用户账号或匿名主体；第三方广告主网站加载 OpenAI 像素（bzr.openai.com）时，自动回传该 Cookie 及浏览、购买等行为数据，使 OpenAI 能跨站关联用户活动。",
+  "keyPoints": [
+    "OpenAI 部署了名为 bzr.openai.com 的广告数据收集器",
+    "__obi Cookie 在 .openai.com 域下设置，具备跨子域与跨站持久性",
+    "Cookie 绑定至 ChatGPT 账号或稳定匿名标识符，非一次性随机值",
+    "第三方网站嵌入 OpenAI 像素后，自动向 OpenAI 回传 __obi 及用户行为数据",
+    "该机制构成隐蔽的跨站行为追踪，未在 ChatGPT 隐私政策中明确披露"
+  ],
+  "method": {
+    "problem": "识别并验证 OpenAI 是否存在未经明确告知的跨站用户行为追踪机制",
+    "approach": "通过移动端网络流量捕获与域名/cookie 行为分析，逆向解析 OpenAI 广告像素的数据流向与标识绑定逻辑",
+    "design": [
+      "使用抓包工具监控手机端 ChatGPT App 及浏览器访问中的 HTTP 请求",
+      "定位到 bzr.openai.com 域名及其设置的 __obi Cookie 的作用域与生命周期",
+      "比对不同站点（含广告合作方）加载 OpenAI 像素时的请求头与 payload",
+      "验证 __obi 是否在登录前后保持稳定，是否与账号 ID 或设备指纹强关联"
+    ],
+    "setup": "基于真实移动设备流量捕获，覆盖 ChatGPT App 与 Web 端交互场景；未使用模拟环境或自动化爬虫"
+  },
+  "conclusion": {
+    "findings": "确认 OpenAI 通过 __obi Cookie 构建跨站行为图谱，实现对用户站外活动的系统性收集",
+    "impact": "引发对大型 AI 公司隐性数据采集实践的隐私监管关注，推动平台透明度与合规性审查",
+    "limitations": "未公开具体数据存储周期、共享范围及匿名化强度；未覆盖所有地区/客户端变体"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ChatGPT __o…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "跨站行为追踪",
+        "note": "用户在非 OpenAI 网站的行为是否被关联至账号？",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "流量逆向分析",
+        "note": "手机端抓包定位 bzr.openai.com 与 __obi Cookie 行为",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "揭露隐蔽像素",
+        "note": "证实 OpenAI 像素在第三方网站执行跨站数据回传",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "__obi 持久绑定",
+        "note": "Cookie 在 .openai.com 下设置，稳定关联账号或匿名主体",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "隐私政策缺口",
+        "note": "当前披露不足，可能违反 GDPR/CCPA 等透明度要求",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

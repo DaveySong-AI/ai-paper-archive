@@ -1,0 +1,72 @@
+{
+  "abstract": "Artificial Analysis 对 Grok 4.7 进行评测，其在 Artificial Analysis Intelligence Index（AAII）中得分为 46，较前代 Grok 4.6 提升 2 分；该提升推动 SpaceXAI 进入全球前四大 AI 实验室行列。评测聚焦智能综合能力与编码智能体专项表现，后者达 56 分。",
+  "keyPoints": [
+    "Grok 4.7 在 AAII 综合智能指数中获 46 分，为当前公开评测最高分之一",
+    "编码智能体指数达 56 分，显著高于综合得分，反映专项强化",
+    "较 Grok 4.6 提升 2 分，是迄今 Grok 系列最大单代进步",
+    "此次升级使 SpaceXAI 首次跻身全球前四大 AI 实验室（按 AAII 排名）",
+    "评测由第三方机构 Artificial Analysis 发布，非官方基准"
+  ],
+  "method": {
+    "problem": "缺乏统一、可比的跨模型智能能力量化框架",
+    "approach": "构建 Artificial Analysis Intelligence Index（AAII）多维评测体系，覆盖推理、知识、工具调用与编码智能体等维度",
+    "design": [
+      "采用混合任务集：含逻辑推理、常识问答、API 调用模拟与自主编码任务",
+      "引入‘编码智能体指数’子项，评估模型在无监督环境下的代码生成与执行闭环能力",
+      "标准化评分机制：各子项归一化至 0–100 区间，加权合成综合 AAII 得分",
+      "对比基线涵盖主流闭源与开源模型（具体未披露）"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Grok 4.7 在综合智能与编码智能体两方面均实现突破性提升，验证了 SpaceXAI 在工程化智能体方向的进展",
+    "impact": "推动行业关注‘智能体级能力’评测标准，强化编码作为核心智能指标的地位",
+    "limitations": "AAII 尚未完全公开方法论细节与任务分布；未披露具体测试数据集与复现条件"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Grok 4.7 评测",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "智能评测不统一",
+        "note": "缺乏跨模型、可复现、多维一体的智能量化标准",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "AAII 评测框架",
+        "note": "混合任务+归一化加权，含编码智能体专项子项",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Grok 4.7 双指…",
+        "note": "综合分46，编码智能体分56，创系列新高",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "进入全球前四",
+        "note": "推动 SpaceXAI 首次位列全球前四大 AI 实验室",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "定义智能体新标",
+        "note": "强化编码智能体作为下一代 AI 核心能力的行业共识",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
