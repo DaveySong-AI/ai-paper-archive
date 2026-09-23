@@ -1,0 +1,71 @@
+{
+  "abstract": "Artificial Analysis 发布 Grok 4.7 的独立评测，其在 Artificial Analysis Intelligence Index（AAII）中得分为 46，较前代提升 2 分；编码智能体指数达 56，推动 SpaceXAI 进入全球前四大 AI 实验室行列。该评测未公开方法细节与基准构成。",
+  "keyPoints": [
+    "Grok 4.7 在 AAII 综合智能指数中获 46 分，为当前公开最高分之一",
+    "编码智能体专项指数达 56，显著高于综合得分，反映其在编程任务上的强化",
+    "本次升级使 SpaceXAI 首次跻身全球前四大 AI 实验室（按 AAII 排名）",
+    "评测由第三方机构 Artificial Analysis 独立发布，非官方报告",
+    "未披露评测数据集、任务分布、评估协议等关键方法信息"
+  ],
+  "method": {
+    "problem": "对大语言模型（Grok 4.7）进行多维智能水平量化评估",
+    "approach": "基于 proprietary Artificial Analysis Intelligence Index（AAII）框架开展黑盒评测",
+    "design": [
+      "采用综合智能指数（AAII）与编码智能体指数双轨评分",
+      "对比前代 Grok 4.6 进行增量性能分析",
+      "以实验室为单位聚合模型表现，生成机构排名"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Grok 4.7 在 AAII 中得分 46，编码专项达 56，体现其在工程化智能任务中的领先性",
+    "impact": "推动 SpaceXAI 进入全球顶级 AI 实验室梯队，提升开源/商业混合范式影响力",
+    "limitations": "评测指标定义、权重分配及基准细节未公开，可复现性与透明度受限"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Grok 4.7 AA…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "模型智能量化",
+        "note": "对 Grok 4.7 进行客观、可比的多维能力评估",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "AAII 黑盒评测",
+        "note": "基于 proprietary 指数框架，含综合与编码双维度",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "排名跃升",
+        "note": "推动 SpaceXAI 首次进入全球前四大 AI 实验室",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "AAII=46",
+        "note": "较 Grok 4.6 提升 2 分，编码智能体指数达 56",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "范式影响",
+        "note": "强化商业公司主导的 AI 研发模式在主流评价体系中的话语权",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

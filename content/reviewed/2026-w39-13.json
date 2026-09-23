@@ -1,0 +1,73 @@
+{
+  "abstract": "本文揭露 ChatGPT 通过跨站 Cookie __obi 实现用户行为追踪：OpenAI 在 .openai.com 域下设置持久性 __obi Cookie，绑定用户账号或稳定匿名标识；第三方广告主网站嵌入 OpenAI 像素后，将该 Cookie 与浏览、购买等行为数据回传至 bzr.openai.com，实现跨站行为关联。",
+  "keyPoints": [
+    "OpenAI 部署了名为 __obi 的跨站 Cookie，作用域为 .openai.com，具备长期稳定性",
+    "__obi 可关联到具体 ChatGPT 账号，或在未登录时绑定唯一匿名主体",
+    "广告主网站集成 OpenAI 像素（如 bzr.openai.com/beacon）时自动上传 __obi 及用户行为数据",
+    "该机制构成隐蔽的跨站行为追踪系统，绕过常规第三方 Cookie 限制",
+    "作者通过移动端流量抓包实证复现了该数据回传链路"
+  ],
+  "method": {
+    "problem": "揭示 OpenAI 是否及如何通过广告基础设施实现跨站用户行为追踪",
+    "approach": "基于真实设备网络流量捕获与域名/请求分析，逆向验证广告像素的数据采集逻辑",
+    "design": [
+      "在手机端启用 HTTPS 流量抓包，访问含 OpenAI 像素的广告合作站点",
+      "识别并解析 bzr.openai.com 域下的 beacon 请求及其携带的 __obi Cookie",
+      "比对不同站点间 __obi 值一致性，确认其跨站持久性与主体绑定性",
+      "检查 __obi 设置路径与作用域，确认其符合跨站 Cookie 技术特征",
+      "结合 OpenAI 像素 JS 代码行为推断数据采集范围（浏览、转化等）"
+    ],
+    "setup": "移动端抓包环境（iOS/Android），多个含 OpenAI 像素的第三方电商/内容网站作为测试目标"
+  },
+  "conclusion": {
+    "findings": "OpenAI 已部署隐蔽的跨站追踪机制，利用 __obi Cookie 将用户在广告主网站的行为持续关联至 ChatGPT 账号或匿名主体",
+    "impact": "对隐私保护实践构成挑战，暴露大型 AI 公司在商业化过程中对用户行为数据的深度整合意图，可能推动监管关注与浏览器策略调整",
+    "limitations": "未披露 __obi 生成算法细节与服务端关联逻辑；未覆盖所有广告合作方样本；未评估反追踪措施有效性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ChatGPT __o…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "跨站行为追踪",
+        "note": "OpenAI 是否通过广告生态收集用户在第三方网站的行为数据？",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "移动端流量分析",
+        "note": "使用抓包工具捕获真实设备访问含 OpenAI 像素网站的 HTTPS 流量",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "__obi Cooki…",
+        "note": "发现 .openai.com 域下持久性 __obi Cookie，用于跨站身份锚定与数据回传",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "行为数据回传链路",
+        "note": "广告主网站加载 OpenAI 像素后，自动向 bzr.openai.com 发送含 __obi 的行为事件",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "隐私与监管影响",
+        "note": "揭示 AI 公司数据实践新范式，可能触发隐私合规审查与浏览器策略更新",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
