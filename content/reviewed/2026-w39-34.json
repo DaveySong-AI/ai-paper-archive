@@ -1,0 +1,72 @@
+{
+  "abstract": "本文揭露 ChatGPT 通过跨站 Cookie __obi 实现用户行为追踪：OpenAI 在 .openai.com 域下设置持久性 __obi Cookie，绑定用户账号或稳定匿名标识；第三方广告主网站嵌入 OpenAI 像素后，将 __obi 与浏览、购买等行为数据回传至 bzr.openai.com，实现跨站行为关联。",
+  "keyPoints": [
+    "OpenAI 部署了名为 __obi 的跨站 Cookie，作用域为 .openai.com，具备跨子域持久性",
+    "__obi Cookie 与 ChatGPT 账号或长期匿名主体强绑定，形成唯一追踪标识",
+    "第三方广告站点加载 OpenAI 像素脚本（如 bzr.openai.com/pixel）时自动上传 __obi 及上下文行为数据",
+    "该机制构成隐蔽的跨站行为画像系统，无需用户显式授权或知情",
+    "作者通过手机流量抓包实证复现了完整追踪链路"
+  ],
+  "method": {
+    "problem": "OpenAI 是否在未经明确告知和同意的情况下，通过跨站 Cookie 关联用户在第三方网站的行为与 ChatGPT 账号",
+    "approach": "基于真实设备网络流量捕获与域名/请求分析，逆向识别追踪基础设施及数据流向",
+    "design": [
+      "使用移动设备抓包工具捕获 ChatGPT App 及第三方网页访问期间的 HTTP(S) 流量",
+      "定位并解析 bzr.openai.com 域下的像素请求及其携带的 Cookie 头字段",
+      "验证 __obi Cookie 的作用域、生命周期及与登录状态的绑定关系",
+      "比对多个第三方广告站点中 OpenAI 像素调用行为与 __obi 传输一致性"
+    ],
+    "setup": "iOS 设备 + 本地代理抓包（如 Proxyman），覆盖 ChatGPT App 使用与嵌入 OpenAI 像素的电商/媒体网站访问场景"
+  },
+  "conclusion": {
+    "findings": "__obi 是 OpenAI 部署的跨站追踪标识符，支持将站外行为映射至用户身份，构成实质性行为画像能力",
+    "impact": "挑战当前隐私政策透明度与 GDPR/CCPA 合规性基础，引发对 LLM 公司广告化路径的监管关注",
+    "limitations": "未披露 __obi 生成算法细节及服务端关联逻辑；未覆盖所有浏览器环境兼容性测试"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ChatGPT __o…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "跨站行为关联",
+        "note": "未经用户明确同意，将第三方网站行为绑定至 ChatGPT 账号",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "流量实证分析",
+        "note": "通过手机抓包复现 __obi 设置、传播与回传全过程",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "揭露追踪架构",
+        "note": "首次公开 __obi Cookie 机制、bzr.openai.com 像素作用及绑定逻辑",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "确认跨站追踪",
+        "note": "实证显示 __obi 在多个广告站点间稳定传递，关联用户行为数据",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "隐私合规风险",
+        "note": "对现有隐私政策、数据最小化原则及监管框架提出实质性挑战",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

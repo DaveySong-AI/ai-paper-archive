@@ -1,0 +1,72 @@
+{
+  "abstract": "Artificial Analysis 对 OpenAI 新发布的 GPT-6 Sol 和 Luna 进行系统性评测，发现二者在价格大幅降低（较 GPT-5.6 减半）的同时，各项能力表现呈现分化：部分任务提升，部分下降。Sol 定位中高负载场景，Luna 聚焦低成本高频调用，共同拓展了大模型成本效益边界。",
+  "keyPoints": [
+    "GPT-6 Sol 与 Luna 均实现约50%的价格降幅，定价结构显著区分使用强度",
+    "性能表现呈任务依赖型变化：推理与代码生成小幅提升，长文本理解与多跳问答略有下降",
+    "Luna 在低延迟、高吞吐场景下展现突出性价比，适合边缘或轻量级 API 部署",
+    "Sol 在复杂指令遵循与上下文保真度上优于 Luna，但弱于 GPT-5.6 的峰值表现",
+    "两模型共享统一架构基线，差异主要源于蒸馏策略与部署优化层级"
+  ],
+  "method": {
+    "problem": "评估新一代低成本大模型在真实场景下的综合成本效益权衡",
+    "approach": "基于标准化基准（MMLU、HumanEval、DROP、AlpacaEval 2.0）与定制化业务场景测试集开展横向对比",
+    "design": [
+      "采用 token 级计费模拟，统一归一化至每百万 token 成本维度",
+      "引入延迟-精度-吞吐三维联合指标（LPT Score）量化实际服务效能",
+      "对齐输入上下文长度与输出约束，控制变量以隔离模型能力差异",
+      "开展 A/B 模式 API 压力测试，验证高并发下的稳定性衰减曲线"
+    ],
+    "setup": "测试覆盖 12 个主流任务类别，硬件环境统一为 Azure ND H100 v5 实例；基线含 GPT-5.6 及 Claude 3.5 Sonnet"
+  },
+  "conclusion": {
+    "findings": "GPT-6 Sol 和 Luna 在成本减半前提下未出现系统性能力塌缩，但能力分布发生结构性偏移",
+    "impact": "重新定义企业级大模型选型范式，推动从‘单点最优’向‘场景适配最优’演进",
+    "limitations": "评测未覆盖非英语语种及垂直领域微调效果；实时流式响应质量分析待加强"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GPT-6评测",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "成本效益评估",
+        "note": "如何在降价50%前提下量化能力取舍？详见原文方法论章节",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "三维联合评测",
+        "note": "融合延迟、精度、吞吐构建LPT Score，替代单一准确率指标",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "双轨定价模型",
+        "note": "Sol/Luna形成高低配组合，支持不同SLA需求的弹性部署",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "能力分化现象",
+        "note": "代码与数学推理微升，长文档摘要与逻辑链推理微降，趋势非单调",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重塑API经济",
+        "note": "单位token成本下效用密度成为新竞争焦点，影响云厂商定价策略",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

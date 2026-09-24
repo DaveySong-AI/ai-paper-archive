@@ -1,0 +1,72 @@
+{
+  "abstract": "FrogNano 是一个参数量为 4B 的轻量级编码智能体，通过在线任务合成（online task synthesis）方式进行训练，在不依赖前沿大模型蒸馏的前提下，在 SWE-bench Verified 基准上达到 61.5% 解决率，显著优于同规模模型，展示了高效训练范式对小型代码智能体性能提升的有效性。",
+  "keyPoints": [
+    "提出 FrogNano：4B 参数量的轻量级开源编码智能体",
+    "采用在线任务合成（online task synthesis）替代传统监督微调或模型蒸馏",
+    "在 SWE-bench Verified 上达成 61.5% 解决率，未使用 frontier-model distillation",
+    "验证了小模型通过高质量合成数据可逼近大模型性能",
+    "强调训练数据生成机制创新而非单纯扩大模型规模"
+  ],
+  "method": {
+    "problem": "如何在不依赖超大规模模型蒸馏或海量人工标注数据的前提下，提升中小规模代码智能体在真实软件工程任务上的泛化能力",
+    "approach": "基于在线任务合成的强化学习风格训练框架，动态构建多样化、高难度编程任务并闭环评估",
+    "design": [
+      "实时生成与 SWE-bench 风格一致的合成任务",
+      "引入执行反馈驱动的任务难度自适应机制",
+      "结合单元测试通过率与代码语义等价性进行多维奖励建模",
+      "采用轻量级推理优化策略适配 4B 模型推理效率"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "FrogNano 在无前沿模型蒸馏条件下，以 4B 规模实现 SWE-bench Verified 61.5% 解决率，证明在线任务合成是提升小模型代码能力的有效路径",
+    "impact": "为资源受限场景下的代码智能体研发提供新范式，推动轻量化、可持续的AI编程工具发展",
+    "limitations": "任务合成质量依赖基础模型能力，泛化至非SWE类任务表现尚待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "FrogNano",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "小模型代码能力瓶颈",
+        "note": "传统方法依赖大模型蒸馏或海量标注，成本高且不可持续",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "在线任务合成训练",
+        "note": "动态生成SWE-bench风格任务，结合执行反馈闭环优化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "4B模型达61.5%",
+        "note": "SWE-bench Verified基准上突破性结果，无需frontier distillation",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "轻量高效可复现",
+        "note": "开源设计支持社区迭代，训练资源需求显著低于主流方案",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动代码智能轻量化",
+        "note": "为边缘端、教育场景及低算力环境提供可行技术路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

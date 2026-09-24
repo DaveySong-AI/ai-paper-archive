@@ -1,0 +1,73 @@
+{
+  "abstract": "Salesforce AI 研究发现，用 Gemini 的完整执行轨迹对弱模型智能体（Qwen3-Coder-30B-A3B）进行离线微调，导致其在7项企业任务上的成功率从78.0%显著下降至63.1%，所有任务均退化。根本原因在于弱模型盲目模仿强模型的规划逻辑，破坏了原有适配其能力边界的提示、工具与工作流设计。",
+  "keyPoints": [
+    "弱模型模仿强模型完整轨迹会引发行为错配，而非能力提升",
+    "智能体性能依赖模型-工具-提示-工作流的整体协同，非孤立模型能力",
+    "离线模仿学习（off-policy）在智能体蒸馏中可能失效",
+    "on-policy 微调（即基于弱模型自身行为反馈调整）更鲁棒有效",
+    "规划方式迁移需考虑模型内在推理偏好，不可简单复制轨迹"
+  ],
+  "method": {
+    "problem": "如何有效将强模型（Gemini）的智能体能力迁移到弱模型（Qwen3-Coder-30B-A3B）上",
+    "approach": "对比离线轨迹模仿（off-policy）与在线策略修正（on-policy）两种迁移范式",
+    "design": [
+      "以Qwen3-Coder-30B-A3B为基座，在7项企业级任务上构建原生智能体系统",
+      "采集Gemini在同一任务集上的完整执行轨迹（含思考链、工具调用、参数选择）",
+      "用Gemini轨迹对Qwen进行全轨迹监督微调（SFT），评估泛化性能",
+      "引入on-policy机制：仅保留Qwen自身成功轨迹，动态优化提示与工具调用策略",
+      "控制变量分析退化来源：分离规划逻辑、工具使用、输出格式等影响因子"
+    ],
+    "setup": "7项企业任务；Qwen3-Coder-30B-A3B vs Gemini；成功率为主指标；详见原文"
+  },
+  "conclusion": {
+    "findings": "离线模仿强模型轨迹会导致弱模型智能体全面退化，核心矛盾在于规划范式与底层能力不匹配；on-policy修正能恢复并超越原始性能。",
+    "impact": "挑战当前主流的大模型智能体知识蒸馏范式，推动面向弱模型特性的‘适配式迁移’研究范式。",
+    "limitations": "实验仅覆盖代码类弱模型与7项任务，未验证多模态或长程规划场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Salesforce弱…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "弱模型智能体迁移",
+        "note": "如何将Gemini能力安全迁移到Qwen等弱模型？",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "on-policy修正",
+        "note": "基于Qwen自身成功轨迹动态优化提示与工具策略",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "揭示模仿退化机制",
+        "note": "证明规划逻辑错配是主因，非单纯能力不足",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "全面性能退化",
+        "note": "7项任务成功率从78.0%降至63.1%，无一例外",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重定义智能体蒸馏",
+        "note": "推动从‘轨迹复制’转向‘能力适配’的新范式",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

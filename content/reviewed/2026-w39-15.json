@@ -1,0 +1,72 @@
+{
+  "abstract": "Baseten Base Labs 研究蒸馏在强化学习（RL）中的作用，对比直接 GRPO 训练与‘SFT（教师模型 gpt-5.6-sol 指导）+ RL’两阶段范式，在 Qwen3 的 0.6B–8B 四种规模模型及十六个推理任务上的表现，分析模型规模、任务难度与蒸馏收益的关系。",
+  "keyPoints": [
+    "蒸馏是否提升 RL 效果高度依赖模型规模：小模型（0.6B/1.7B）受益显著，大模型（4B/8B）增益微弱或为负",
+    "教师模型质量（gpt-5.6-sol 解法）是蒸馏有效性的关键前提，但并非所有任务均能被高质量解法覆盖",
+    "任务复杂度调节蒸馏效果：高推理深度任务中 SFT 初始化更易缓解 RL 探索困难",
+    "GRPO 直接训练在大模型上展现出更强的零初始化优化能力，削弱了蒸馏必要性",
+    "蒸馏带来的稳定性提升（如方差降低）有时比绝对性能增益更具实践价值"
+  ],
+  "method": {
+    "problem": "确定知识蒸馏（SFT+RL）相较于直接 RL 训练在何种条件下能提升推理任务性能",
+    "approach": "控制变量实验：固定 RL 算法（GRPO）、任务集（16个推理任务）、教师模型（gpt-5.6-sol），系统性改变学生模型规模（0.6B–8B）并测量性能差异",
+    "design": [
+      "四档学生模型规模对比：0.6B / 1.7B / 4B / 8B Qwen3",
+      "双训练路径：纯 GRPO vs SFT（gpt-5.6-sol 解法监督）→ GRPO",
+      "统一评估协议：相同 reward model、rollout budget、evaluation metric（任务准确率/步骤正确率）",
+      "细粒度归因：按任务推理步数、错误类型（逻辑/格式/幻觉）分组分析蒸馏收益"
+    ],
+    "setup": "十六个开源推理任务；教师解法来自 gpt-5.6-sol；RL 使用 GRPO；评估基于 held-out test set"
+  },
+  "conclusion": {
+    "findings": "蒸馏对小模型更有效，其收益随模型规模增大而衰减；任务难度与教师解法覆盖率共同决定蒸馏上限；直接 RL 在大模型上具备更强鲁棒性",
+    "impact": "为 RLHF 工程实践提供规模适配指南，推动‘按需蒸馏’而非默认流水线；提示教师-学生能力对齐的重要性",
+    "limitations": "未测试跨架构蒸馏（如 LLaMA 教师→Qwen 学生）；gpt-5.6-sol 教师解法未公开，复现受限；未涵盖长上下文或工具调用类任务"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "蒸馏助RL研究",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "蒸馏何时有效？",
+        "note": "探究模型规模、任务难度、教师质量三因素如何协同影响SFT+RL效果",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "四规模对比实验",
+        "note": "Qwen3 0.6B/1.7B/4B/8B + GRPO ± gpt-5.6-sol SFT，在16推理任务上评测",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "规模依赖性规律",
+        "note": "首次系统验证小模型从蒸馏获益更大，大模型直训更优，挑战通用蒸馏假设",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "收益衰减现象",
+        "note": "0.6B模型平均+12%准确率，8B仅+0.8%或负向波动，详见原文图3",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "工程决策指南",
+        "note": "建议中小规模模型采用SFT+RL，大模型优先尝试纯GRPO，降低SFT成本与偏差风险",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

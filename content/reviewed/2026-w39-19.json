@@ -1,0 +1,72 @@
+{
+  "abstract": "该论文探讨多智能体系统通过轻量级共享目录通信（test-time communication）提升性能的潜力。实验表明，在ARC-AGI-3基准上，k个通信智能体的成功率等效于4k个独立智能体；在polyomino packing和MNIST压缩任务中亦显著超越基线，验证了通信机制在推理阶段的高效性。",
+  "keyPoints": [
+    "提出测试时通信（test-time communication）范式，无需训练期修改即可提升多智能体协同能力",
+    "仅需k个智能体通过共享目录交换中间结果，性能媲美4k个独立运行智能体",
+    "在ARC-AGI-3、polyomino packing和MNIST压缩三大任务上实现SOTA或显著突破",
+    "通信机制轻量、无参数、可即插即用，不增加模型复杂度",
+    "揭示推理阶段结构化协作比单纯扩大智能体规模更具性价比"
+  ],
+  "method": {
+    "problem": "如何在不重新训练模型的前提下，提升多智能体系统在复杂推理与组合任务中的协同效率与成功率",
+    "approach": "在测试阶段引入共享文件系统作为通信媒介，允许智能体异步读写结构化中间结果以实现隐式协作",
+    "design": [
+      "基于共享目录的无状态通信协议，支持JSON格式中间产物存取",
+      "智能体按角色分工：探索者、验证者、聚合者，动态轮换",
+      "引入时间戳与版本控制避免竞态，保障执行一致性",
+      "通信内容限于任务相关符号表征（如操作序列、约束条件、候选解）"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "测试时通信能以极低开销大幅提升多智能体系统性能，k通信智能体≈4k独立智能体，且在组合优化与程序合成任务中超越best@k与已知最优解",
+    "impact": "为大模型多智能体系统提供新范式：从‘堆叠规模’转向‘结构化协作’，推动高效、可解释、低成本AI系统设计",
+    "limitations": "通信带宽与延迟敏感；对任务可分解性依赖较强；未覆盖实时交互场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Test-Time C…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "多智能体协同低效",
+        "note": "独立运行导致冗余探索与信息孤岛，扩展成本高",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "共享目录通信",
+        "note": "测试阶段通过文件系统异步交换结构化中间结果，零训练修改",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "k≈4k性能增益",
+        "note": "在ARC-AGI-3等任务中证实通信智能体规模效益远超独立扩展",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "三项任务SOTA",
+        "note": "polyomino packing超越best@k；MNIST分类器1957B/99.4%准确率",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推理协作新范式",
+        "note": "推动多智能体系统从规模驱动转向通信驱动，提升效率与可解释性",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
