@@ -1,0 +1,73 @@
+{
+  "abstract": "本文揭露 ChatGPT 通过跨站 Cookie __obi 实现用户行为追踪：bzr.openai.com 在 .openai.com 域下设置持久化 __obi Cookie，绑定用户账号或稳定匿名标识；第三方广告主网站嵌入 OpenAI 像素后，将该 Cookie 与浏览、购买等行为数据回传至 OpenAI，实现站外行为关联。",
+  "keyPoints": [
+    "OpenAI 部署了名为 bzr.openai.com 的广告数据收集器",
+    "__obi Cookie 在 .openai.com 域下设置，具备跨子域持久性与跨站可读性",
+    "Cookie 值与 ChatGPT 账号或长期匿名主体强绑定",
+    "第三方网站加载 OpenAI 像素脚本时自动回传 __obi 及用户行为数据",
+    "该机制构成隐蔽的跨站行为画像与追踪基础设施"
+  ],
+  "method": {
+    "problem": "揭示 OpenAI 是否及如何通过前端机制实现跨站用户行为追踪",
+    "approach": "基于真实移动设备网络流量捕获与域名/cookie 行为分析，逆向验证广告像素的数据流向与标识绑定逻辑",
+    "design": [
+      "捕获手机端 ChatGPT App 及网页访问产生的全部 HTTP(S) 流量",
+      "识别并解析 bzr.openai.com 域下的 Set-Cookie 响应（含 __obi）",
+      "跟踪第三方站点加载 openai.com 像素脚本后的请求载荷与 Cookie 携带情况",
+      "比对不同设备/账号下 __obi 值的稳定性与唯一性",
+      "验证 __obi 是否随用户登录状态变化或跨设备复用"
+    ],
+    "setup": "iOS 设备 + Charles Proxy 抓包；覆盖 ChatGPT Web 与 iOS App 场景；未使用自动化测试框架"
+  },
+  "conclusion": {
+    "findings": "确认 OpenAI 已部署生产级跨站追踪能力，__obi 是其核心标识符，且与账号存在映射关系",
+    "impact": "挑战用户对 ChatGPT 数据边界的预期，引发隐私合规（如 GDPR/CCPA）与浏览器 SameSite 策略执行有效性质疑",
+    "limitations": "未披露 __obi 生成算法、服务端绑定逻辑及数据存储周期；未测试主流浏览器隐私模式下的行为差异"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ChatGPT __o…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "跨站行为追踪",
+        "note": "验证 OpenAI 是否构建隐蔽的用户行为关联能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "流量逆向分析",
+        "note": "通过手机抓包识别 __obi 设置与回传链路",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "揭露广告像素机制",
+        "note": "首次公开 bzr.openai.com 与 __obi Cookie 的跨站协同设计",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "__obi 绑定账号",
+        "note": "确认该 Cookie 在登录前后具稳定性，可关联真实身份",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "隐私边界重构",
+        "note": "迫使重新评估 AI 服务商在非交互场景下的数据采集正当性",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "Meta 发布 A-MLE（Agentic ML Exploration）框架，作为已部署于广告排序场景的 LLM 驱动智能体系统，可自动化完成 ML 实验全流程：包括假设生成、实验执行、失败恢复、结果分析与跨模型经验迁移。",
+  "keyPoints": [
+    "首个在工业级广告排序系统中实际部署的 LLM 智能体 ML 实验框架",
+    "端到端自动化覆盖从想法提出到结果归因的完整 ML 探索闭环",
+    "支持实验任务失败自动诊断与恢复，提升实验鲁棒性",
+    "具备跨模型/任务的经验迁移能力，加速新模型迭代",
+    "以智能体范式重构传统人工驱动的 ML 实验流程"
+  ],
+  "method": {
+    "problem": "ML 实验流程高度依赖人工，效率低、可复现性差、知识难以沉淀与迁移",
+    "approach": "构建基于 LLM 的多角色智能体协作框架，将 ML 实验建模为可规划、可执行、可反思的任务流",
+    "design": [
+      "模块化智能体角色分工（如 Idea Agent、Runner Agent、Analyzer Agent）",
+      "基于反馈的实验计划动态重规划机制",
+      "失败任务的根因识别与自修复策略库",
+      "实验元数据统一建模与跨任务经验检索接口"
+    ],
+    "setup": "部署于 Meta 广告排序模型迭代产线，集成内部 ML 平台与实验追踪系统"
+  },
+  "conclusion": {
+    "findings": "A-MLE 显著缩短广告模型实验周期，提升实验吞吐量与成功率，并实现经验跨模型复用",
+    "impact": "为工业界 ML 工程范式提供新路径，推动 ML 实验向自主化、系统化演进",
+    "limitations": "依赖高质量领域指令与内部平台深度集成，泛化至其他场景需适配"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "A-MLE",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "实验流程低效",
+        "note": "人工主导导致迭代慢、知识难沉淀、失败恢复弱",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "多智能体协同",
+        "note": "分工角色+动态规划+失败自修复+经验检索接口",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个工业部署框架",
+        "note": "真实应用于 Meta 广告排序，闭环覆盖全实验生命周期",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "实验效率提升",
+        "note": "周期缩短、吞吐增加、跨模型迁移经验成功应用",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重塑ML工程范式",
+        "note": "推动AI for ML方向落地，为自治ML系统提供实践样板",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

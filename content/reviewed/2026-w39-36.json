@@ -1,0 +1,72 @@
+{
+  "abstract": "Artificial Analysis 对 OpenAI 新发布的 GPT-6 Sol 和 Luna 进行系统评测，发现二者在价格较 GPT-5.6 降低约50%的同时，多项能力呈现差异化表现：Sol 在推理与长文本任务中略有提升，Luna 在基础语言理解与API响应延迟上优化显著，但复杂指令遵循与多步推理能力小幅下降。评测聚焦成本效率前沿的重新定义。",
+  "keyPoints": [
+    "GPT-6 Sol 与 Luna 均实现约50%的价格降幅，定价结构分层明确",
+    "Sol 在推理与长上下文任务中表现微升，Luna 在低延迟、高吞吐场景更具优势",
+    "两模型在复杂指令遵循与多跳推理上存在轻微退化，需权衡成本与鲁棒性",
+    "评测强调‘成本效率前沿’概念，推动行业从绝对性能转向单位成本效能评估",
+    "未公开模型架构细节，所有结论基于黑盒API级基准测试"
+  ],
+  "method": {
+    "problem": "如何量化评估新一代大模型在显著降价背景下的真实成本效率变化",
+    "approach": "基于标准API调用的黑盒基准测试，对比GPT-5.6、Sol、Luna在多维度任务上的性能-成本比",
+    "design": [
+      "采用统一prompt模板与token计费口径，隔离输入/输出token成本",
+      "覆盖MMLU、GPQA、LiveBench、MT-Bench及自建延迟压力测试集",
+      "引入Cost-Normalized Score（CNS）作为核心指标",
+      "对每项任务重复3轮测试以控制API波动影响"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "GPT-6 Sol 和 Luna 成功拓展了成本效率前沿，但性能提升非全局性，不同任务类型存在trade-off",
+    "impact": "为模型选型提供新范式——从‘单点最优’转向‘任务-成本联合优化’，影响企业级LLM部署策略",
+    "limitations": "未披露训练数据、参数量与架构信息；未覆盖非英语语种与垂直领域微调效果"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GPT-6评测",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "成本效率评估",
+        "note": "如何衡量降价后的真实效能增益？传统benchmark无法反映单位成本价值",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "黑盒API基准",
+        "note": "基于标准测试集+统一计费口径的CNS指标构建，控制变量进行三轮验证",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "成本效率前沿",
+        "note": "提出CNS指标与前沿分析框架，推动行业关注性价比而非绝对分数",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能有升有降",
+        "note": "Sol长文本提升、Luna延迟优化，但复杂推理能力小幅下降",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "部署范式转变",
+        "note": "促使企业根据任务类型选择Sol或Luna，而非默认升级至最高版本",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

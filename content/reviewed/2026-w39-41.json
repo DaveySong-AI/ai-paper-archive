@@ -1,0 +1,72 @@
+{
+  "abstract": "Artificial Analysis 对 Grok 4.7 进行评测，其在 Artificial Analysis Intelligence Index（AAII）中得分为 46，较前代 Grok 4.6 提升 2 分；编码智能体指数达 56；该结果推动 SpaceXAI 进入全球前四大 AI 实验室行列。",
+  "keyPoints": [
+    "Grok 4.7 在 AAII 综合智能指数中获 46 分，为当前最高分之一",
+    "编码智能体指数显著提升至 56，反映其在编程任务上的强化",
+    "本次评测推动 SpaceXAI 首次跻身全球前四大 AI 实验室",
+    "AAII 作为新型多维评估框架，涵盖推理、编码、工具调用等维度",
+    "评测基于公开基准与定制化场景，强调真实世界智能体行为"
+  ],
+  "method": {
+    "problem": "缺乏统一、可比、面向智能体行为的 AI 系统综合评估标准",
+    "approach": "构建 Artificial Analysis Intelligence Index（AAII）多维评测体系，对 Grok 4.7 进行端到端智能体级能力评估",
+    "design": [
+      "定义涵盖认知推理、代码生成、工具交互、多步规划的复合指标",
+      "引入真实任务流（如 GitHub issue 闭环、API 链式调用）作为核心测试场景",
+      "采用人类专家校准 + 自动化评分双轨机制保障信度",
+      "横向对比 Grok 4.6/4.7 及主流闭源/开源模型基线"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Grok 4.7 在 AAII 中得分 46，编码子项达 56，验证其在复杂智能体任务中的领先性",
+    "impact": "推动行业从单点 benchmark 转向系统级智能体能力评估范式，确立 SpaceXAI 全球技术地位",
+    "limitations": "AAII 尚未完全开源，评测覆盖场景有限，长期鲁棒性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Grok 4.7 评测",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "评估标准缺失",
+        "note": "现有 benchmark 难以刻画智能体级综合能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "AAII 多维评测",
+        "note": "融合推理、编码、工具调用等维度的端到端评估框架",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "智能指数 46",
+        "note": "Grok 4.7 创下 AAII 当前最高分，较前代提升 2 分",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "编码指数 56",
+        "note": "显著领先同类模型，体现编程智能体能力跃升",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "进入前四实验室",
+        "note": "推动 SpaceXAI 成为全球 Top 4 AI 实验室之一",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

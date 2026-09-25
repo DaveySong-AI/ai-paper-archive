@@ -1,0 +1,73 @@
+{
+  "abstract": "Salesforce AI 研究发现，用 Gemini 的完整执行轨迹对弱模型 Qwen3-Coder-30B-A3B 进行离线微调（imitation learning），导致其在7项企业任务上的成功率从78.0%显著下降至63.1%，所有任务均退化。根本原因是Qwen盲目模仿Gemini的规划逻辑，破坏了原有适配其能力的智能体提示、工具与工作流设计。",
+  "keyPoints": [
+    "弱模型直接模仿强模型完整轨迹会引发行为错配，而非能力提升",
+    "智能体性能高度依赖模型-工具-提示-工作流的协同适配",
+    "离线模仿学习（off-policy）在智能体场景下可能有害",
+    "on-policy 微调（如实时反馈修正）被证实更鲁棒有效",
+    "模型能力边界应作为智能体架构设计的首要约束"
+  ],
+  "method": {
+    "problem": "如何在不破坏现有智能体系统适配性的前提下，提升弱模型智能体的任务成功率",
+    "approach": "对比离线模仿学习（用Gemini轨迹微调Qwen）与on-policy行为修正的效果",
+    "design": [
+      "在7项真实企业任务上构建Qwen原生智能体基线",
+      "采集Gemini在相同任务中的完整执行轨迹（含思考链、工具调用、结果解析）",
+      "对Qwen进行全轨迹监督微调（SFT），强制拟合Gemini行为",
+      "引入on-policy机制：基于Qwen实时执行反馈动态调整提示与工具调用策略",
+      "控制变量评估各方法对成功率及行为一致性的影响"
+    ],
+    "setup": "Qwen3-Coder-30B-A3B 模型；7项企业级任务；评估指标为端到端任务成功率"
+  },
+  "conclusion": {
+    "findings": "离线模仿强模型轨迹会导致弱模型智能体全面退化；on-policy修正能保持系统适配性并提升性能",
+    "impact": "挑战了‘强模型轨迹即黄金标准’的隐含假设，推动智能体训练范式从off-policy转向on-policy自适应",
+    "limitations": "实验仅覆盖单一弱模型与有限任务集；未探究多阶段混合训练策略"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Salesforce弱…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "弱模型模仿退化",
+        "note": "Qwen模仿Gemini轨迹后成功率下降14.9%，7项任务全退化",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "on-policy修正",
+        "note": "基于Qwen实时执行反馈动态调整提示与工具策略，避免行为错配",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "适配性优先原则",
+        "note": "提出智能体设计应以模型能力边界为锚点，而非强模型行为模板",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "离线模仿有害",
+        "note": "全轨迹SFT破坏Qwen原有工具调用逻辑与规划节奏，导致系统失配",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "范式转向",
+        "note": "推动智能体训练从静态模仿转向动态协同优化，强调on-policy闭环",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

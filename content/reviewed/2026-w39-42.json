@@ -1,0 +1,71 @@
+{
+  "abstract": "FrogNano 是一个参数量为 4B 的轻量级编码智能体，通过在线任务合成（online task synthesis）训练策略，在不依赖前沿大模型蒸馏的前提下，在 SWE-bench Verified 基准上达到 61.5% 解决率，显著优于同规模模型，验证了数据构造质量对小型代码智能体性能的关键作用。",
+  "keyPoints": [
+    "提出在线任务合成训练范式，动态生成多样化、难度适配的编程任务",
+    "FrogNano 仅用 4B 参数即在 SWE-bench Verified 上达 61.5%，未使用任何 frontier-model 蒸馏",
+    "训练过程完全基于合成任务，规避了高质量人工标注数据依赖",
+    "强调任务多样性与渐进难度设计对代码智能体泛化能力的提升作用"
+  ],
+  "method": {
+    "problem": "如何在无前沿大模型蒸馏、无大规模人工标注数据条件下，提升中小规模代码智能体在真实软件工程任务上的表现",
+    "approach": "采用在线任务合成驱动的强化学习式训练框架，持续生成并筛选高信息量编程任务用于微调",
+    "design": [
+      "基于错误反馈与代码执行轨迹动态合成新任务",
+      "引入难度感知采样机制，平衡简单巩固与挑战性探索",
+      "多阶段课程学习：从单文件修复过渡到跨模块集成调试",
+      "任务评估嵌入运行时验证（如测试通过率、编译成功率）作为合成信号"
+    ],
+    "setup": "训练基于 SWE-bench Verified 子集构建验证闭环；未披露具体硬件与训练步数"
+  },
+  "conclusion": {
+    "findings": "在线任务合成可有效替代模型蒸馏与人工标注，成为中小规模代码智能体的核心训练驱动力",
+    "impact": "为资源受限场景下的代码智能体研发提供新范式，推动轻量化、可持续演进的编码Agent发展",
+    "limitations": "任务合成质量依赖初始模型能力，冷启动阶段性能受限；SWE-bench外泛化性尚待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "FrogNano",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "小模型代码能力瓶颈",
+        "note": "4B模型难以匹配前沿模型在SWE-bench等复杂工程任务上的表现",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "在线任务合成",
+        "note": "动态生成带执行反馈的编程任务，替代人工标注与模型蒸馏",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "61.5% SWE-b…",
+        "note": "4B模型首次在Verified子集上突破60%，且未使用任何distillation",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "免蒸馏高性能",
+        "note": "证明高质量合成数据可媲美前沿模型知识迁移效果",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "轻量编码Agent新路径",
+        "note": "为边缘部署、低算力环境下的代码智能体训练提供可行方案",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
