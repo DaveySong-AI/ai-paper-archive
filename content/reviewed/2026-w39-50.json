@@ -1,0 +1,72 @@
+{
+  "abstract": "本文揭露 ChatGPT 通过跨站 Cookie __obi 实现用户行为追踪：OpenAI 在 .openai.com 域下设置持久性 __obi Cookie，绑定用户账号或匿名主体；第三方广告主网站加载 OpenAI 像素代码时，自动回传该 Cookie 及浏览、购买等行为数据，使 OpenAI 能关联站外行为至具体账号。",
+  "keyPoints": [
+    "OpenAI 部署了名为 bzr.openai.com 的广告数据收集器",
+    "__obi Cookie 在 .openai.com 域下设置，具备跨子域持久性与跨站可读性",
+    "Cookie 绑定 ChatGPT 登录账号或稳定匿名标识符，实现长期行为关联",
+    "第三方网站嵌入 OpenAI 像素后，自动向 OpenAI 回传 __obi 及用户行为数据",
+    "该机制构成隐蔽的跨站行为追踪，未在 ChatGPT 隐私政策中明确披露"
+  ],
+  "method": {
+    "problem": "验证 OpenAI 是否通过跨站 Cookie 实现对用户站外行为的隐蔽追踪",
+    "approach": "基于真实移动设备网络流量捕获，逆向分析 OpenAI 像素请求与 Cookie 交互逻辑",
+    "design": [
+      "捕获手机端 ChatGPT App 及网页访问产生的全部 HTTP(S) 流量",
+      "识别并解析 bzr.openai.com 域下的请求与响应头中的 Set-Cookie 字段",
+      "确认 __obi Cookie 的作用域（.openai.com）、有效期及 HttpOnly/Secure 属性",
+      "观察第三方广告站点加载 OpenAI 像素脚本后的请求行为与 Cookie 携带情况"
+    ],
+    "setup": "iOS 设备 + Charles Proxy 抓包；测试场景涵盖登录/未登录 ChatGPT、访问含 OpenAI 像素的电商/媒体网站"
+  },
+  "conclusion": {
+    "findings": "__obi 是 OpenAI 实施跨站用户行为关联的核心标识符，其部署方式符合典型广告追踪器特征",
+    "impact": "引发对大型 AI 服务商隐私实践透明度的质疑，推动监管关注训练数据与行为数据边界的模糊化",
+    "limitations": "未披露 __obi 生成算法细节；未量化覆盖用户规模与数据回传频率；未验证服务端是否进行账号级行为建模"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ChatGPT __o…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "跨站行为追踪",
+        "note": "OpenAI 是否在用户不知情下关联其站外浏览行为？",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "流量逆向分析",
+        "note": "手机抓包复现 __obi 设置与回传链路，验证跨域有效性",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "揭露隐蔽追踪机制",
+        "note": "首次公开证实 __obi Cookie 的账号绑定能力与广告像素协同逻辑",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "__obi 持久绑定账号",
+        "note": "Cookie 在 .openai.com 域下设置，支持跨子域共享，登录即关联",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "隐私政策合规性质疑",
+        "note": "当前披露不足，可能违反 GDPR/CCPA 关于‘隐性追踪’的告知义务",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
