@@ -1,0 +1,72 @@
+{
+  "abstract": "小米复盘 MiMo-V2.6 工具调用重复问题，识别出响应级重复率超 0.05%，并区分正常并行、调用泛滥与调用重复三类现象；发现 MixRL 训练中泛滥率从 11.1% 升至 24.6%，32 次阈值过松；提出 MOPD 方法，在不重启训练前提下将修复成本降至 MixRL 方案的 4%，重复率显著下降。",
+  "keyPoints": [
+    "首次明确定义并区分工具调用中的正常并行、调用泛滥与调用重复三类行为",
+    "发现 MixRL 训练过程中调用泛滥率随 checkpoint 持续上升（11.1%→24.6%）",
+    "原 32 次调用阈值惩罚机制过于宽松，直接收紧需重启 20 步 MixRL，成本高达 231 万美元",
+    "提出轻量级在线干预方法 MOPD（Mitigation via Observation-based Policy Distillation）",
+    "MOPD 将修复成本压缩至 MixRL 方案的 4%，且内部测试重复率从 13.45% 降至 3.83%"
+  ],
+  "method": {
+    "problem": "大模型在工具调用中出现非必要重复请求，干扰服务稳定性与用户体验",
+    "approach": "基于观测数据驱动的策略蒸馏，在线修正策略输出分布，避免重训",
+    "design": [
+      "构建细粒度调用行为分类器，分离正常并行、泛滥与重复三类响应",
+      "设计响应级重复检测模块，支持毫秒级实时判别",
+      "采用 observation-conditioned distillation，仅用当前状态约束 logits 分布",
+      "引入动态阈值衰减机制，适配不同复杂度 query 的调用容忍度"
+    ],
+    "setup": "基于 MiMo-V2.6 线上回放日志与 RL 各 checkpoint 行为分析；内部 A/B 测试验证"
+  },
+  "conclusion": {
+    "findings": "MOPD 可在零重训前提下有效抑制工具调用重复，大幅降低修复成本与线上风险",
+    "impact": "为工业级 LLM 工具调用稳定性治理提供可落地的轻量干预范式，推动 RLHF 部署流程优化",
+    "limitations": "依赖高质量回放日志与行为标注；对跨工具链协同重复场景覆盖有限"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MiMo-V2.6-M…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "工具调用重复",
+        "note": "响应级重复率超0.05%，影响服务稳定性与用户体验",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "MOPD干预法",
+        "note": "基于观测的策略蒸馏，无需重启MixRL训练，实现在线修复",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三类行为区分",
+        "note": "明确划分正常并行、调用泛滥、调用重复，支撑精准干预",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "成本降至4%",
+        "note": "修复成本仅为MixRL方案的4%，重复率从13.45%降至3.83%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "工业部署范式",
+        "note": "为LLM工具调用稳定性治理提供轻量、可扩展的在线干预路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

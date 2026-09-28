@@ -1,0 +1,17 @@
+{
+  "isoWeek": "2026-W40",
+  "startDate": "2026-09-28",
+  "endDate": "2026-10-04",
+  "windowStart": "2026-09-28",
+  "windowEnd": "2026-09-28",
+  "poolTotal": 3,
+  "paperCount": 3,
+  "curatedCount": 1,
+  "sourceCount": 3,
+  "selectionRule": "窗口内共 3 篇，按综合评分取前 3 篇（含全部 1 篇编辑精选），按时间倒序展示，不按评分排序。 本周尚未结束，数据仍在累积中。",
+  "papers": [
+    "2026-w40-01",
+    "2026-w40-02",
+    "2026-w40-03"
+  ]
+}
