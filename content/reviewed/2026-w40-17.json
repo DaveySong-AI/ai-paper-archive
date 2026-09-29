@@ -1,0 +1,72 @@
+{
+  "abstract": "PReCache 是一种免训练的 KV cache 共享框架，专为 Multi-LoRA 智能体设计。它通过 PreLRShared 预计算各 LoRA 专属的低秩 cache 增量，结合 ReBaseShared 对共享基础 cache 进行中性重构，实现跨智能体高效 cache 复用，显著降低推理内存与计算开销。",
+  "keyPoints": [
+    "免训练：无需微调或重训练即可部署，兼容现有 LoRA 智能体",
+    "双阶段共享：分离基础 cache（预训练权重生成）与低秩增量 cache（LoRA 专属）",
+    "中性重构（ReBaseShared）：使共享基础 cache 对不同 LoRA 保持语义中立，提升复用鲁棒性",
+    "低秩预计算（PreLRShared）：以紧凑形式预存 LoRA 特异性 KV 增量，避免重复计算",
+    "端到端兼容：支持动态 LoRA 切换与并发智能体推理，不修改模型架构"
+  ],
+  "method": {
+    "problem": "Multi-LoRA 智能体在并发推理时 KV cache 重复存储与计算导致显存爆炸与延迟上升",
+    "approach": "将 KV cache 解耦为共享的基础分量与可插拔的低秩专属分量，通过预计算与中性化实现免训练共享",
+    "design": [
+      "PreLRShared：基于 LoRA 权重解析出低秩 KV 增量并离线预计算",
+      "ReBaseShared：对齐不同 LoRA 下的 base model KV 输出，使其在共享缓存空间中保持语义一致性",
+      "Neutral Reconstruction：引入正交投影约束，抑制基础 cache 中 LoRA 相关偏差",
+      "Cache Composition：运行时按需组合共享 base cache 与预载 LR cache，生成完整 KV"
+    ],
+    "setup": "在 LLaMA-2/3 与 Qwen 系列上评估 4–16 个 LoRA 智能体并发场景；使用 HuggingFace Transformers + vLLM 后端"
+  },
+  "conclusion": {
+    "findings": "PReCache 在保持零精度损失前提下，将 Multi-LoRA 推理显存峰值降低 38–62%，首 token 延迟下降 27–45%；共享 cache 复用率超 89%",
+    "impact": "为 LoRA-based 智能体服务提供轻量级、即插即用的 cache 优化范式，推动边缘与多租户大模型部署",
+    "limitations": "依赖 LoRA 结构假设；对非低秩适配器（如 Adapter、IA3）泛化性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "PReCache",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Multi-LoRA …",
+        "note": "并发智能体导致 KV cache 重复存储与计算，显存与延迟瓶颈",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "预计算+中性重构",
+        "note": "PreLRShared 预存低秩增量；ReBaseShared 实现基础 cache 语义中立化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "免训练共享框架",
+        "note": "无需微调，兼容任意 LoRA 组合，支持动态加载与热切换",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "显存降62%，延迟降4…",
+        "note": "在多 LoRA 并发推理中实现高复用率与零精度损失",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "LoRA 智能体部署新…",
+        "note": "为多租户、边缘端大模型服务提供轻量 cache 共享基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

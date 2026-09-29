@@ -1,0 +1,73 @@
+{
+  "abstract": "Amazon AGI 提出 AutoGym，一种面向智能体强化学习训练的自动化环境生成框架。它支持从少量领域种子或历史智能体轨迹出发，同步生成任务定义、可执行环境代码及形式化验证器，实现‘蓝图优先’（blueprint-first）的可验证 agent gym 构建，旨在将 RL 环境开发提升为标准化 AI 工程实践。",
+  "keyPoints": [
+    "提出‘blueprint-first’范式：先定义可验证的任务蓝图，再生成可执行环境",
+    "支持双路径输入：领域种子（如自然语言描述）或已有智能体轨迹",
+    "端到端生成三要素：任务规范、环境实现、形式化验证器",
+    "强调环境可验证性与可复现性，降低 RL 环境构建门槛",
+    "将 RL 环境工程定位为关键 AI 基础能力，推动 agent-centric 开发范式"
+  ],
+  "method": {
+    "problem": "RL 环境人工构建成本高、难以验证、缺乏可复现性与跨任务泛化能力",
+    "approach": "以任务蓝图为核心，通过程序合成与轨迹反演联合驱动环境自动生成",
+    "design": [
+      "基于 LLM 的任务蓝图解析与结构化建模",
+      "多阶段环境代码合成：状态空间、动作接口、奖励函数、终止条件",
+      "从轨迹中反推隐式任务约束并注入验证逻辑",
+      "内置轻量级形式化验证器生成模块",
+      "支持 human-in-the-loop 迭代修正与版本化管理"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "AutoGym 能在多个基础控制与导航任务中成功生成功能完备、可验证的 RL 环境，显著缩短环境开发周期",
+    "impact": "为 agent-based AI 提供基础设施级支持，推动 RL 研究向可组合、可验证、工程化方向演进",
+    "limitations": "对复杂物理仿真或高保真视觉环境的支持尚未验证；依赖种子质量与轨迹多样性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AutoGym",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "RL环境构建难",
+        "note": "人工成本高、不可验证、难复现，制约agent规模化训练",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "蓝图优先生成",
+        "note": "以结构化任务蓝图驱动环境代码与验证器联合合成",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三件套自动生成",
+        "note": "同步产出任务定义、可执行环境、形式化验证器",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "快速构建可验证gym",
+        "note": "在控制/导航等任务中验证可行性，支持human-in-the-loop迭代",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI工程新范式",
+        "note": "将RL环境开发升维为标准化、可复用的AI基础设施能力",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "EditWorld 是一种面向可交互世界的视频世界模型，支持在自回归生成过程中流式接收编辑指令和参考图像，实现对视频世界的精准编辑与灵活引用。其核心创新包括 Gated Causal Attention 以融合时变编辑条件与参考图像，以及 Sparse Context 机制维持有界历史上下文，从而支持长时程、可干预的世界建模。",
+  "keyPoints": [
+    "首次将实时编辑指令与参考图像无缝注入视频世界模型的自回归生成流程",
+    "提出 Gated Causal Attention，动态调控编辑条件与参考图像对每帧生成的影响",
+    "设计 Sparse Context 机制，在保证长时程一致性的同时控制计算开销",
+    "将视频世界建模从被动探索范式拓展为主动、可干预的交互式编辑范式",
+    "支持多轮、跨帧的语义级精准编辑（如替换物体、修改属性、插入新元素）"
+  ],
+  "method": {
+    "problem": "如何在视频世界模型中实现低延迟、高保真的流式编辑与跨帧参考，同时维持长时程时空一致性",
+    "approach": "在自回归视频生成框架中嵌入可插拔的编辑感知模块，解耦条件建模与内容生成",
+    "design": [
+      "Gated Causal Attention：门控机制约束参考图像与编辑指令仅影响当前及后续帧，保持因果性",
+      "Sparse Context：基于重要性采样的稀疏历史帧缓存，替代全帧记忆",
+      "双路径条件编码器：分别处理文本编辑指令与参考图像特征，并动态融合",
+      "编辑感知位置编码：显式建模编辑触发时刻与作用范围"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "EditWorld 在保持生成质量的同时显著提升编辑响应速度与引用灵活性，验证了交互式视频世界建模的可行性",
+    "impact": "为具身智能、虚拟现实、AIGC内容创作提供首个支持实时干预的视频世界建模基础架构",
+    "limitations": "当前依赖高质量参考图像输入；对细粒度物理交互建模尚不充分"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "EditWorld",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "交互式编辑瓶颈",
+        "note": "传统视频世界模型缺乏对流式编辑指令与参考图像的实时响应能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "门控稀疏建模",
+        "note": "Gated Causal Attention + Sparse Context 实现高效、因果一致的条件注入",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "可干预世界范式",
+        "note": "首次定义并实现支持多轮语义编辑与跨帧引用的视频世界交互协议",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "流式编辑验证",
+        "note": "在多个基准上实现毫秒级编辑响应与帧间一致性保持，定性效果显著提升",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AIGC新基座",
+        "note": "为下一代可编辑、可引用、可协作的生成式世界模型提供核心架构参考",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "TraceDance 是一种自动化系统，旨在从真实世界智能体部署轨迹中构建高质量行为基准。它采用 Anchor-and-Confirm 机制与 Anchor Synthesis Loop，针对用户指定的不良行为（如幻觉、越权、响应延迟等）自动生成可复现、语义一致的测试用例，无需人工标注或合成数据。",
+  "keyPoints": [
+    "首创从真实部署轨迹中自动提取行为基准的端到端框架",
+    "提出 Anchor-and-Confirm 机制实现不良行为的精准定位与验证",
+    "设计 Anchor Synthesis Loop 支持迭代式锚点增强与泛化",
+    "完全免人工标注，支持用户自定义不良行为类型",
+    "生成的基准具备真实场景覆盖性与行为可解释性"
+  ],
+  "method": {
+    "problem": "现有智能体行为基准多依赖人工构造或合成数据，缺乏真实部署场景的多样性、复杂性与错误模式保真度",
+    "approach": "以真实轨迹为源数据，通过锚点发现、确认与合成闭环，自动提炼可泛化的不良行为测试模式",
+    "design": [
+      "轨迹分段与行为语义解析：对原始部署日志进行动作-状态-反馈三元组建模",
+      "Anchor-and-Confirm：基于规则+轻量模型识别潜在不良行为锚点，并通过上下文一致性验证",
+      "Anchor Synthesis Loop：对验证锚点进行扰动、重写与场景迁移，生成多样化测试变体",
+      "基准质量控制：引入轨迹覆盖率、行为区分度与人工校验通过率三重评估指标"
+    ],
+    "setup": "在多个已部署LLM智能体（客服、运维、教育类）的真实轨迹数据集上验证；基线对比包括BEAVER-TAIL、AgentBench等"
+  },
+  "conclusion": {
+    "findings": "TraceDance 显著提升行为基准的真实性与构建效率，在5类典型不良行为上生成的测试集使SOTA检测器F1提升12.7%，且人工评估通过率达89.4%",
+    "impact": "为智能体安全评估提供可扩展、可审计、贴近生产环境的新范式，推动从‘合成评测’向‘轨迹驱动评测’演进",
+    "limitations": "对低频极端错误模式覆盖有限；依赖轨迹中可观测的行为信号，隐式策略缺陷难以捕获"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "TraceDance",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "基准真实性不足",
+        "note": "现有基准多为人工/合成，缺乏真实部署中的长尾错误与上下文耦合",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Anchor-and-…",
+        "note": "双阶段机制：先定位可疑锚点，再通过多维上下文验证其不良行为属性",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "轨迹驱动基准构建",
+        "note": "首个全自动、免标注、支持用户定制不良行为类型的基准生成系统",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高效可复现评测",
+        "note": "在多个部署场景验证有效性；测试集可导出为标准格式（JSONL+trace schema）",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动评测范式变革",
+        "note": "为智能体鲁棒性、安全性、合规性评估提供贴近生产环境的新基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

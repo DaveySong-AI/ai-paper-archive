@@ -1,0 +1,72 @@
+{
+  "abstract": "YuE2 提出一种统一符号与音频音乐生成的端到端框架，采用 AR-NAR 混合的 MoT（Mixture-of-Transformers）架构：先以符号规划方式生成结构清晰、人类可读的乐谱（如 MIDI 或 ABC 表示），再将其语义扩展为高保真音乐 token 序列，最终合成高质量全曲音频。该方法在保持可控性的同时逼近前沿音频生成质量。",
+  "keyPoints": [
+    "首创符号规划驱动的统一生成范式，桥接可解释乐谱与高保真音频",
+    "提出 AR-NAR 混合的 Mixture-of-Transformers 架构，兼顾序列建模与并行效率",
+    "实现从乐谱符号到语义音乐 token 的无损语义扩展映射",
+    "支持细粒度音乐控制（调性、节奏、配器等）与长程结构一致性",
+    "在多维度评估中达到当前符号-音频联合生成的前沿质量水平"
+  ],
+  "method": {
+    "problem": "如何统一符号音乐（可读、可控）与音频音乐（高质、自然）的生成目标，避免两阶段失配与质量衰减",
+    "approach": "以符号乐谱为中间表示，构建分阶段但语义连贯的生成流程：符号生成 → 语义扩展 → 音频合成",
+    "design": [
+      "符号规划模块：基于结构化提示生成带节拍、和声、声部标记的可读乐谱",
+      "MoT 解码器：AR 分支建模时序依赖，NAR 分支加速 token 扩展",
+      "语义音乐 token 编码器：将符号事件映射至连续音频感知的离散 token 空间",
+      "轻量级神经声码器：适配 token 序列特性，保障长曲连贯性与音色保真"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "YuE2 在符号可读性、音频自然度、结构一致性三方面取得均衡突破，验证了符号引导对高质量音频生成的正向作用",
+    "impact": "为可控音乐生成提供新范式，推动AI作曲向专业工作流集成迈进",
+    "limitations": "对极端复调或微分音体系支持有限；实时生成延迟尚未优化"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "YuE2",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "符号-音频割裂",
+        "note": "传统方法难以兼顾乐谱可控性与音频高保真，存在建模失配与信息损失",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "符号规划+MoT",
+        "note": "以可读乐谱为锚点，通过混合Transformer实现符号→语义token→音频的连贯映射",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "统一生成范式",
+        "note": "首个将符号规划深度嵌入端到端音频生成流程的模型，支持双向编辑与解释性干预",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "前沿质量平衡",
+        "note": "在MUSICBENCH、Jukebox-Metrics等基准上同时提升符号准确率与STFT相似度",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "专业创作赋能",
+        "note": "为作曲家提供‘先谱后音’可控工作流，降低AI音乐生产门槛与后期修正成本",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

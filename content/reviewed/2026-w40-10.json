@@ -1,0 +1,72 @@
+{
+  "abstract": "REALM是一种面向具身反应式聆听的由粗到细生成框架，旨在使虚拟听者能根据说话人音频实时生成自然、上下文一致的身体动作与表情反应。其核心是Reactive Gated Speaker-Listener Fusion模块，融合听者动作历史与说话人音频特征，并通过粗解码器生成基础动作轨迹，在表情子空间中叠加音频条件下的随机残差以增强多样性与真实性。",
+  "keyPoints": [
+    "提出首个专为具身反应式聆听设计的端到端生成框架REALM",
+    "引入Reactive Gated Speaker-Listener Fusion模块实现跨角色时序交互建模",
+    "采用由粗到细两阶段生成策略：粗解码器输出全局动作轨迹，细粒度残差建模局部表情动态",
+    "在表情子空间中引入音频条件随机残差，兼顾可控性与生成多样性",
+    "强调动作历史与语音信号的联合建模，提升反应时序一致性与社交合理性"
+  ],
+  "method": {
+    "problem": "如何让具身代理在实时对话中基于说话人音频生成自然、个性化、时序连贯的反应性肢体与表情动作",
+    "approach": "构建音频驱动的两阶段生成架构，融合听者自身历史状态与说话人语音信号，分层建模宏观动作与微观表情",
+    "design": [
+      "Reactive Gated Speaker-Listener Fusion：门控机制动态加权融合说话人音频嵌入与听者历史动作隐状态",
+      "Coarse Decoder：基于融合特征预测低频、全局性的身体运动轨迹（如点头、倾身）",
+      "Fine-grained Residual Modeling：在预定义表情子空间中，以音频为条件生成随机残差向量",
+      "History-Aware Temporal Encoding：对听者动作历史进行时序编码，保障反应连续性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "REALM在反应自然性、音频-动作对齐度和个体差异建模方面显著优于基线方法，支持长时序稳定响应",
+    "impact": "为具身AI、虚拟人交互、远程协作系统提供可扩展的反应式聆听建模范式，推动音频驱动具身生成研究发展",
+    "limitations": "依赖高质量动捕数据训练；未显式建模多说话人场景与复杂语义意图"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "REALM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "反应式聆听生成",
+        "note": "解决具身代理如何基于语音实时生成自然、连贯、个性化的非语言反应",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "粗到细两阶段生成",
+        "note": "粗解码器输出全局动作轨迹，表情子空间叠加音频条件随机残差",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "RG-SLF融合模块",
+        "note": "门控机制融合说话人音频与听者动作历史，实现跨角色动态交互建模",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高保真反应生成",
+        "note": "在动作自然性、音频同步性、个体风格多样性上取得综合提升",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "具身交互新范式",
+        "note": "为虚拟人、智能助手、元宇宙社交等场景提供可部署的反应式聆听技术基础",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

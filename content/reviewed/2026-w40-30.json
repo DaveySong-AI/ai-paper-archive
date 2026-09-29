@@ -1,0 +1,72 @@
+{
+  "abstract": "SpatialSpeak 是面向空间链式推理的 QA 原生重建框架，通过两阶段设计融合局部与全局上下文建模，将 QA 重建预训练与空间链式推理（CoT）学习协同优化。在 ReVSI 基准上显著提升 CoT-VC 增益（+6.9 分），并在 ReVSI、VSI-Bench 和 SPAR-Bench 上均达 SOTA 性能。",
+  "keyPoints": [
+    "提出 QA-Native Reconstruction 预训练范式，直接以问答对为基本单元进行空间语义重建",
+    "构建空间链式推理（Spatial CoT）专用学习机制，显式建模位置、方向、拓扑等空间关系推理路径",
+    "引入局部-全局双粒度上下文融合模块，增强空间指代与跨步推理一致性",
+    "两阶段训练策略：先 QA 重建预训练，再空间 CoT 微调，实现知识解耦与渐进强化",
+    "在三大空间视觉推理基准（ReVSI/VSI-Bench/SPAR-Bench）上全面超越现有方法"
+  ],
+  "method": {
+    "problem": "空间视觉问答中链式推理能力弱、上下文建模割裂、QA 结构未被原生利用",
+    "approach": "将空间链式推理建模为 QA 原生重建任务，通过两阶段协同训练实现结构感知与推理能力联合优化",
+    "design": [
+      "QA-Native Reconstruction：以原始问答对为输入输出单元，重构空间推理过程的中间语义状态",
+      "Local-Global Context Encoder：分别捕获物体级局部空间关系与场景级全局布局约束",
+      "Spatial CoT Tokenizer：将空间推理步骤离散化为可学习 token 序列，支持显式链式建模",
+      "CoT-VC Alignment Loss：对齐模型生成的推理链与人工标注的空间验证链（CoT-VC）"
+    ],
+    "setup": "在 ReVSI、VSI-Bench、SPAR-Bench 三个空间视觉推理基准上评估；主指标为准确率；对比基线含 LLaVA-Spatial、Vary、CoT-VC 等"
+  },
+  "conclusion": {
+    "findings": "QA 原生重建显著提升空间链式推理稳定性与可解释性；局部-全局上下文协同是空间推理性能跃升的关键；两阶段训练优于端到端联合优化。",
+    "impact": "为多模态空间推理提供新范式，推动 QA 结构驱动的视觉语言模型设计；促进空间认知能力的可验证、可分解建模。",
+    "limitations": "依赖高质量空间 CoT 标注；在开放空间场景（如非结构化户外）泛化性有待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SpatialSpeak",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "空间CoT弱",
+        "note": "现有方法难以建模多步空间关系推理，缺乏结构化中间表示",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "QA原生重建",
+        "note": "以问答对为基本单元，重建空间推理链，统一预训练与推理目标",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "双粒度编码器",
+        "note": "局部捕捉物体相对关系，全局建模场景拓扑约束，支持跨步一致性推理",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "ReVSI 62.8",
+        "note": "较最强基线高8.7分，CoT-VC增益达6.9分，三大基准SOTA",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "空间推理新范式",
+        "note": "推动视觉语言模型从‘答对’转向‘推对’，支撑具身智能与空间认知研究",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出δ-Vision方法，通过轻量低秩MLP适配器逐层重建视觉状态，替代传统Transformer中视觉token的重复演化；保留全部视觉token以支持文本检索，同时在低维子空间实现高效信息压缩与重建，显著降低计算开销且不牺牲准确率。",
+  "keyPoints": [
+    "提出δ-Vision框架，用轻量MLP替代视觉token在多模态Transformer中的逐层演化",
+    "发现视觉到文本的信息流高度集中在低维子空间，支持高效低秩建模",
+    "逐层构建视觉记忆，完整保留原始视觉token用于下游文本检索任务",
+    "在图像与视频基准上，计算量相当或更低时准确率超越视觉token剪枝基线",
+    "重建过程保持高余弦相似度与低重建误差，验证MLP对视觉状态的强逼近能力"
+  ],
+  "method": {
+    "problem": "多模态语言模型中视觉token重复演化导致计算冗余，而剪枝又损害文本检索能力",
+    "approach": "用轻量低秩MLP适配器逐层重建视觉状态，解耦视觉演化与token保留",
+    "design": [
+      "引入δ-Adapter：每层独立的低秩MLP，输入为前一层重建状态与原始视觉token差值",
+      "设计残差式重建结构，显式建模各层视觉状态的增量变化",
+      "约束适配器输出在低维子空间，匹配视觉-文本跨模态信息流的低维本质",
+      "冻结主干视觉编码器，仅训练δ-Adapter，保障训练效率与稳定性"
+    ],
+    "setup": "在标准图像理解（如VQAv2、OK-VQA）与视频理解（如VideoQA）基准上评估，对比token剪枝、特征蒸馏等基线"
+  },
+  "conclusion": {
+    "findings": "轻量MLP足以高效重建多模态模型中的逐层视觉状态，且完整保留token可提升文本检索鲁棒性",
+    "impact": "为多模态模型轻量化提供新范式，推动视觉状态建模从‘演化’转向‘重建’",
+    "limitations": "未明确报告不同视觉编码器架构下的泛化性；动态视频场景的时序建模能力需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "δ-Vision",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "视觉token冗余演化",
+        "note": "Transformer中重复处理视觉token导致计算浪费，剪枝又损害检索能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "δ-Adapter重建",
+        "note": "逐层轻量MLP适配器，基于残差与低秩约束重建视觉状态",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "保留token+低维重建",
+        "note": "首次实现视觉状态高效重建与完整token保留的协同设计",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "精度与效率双赢",
+        "note": "图像/视频基准上准确率超剪枝基线，计算量相当或更低",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "多模态轻量化新路径",
+        "note": "推动视觉建模范式转变，为边缘端多模态部署提供可能",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

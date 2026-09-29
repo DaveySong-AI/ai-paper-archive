@@ -1,0 +1,72 @@
+{
+  "abstract": "SciGen-Verifier 是面向科学图像生成的可解释验证多模态推理器，支持二值判断、自然语言解释与纠错编辑三重输出。通过冷启动监督微调与课程式两阶段强化学习训练，在自建基准 SciGen-Verify 上达到媲美更大闭源模型的性能，同时可作为在线 critic 实现图像迭代修正。",
+  "keyPoints": [
+    "提出首个专用于科学图像生成验证的多模态推理框架",
+    "构建覆盖指令遵循、多学科推理与世界知识的 SciGen-Verify 基准",
+    "采用三层协议：二值判断 + 可解释性说明 + 可执行纠错编辑",
+    "引入冷启动监督微调加课程式两阶段强化学习训练范式",
+    "支持作为在线 critic 驱动生成图像的迭代式修正"
+  ],
+  "method": {
+    "problem": "科学图像生成结果的真实性、合理性与指令一致性缺乏可解释验证机制",
+    "approach": "构建端到端多模态推理器，联合理解科学图像、文本指令与领域知识，输出结构化验证反馈",
+    "design": [
+      "设计三输出头：验证标签（True/False）、自然语言解释、像素级/语义级编辑指令",
+      "构建 SciGen-Verify 基准，含跨学科科学图像-指令对及专家标注验证三元组",
+      "采用冷启动 SFT 初始化，再以课程学习分阶段优化判断、解释、编辑子任务",
+      "引入图像-文本-知识图谱联合对齐模块增强科学事实感知"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "SciGen-Verifier 在 SciGen-Verify 基准上实现高准确率与强解释一致性，验证能力不依赖模型规模优势",
+    "impact": "为科学AIGC建立可信验证范式，推动可解释AI在科研图像生成中的落地应用",
+    "limitations": "对高度抽象或未见学科组合的泛化能力待验证；图像编辑指令执行需耦合外部生成器"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SciGen-Veri…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "科学图像验证难",
+        "note": "缺乏兼顾真实性、指令一致性和可解释性的验证工具",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "三阶段验证架构",
+        "note": "二值判断→自然语言解释→可执行纠错编辑，统一多模态输入",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "SciGen-Veri…",
+        "note": "首个多学科、多任务、带专家三元组标注的科学图像验证基准",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "媲美大模型性能",
+        "note": "在自建基准上达到与更大闭源模型相当的验证准确率与解释质量",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "在线critic机制",
+        "note": "支持嵌入生成pipeline，实现图像-验证-修正闭环迭代",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

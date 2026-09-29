@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出Diffusion Reward Models（DRM），将奖励建模重构为条件密度估计任务p(r|x,y)，利用冻结的LLM编码器提取文本对(x,y)特征，驱动轻量级Diffusion Transformer从高斯噪声中逐步去噪生成连续奖励向量。该方法避免预设输出分布假设，天然支持人类偏好数据的多模态、不确定性与结构化表达。",
+  "keyPoints": [
+    "首次将扩散模型引入奖励建模，建模奖励r的完整条件分布p(r|x,y)",
+    "采用冻结LLM编码器作为条件信号源，兼顾语义表征能力与训练效率",
+    "使用轻量Diffusion Transformer实现高维连续奖励向量的生成式建模",
+    "无需假设奖励服从单峰分布，可自然刻画人类偏好的多模态特性",
+    "端到端学习奖励的不确定性与结构化依赖关系"
+  ],
+  "method": {
+    "problem": "传统奖励模型（如RM、GRM）常假设奖励服从简单分布（如标量回归或单峰分布），难以建模人类偏好中的多模态性、歧义性与结构化反馈",
+    "approach": "将奖励建模转化为条件扩散生成任务：以文本对(x,y)为条件，用扩散模型学习从噪声到奖励向量r的逆过程",
+    "design": [
+      "冻结LLM编码器提取x和y的联合嵌入作为扩散模型的条件输入",
+      "采用DiT架构的轻量扩散Transformer作为去噪主干网络",
+      "将奖励r建模为d维连续向量（而非标量），支持细粒度结构化评估",
+      "使用v-prediction参数化与渐进式时间步调度提升训练稳定性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "DRM在多个偏好数据集上展现出更强的校准性、多模态拟合能力与跨任务泛化性，尤其在存在分歧或模糊偏好的样本上显著优于标量RM基线",
+    "impact": "为基于人类反馈的强化学习（RLHF）提供更鲁棒、可解释的奖励建模新范式，推动对齐研究从‘点估计’迈向‘分布估计’",
+    "limitations": "推理延迟高于标量RM；高维奖励向量的可解释性依赖后处理；未验证在超大规模LLM上的部署可行性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "DRM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "奖励分布建模局限",
+        "note": "传统RM假设单峰/标量分布，无法刻画人类偏好中的多模态与不确定性",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "条件扩散生成",
+        "note": "以冻结LLM编码为条件，Diffusion Transformer将噪声迭代去噪为奖励向量r",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "分布式奖励建模",
+        "note": "首个将扩散模型用于p(r|x,y)估计的工作，支持向量奖励与多模态结构",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "强校准与泛化性",
+        "note": "在分歧样本上表现更优，奖励预测具备自然不确定性量化能力",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动RLHF范式升级",
+        "note": "从点估计奖励转向分布估计，为安全对齐与可解释AI提供新基础",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

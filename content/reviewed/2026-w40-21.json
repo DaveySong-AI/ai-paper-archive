@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出'Physical Coding'范式，将物理世界任务的状态与执行统一建模为可演化的代码形式，并构建HexaAnything智能体框架，集成视觉-语言-动作（VLA）与世界模型增强控制（WAM）策略，通过感知-规划-控制闭环及外部反馈实现自进化编程，推动AI从数字程序向具身物理智能跃迁。",
+  "keyPoints": [
+    "提出Physical Coding新范式，用代码统一表征物理任务状态与执行",
+    "构建HexaAnything智能体框架，支持多模态感知、分层规划与闭环控制",
+    "融合VLA与WAM策略，实现基于环境反馈的在线代码演化与决策优化",
+    "强调'在环决策'机制，使智能体能在真实物理交互中持续自我改进",
+    "bridging the gap between symbolic programming and embodied intelligence"
+  ],
+  "method": {
+    "problem": "如何让编程智能体超越纯数字环境，具备在动态物理世界中自主理解、规划、执行与进化的通用能力",
+    "approach": "以代码为统一媒介，将物理任务建模为可读、可执行、可演化的程序实体，通过感知反馈驱动代码级自我修改",
+    "design": [
+      "Physical Coding：定义任务状态、动作接口与执行语义的可计算代码表示",
+      "HexaAnything架构：六模块协同框架（感知/记忆/规划/编译/执行/反馈）",
+      "VLA-WAM混合策略：VLA提供跨模态指令 grounding，WAM提供物理动力学约束下的动作优化",
+      "Feedback-to-Code 编译器：将传感器反馈、失败信号、人类修正等转化为代码补丁或重构指令"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Physical Coding 能有效桥接符号化编程能力与具身物理交互需求，HexaAnything 在仿真与真实机器人平台上展现出任务泛化性与演化稳定性",
+    "impact": "为构建可解释、可调试、可持续进化的具身智能系统提供新范式，推动AI向'可编程物理智能'演进",
+    "limitations": "当前依赖高质量仿真预训练与受限物理接口；真实世界长程演化鲁棒性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Physical Co…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "物理世界编程鸿沟",
+        "note": "传统代码无法直接表达物理状态变化与实时反馈闭环",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "HexaAnythin…",
+        "note": "六模块协同，支持感知-规划-执行-反馈全链路代码化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Physical Co…",
+        "note": "用可演化代码统一表征任务状态、动作语义与执行逻辑",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "自进化闭环验证",
+        "note": "在仿真与真实平台实现基于反馈的代码级策略迭代与任务泛化",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "可编程物理智能",
+        "note": "为具身AI提供可解释、可调试、可持续进化的新型基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

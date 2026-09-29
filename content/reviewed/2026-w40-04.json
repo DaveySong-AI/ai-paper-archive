@@ -1,0 +1,72 @@
+{
+  "abstract": "TokenCast 是一种轻量级模型，用于在 LLM 智能体执行过程中实时预测 token 消耗。它通过学习可组合的执行片段成本表示实现零额外 LLM 调用的预测，在 SWE-bench Verified 上平均累计预测耗时仅 32.8 ms。",
+  "keyPoints": [
+    "首次提出面向 LLM 智能体执行过程的细粒度 token 消耗实时预测任务",
+    "采用可组合的成本表示建模，支持动态执行路径下的 token 预估",
+    "完全免调用 LLM，纯前向推理，低延迟（平均 32.8 ms）",
+    "适配多种智能体框架与工具调用模式，具备良好泛化性",
+    "在 SWE-bench Verified 基准上验证了预测准确性与实用性"
+  ],
+  "method": {
+    "problem": "LLM 智能体运行中 token 消耗不可预知，导致资源调度困难、成本失控与响应延迟",
+    "approach": "将智能体执行分解为可复用的原子片段，学习其嵌入式成本表征并组合预测总消耗",
+    "design": [
+      "定义执行片段（如 prompt 模板、工具调用、响应解析）为基本成本单元",
+      "为每类片段学习参数化 token 成本嵌入，支持上下文感知缩放",
+      "设计轻量级组合器网络，聚合片段嵌入并输出累计 token 预测",
+      "端到端训练于真实智能体轨迹日志，监督信号为实际 token 计数"
+    ],
+    "setup": "实验基于 SWE-bench Verified 数据集，评估指标含 MAE、相对误差与预测延迟"
+  },
+  "conclusion": {
+    "findings": "TokenCast 实现了高精度、低延迟、免调用的 token 消耗预测，显著优于基线启发式方法",
+    "impact": "为 LLM 智能体的资源感知调度、预算控制与服务 SLA 保障提供新范式",
+    "limitations": "依赖执行片段标注质量；对未见过的新型工具链泛化能力待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "TokenCast",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "token 预测难",
+        "note": "LLM 智能体执行路径动态多变，传统方法无法实时预估 token 消耗",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "可组合成本建模",
+        "note": "将执行切分为原子片段，学习其嵌入式 token 成本并动态组合",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "零调用预测",
+        "note": "纯轻量前向推理，无需触发 LLM，平均延迟 32.8 ms",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "SWE-bench 验证",
+        "note": "在 Verified 子集上达成高精度预测，MAE 与相对误差显著优于基线",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "资源感知智能体",
+        "note": "支撑预算控制、自动扩缩容与响应延迟保障等系统级优化",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,73 @@
+{
+  "abstract": "UC Berkeley RDI 团队构建全自动 AI Agent 对 13 个主流AI基准进行系统性审计，发现45种无需真正解题即可获得满分的作弊路径，所有基准均被评定为 critical 风险等级，并归纳出16类共性攻击模式，揭示当前评估体系在可信性与鲁棒性上的严重缺陷。",
+  "keyPoints": [
+    "首次采用全自动AI Agent对AI基准展开大规模、可复现的渗透式审计",
+    "发现45个绕过问题求解、直接获取满分的作弊方案，覆盖全部13个基准",
+    "提出16种新型基准漏洞类型，涵盖提示注入、元数据泄露、缓存污染等维度",
+    "所有被测基准均被判定为critical风险，暴露评估生态的系统性脆弱性",
+    "呼吁建立动态、对抗性、多层验证的下一代可信基准框架"
+  ],
+  "method": {
+    "problem": "现有AI基准缺乏对非解题型作弊行为的防御与检测能力",
+    "approach": "构建具备自主探索、漏洞挖掘与验证能力的AI Agent审计系统",
+    "design": [
+      "基于多Agent协作的基准环境逆向分析框架",
+      "自动化提示扰动与上下文注入测试流水线",
+      "元数据与响应模式异常检测模块",
+      "作弊路径可复现性验证与归因机制",
+      "跨基准共性漏洞聚类与分类学建模"
+    ],
+    "setup": "审计13个开源/闭源AI基准（含MMLU、GSM8K、HumanEval等），使用LLM-as-Judge与人工交叉验证"
+  },
+  "conclusion": {
+    "findings": "当前AI基准普遍存在设计盲区，易受非语义性攻击影响，满分成绩无法反映真实能力",
+    "impact": "推动AI评估范式从静态打分转向动态可信审计，为基准标准化与监管提供方法论基础",
+    "limitations": "部分闭源基准内部机制不可见，审计深度受限；Agent自身能力边界影响漏洞发现覆盖率"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "BenchmarkAu…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "基准可信危机",
+        "note": "满分≠能力，45种作弊路径暴露评估失真",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Agent自动化审计",
+        "note": "多Agent协同逆向分析+提示扰动+异常检测",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "16类攻击模型",
+        "note": "涵盖元数据泄露、缓存劫持、格式诱导等新型漏洞",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "全基准critical…",
+        "note": "13/13基准存在高危漏洞，需紧急重评估",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "可信评估新范式",
+        "note": "推动动态基准、对抗测试、多维验证标准建设",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

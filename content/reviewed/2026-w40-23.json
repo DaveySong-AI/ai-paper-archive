@@ -1,0 +1,72 @@
+{
+  "abstract": "VGGT-Diff 提出一种融合视觉几何先验与预训练视频扩散模型的新视角合成方法，专为稀疏视角输入设计。通过将VGGT-Ω提取的含3D点与置信度的视觉token，经置信度感知的Visual Geometry Router（VGR）转化为查询对齐的latent条件，并引入Point-Track Residual Consistency（PTRC）沿可靠3D轨迹正则化残差，提升几何一致性与生成质量。",
+  "keyPoints": [
+    "提出Visual Geometry Router（VGR），实现3D几何信息到扩散模型latent空间的置信度加权映射",
+    "引入Point-Track Residual Consistency（PTRC），利用可靠3D轨迹约束扩散过程中的帧间残差一致性",
+    "复用预训练视频扩散模型，避免从头训练，降低计算开销并提升泛化性",
+    "每个视觉token显式关联3D点坐标与置信度，增强稀疏视角下的几何可解释性与可控性",
+    "在稀疏视角设定下实现高质量、几何一致的新视角视频合成"
+  ],
+  "method": {
+    "problem": "稀疏视角输入下的新视角合成中几何不一致、时序抖动与细节失真问题",
+    "approach": "将视觉几何结构化表征作为条件注入预训练视频扩散模型，以几何引导生成过程",
+    "design": [
+      "VGGT-Ω编码器提取带3D点与置信度的视觉token",
+      "置信度感知的Visual Geometry Router（VGR）实现token到latent查询的几何对齐映射",
+      "Point-Track Residual Consistency（PTRC）模块沿高置信度3D轨迹约束残差预测",
+      "联合优化几何路由损失与扩散重建损失"
+    ],
+    "setup": "实验基于稀疏多视角视频数据集（具体配置详见原文）"
+  },
+  "conclusion": {
+    "findings": "VGGT-Diff在稀疏视角设定下显著提升新视角合成的几何保真度与时序稳定性，优于纯学习型与传统MVS基线方法",
+    "impact": "为扩散模型引入显式3D几何归纳偏置提供新范式，推动神经渲染与生成式视觉几何的交叉发展",
+    "limitations": "依赖VGGT-Ω提供的初始几何估计质量；对极稀疏视角（如<3视图）鲁棒性有待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "VGGT-Diff",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "稀疏视角合成难",
+        "note": "视角少导致深度模糊、时序不一致、纹理失真",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "几何引导扩散",
+        "note": "VGR路由3D token至扩散latent，PTRC约束残差轨迹",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "VGR与PTRC模块",
+        "note": "置信度感知几何路由 + 可靠3D轨迹残差正则化",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "几何一致新视角",
+        "note": "在稀疏输入下生成高保真、低抖动的合成视频",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "扩散+几何新范式",
+        "note": "推动神经渲染中生成模型与几何先验的深度融合",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
