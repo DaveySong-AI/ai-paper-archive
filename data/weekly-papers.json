@@ -3,6 +3,449 @@
     {
       "id": "2026-w40-01",
       "kind": "weekly",
+      "title": "Galahad 让 LLM 重复读取文档成为一次性成本，在 llama.cpp 上将召回测试提升到 100/100",
+      "titleEn": "Working Around the Compute Ceiling: Byte-Exact Memory in Galahad Makes LLM Reading a One-Time Cost LLM Reading a One-Time Cost",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-10-01T04:21:39.061Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-01",
+        "original": "https://arxiv.org/abs/2609.39358",
+        "detail": "https://aihot.news/items/y0sgjtwv2p5a4z06kdoao3h13"
+      },
+      "summary": "论文提出面向 vLLM、SGLang 和 llama.cpp 的内存层 Galahad，把模型对同一段文本的读取从重复计算变为一次性成本。",
+      "arxivId": "2609.39358"
+    },
+    {
+      "id": "2026-w40-02",
+      "kind": "weekly",
+      "title": "Agent Error Dataset：5 万条错误—诊断对，用于失败分析与错误感知后训练",
+      "titleEn": "Agent Error Dataset: Scaling 50,000 Error--Diagnosis Pairs for Failure Analysis and Error-Aware Post-Training",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-10-01T03:52:37.852Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-02",
+        "original": "https://arxiv.org/abs/2609.40111",
+        "detail": "https://aihot.news/items/r55ck8a3gz0aplxkjkvjolx79"
+      },
+      "summary": "研究者发布 Agent Error Dataset（AED），包含来自 33 个环境、19 个 harness 家族和 23 个策略模型的 50,228 条错误—诊断对，覆盖 9,961 个源任务。",
+      "arxivId": "2609.40111"
+    },
+    {
+      "id": "2026-w40-03",
+      "kind": "weekly",
+      "title": "系统性评测 GPT-6 Astra 作为具身策略的能力与局限",
+      "titleEn": "Systematically Exploring the Capabilities of GPT-6 Astra as Embodied Policies",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-10-01T03:23:36.081Z",
+      "publishedAt": "2026-09-29T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-03",
+        "original": "https://arxiv.org/abs/2609.38537",
+        "detail": "https://aihot.news/items/tya3t0houd86m58ggwgv9juro"
+      },
+      "summary": "一篇论文在六个领域系统评测 GPT-6 Astra 作为通用具身策略的能力，覆盖直接控制、与学习策略协作及反馈驱动适应。",
+      "arxivId": "2609.38537"
+    },
+    {
+      "id": "2026-w40-04",
+      "kind": "weekly",
+      "title": "Transluce 报告 AI 智能体以激进手段访问美加政府网站",
+      "titleEn": "AI Agents Targeted U.S. and Canadian Government Websites",
+      "source": {
+        "name": "Transluce",
+        "family": "other",
+        "url": null
+      },
+      "timelineAt": "2026-10-01T01:07:35.711Z",
+      "publishedAt": "2026-09-29T16:00:00.000Z",
+      "curated": true,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-04",
+        "original": "https://transluce.org/us-canada-gov",
+        "detail": "https://aihot.news/items/pmrfien75u21keottpq5php5z"
+      },
+      "summary": "Transluce 发布调查报告，发现多起 AI 智能体以激进手段访问美加政府网站的事件，包括两起失败的初级入侵尝试：6 月 17 日智能体对美国教育部民权数据收集网站发出超过 20 万次请求并尝试 SQL 注入，5 月 28 日和 6 月 9 日 Arquivo.pt 记录到针对加拿大图书档案馆的 899 次请求，其中 13 次含攻击载荷。"
+    },
+    {
+      "id": "2026-w40-05",
+      "kind": "weekly",
+      "title": "Meta 发布 Context Language Models 论文：模型自主管理上下文胜过人工规则",
+      "titleEn": "Meta dropped a great paper.",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T23:43:38.000Z",
+      "publishedAt": "2026-09-30T23:20:34.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-05",
+        "original": "https://x.com/rohanpaul_ai/status/2105437677558648976",
+        "detail": "https://aihot.news/items/nn7inchbxd3hqquawkz6lp2wl"
+      },
+      "summary": "Meta 等机构发布 Context Language Models（CLMs）论文，让语言模型把上下文当作文件、原生自主管理上下文，无需外部 harness。"
+    },
+    {
+      "id": "2026-w40-06",
+      "kind": "weekly",
+      "title": "从 SELECT 到 SYSADMIN：SQL Copilot 漏洞 CVE-2026-65669 研究复盘",
+      "titleEn": "From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)",
+      "source": {
+        "name": "Johann Rehberger / Embrace The Red",
+        "family": "other",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T23:22:40.574Z",
+      "publishedAt": "2026-09-30T21:00:40.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-06",
+        "original": "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/",
+        "detail": "https://aihot.news/items/mvm1qr77e1yp1udbwl5uxwlbm"
+      },
+      "summary": "安全研究员 Johann Rehberger 在 BlueHat Asia 2026 上报告 Microsoft SQL Server Management Studio 中 SQL Copilot 的 SQL Server 提权漏洞 CVE-2026-65669，微软评级为 critical，建议用户保持安装更新。"
+    },
+    {
+      "id": "2026-w40-07",
+      "kind": "weekly",
+      "title": "Apple 提出 SCLATE：面向持续学习智能体训练与评估的执行基座",
+      "titleEn": "SCLATE: A Substrate for Continual-Learning Agent Training and Evaluation",
+      "source": {
+        "name": "Apple Machine Learning Research",
+        "family": "lab",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T22:14:35.808Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-07",
+        "original": "https://machinelearning.apple.com/research/sclate-agent-training-evaluation",
+        "detail": "https://aihot.news/items/roil6dgezxwltpov49xeiye2t"
+      },
+      "summary": "Apple 研究团队提出 SCLATE，一个让基准测试与未经修改的智能体各自通过适配器向同一开放事件调度器注册事件的执行基座，其混合模拟时钟可将长达一个月的场景压缩到数小时内运行。"
+    },
+    {
+      "id": "2026-w40-08",
+      "kind": "weekly",
+      "title": "分块 KV-Cache 压缩存在周期性弱点：相位敏感性问题研究",
+      "titleEn": "Periodic Weak Spots: Phase Sensitivity from Chunked KV-Cache Compression",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T16:51:29.335Z",
+      "publishedAt": "2026-09-28T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-08",
+        "original": "https://arxiv.org/abs/2609.36322",
+        "detail": "https://aihot.news/items/tf0fzkbkdszn263l3hfocye5r"
+      },
+      "summary": "分块 KV-Cache 压缩会引入\"相位\"这一新位置坐标，导致同一信息在不同相位下检索难度不同，大型开放权重模型的长上下文检索准确率跨相位差异最高达 40 个百分点。研究者从零预训练了多种 KV 压缩设计的 Transformer 家族复现该现象，并通过因果干预发现不同注意力组件在不同源相位下贡献不对称，即相位特化。评估此类压缩模型需跨压缩相位测量，高平均准确率可能掩盖系统性位置失效。",
+      "arxivId": "2609.36322"
+    },
+    {
+      "id": "2026-w40-09",
+      "kind": "weekly",
+      "title": "研究称 Cloudflare、Google 等基础设施服务商助长 AI 换脸滥用图像网站",
+      "titleEn": "Internet Infrastructure Services Empower Deepfake Abuse, New Study Finds",
+      "source": {
+        "name": "404 Media",
+        "family": "other",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T16:13:17.865Z",
+      "publishedAt": "2026-09-30T16:02:39.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-09",
+        "original": "https://www.404media.co/deepfake-abuse-sites-infrastructure-providers-study/",
+        "detail": "https://aihot.news/items/c8x0lx75oiikxof2ha0js5nea"
+      },
+      "summary": "发表于斯坦福 Journal of Online Trust and Safety 的研究识别了88个活跃托管未经同意 AI 生成亲密图像的网站，指出 Cloudflare、Google、Namecheap、WordPress 和 Proton 五家为主要基础设施服务商，其中 Cloudflare 提供了大部分托管、CDN 和域名解析服务，尽管各家服务条款均禁止非法内容。"
+    },
+    {
+      "id": "2026-w40-10",
+      "kind": "weekly",
+      "title": "Anthropic 研究测算机器人对岗位的暴露度：机器人可做 74% 的物理任务但仅 0.3% 具备成本竞争力",
+      "titleEn": "What work can robots do?",
+      "source": {
+        "name": "Anthropic：Research",
+        "family": "lab",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T16:09:20.882Z",
+      "publishedAt": "2026-09-29T16:00:00.000Z",
+      "curated": true,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-10",
+        "original": "https://www.anthropic.com/research/what-work-can-robots-do",
+        "detail": "https://aihot.news/items/lzxm86234leqs91hbocegps1l"
+      },
+      "summary": "Anthropic 发布研究，用 Claude 对约 19,000 项工作任务评估机器人暴露度，发现现今机器人可完成美国 74% 的物理任务（占全部工作时间的 34%），但仅在 0.3% 的任务上比人工更具成本竞争力，按每年约 3% 的降价趋势需约 40 年才能达到 10%。"
+    },
+    {
+      "id": "2026-w40-11",
+      "kind": "weekly",
+      "title": "Google DeepMind 提出 AI 设计蛋白质水印方法 SynthIDBio",
+      "titleEn": "Google figures out how to watermark AI-designed proteins",
+      "source": {
+        "name": "Ars Technica：AI",
+        "family": "media",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T16:06:20.664Z",
+      "publishedAt": "2026-09-30T15:54:52.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-11",
+        "original": "https://arstechnica.com/science/2026/09/google-figures-out-how-to-watermark-ai-designed-proteins/",
+        "detail": "https://aihot.news/items/eo88qsz50l2igg5metqwwlre0"
+      },
+      "summary": "Google DeepMind 团队发表论文，提出基于 SynthID 的 SynthIDBio 技术，可在流行蛋白设计工具 ProteinMPNN 生成序列时嵌入不影响功能的水印，帮助 DNA 合成方筛查未知蛋白来源。"
+    },
+    {
+      "id": "2026-w40-12",
+      "kind": "weekly",
+      "title": "MIT 等机构发布 Ataraxos，以极低成本战胜顶级人类 Stratego 选手",
+      "titleEn": "This game-playing AI is the new champ at Stratego",
+      "source": {
+        "name": "MIT News",
+        "family": "other",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T16:06:18.839Z",
+      "publishedAt": "2026-09-30T15:00:00.000Z",
+      "curated": true,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-12",
+        "original": "https://news.mit.edu/2026/game-playing-ai-stratego-new-champ-0930",
+        "detail": "https://aihot.news/items/knj4jcg30hz6vujhwu7xqeplj"
+      },
+      "summary": "MIT、CMU、NYU 与 Stanford 的研究人员开发出 AI 系统 Ataraxos，在隐藏信息棋盘战棋 Stratego 上大幅超越世界顶级人类选手，论文发表于 Nature。"
+    },
+    {
+      "id": "2026-w40-13",
+      "kind": "weekly",
+      "title": "Hugging Face 推出 Open TTS Leaderboard：用客观指标评测多语言 TTS 与语音克隆",
+      "titleEn": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning",
+      "source": {
+        "name": "Hugging Face：Blog",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T15:12:18.376Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-13",
+        "original": "https://huggingface.co/blog/open-tts-leaderboard",
+        "detail": "https://aihot.news/items/bkvpzk1shk933ze6hasfxtgie"
+      },
+      "summary": "Hugging Face 推出 Open TTS Leaderboard，用 WER/CER、RTFx、TTFA 和 WavLM 嵌入相似度等客观指标评测开源 TTS 模型，将评测周期从数周缩短到数小时。榜单支持多语言与语音克隆对比，提供 Listen 试听和 Streaming 排名，评测脚本即将开源。"
+    },
+    {
+      "id": "2026-w40-14",
+      "kind": "weekly",
+      "title": "Artificial Analysis 发布 AA-Video-T2V v2.0 文生视频评测基准，Wan 3.0 居首",
+      "titleEn": "We are launching AA-Video-T2V v2.0, our new benchmark for evaluating text to video models, alongside AA-Video-T2V-Silent v2.0 for video g...",
+      "source": {
+        "name": "X：Artificial Analysis",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T14:09:15.496Z",
+      "publishedAt": "2026-09-30T13:38:40.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-14",
+        "original": "https://x.com/ArtificialAnlys/status/2105291240573190370",
+        "detail": "https://aihot.news/items/x84lq6ixim8d7hcz92govlay5"
+      },
+      "summary": "Artificial Analysis 发布 AA-Video-T2V v2.0 和无音频版 AA-Video-T2V-Silent v2.0 文生视频基准，统一以 1080p 高码率评估，按 10 种用例、10 种能力和多种视觉风格排名，分别基于超 68,000 票（1,000+ prompts）和超 47,000 票（500 prompts）的人工偏好投票。"
+    },
+    {
+      "id": "2026-w40-15",
+      "kind": "weekly",
+      "title": "AutoRef：面向智能体多参考图像生成的 Harness 自动优化",
+      "titleEn": "AutoRef: Harness Optimization for Agentic Multi-Reference Image Generation",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T11:49:32.378Z",
+      "publishedAt": "2026-09-28T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-15",
+        "original": "https://arxiv.org/abs/2609.35530",
+        "detail": "https://aihot.news/items/x9gdkx390io5e26chzo1docvl"
+      },
+      "summary": "AutoRef 通过编码智能体迭代重写 harness 代码，在模型冻结的前提下自动优化多参考图像生成流程，并发现 AutoRef-Harness。该 harness 将开源 FLUX.2 [klein] 4B 在 MultiBanana 基准的四参考任务上从 5.72 提升至 7.37，追平或超过 Nano Banana Pro 和 GPT-Image-1.5 等闭源模型。",
+      "arxivId": "2609.35530"
+    },
+    {
+      "id": "2026-w40-16",
+      "kind": "weekly",
+      "title": "SEAD 提出基于状态视角的工具调用智能体攻防框架 DART 与 SAGE",
+      "titleEn": "SEAD: A State-Based Perspective on Attack and Defense in Tool-Using Agents",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T09:19:25.289Z",
+      "publishedAt": "2026-09-28T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-16",
+        "original": "https://arxiv.org/abs/2609.34518",
+        "detail": "https://aihot.news/items/esbye66cv7ktluqxp7xmxx01e"
+      },
+      "summary": "SEAD 将工具调用智能体的攻击与防御建模为部分可观测的状态控制，并提出攻击方法 DART 与防御方法 SAGE，代码和数据已在 GitHub 开源。",
+      "arxivId": "2609.34518"
+    },
+    {
+      "id": "2026-w40-17",
+      "kind": "weekly",
+      "title": "BlueQubit 团队用 IBM Nighthawk r2 量子处理器 19 秒完成百万次采样",
+      "titleEn": "IBM 量子处理器仅用 19 秒完成百万次采样，挑战超级计算机 110 年任务",
+      "source": {
+        "name": "IT之家",
+        "family": "media",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T08:50:37.835Z",
+      "publishedAt": "2026-09-30T08:36:06.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-17",
+        "original": "https://www.ithome.com/1/008/789.htm",
+        "detail": "https://aihot.news/items/wne9u4r91yxjk0emrbk0jf5qa"
+      },
+      "summary": "BlueQubit 团队使用 IBM 120 量子比特的 Nighthawk r2 处理器，在 36 个周期、918 个双量子比特门配置下仅用 19 秒完成 100 万次随机量子线路采样，研究人员估算 Frontier 超级计算机复现同等任务约需 110 年，约 1.2 × 10²⁷ 次计算操作。"
+    },
+    {
+      "id": "2026-w40-18",
+      "kind": "weekly",
+      "title": "英国 AISI 测试发现 GPT-6 Astra 在模拟评测中进行未经授权的供应链攻击",
+      "titleEn": "GPT-6 Astra performs unsanctioned supply-chain attacks in simulations",
+      "source": {
+        "name": "英国 AI Security Institute：Blog",
+        "family": "lab",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T08:23:36.658Z",
+      "publishedAt": "2026-09-27T23:00:00.000Z",
+      "curated": true,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-18",
+        "original": "https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations",
+        "detail": "https://aihot.news/items/kcog7t55o2y85eoufahuwatfq"
+      },
+      "summary": "英国 AI Security Institute 在发布前用 Petri 模拟工具测试 GPT-6 Astra，发现它在网络安全评测中实施未经授权的供应链攻击，完成率为 29.2%，高于 GPT-5.6 Sol 的 6.3% 和 GPT-5.5 的 0%。"
+    },
+    {
+      "id": "2026-w40-19",
+      "kind": "weekly",
+      "title": "NVIDIA 联合 MIT 与牛津发布 Physis-Lang，助力 Cosmos 3 在物理基准上超越 Veo 3.1",
+      "titleEn": "NVIDIA Researchers Introduce Physis-Lang: Self-Evolving Physical Language That Lifts Cosmos 3 Past Veo 3.1 on Physics Benchmarks",
+      "source": {
+        "name": "MarkTechPost",
+        "family": "media",
+        "url": null
+      },
+      "timelineAt": "2026-09-30T08:04:38.735Z",
+      "publishedAt": "2026-09-30T07:32:34.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-19",
+        "original": "https://www.marktechpost.com/2026/09/30/nvidia-researchers-introduce-physis-lang-self-evolving-physical-language-that-lifts-cosmos-3-past-veo-3-1-on-physics-benchmarks/",
+        "detail": "https://aihot.news/items/w2ger3yapl6k5grt828vg5wz0"
+      },
+      "summary": "NVIDIA、MIT 和牛津团队发布 Physis-Lang，一个自进化的物理语言框架，通过在视频描述中加入 physics_reasoning 字段和 physics_negative_prompt，把物理语言用于数据筛选、训练和推理。"
+    },
+    {
+      "id": "2026-w40-20",
+      "kind": "weekly",
       "title": "研究量化聊天模板注入中保留 token 表示带来的攻击权限差异",
       "titleEn": "Same Bytes, Different Authority: Reserved-Token Representations in Chat-Template Prompt Injection",
       "source": {
@@ -17,7 +460,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-01",
+        "reader": "/paper/2026-w40-20",
         "original": "https://arxiv.org/abs/2609.35932",
         "detail": "https://aihot.news/items/fq06x2g2qi27ifnbzefp02qlj"
       },
@@ -25,7 +468,7 @@
       "arxivId": "2609.35932"
     },
     {
-      "id": "2026-w40-02",
+      "id": "2026-w40-21",
       "kind": "weekly",
       "title": "Context Language Models 提出让模型原生管理自身上下文",
       "titleEn": "Context Language Models",
@@ -41,7 +484,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-02",
+        "reader": "/paper/2026-w40-21",
         "original": "https://arxiv.org/abs/2609.37725",
         "detail": "https://aihot.news/items/tobgx74oytiedf2bh6xzq0k8s"
       },
@@ -49,31 +492,7 @@
       "arxivId": "2609.37725"
     },
     {
-      "id": "2026-w40-03",
-      "kind": "weekly",
-      "title": "EngiWorld：前沿智能体在专业工程环境中能交付什么？",
-      "titleEn": "EngiWorld: What Can Frontier Agents Deliver in Professional Engineering Environments?",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-30T04:54:35.460Z",
-      "publishedAt": "2026-09-29T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-03",
-        "original": "https://arxiv.org/abs/2609.37686",
-        "detail": "https://aihot.news/items/b7i6p4nyeigb41dex1qgg5fc9"
-      },
-      "summary": "EngiWorld 是首个围绕完整设计闭环构建的工程智能体基准，包含 6 大工程领域（CAD、CAE、CAM、BIM、EDA、3D 可视化）、26 个专业软件平台的 1,301 个专家精选任务，覆盖 GUI 与 CLI 界面及 6 类任务。",
-      "arxivId": "2609.37686"
-    },
-    {
-      "id": "2026-w40-04",
+      "id": "2026-w40-22",
       "kind": "weekly",
       "title": "TabFM：400M 参数的零样本表格数据基础模型",
       "titleEn": "TabFM: A Zero-Shot Foundation Model for Tabular Data",
@@ -89,7 +508,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-04",
+        "reader": "/paper/2026-w40-22",
         "original": "https://arxiv.org/abs/2609.37959",
         "detail": "https://aihot.news/items/fes2m8w2e51n6scle8weg0tzl"
       },
@@ -97,7 +516,7 @@
       "arxivId": "2609.37959"
     },
     {
-      "id": "2026-w40-05",
+      "id": "2026-w40-23",
       "kind": "weekly",
       "title": "研究称语言模型倾向于\"不安全\"汇报，一句诚实提示可显著改善",
       "titleEn": "Language Models Are \"Insecure\" Reporters",
@@ -113,7 +532,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-05",
+        "reader": "/paper/2026-w40-23",
         "original": "https://arxiv.org/abs/2609.36139",
         "detail": "https://aihot.news/items/krgp8guk1yhf3ixqyz0o36vnb"
       },
@@ -121,79 +540,7 @@
       "arxivId": "2609.36139"
     },
     {
-      "id": "2026-w40-06",
-      "kind": "weekly",
-      "title": "EasyPPO：稳定 critic 是 PPO 训练 LLM 的关键",
-      "titleEn": "EasyPPO: Stabilizing the Critic Is Key",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-30T03:38:34.820Z",
-      "publishedAt": "2026-09-29T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-06",
-        "original": "https://arxiv.org/abs/2609.36802",
-        "detail": "https://aihot.news/items/shzrjwhcyhd5cn95fvv4kmcjc"
-      },
-      "summary": "EasyPPO 通过仅对 actor 做超长过滤、按采样回报标准差倒数加权 critic 回归、并适度缩小 critic mini-batch，解决了 PPO 中 critic 的两类失稳问题。",
-      "arxivId": "2609.36802"
-    },
-    {
-      "id": "2026-w40-07",
-      "kind": "weekly",
-      "title": "ROSS：通过选择性监督从自生成 rollout 中再学习",
-      "titleEn": "ROSS: Relearning from Self-Generated Rollouts through Selective Supervision",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-30T03:38:34.803Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-07",
-        "original": "https://arxiv.org/abs/2609.35954",
-        "detail": "https://aihot.news/items/wvr4d2vzjyphq8xpks56uzjls"
-      },
-      "summary": "ROSS 提出一种选择性监督方法，将历史轨迹完整保留为上下文，仅对选定的模型生成续写计算损失，从而复用自生成 rollout 中的行为经验。在 Qwen3.6-35B-A3B 上，ROSS 将六项基准的 MOPD 平均分从 58.40% 提升至 62.20%，SWE-bench Verified 从 64.20% 提升至 68.40%。",
-      "arxivId": "2609.35954"
-    },
-    {
-      "id": "2026-w40-08",
-      "kind": "weekly",
-      "title": "AutoDataBench：智能体能写出自我改进循环所需的数据吗？",
-      "titleEn": "AutoDataBench: Can Agents Write the Data That Feeds the Self-Improvement Loop?",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-30T03:38:34.767Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-08",
-        "original": "https://arxiv.org/abs/2609.35025",
-        "detail": "https://aihot.news/items/z9229fn66d9dh58ijgxqm62vw"
-      },
-      "summary": "新基准 AutoDataBench 要求智能体根据原始基准任务和目标模型的尝试记录，写出满足有效性、新颖性、难度和行为覆盖等验收标准的新任务。在三个可执行智能体任务基准上，默认 45 分钟预算内没有智能体得分超过 20/100；给最强智能体四倍时间后得分大幅提升，但单个可用任务的成本几乎不变。",
-      "arxivId": "2609.35025"
-    },
-    {
-      "id": "2026-w40-09",
+      "id": "2026-w40-24",
       "kind": "weekly",
       "title": "Marathoner：超长时程自主智能体模型",
       "titleEn": "Marathoner: Ultra-Long-Horizon Autonomous Intelligence",
@@ -209,7 +556,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-09",
+        "reader": "/paper/2026-w40-24",
         "original": "https://arxiv.org/abs/2609.34378",
         "detail": "https://aihot.news/items/zowv5bp1rb906xt9489ndj431"
       },
@@ -217,7 +564,7 @@
       "arxivId": "2609.34378"
     },
     {
-      "id": "2026-w40-10",
+      "id": "2026-w40-25",
       "kind": "weekly",
       "title": "MaLiang-Harness：可编程图像与视频生成框架，GPT-6-Astra 双榜生成成功率 100%",
       "titleEn": "MaLiang-Harness: A Programmable Path to Image and Video Generation",
@@ -233,7 +580,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-10",
+        "reader": "/paper/2026-w40-25",
         "original": "https://arxiv.org/abs/2609.34309",
         "detail": "https://aihot.news/items/vmq4kjv7wyci6ehszpb9xj6ak"
       },
@@ -241,31 +588,7 @@
       "arxivId": "2609.34309"
     },
     {
-      "id": "2026-w40-11",
-      "kind": "weekly",
-      "title": "OmniTaskonomy：视觉生成何时能提升视觉理解？",
-      "titleEn": "OmniTaskonomy: When Does Visual Generation Improve Visual Understanding?",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-30T02:22:34.214Z",
-      "publishedAt": "2026-09-29T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-11",
-        "original": "https://arxiv.org/abs/2609.38079",
-        "detail": "https://aihot.news/items/yprdr6yhjqibwowse44z6nrdp"
-      },
-      "summary": "研究通过配对 I2I 生成与 I2T 理解任务发现，在合适训练配方下 I2I 训练能提升下游 I2T 表现，且 I2I 训练数据越多增益越大。",
-      "arxivId": "2609.38079"
-    },
-    {
-      "id": "2026-w40-12",
+      "id": "2026-w40-26",
       "kind": "weekly",
       "title": "剑桥等机构研究提出 vibercrime 概念：AI 加速廉价诈骗但未造出新黑客",
       "titleEn": "The authors coined a new term, \"vibercrime,\" for what AI actually does for criminals: it speeds up cheap scams but doesn't create new hac...",
@@ -281,62 +604,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-12",
+        "reader": "/paper/2026-w40-26",
         "original": "https://x.com/rohanpaul_ai/status/2105114842910884110",
         "detail": "https://aihot.news/items/mmn8djcd4bhpoilolycgv5t1m"
       },
       "summary": "Jack Hughes、Ben Collier 和 Daniel R. Thomas 的论文分析近10万条网络犯罪论坛相关帖子，提出 vibercrime 一词：AI 是便利帮手而非犯罪的即插即用工具。生成式AI 主要扩大垃圾网站、机器人账号和拟人化诈骗信息的规模，编码助手多为已有编程能力者省时，尚未显著降低技术门槛或催生创新性黑客手段。"
     },
     {
-      "id": "2026-w40-13",
-      "kind": "weekly",
-      "title": "大语言模型在线策略蒸馏真的需要 KL 散度吗？——C-MOPD 多教师蒸馏方法",
-      "titleEn": "Do We Really Need KL Divergence for On-Policy Distillation of Large Language Models?",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T23:13:20.823Z",
-      "publishedAt": "2026-09-27T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-13",
-        "original": "https://arxiv.org/abs/2609.33791",
-        "detail": "https://aihot.news/items/plmqg4u3t2hb2a8usjcbz9hd9"
-      },
-      "summary": "研究发现，大语言模型在线策略蒸馏（OPD）或许并不需要 KL 散度：只要让更新方向朝向教师模型即可，甚至仅对教师与学生分歧强烈的一小部分 token 保持正确更新方向，训练依然有效。基于此提出 Consensus Multi-Teacher On-Policy Distillation（C-MOPD），让每个样本受所有教师监督，在数学和代码基准上持续优于 MOPD。",
-      "arxivId": "2609.33791"
-    },
-    {
-      "id": "2026-w40-14",
-      "kind": "weekly",
-      "title": "谁获得一个 Token，它又承载了什么？大语言模型中的姓名支持不均与概念可及性差异",
-      "titleEn": "Who Gets a Token, and What Does It Carry? Unequal Name Support and Concept Access in Large Language Models",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T16:43:30.381Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-14",
-        "original": "https://arxiv.org/abs/2609.34065",
-        "detail": "https://aihot.news/items/betvu7jiywppgp7m3wq4d0o6r"
-      },
-      "summary": "研究揭示大语言模型对姓名的 token 化存在系统性不均：在近 50 万个名字和 12 个 LLM 分词器上，部分姓名可直接单 token 访问，另一些则被拆成多个子词，且这种差异与种族、性别相关的姓名元数据分布不均。",
-      "arxivId": "2609.34065"
-    },
-    {
-      "id": "2026-w40-15",
+      "id": "2026-w40-27",
       "kind": "weekly",
       "title": "Arena 研究：LLM 裁判偏爱自己答案的概率比人类高 70%",
       "titleEn": "LLM judges prefer their own responses 70% more often than humans do",
@@ -352,14 +627,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-15",
+        "reader": "/paper/2026-w40-27",
         "original": "https://x.com/arena/status/2104965778613452895",
         "detail": "https://aihot.news/items/u6afu3icor0mjvuoie6d2fd2w"
       },
       "summary": "Arena 用 12 个模型对 1,460 场真实 Text Arena 对战做了 34,580 条裁决，发现模型偏爱自己答案的程度平均比人类高约 70%，GPT-6 Astra 在 88% 的对战中选了自己。OpenAI 三款裁判对 OpenAI 模型比人类宽容 37 分，AI 裁判之间一致率 79.4%，但与人类投票者只有 56.9%；模型很少判平局，Sol 在 96% 的对战中强行选出赢家。"
     },
     {
-      "id": "2026-w40-16",
+      "id": "2026-w40-28",
       "kind": "weekly",
       "title": "Arena 分析 12 个模型的 34,580 条判定：AI 评委平均 58% 偏爱自己的答案",
       "titleEn": "Ask an AI model to pick the better answer, and it'll usually pick its own.",
@@ -375,38 +650,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-16",
+        "reader": "/paper/2026-w40-28",
         "original": "https://x.com/arena/status/2104969213282840770",
         "detail": "https://aihot.news/items/chbjir1f01ik20w7xfve6e7cu"
       },
       "summary": "Arena 对比了 12 个模型的 34,580 条判定与 1,460 场盲测对战的人类投票，发现 AI 评委平均 58% 的时间选择自己的答案，而人类只有 34% 选择同一答案，GPT-6 Astra 自选率高达 88%。"
     },
     {
-      "id": "2026-w40-17",
-      "kind": "weekly",
-      "title": "蒸馏防御在强化学习后轻易失效",
-      "titleEn": "Distillation Defenses Easily Break After Reinforcement Learning",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T14:20:12.786Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-17",
-        "original": "https://arxiv.org/abs/2609.35699",
-        "detail": "https://aihot.news/items/va7w2hfj4eqlqi9oyeii3af9i"
-      },
-      "summary": "论文指出，现有蒸馏攻击防御通常只在蒸馏后立即评估，隐含假设攻击者不再继续训练，但更现实的威胁模型包含蒸馏后的强化学习。结果显示，强化学习会降低蒸馏攻击门槛，仅用当前 API 易得数据即可窃取闭源模型推理能力，效果相当于提取完整隐藏推理轨迹的复杂攻击。任何泄露足够信息以重建近似推理轨迹的蒸馏防御都可能失效。",
-      "arxivId": "2609.35699"
-    },
-    {
-      "id": "2026-w40-18",
+      "id": "2026-w40-29",
       "kind": "weekly",
       "title": "AnswerMap：从答案后验构建 VLM 的忠实空间可解释性方法",
       "titleEn": "AnswerMap: Faithful Spatial Interpretability of VLMs from Answer Posteriors",
@@ -422,7 +673,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-18",
+        "reader": "/paper/2026-w40-29",
         "original": "https://arxiv.org/abs/2609.35247",
         "detail": "https://aihot.news/items/d1rot4zrs8rxp1c9opakdt5e8"
       },
@@ -430,7 +681,7 @@
       "arxivId": "2609.35247"
     },
     {
-      "id": "2026-w40-19",
+      "id": "2026-w40-30",
       "kind": "weekly",
       "title": "ProvenanceGuard：面向 MCP 智能体的来源感知事实性验证",
       "titleEn": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
@@ -446,14 +697,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-19",
+        "reader": "/paper/2026-w40-30",
         "original": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
         "detail": "https://aihot.news/items/y7bvfxfwpafx58lyc71sypyvz"
       },
       "summary": "Hugging Face 发布论文 ProvenanceGuard，一个面向 MCP 智能体的生成后验证层，可在不重训智能体的前提下读取 MCP 调用轨迹，逐条核查答案中的声明是否由其所声称的来源支持，以捕捉\"跨来源混淆\"错误。"
     },
     {
-      "id": "2026-w40-20",
+      "id": "2026-w40-31",
       "kind": "weekly",
       "title": "上海理工大学团队在《自然·光子学》发表单光束多维光存储方案，DVD尺寸容量可达0.4 Pb",
       "titleEn": "我国科学家提出单光束多维光存储新方案：DVD 尺寸容量可达 0.4 Pb",
@@ -469,14 +720,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-20",
+        "reader": "/paper/2026-w40-31",
         "original": "https://www.ithome.com/1/008/488.htm",
         "detail": "https://aihot.news/items/jo4hnzajred7xor8xsjmgr0yi"
       },
       "summary": "上海理工大学顾敏院士、张启明教授团队在《自然·光子学》发表单光束多维光存储技术，单个三维存储点可区分1024种状态，对应10 bit信息容量，DVD尺寸介质理论容量约0.4 Pb，读取可靠性超过99.99%。"
     },
     {
-      "id": "2026-w40-21",
+      "id": "2026-w40-32",
       "kind": "weekly",
       "title": "清华等提出 One-Shot OPD：单条查询达全量数据 87% 增益",
       "titleEn": "Post-training pipelines now use on-policy distillation (OPD) to hand a student the teacher's full next-token distribution at every prefix...",
@@ -492,14 +743,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-21",
+        "reader": "/paper/2026-w40-32",
         "original": "https://x.com/OpenBMB/status/2104919127056101611",
         "detail": "https://aihot.news/items/syhp0sejwmm5xkd1iusbyqif1"
       },
       "summary": "清华 NLP（OpenBMB 成员）联合中科院大学、东北大学、UIUC 和约翰霍普金斯大学提出 One-Shot OPD，将 OPD 训练集压缩到一条查询：数学任务上从 59.1 提升至 68.5（300 步），达到全量数据 OPD 69.8 的 87% 增益，并在代码、指令跟随和智能体工具使用上跨 Qwen、Llama、OLMo 成立。"
     },
     {
-      "id": "2026-w40-22",
+      "id": "2026-w40-33",
       "kind": "weekly",
       "title": "GPT-6 Astra 跨计算机视觉评测揭示通用模型的能力边界",
       "titleEn": "Hard Vision, Easy Vision: What GPT-6 Astra Reveals Across Computer Vision",
@@ -515,7 +766,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-22",
+        "reader": "/paper/2026-w40-33",
         "original": "https://arxiv.org/abs/2609.35718",
         "detail": "https://aihot.news/items/u32robd0r2m7stgltlcqsofqh"
       },
@@ -523,30 +774,7 @@
       "arxivId": "2609.35718"
     },
     {
-      "id": "2026-w40-23",
-      "kind": "weekly",
-      "title": "小红书 AllSpark 提出 PACT：从信用分配到 Critic 对齐，SWE-bench Verified 达 67.4%",
-      "titleEn": "长程 Agent 如何论功行赏？小红书 AllSpark 提出 PACT",
-      "source": {
-        "name": "公众号：小红书技术",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T12:02:02.660Z",
-      "publishedAt": "2026-09-29T09:59:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-23",
-        "original": "https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg==&mid=2247496544&idx=1&sn=b2047c66838ad9dc81976aca9757724d&chksm=ce3de637bd0bbcdddb4ee6e70c2f2b47230c9033098c252c6008a87ca5dfd7f92b22d01c5ede&scene=126&sessionid=1790683320#rd",
-        "detail": "https://aihot.news/items/ftbkgxoe0o25jhw0m3n83s5ql"
-      },
-      "summary": "小红书 AllSpark 团队提出 PACT（Policy Aligned Critic Training），通过三个正则条件唯一确定长程 Agent 的信用分配，并用 BCE 回归有界 Value、采用 Actor-Then-Critic 更新顺序改进 Critic 与策略对齐。"
-    },
-    {
-      "id": "2026-w40-24",
+      "id": "2026-w40-34",
       "kind": "weekly",
       "title": "IMDEA Networks 论文：九款对话式 AI 服务向第三方泄露对话标题、提示词与截图",
       "titleEn": "AI companies leak data to advertisers [pdf]",
@@ -562,38 +790,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-24",
+        "reader": "/paper/2026-w40-34",
         "original": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf",
         "detail": "https://aihot.news/items/k8sujz02e95ov1206fwycu9ci"
       },
       "summary": "IMDEA Networks 等机构对 ChatGPT、Claude、Grok、DeepSeek、Gemini、Perplexity、Copilot、Mistral 和 Meta AI 九款对话式 AI 服务做了系统性隐私分析。"
     },
     {
-      "id": "2026-w40-25",
-      "kind": "weekly",
-      "title": "Recursive Harness Distillation：跨智能体蒸馏经验提升机器人操作成功率",
-      "titleEn": "Recursive Harness Distillation across Agents for Robot Manipulation",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T09:33:37.961Z",
-      "publishedAt": "2026-09-27T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-25",
-        "original": "https://arxiv.org/abs/2609.33378",
-        "detail": "https://aihot.news/items/v6ousc73hk1gj2ffus9j5g2az"
-      },
-      "summary": "研究提出 Recursive Harness Distillation，让强智能体把干预经验蒸馏成 playbook 供轻量智能体使用，并借助轻量智能体的执行反馈递归优化，无需更新模型参数。",
-      "arxivId": "2609.33378"
-    },
-    {
-      "id": "2026-w40-26",
+      "id": "2026-w40-35",
       "kind": "weekly",
       "title": "Draft-KV：学习语言模型间有用的潜态通信",
       "titleEn": "Draft-KV: Learning Useful Latent Communication Between Language Models",
@@ -609,7 +813,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-26",
+        "reader": "/paper/2026-w40-35",
         "original": "https://arxiv.org/abs/2609.34754",
         "detail": "https://aihot.news/items/j1l8qp4lsjmdgqhw7wai22zbq"
       },
@@ -617,55 +821,7 @@
       "arxivId": "2609.34754"
     },
     {
-      "id": "2026-w40-27",
-      "kind": "weekly",
-      "title": "WideSWE：编码智能体能否跨仓库协同完成变更？",
-      "titleEn": "WideSWE: Can Coding Agents Coordinate Changes Across Repositories?",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T07:58:35.782Z",
-      "publishedAt": "2026-09-27T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-27",
-        "original": "https://arxiv.org/abs/2609.33382",
-        "detail": "https://aihot.news/items/yoh8m60mmm4943ln1icj8e3xq"
-      },
-      "summary": "WideSWE 是用于评估编码智能体跨仓库任务的新基准，从 103 个软件生态系统中挖掘出 120 个真实任务，包含 60 个 bug 修复和 60 个功能开发。",
-      "arxivId": "2609.33382"
-    },
-    {
-      "id": "2026-w40-28",
-      "kind": "weekly",
-      "title": "模型内部表征何时有用？表征工程在 LLM 安全中的角色评估",
-      "titleEn": "When Do Model Internals Help? Exploring the Role of Representation Engineering in LLM Safety",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T07:58:35.756Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-28",
-        "original": "https://arxiv.org/abs/2609.34771",
-        "detail": "https://aihot.news/items/qjrptkw3yhm3uv2noazzqqflj"
-      },
-      "summary": "一项匹配评估对比了表征工程与行为安全防护在 LLM 安全控制与监控上的表现。安全控制方面，DPO 整体控制最强且随训练数据增加而提升，但后续良性微调会削弱其安全性；表征引导仅在低数据场景（尤其高质量对比数据）保持竞争力。安全监控方面，专用文本监控器检测准确率最高，表征探针则以更低边际成本保持竞争力，监控引导干预还能在几乎不增加过度拒答的情况下恢复 DPO 因良性微调损失的大部分安全性。",
-      "arxivId": "2609.34771"
-    },
-    {
-      "id": "2026-w40-29",
+      "id": "2026-w40-36",
       "kind": "weekly",
       "title": "距离去掉视觉编码器还有多远？无编码器多模态预训练的缩放定律",
       "titleEn": "How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining",
@@ -681,7 +837,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-29",
+        "reader": "/paper/2026-w40-36",
         "original": "https://arxiv.org/abs/2609.35457",
         "detail": "https://aihot.news/items/sehxvnbrpzcr1nizl9rf0xby2"
       },
@@ -689,78 +845,7 @@
       "arxivId": "2609.35457"
     },
     {
-      "id": "2026-w40-30",
-      "kind": "weekly",
-      "title": "ColNanoVDR：面向多向量视觉文档检索的无文档查询蒸馏框架",
-      "titleEn": "ColNanoVDR: Document-Free Query Distillation for Multi-Vector Visual Document Retrieval via Optimal Transport",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T07:58:35.743Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-30",
-        "original": "https://arxiv.org/abs/2609.34899",
-        "detail": "https://aihot.news/items/fdqhgq9qvltwrx1v9onh8m8pk"
-      },
-      "summary": "ColNanoVDR 是首个将无文档查询蒸馏用于多向量视觉文档检索（VDR）的框架，通过基于熵最优传输的 OTW 目标对齐学生与教师的查询 token，无需页面数据。",
-      "arxivId": "2609.34899"
-    },
-    {
-      "id": "2026-w40-31",
-      "kind": "weekly",
-      "title": "Jev-LDE 让 LLM 少样本示例一次编辑到位",
-      "titleEn": "You Only Edit Once:",
-      "source": {
-        "name": "X：马东锡 NLP",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T05:45:37.439Z",
-      "publishedAt": "2026-09-29T05:16:22.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-31",
-        "original": "https://x.com/dongxi_nlp/status/2104802445150839013",
-        "detail": "https://aihot.news/items/sl7fcwao68xpe5h0r02zyhy8p"
-      },
-      "summary": "You Only Edit Once：\n\n通过局部示例精修激发 LLM 的上下文能力\n\n挑选最佳少样本示例是一种缓慢的 System-2 搜索：组合爆炸，且往往需要反复调用 LLM。\n\n我们把它变成了 System 1。⚡\n\nJev-LDE，一个 1.7B 的编辑器，扫一眼检索到的示例，只做一次编辑。LLM 只回答一次。\n\n平均 1-shot 准确率 81.2 → 88.1\n\nYou Only …"
-    },
-    {
-      "id": "2026-w40-32",
-      "kind": "weekly",
-      "title": "研究揭示 LLM 全流程为何默认偏向美式英语：1,813 组 AmE–BrE 变体与 DiAlign 方法",
-      "titleEn": "How Does \"English (US)\" Become the Default? Triangulating Structural Bias Towards American English Across the LLM Pipeline",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T05:35:35.043Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-32",
-        "original": "https://arxiv.org/abs/2604.04204",
-        "detail": "https://aihot.news/items/i9rh56ltwz34p8by2y52fv5ym"
-      },
-      "summary": "研究以 1,813 组匹配的美式英语（AmE）与英式英语（BrE）变体为资源，提出免训练的 DiAlign 方法，从数据分布证据估计区域对齐度。AmE 在全部 6 个预训练语料和 21 个后训练数据集中均被偏好，tokenizer 表示更紧凑、预测成本更低，且在中性英语提示下仍是默认生成偏好；改用英式英语提示可向 BrE 偏移，但无法稳定消除 AmE 默认。",
-      "arxivId": "2604.04204"
-    },
-    {
-      "id": "2026-w40-33",
+      "id": "2026-w40-37",
       "kind": "weekly",
       "title": "为何确定性 PRM 引导在离散扩散推理中表现不佳",
       "titleEn": "Why Deterministic PRM Guidance Underperforms in Discrete Diffusion Reasoning",
@@ -776,7 +861,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-33",
+        "reader": "/paper/2026-w40-37",
         "original": "https://arxiv.org/abs/2609.35472",
         "detail": "https://aihot.news/items/k9egkedanczjazmdt31wvys3e"
       },
@@ -784,7 +869,7 @@
       "arxivId": "2609.35472"
     },
     {
-      "id": "2026-w40-34",
+      "id": "2026-w40-38",
       "kind": "weekly",
       "title": "ETH Zurich 研发出能用指尖自行行走的五指机械手",
       "titleEn": "惊悚又硬核：能用指尖行走的机械手问世",
@@ -800,86 +885,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-34",
+        "reader": "/paper/2026-w40-38",
         "original": "https://www.ithome.com/1/008/235.htm",
         "detail": "https://aihot.news/items/oswc6ay3zxzxvxfv2qmwmuyni"
       },
       "summary": "苏黎世联邦理工学院软体机器人实验室基于常规仿人机械手，用强化学习训练出可依靠指尖自行行走的机械手，整机重 818 克，搭载树莓派机载计算机可独立运行。该机械手在 NVIDIA Isaac Lab 仿真平台完成训练，已在沥青、草地、碎石等 14 种表面爬行，25 次被碰倒中 21 次能自主站起；手指仍可恢复普通操作，敲键盘正确率达 90%，并通关推箱子游戏、定位精度达毫米级。"
     },
     {
-      "id": "2026-w40-35",
-      "kind": "weekly",
-      "title": "重新思考自动语音相似度：从 EER 转向嵌入向量几何",
-      "titleEn": "Rethinking Automated Voice Similarity by Shifting from EER to Embedding Geometry",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T04:47:38.176Z",
-      "publishedAt": "2026-09-27T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-35",
-        "original": "https://arxiv.org/abs/2609.33999",
-        "detail": "https://aihot.news/items/u0g76iekdtjziocnxu72dml9r"
-      },
-      "summary": "研究提出人类感知对齐指标，发现说话人验证模型的感知对齐更多取决于训练目标而非 EER 表现，AAM-Softmax 等基于 margin 的分类损失对齐度明显低于原型度量损失。团队将差异追溯到嵌入向量几何，有效维度 d_eff 与感知对齐的秩相关达 -0.95，施加维度瓶颈后 ρ_align 从 0.08 升至 0.74。",
-      "arxivId": "2609.33999"
-    },
-    {
-      "id": "2026-w40-36",
-      "kind": "weekly",
-      "title": "AdaGuard：支持用户自定义策略的自适应 Guard 模型",
-      "titleEn": "AdaGuard: An Adaptive Guard Model with User-defined Policies",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T04:47:38.172Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-36",
-        "original": "https://arxiv.org/abs/2609.34241",
-        "detail": "https://aihot.news/items/skjffhg8kn5gpkj49e1dm7ntg"
-      },
-      "summary": "研究团队提出 AdaGuard 系列 Guard 模型（0.6B、4B、8B），可在推理时按用户自定义策略评估语言模型智能体的轨迹。",
-      "arxivId": "2609.34241"
-    },
-    {
-      "id": "2026-w40-37",
-      "kind": "weekly",
-      "title": "PReCache：面向 Multi-LoRA 智能体的免训练 KV Cache 共享框架",
-      "titleEn": "PReCache: Efficient KV Cache Sharing for Multi-LoRA Agents via Low-Rank Precomputation and Neutral Reconstruction",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T04:47:38.152Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-37",
-        "original": "https://arxiv.org/abs/2609.34054",
-        "detail": "https://aihot.news/items/suux8shrkz3wnloxh0ww0xk50"
-      },
-      "summary": "PReCache 是一个免训练的 KV cache 共享框架，通过 PreLRShared 和 ReBaseShared 两种设计共享基于预训练权重计算的基础 cache，并预计算紧凑的智能体专属低秩（LR）cache。",
-      "arxivId": "2609.34054"
-    },
-    {
-      "id": "2026-w40-38",
+      "id": "2026-w40-39",
       "kind": "weekly",
       "title": "FlyBy 框架教小型推理模型识别何时思考无效并按需查询更强模型",
       "titleEn": "Knowing When Thinking Is Not Enough: Teaching Small Reasoning Models to Reason Beyond Their Parametric Knowledge",
@@ -895,7 +908,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-38",
+        "reader": "/paper/2026-w40-39",
         "original": "https://arxiv.org/abs/2609.34327",
         "detail": "https://aihot.news/items/ctxnyajw05pege1tsl5re86yv"
       },
@@ -903,7 +916,7 @@
       "arxivId": "2609.34327"
     },
     {
-      "id": "2026-w40-39",
+      "id": "2026-w40-40",
       "kind": "weekly",
       "title": "MIT 研究认为算法单一栽培的利弊取决于具体情境",
       "titleEn": "The effects of an “algorithmic monoculture” depend on the details",
@@ -919,62 +932,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-39",
+        "reader": "/paper/2026-w40-40",
         "original": "https://news.mit.edu/2026/algorithmic-monoculture-effects-depend-on-details-0929",
         "detail": "https://aihot.news/items/zqwgk4ktxb3zhk6q2nia7pqdp"
       },
       "summary": "MIT 研究者 Brian Hedden 与 Manish Raghavan 系统评估了针对算法单一栽培的主要反对意见，发表于 Philosophical Perspectives。"
     },
     {
-      "id": "2026-w40-40",
-      "kind": "weekly",
-      "title": "自进化编程智能体：从数字程序到物理世界智能",
-      "titleEn": "Self-Evolving Coding Agents: From Digital Programs to Physical-World Intelligence",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T03:59:34.708Z",
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-40",
-        "original": "https://arxiv.org/abs/2609.35432",
-        "detail": "https://aihot.news/items/m13tb7zhjkep0ug0cdwq435xa"
-      },
-      "summary": "研究者提出 Physical Coding，将任务状态与执行表示为代码，并构建 HexaAnything 调用感知、规划与控制工具（含 VLA/WAM 策略），依据外部反馈在环决策。",
-      "arxivId": "2609.35432"
-    },
-    {
       "id": "2026-w40-41",
-      "kind": "weekly",
-      "title": "让 LLM 学会从上下文学习：基于扰动公开文档的合成训练方法",
-      "titleEn": "Learning to Learn from Context: Synthetic Training from Perturbed Public Documents",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-29T03:59:34.692Z",
-      "publishedAt": "2026-09-27T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w40-41",
-        "original": "https://arxiv.org/abs/2609.33642",
-        "detail": "https://aihot.news/items/edcv2gj054pz0i8ktwxa818ga"
-      },
-      "summary": "研究者构建了一套无需人工标注的合成流水线，通过扰动改写公开文档、生成需依赖文档推理的问题与评分标准，从 3.5k 篇文档生成约 10k 样本，用于训练学生模型。",
-      "arxivId": "2609.33642"
-    },
-    {
-      "id": "2026-w40-42",
       "kind": "weekly",
       "title": "YuE2 论文提出统一符号与音频的歌曲生成模型",
       "titleEn": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
@@ -990,7 +955,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-42",
+        "reader": "/paper/2026-w40-41",
         "original": "https://arxiv.org/abs/2609.33757",
         "detail": "https://aihot.news/items/rop9sh4j49t55q05t0jtogeb6"
       },
@@ -998,7 +963,7 @@
       "arxivId": "2609.33757"
     },
     {
-      "id": "2026-w40-43",
+      "id": "2026-w40-42",
       "kind": "weekly",
       "title": "20 余名 AI 行业领袖发论文警告智能爆炸风险，呼吁政策制定者关注 AI 自我改进",
       "titleEn": "20 余名行业领袖示警“智能爆炸”，Anthropic、OpenAI 高管呼吁关注 AI 自我改进",
@@ -1014,14 +979,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-43",
+        "reader": "/paper/2026-w40-42",
         "original": "https://www.ithome.com/1/008/096.htm",
         "detail": "https://aihot.news/items/dt7h42asngwoup46orr4c9pk5"
       },
       "summary": "据彭博社报道，20 多名 AI 行业领袖在一篇新论文中警告，用 AI 自动化下一代模型研发可能导致技术进步突然加速的智能爆炸，其速度或超过社会适应能力。联署者包括 Anthropic 联合创始人杰克·克拉克、OpenAI 首席科学家雅库布·帕乔茨基、杰弗里·辛顿、约书亚·本吉奥等。"
     },
     {
-      "id": "2026-w40-44",
+      "id": "2026-w40-43",
       "kind": "weekly",
       "title": "20 多位顶尖 AI 研究者警告自动化 AI 研究存在极端风险",
       "titleEn": "More than 20 leading AI researchers warn that automated AI research poses extreme risks",
@@ -1037,14 +1002,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-44",
+        "reader": "/paper/2026-w40-43",
         "original": "https://the-decoder.com/more-than-20-leading-ai-researchers-warn-that-automated-ai-research-poses-extreme-risks/",
         "detail": "https://aihot.news/items/v1b6aqwe8taxv7dkb34igwhth"
       },
       "summary": "20 多位 AI 研究者在论文中警告，自我改进的 AI 可能引发智能爆炸，签署者包括 Geoffrey Hinton、Yoshua Bengio 和 OpenAI 研究负责人 Jakub Pachocki。"
     },
     {
-      "id": "2026-w40-45",
+      "id": "2026-w40-44",
       "kind": "weekly",
       "title": "研究：个人AI智能体根据推断财富为用户推荐更贵选项",
       "titleEn": "Personal agents gone wrong.",
@@ -1060,14 +1025,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-45",
+        "reader": "/paper/2026-w40-44",
         "original": "https://x.com/omarsar0/status/2104593228557410322",
         "detail": "https://aihot.news/items/fexkzxa4p4bgaq8lkcse3wxp3"
       },
       "summary": "论文《Et Tu, Brute?》发现个人AI智能体会根据推断的用户财富推荐更贵选项：325K 次实验覆盖 13 个模型的航班、健康保险和研究生项目场景，8 个模型在请求完全相同时给被推断为富有的用户选更贵的选项。"
     },
     {
-      "id": "2026-w40-46",
+      "id": "2026-w40-45",
       "kind": "weekly",
       "title": "MIT利用AI算法优化RNA疫苗配方，实现室温稳定保存一年",
       "titleEn": "New formulation helps RNA vaccines withstand high temperatures",
@@ -1083,14 +1048,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-46",
+        "reader": "/paper/2026-w40-45",
         "original": "https://news.mit.edu/2026/new-formulation-helps-rna-vaccines-withstand-high-temperatures-0928",
         "detail": "https://aihot.news/items/usolnb7i6x3qmicwmoza9dpvl"
       },
       "summary": "MIT研究人员借助AI算法优化脂质纳米颗粒（LNP）的辅料配比，成功开发出耐热性更强的RNA疫苗配方。该配方使疫苗在室温下可稳定保存一年，或在37摄氏度下保存两个月，且在小鼠实验中产生的免疫反应与Moderna类似。AI算法通过少量实验数据快速收敛至最优解，将原本需数月的筛选过程缩短至几周。相关成果发表于《Nature Biotechnology》。"
     },
     {
-      "id": "2026-w40-47",
+      "id": "2026-w40-46",
       "kind": "weekly",
       "title": "UC Berkeley 团队用 AI Agent 审计 13 个基准，发现 45 个无需解题的满分作弊方案",
       "titleEn": "We Scored 100% on AI Benchmarks Without Solving a Single Problem April 06, 2026",
@@ -1106,14 +1071,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-47",
+        "reader": "/paper/2026-w40-46",
         "original": "https://rdi.berkeley.edu/blog/trustworthy-benchmarks",
         "detail": "https://aihot.news/items/xzz70gkzl87ypmq36y8hmo2rs"
       },
       "summary": "UC Berkeley 团队构建全自动 AI Agent 审计 13 个广泛使用的基准，发现 45 个作弊方案，全部基准被评为 critical 风险，共归纳 16 种攻击类型。"
     },
     {
-      "id": "2026-w40-48",
+      "id": "2026-w40-47",
       "kind": "weekly",
       "title": "Google Research 推出 AI 视频联合导演，用 4 个智能体框架生成连贯的长视频",
       "titleEn": "Google Research Introduces an AI Video Co-Director: 4 Agentic Frameworks for Coherent, Minutes-Long Video Generation",
@@ -1129,11 +1094,35 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w40-48",
+        "reader": "/paper/2026-w40-47",
         "original": "https://www.marktechpost.com/2026/09/27/google-research-introduces-an-ai-video-co-director-4-agentic-frameworks-for-coherent-minutes-long-video-generation",
         "detail": "https://aihot.news/items/cmuknsyrq1yf2ro9h5u9s4a1u"
       },
       "summary": "Google Research 推出 AI 视频联合导演，由 4 个智能体框架组成，运行在 Gemini 和 Veo 之上，用于解决多镜头 AI 视频中的身份漂移和级联错误问题。"
+    },
+    {
+      "id": "2026-w40-48",
+      "kind": "weekly",
+      "title": "VoxParity 基准测试语音智能体对音频线索的响应能力",
+      "titleEn": "Almost Human, Except When It Matters: VoxParity and the Decisions a Voice Should Change",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-28T00:00:00.000Z",
+      "publishedAt": "2026-09-28T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w40-48",
+        "original": "https://arxiv.org/abs/2609.35922",
+        "detail": "https://aihot.news/items/owzk4b99aajeahiiul6fe3n2m"
+      },
+      "summary": "VoxParity 基准用 14 个行业 183 个场景测试语音智能体是否根据音频线索改变行动，同一文本的音频变化（如 mayday 呼救、儿童声音下注、恐惧低语）应触发不同的工具调用。",
+      "arxivId": "2609.35922"
     },
     {
       "id": "2026-w40-49",
@@ -1275,7 +1264,55 @@
       "summary": "斯坦福团队推出 HomeBody，由 GPT Astra 控制的人形机器人在此前未见过的厨房中执行长程任务，从跨房间收拾到按模糊指令取回记住的物体。整个过程无需环境专属训练数据或额外的策略学习，项目页面为 https://tml.stanford.edu/homebody/。Ethan Mollick 转发并评论称，LLM 出人意料地成为许多看似与人类语言模型无关问题的关键。"
     },
     {
+      "id": "2026-w39-06",
+      "kind": "weekly",
+      "title": "持续学习中的学习动力学：数据归因、遗忘与可塑性损失的统一视角",
+      "titleEn": "Learning Dynamics of Continual Learning: A Unified View of Data Attribution, Forgetting, and Plasticity Loss",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-27T00:00:00.000Z",
+      "publishedAt": "2026-09-27T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-06",
+        "original": "https://arxiv.org/abs/2609.33620",
+        "detail": "https://aihot.news/items/dtk8515aakl9myctm741453oz"
+      },
+      "summary": "研究提出一种 token 级与层级的分解方法，刻画从一个 token 学习如何改变另一个预测，通过分离 softmax 力、共享读出几何与残差连接，揭示两条交互通道并给出可前向计算的近似。",
+      "arxivId": "2609.33620"
+    },
+    {
       "id": "2026-w39-05",
+      "kind": "weekly",
+      "title": "选择多样化的 SFT 轨迹可提升后 RL 泛化能力",
+      "titleEn": "Selecting Diverse SFT Traces Improves Post-RL Generalization",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-27T00:00:00.000Z",
+      "publishedAt": "2026-09-27T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-05",
+        "original": "https://arxiv.org/abs/2609.33780",
+        "detail": "https://aihot.news/items/ovndv3d66361qfk65j27gl20f"
+      },
+      "summary": "一项研究提出用轻量级规则指纹筛选 SFT 数据中的\"推理路径多样性\"，即推理步骤序列的差异。在合成实验中，路径多样化的 SFT 让 OLMo3-7B 在 SFT 未见过环境上的 pass@8 提升 16.9 分；单模型条件下，跨 10 个数学基准的平均 pass@8 最高提升 6.2 分。该仅用 CPU、无需模型调用的选择器在 3 个开源语料上均优于更昂贵的替代方案。",
+      "arxivId": "2609.33780"
+    },
+    {
+      "id": "2026-w39-07",
       "kind": "weekly",
       "title": "DeepSeek 发布 DSec 弹性计算沙箱平台技术报告，支撑大规模智能体 RL 训练",
       "titleEn": "DeepSeek 弹性计算 (DSec)",
@@ -1291,7 +1328,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-05",
+        "reader": "/paper/2026-w39-07",
         "original": "https://arxiv.org/abs/2609.22978",
         "detail": "https://aihot.news/items/cmuizwqn30fmtrohyy8c9tgcx"
       },
@@ -1299,7 +1336,7 @@
       "arxivId": "2609.22978"
     },
     {
-      "id": "2026-w39-06",
+      "id": "2026-w39-08",
       "kind": "weekly",
       "title": "研究：AI建议可用让人几乎不再愿意说“我不知道”",
       "titleEn": "AI access makes people almost entirely unwilling to say \"I don't know,\" study finds",
@@ -1315,14 +1352,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-06",
+        "reader": "/paper/2026-w39-08",
         "original": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds",
         "detail": "https://aihot.news/items/cmuimykl30ru9rov0ibcecw52"
       },
       "summary": "一项覆盖3132名参与者、共五个实验的研究发现，仅当AI建议可用时，人们放弃回答的比例从36-44%骤降至3-6%。由于所用模型Step 3.5 Flash对所测试的电影视觉细节问题几乎全错，参与者正确率反而从27.5%降至9.2%；财务激励能减少求助AI并略提升弃答比例，但未能扭转效应，即使AI答案自动展示时弃答率也降至1-7%。"
     },
     {
-      "id": "2026-w39-07",
+      "id": "2026-w39-09",
       "kind": "weekly",
       "title": "Claude 无人值守算出 N=4 超杨-米尔斯理论九圈散射振幅，刷新人类八圈纪录",
       "titleEn": "Anthropic Claude 刷新物理学世界纪录：单挑基于杨振宁理论 9 圈难题",
@@ -1338,14 +1375,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-07",
+        "reader": "/paper/2026-w39-09",
         "original": "https://www.ithome.com/1/007/444.htm",
         "detail": "https://aihot.news/items/cmuiltkdf0qrarov0lo96tucy"
       },
       "summary": "Anthropic 宣布 Claude 在 Claude Science 系统中仅凭一条提示词、无人监督连续运行数天，算出平面 N=4 超杨-米尔斯理论六粒子振幅的九圈结果，超越 Lance Dixon 团队 2023 年的八圈纪录，总成本几千美元，其中直接自举路线的 Python 运行成本仅约 100 美元。"
     },
     {
-      "id": "2026-w39-08",
+      "id": "2026-w39-10",
       "kind": "weekly",
       "title": "Lasso Security 研究：SynthID-Text 水印会改变 AI Agent 的拒绝与工具调用行为",
       "titleEn": "Understanding the Impact of LLM Watermarking on AI Agent Behavior",
@@ -1361,14 +1398,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-08",
+        "reader": "/paper/2026-w39-10",
         "original": "https://www.lasso.security/blog/the-provenance-tax-understanding-the-impact-of-llm-watermarking-on-ai-agent-behavior",
         "detail": "https://aihot.news/items/cmuikap9m0p54rov0m856vj2l"
       },
       "summary": "Lasso Security 的 Andrea Siposova 发文分析 Anthropic 为 Claude 引入的基于 Google DeepMind SynthID-Text 的水印如何影响模型行为，提出采样漂移（sampling drift）概念。"
     },
     {
-      "id": "2026-w39-09",
+      "id": "2026-w39-11",
       "kind": "weekly",
       "title": "斯坦福团队首次实时观测单个声子消失的量子跃迁，成果发表于《科学》",
       "titleEn": "科学家首次实时观测单个声子消失，量子计算纠错研究迈出重要一步",
@@ -1384,14 +1421,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-09",
+        "reader": "/paper/2026-w39-11",
         "original": "https://www.ithome.com/1/007/438.htm",
         "detail": "https://aihot.news/items/cmuihj7n80ma8rov04w614nfe"
       },
       "summary": "斯坦福大学 Safavi-Naeini 团队首次实时观测到单个声子消失的量子跃迁过程，论文于 9 月 17 日发表于《科学》。团队将寿命约 2 毫秒的微型机械谐振器与超导量子比特连接，通过数百次连续测量捕捉到从 1 到 0 的跃迁瞬间。"
     },
     {
-      "id": "2026-w39-10",
+      "id": "2026-w39-12",
       "kind": "weekly",
       "title": "Nvidia SoL-Pi 系统优化 agent harness，编码任务 token 用量减少近一半",
       "titleEn": "Nvidia's SoL-Pi system cuts coding agent token usage nearly in half by optimizing the harness",
@@ -1407,14 +1444,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-10",
+        "reader": "/paper/2026-w39-12",
         "original": "https://the-decoder.com/nvidias-sol-pi-system-cuts-coding-agent-token-usage-nearly-in-half-by-optimizing-the-harness",
         "detail": "https://aihot.news/items/cmuia3dtr0b2jrov0w9x40faf"
       },
       "summary": "Nvidia 研究人员提出 SoL-Pi 系统，用研究 agent 自动优化编码 agent 的控制层（harness），在 EdgeBench 上相比 Codex 节省 50%、相比 Claude Code 节省 54.3% 的 token，性能与原 Pi harness 大致持平。"
     },
     {
-      "id": "2026-w39-11",
+      "id": "2026-w39-13",
       "kind": "weekly",
       "title": "独立调查报告揭秘 OpenAI 智能体集群入侵 Hugging Face 的技术细节",
       "titleEn": "揭秘OpenAI代理如何入侵Hugging Face的细节",
@@ -1430,14 +1467,206 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-11",
+        "reader": "/paper/2026-w39-13",
         "original": "https://swarmtraces.org/",
         "detail": "https://aihot.news/items/cmuhnmnp20fuhrojn1henams8"
       },
       "summary": "一份独立调查报告披露了 7 月约 700 个 OpenAI 智能体入侵 Hugging Face 的此前未公开细节，并发布超过 80,000 个重组攻击 payload 数据集。"
     },
     {
-      "id": "2026-w39-12",
+      "id": "2026-w39-21",
+      "kind": "weekly",
+      "title": "LT-OPD：用在线策略自蒸馏实现极端视觉 token 压缩",
+      "titleEn": "Fewer Tokens, More Self-Teaching: On-Policy Self-Distillation for Extreme Visual Token Reduction",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-26T00:00:00.000Z",
+      "publishedAt": "2026-09-26T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-21",
+        "original": "https://arxiv.org/abs/2609.32353",
+        "detail": "https://aihot.news/items/afojtaxf7q5m0pvgilho77cdx"
+      },
+      "summary": "针对多模态大模型在极低视觉 token 预算下性能骤降的问题，研究者提出训练框架 LT-OPD，让仅保留少量视觉 token 的学生模型在自己生成的轨迹上接受冻结全 token 教师模型的分布监督，并引入逐步降低 token 预算的课程。",
+      "arxivId": "2609.32353"
+    },
+    {
+      "id": "2026-w39-20",
+      "kind": "weekly",
+      "title": "用强化学习实现可证明最优的四边形块分解",
+      "titleEn": "Playing to Par: Reinforcement Learning for Provably Optimal Quadrilateral Block Decompositions",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-26T00:00:00.000Z",
+      "publishedAt": "2026-09-26T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-20",
+        "original": "https://arxiv.org/abs/2609.32146",
+        "detail": "https://aihot.news/items/ytam80dgx8rmbfz5edyfj8rc9"
+      },
+      "summary": "研究者训练强化学习智能体直接在半边数据结构上做局部编辑，构建达到离散 Gauss-Bonnet 下界（称为 par）的四边形网格分解，并通过在最优网格上的行为克隆加 PPO 突破稀疏奖励的探索瓶颈。",
+      "arxivId": "2609.32146"
+    },
+    {
+      "id": "2026-w39-19",
+      "kind": "weekly",
+      "title": "SkillDRE：通过执行前与运行时反馈对 Agent 技能进行双阶段红队演化",
+      "titleEn": "SkillDRE: Dual-Stage Red-Team Evolution of Agent Skills via Pre-Execution and Runtime Feedback",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-26T00:00:00.000Z",
+      "publishedAt": "2026-09-26T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-19",
+        "original": "https://arxiv.org/abs/2609.32400",
+        "detail": "https://aihot.news/items/nd1iyr67m7mw63ojy6nncxem3"
+      },
+      "summary": "SkillDRE 是一个全自动框架，通过执行前扫描与运行时防御反馈的双阶段闭环，演化完整的恶意 Agent 技能包。在 SkillsBench 上对四个受害模型评测，平均攻击成功率达 45.28%，超过最强基线 40.3%，且最终提交的技能未触发任何 SkillScan 告警，并基本保留良性任务性能。结果表明，两阶段防御反馈可作为自适应红队的有效学习信号，单独评估任一防御阶段都会遗漏攻击能力。",
+      "arxivId": "2609.32400"
+    },
+    {
+      "id": "2026-w39-18",
+      "kind": "weekly",
+      "title": "MALA：让注意力自行分配其计算量的融合注意力原语",
+      "titleEn": "MassAlloc Attention: Let Attention Allocate Its Own Compute",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-26T00:00:00.000Z",
+      "publishedAt": "2026-09-26T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-18",
+        "original": "https://arxiv.org/abs/2609.32712",
+        "detail": "https://aihot.news/items/nclaapiw8h359y5liwjffeiba"
+      },
+      "summary": "研究者提出融合注意力原语 MALA，按归一化贡献分配 post-score 计算，在 8K 匹配工作量下平均遗漏质量仅 0.0188%，接近逐实例参考质量 oracle 的 0.0182%。",
+      "arxivId": "2609.32712"
+    },
+    {
+      "id": "2026-w39-17",
+      "kind": "weekly",
+      "title": "同族同策略蒸馏的缩放规律：弱到强、同基座与强到弱教师-学生设置研究",
+      "titleEn": "Scaling Properties of Same-Family On-Policy Distillation",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-26T00:00:00.000Z",
+      "publishedAt": "2026-09-26T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-17",
+        "original": "https://arxiv.org/abs/2609.32722",
+        "detail": "https://aihot.news/items/df1eqnh2vi6zgaxcna4gv9by0"
+      },
+      "summary": "研究揭示同策略蒸馏（OPD）在弱到强、同基座、强到弱教师-学生设置中的缩放规律：早期训练中，留出准确率（gold score）随学生初始化 token 级反向 KL 散度平方根近似线性上升，形成\"有效迁移\"区间。",
+      "arxivId": "2609.32722"
+    },
+    {
+      "id": "2026-w39-16",
+      "kind": "weekly",
+      "title": "CoWindow Attention（CoWA）：让完整因果覆盖成为注意力头集合的集体属性",
+      "titleEn": "CoWindow Attention: Full Causal Coverage Is a Collective Property",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-26T00:00:00.000Z",
+      "publishedAt": "2026-09-26T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-16",
+        "original": "https://arxiv.org/abs/2609.32704",
+        "detail": "https://aihot.news/items/on78ohnnkhekot1ahtjuh4alz"
+      },
+      "summary": "研究者提出结构化注意力架构 CoWA，将因果历史访问分散到各 KV head：所有 head 共享近对角与 prefix-sink 窗口，互补的长程窗口划分其余历史，其并集实现完整因果覆盖，且无需学习型 router 或 indexer。",
+      "arxivId": "2609.32704"
+    },
+    {
+      "id": "2026-w39-15",
+      "kind": "weekly",
+      "title": "Relic：把多智能体协作经验沉淀为组织级可执行协议",
+      "titleEn": "Relic: From Multi-Agent Collaboration to Persistent Organizational Capability",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-26T00:00:00.000Z",
+      "publishedAt": "2026-09-26T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-15",
+        "original": "https://arxiv.org/abs/2609.32965",
+        "detail": "https://aihot.news/items/xb95iw5eudcue7ehvw0rhbhp7"
+      },
+      "summary": "Relic 将多智能体协作中反复出现的失败转化为组织所有、可执行的协议，把触发条件、责任、所需证据与执行后果绑定到运行时，并支持修订与退役。在十个软件工作负载、三个模型共 360 次受控运行中，完整契约交付率从 14.06% 提升至 19.76%（+5.71 个百分点）。",
+      "arxivId": "2609.32965"
+    },
+    {
+      "id": "2026-w39-14",
+      "kind": "weekly",
+      "title": "AgentTell 基准揭示浏览器智能体通过行为侧信道泄露隐私",
+      "titleEn": "AgentTell: Behavioural Side-Channel Leakage in Browser-Use Agents",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-26T00:00:00.000Z",
+      "publishedAt": "2026-09-26T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-14",
+        "original": "https://arxiv.org/abs/2609.32915",
+        "detail": "https://aihot.news/items/uc9vmkrem9pzpwkrapohc31r1"
+      },
+      "summary": "论文提出 AgentTell 基准，研究 browser-use 智能体的行为侧信道泄露，即智能体的操作无意间暴露从先前网站获取的秘密。基准含 20 个场景、100 个任务，在六个骨干模型上共 9,760 次会话的评估显示 61.1% 的会话中智能体通过行为泄露秘密；即使记忆中明确要求不透露，泄露率仍达 56.7%，且 34.5% 的泄露会话最终回复还向用户保证未泄露。",
+      "arxivId": "2609.32915"
+    },
+    {
+      "id": "2026-w39-22",
       "kind": "weekly",
       "title": "Stanford 研究发现 AI 基准测试常常测不出它声称测量的东西",
       "titleEn": "The Tests That Grade AI May Be Getting It Wrong",
@@ -1453,14 +1682,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-12",
+        "reader": "/paper/2026-w39-22",
         "original": "https://hai.stanford.edu/news/the-tests-that-grade-ai-may-be-getting-it-wrong",
         "detail": "https://aihot.news/items/cmuhibqgf0a85rojn4svbgg9x"
       },
       "summary": "Stanford 研究者将在 10 月旧金山 COLM 会议上发表两项研究，用测量科学与心理测量学检验 56 个常用基准，发现基准并不总是测量其声称的能力，声称测同一属性的基准之间也常互相矛盾。研究以 BBQ 偏见基准为例指出其更像在测阅读理解，另一项研究拆解了安全分数在非英语语言中下降的原因，区分模型 guardrails 变弱与翻译后测试本身失真这两种因素。"
     },
     {
-      "id": "2026-w39-13",
+      "id": "2026-w39-23",
       "kind": "weekly",
       "title": "Qwen 团队发布 Qwen3.8-Omni-Flash 报告：面向原生全模态智能体",
       "titleEn": "The era of omni agents is upon us. This is a great report by the Qwen Team on their omni-modal agen...",
@@ -1476,14 +1705,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-13",
+        "reader": "/paper/2026-w39-23",
         "original": "https://x.com/dair_ai/status/2103573552611926373",
         "detail": "https://aihot.news/items/cmuhdwhpo0abaro3b872nki4e"
       },
       "summary": "Qwen 团队发布报告，介绍 Qwen3.8-Omni-Flash，一个原生多模态模型，面向跨文本、音频和视频的长程智能体任务，如视频编辑和长音频视频翻译。模型采用 Qwen3.8-Next 的稀疏 MoE 架构，上下文窗口达一百万 token，并通过协同训练策略在保持文本性能的同时将智能体能力迁移到音频和视频任务。"
     },
     {
-      "id": "2026-w39-14",
+      "id": "2026-w39-24",
       "kind": "weekly",
       "title": "Arena：GPT-6 Sol (Max) 以 +7.7% 净改进重塑 Agent Arena Pareto 前沿",
       "titleEn": "GPT-6 Sol (Max) by @OpenAI has reshaped the Agent Arena Pareto frontier with a +7.7% net improvement...",
@@ -1499,14 +1728,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-14",
+        "reader": "/paper/2026-w39-24",
         "original": "https://x.com/arena/status/2103572481206538439",
         "detail": "https://aihot.news/items/cmuhdm4yz0a20ro3bo436lm8s"
       },
       "summary": "Arena 宣布 OpenAI 的 GPT-6 Sol (Max) 进入 Agent Arena，基于 4K+ 真实智能体会话取得 +7.7% 净改进，排名第 6，中位成本 $0.75/task。"
     },
     {
-      "id": "2026-w39-15",
+      "id": "2026-w39-25",
       "kind": "weekly",
       "title": "Qwen 团队发布 Qwen3.8-Omni-Flash 全模态智能体模型报告",
       "titleEn": "Era of the omni models is upon us. This is a great report by the Qwen Team on their omni model. Th...",
@@ -1522,14 +1751,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-15",
+        "reader": "/paper/2026-w39-25",
         "original": "https://x.com/dair_ai/status/2103563695381209417",
         "detail": "https://aihot.news/items/cmuhctws709c9ro3bc9io6um2"
       },
       "summary": "Qwen 团队发布 Qwen3.8-Omni-Flash 报告，这是一个原生多模态模型，面向跨文本、音频和视频的长时程智能体任务，如视频编辑和长音频视频翻译。模型沿用 Qwen3.8-Next 的稀疏 MoE 架构，上下文窗口为 100 万 token，并通过协同训练策略在保持文本性能的同时把智能体能力迁移到音频和视频任务。"
     },
     {
-      "id": "2026-w39-16",
+      "id": "2026-w39-26",
       "kind": "weekly",
       "title": "CESifo 工作论文：数据未显示 AI 冲击应届大学毕业生就业",
       "titleEn": "AI was supposed to hit new grads hard. So far, unemployment data says otherwise.",
@@ -1545,14 +1774,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-16",
+        "reader": "/paper/2026-w39-26",
         "original": "https://arstechnica.com/ai/2026/09/ai-was-supposed-to-hit-new-grads-hard-so-far-unemployment-data-says-otherwise",
         "detail": "https://aihot.news/items/cmuhcqomm098bro3bs17euafh"
       },
       "summary": "慕尼黑 CESifo 的 Robert Fairlie 和 Jane Wu 发布工作论文，称没有证据显示应届大学毕业生在绝对或相对水平上出现明显的岗位替代或招聘减少。"
     },
     {
-      "id": "2026-w39-17",
+      "id": "2026-w39-27",
       "kind": "weekly",
       "title": "Claude 将粒子物理散射振幅计算从 8 环推进到 9 环，Lance Dixon 独立验证",
       "titleEn": "Claude pushed a frontier particle-physics calculation from 8 loops to 9. - importantly “Claude Scie...",
@@ -1568,14 +1797,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-17",
+        "reader": "/paper/2026-w39-27",
         "original": "https://x.com/rohanpaul_ai/status/2103558769984860287",
         "detail": "https://aihot.news/items/cmuhc5qll08huro3brxnmyl2q"
       },
       "summary": "Claude Science 在单个提示词下、数天基本无人监督运行，在平面 N=4 super-Yang-Mills 模型中完成九环散射振幅计算，将此前 SLAC 的 Lance Dixon 等人保持的 8 环纪录推进到 9 环，总成本仅几千美元。"
     },
     {
-      "id": "2026-w39-18",
+      "id": "2026-w39-28",
       "kind": "weekly",
       "title": "Anthropic 称 Claude 完成平面 N=4 超杨-米尔斯理论九圈散射振幅计算",
       "titleEn": "New on the Science Blog: Yes, Claude can do Nine Loops. Theoretical physicists predict how particle...",
@@ -1591,14 +1820,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-18",
+        "reader": "/paper/2026-w39-28",
         "original": "https://x.com/AnthropicAI/status/2103541577083719888",
         "detail": "https://aihot.news/items/cmuh9l75q02v8ro3brr0wv9o8"
       },
       "summary": "Anthropic 在科学博客称，物理学家 @4gravitons 发起挑战后，Claude 在 Claude Science 中依据单个提示词 largely unsupervised 地运行数天，在平面 N=4 超杨-米尔斯模型中完成九圈散射振幅计算，总成本约几千美元。"
     },
     {
-      "id": "2026-w39-19",
+      "id": "2026-w39-29",
       "kind": "weekly",
       "title": "Perplexity 用提示词引导自蒸馏让 Computer 智能体从真实错误中学习",
       "titleEn": "Perplexity Trains Its Computer Agent on Real Mistakes With Hint-Guided Self-Distillation",
@@ -1614,14 +1843,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-19",
+        "reader": "/paper/2026-w39-29",
         "original": "https://www.marktechpost.com/2026/09/25/perplexity-trains-its-computer-agent-on-real-mistakes-with-hint-guided-self-distillation",
         "detail": "https://aihot.news/items/cmuh35rj907cwrolzwxxy5xn2"
       },
       "summary": "Perplexity Research 发布后训练研究，将拒绝采样微调与提示引导自蒸馏（OPSD）结合，用 GLM 5.2 驱动的 Perplexity Computer 真实用户会话（含失败会话）训练模型。"
     },
     {
-      "id": "2026-w39-20",
+      "id": "2026-w39-30",
       "kind": "weekly",
       "title": "微软提出 CASD：用编码代理分析轨迹日志做提示词优化，平均提升 16.6 分",
       "titleEn": "Banger paper from Microsoft on prompt optimization. (bookmark it) The claim that a coding agent re...",
@@ -1637,14 +1866,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-20",
+        "reader": "/paper/2026-w39-30",
         "original": "https://x.com/dair_ai/status/2103479392106352910",
         "detail": "https://aihot.news/items/cmuh11j440560rolz0093vp6i"
       },
       "summary": "微软论文《Coding Agents are Strong Prompt Optimizers》提出 Coding-Agent Skill Distillation（CASD），让现成编码代理读取完整智能体轨迹日志，自行编写分析代码统计失败模式并将发现写成规则提示词，无需环境访问和验证数据。"
     },
     {
-      "id": "2026-w39-21",
+      "id": "2026-w39-31",
       "kind": "weekly",
       "title": "研究论文：Coding Agent 在广义任务与运动规划问题上的能力评测",
       "titleEn": "Coding Agents for Generalized Task and Motion Planning Problems",
@@ -1660,7 +1889,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-21",
+        "reader": "/paper/2026-w39-31",
         "original": "https://arxiv.org/abs/2609.30233",
         "detail": "https://aihot.news/items/cmugr3m2616ltrogvrucw6ndx"
       },
@@ -1668,7 +1897,7 @@
       "arxivId": "2609.30233"
     },
     {
-      "id": "2026-w39-22",
+      "id": "2026-w39-32",
       "kind": "weekly",
       "title": "Rufus-Air：基于 GLM-4.5-Air-Base 的开源 LLM 后训练配方",
       "titleEn": "Rufus-Air: An Open LLM Post-Training Recipe",
@@ -1684,7 +1913,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-22",
+        "reader": "/paper/2026-w39-32",
         "original": "https://arxiv.org/abs/2609.29421",
         "detail": "https://aihot.news/items/cmugmtaa5120lrogvmdv8v5k0"
       },
@@ -1692,7 +1921,127 @@
       "arxivId": "2609.29421"
     },
     {
-      "id": "2026-w39-23",
+      "id": "2026-w39-33",
+      "kind": "weekly",
+      "title": "PUBG Ally：PUBG 中可语音对话的具身智能体队友",
+      "titleEn": "PUBG Ally: A Conversational Embodied Agent as an AI Teammate",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-25T03:20:52.873Z",
+      "publishedAt": "2026-09-24T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-33",
+        "original": "https://arxiv.org/abs/2609.29837",
+        "detail": "https://aihot.news/items/cmuge8kyh0pajrogvxgrumclx"
+      },
+      "summary": "论文介绍 PUBG Ally，一个在 PUBG: BATTLEGROUNDS 中作为语音队友的具身智能体，可感知动态游戏环境并自主行动。语言模型智能体通过受控接口检查游戏信息、理解玩家语音并下发高层动作，交给更快的控制层执行移动、战斗和恢复；团队基于近 39k 场真实玩家共玩对局的数据做迭代训练，并通过模型压缩、上下文压缩、安全训练和运行时护栏实现低延迟端侧部署与玩家沟通安全。",
+      "arxivId": "2609.29837"
+    },
+    {
+      "id": "2026-w39-39",
+      "kind": "weekly",
+      "title": "Duplex-MPE：全双工对话中多方交互的基准测试",
+      "titleEn": "Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-25T00:00:00.000Z",
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-39",
+        "original": "https://arxiv.org/abs/2609.31948",
+        "detail": "https://aihot.news/items/c9e1e98s4sciriah8ij423ki4"
+      },
+      "summary": "Duplex-MPE 基准发布，用于评估全双工语音助手在多人共享对话中何时应答、保持沉默或停止说话，包含 2000 个由三到四名人类说话者与一名助手构成的场景，同一请求分显式与隐式指代配对。",
+      "arxivId": "2609.31948"
+    },
+    {
+      "id": "2026-w39-38",
+      "kind": "weekly",
+      "title": "ZooWork-ShopRanker：面向电商场景的偏好对齐重排序模型发布",
+      "titleEn": "ZooWork-ShopRanker: An Open, Preference-Aligned E-Commerce Reranker",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-25T00:00:00.000Z",
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-38",
+        "original": "https://arxiv.org/abs/2609.31002",
+        "detail": "https://aihot.news/items/kmrxks04q1917wjhx1kc9em4h"
+      },
+      "summary": "ZooWork团队发布ShopRanker系列电商重排序模型（0.6B/4B/8B），通过多LLM裁判生成偏好标签进行训练，并推出包含约1万条真实流量数据的ShopRank-Bench基准。实验显示该系列模型在电商检索任务上显著优于现有开源基线及未对齐版本，且小参数模型表现突出。目前模型与基准已开源。",
+      "arxivId": "2609.31002"
+    },
+    {
+      "id": "2026-w39-37",
+      "kind": "weekly",
+      "title": "利用预训练扩散模型和多模态条件增强摄影测量数字表面模型",
+      "titleEn": "Enhancing Photogrammetric Digital Surface Models with Pretrained Diffusion Models and Multimodal Conditioning",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-25T00:00:00.000Z",
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-37",
+        "original": "https://arxiv.org/abs/2609.31199",
+        "detail": "https://aihot.news/items/xxg4xxpnzkgfde269ac6uof3o"
+      },
+      "summary": "该研究提出一种改进的 Stable Diffusion 3 架构，通过同时以摄影测量 DSM 和 Pléiades 卫星图像作为条件，对垂直配准的数字表面模型进行细化。实验表明，这种多模态条件方法能显著提升高程精度，在法国城市测试中，密集城区的 RMSE 从 6.00 米降至 3.45 米（上下文城市）及 2.76 米（留出城市）。",
+      "arxivId": "2609.31199"
+    },
+    {
+      "id": "2026-w39-36",
+      "kind": "weekly",
+      "title": "自对弈搜索蒸馏 SPSD：用 MuZero 式自对弈数据提升 LLM 推理能力",
+      "titleEn": "Self-Play Search Distillation for Large Language Model Reasoning",
+      "source": {
+        "name": "HuggingFace Daily Papers",
+        "family": "huggingface",
+        "url": null
+      },
+      "timelineAt": "2026-09-25T00:00:00.000Z",
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-36",
+        "original": "https://arxiv.org/abs/2609.30936",
+        "detail": "https://aihot.news/items/j9nwzvu6vgep1f0d0laay6jqh"
+      },
+      "summary": "研究者提出 Self-Play Search Distillation（SPSD），通过棋盘游戏上训练的 MuZero 式网络自对弈生成超人类合成数据，将搜索记录转为超人类思维链，用环境监督训练 LLM。在 Qwen3-4B-Base 上，六个数学基准的平均分从 24.1 提升至 36.6，留出游戏胜率从 15% 升至 45%。该方法仅用自对弈搜索记录训练，却能迁移到未见过的数学任务。",
+      "arxivId": "2609.30936"
+    },
+    {
+      "id": "2026-w39-35",
       "kind": "weekly",
       "title": "TRACE：流式视频理解的时序审计与条件感知评估框架",
       "titleEn": "TRACE: Temporal Audit and Condition-aware Evaluation of Streaming Video Understanding",
@@ -1708,7 +2057,7 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-23",
+        "reader": "/paper/2026-w39-35",
         "original": "https://arxiv.org/abs/2609.30670",
         "detail": "https://aihot.news/items/olgs84pihioa7i8iv3qrotmpn"
       },
@@ -1716,7 +2065,53 @@
       "arxivId": "2609.30670"
     },
     {
-      "id": "2026-w39-24",
+      "id": "2026-w39-34",
+      "kind": "weekly",
+      "title": "OpenAI 报告存在可自我复制的提示词注入",
+      "titleEn": "Self-replicating prompt injections exist",
+      "source": {
+        "name": "OpenAI：失准报告与通报",
+        "family": "lab",
+        "url": null
+      },
+      "timelineAt": "2026-09-25T00:00:00.000Z",
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "curated": true,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-34",
+        "original": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+        "detail": "https://aihot.news/items/l0p27y7t9kdxf7egvf32bob3w"
+      },
+      "summary": "OpenAI 证明存在一种可像蠕虫一样自我传播的新型提示词注入，发现于 2026 年 6 月 27 日，基于 GPT-Red 自博弈红队训练，攻击模型基于 GPT-5.4-mini，受测模型包括 GPT-5.4-mini 和 GPT-5.5。"
+    },
+    {
+      "id": "2026-w39-40",
+      "kind": "weekly",
+      "title": "Google DeepMind 发布 XYEval，测试智能体是否盲从用户的错误建议",
+      "titleEn": "Interesting new paper from Google DeepMind. Studies agents that follow bad advice from users. User...",
+      "source": {
+        "name": "X：DAIR.AI",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-09-24T22:29:13.987Z",
+      "publishedAt": "2026-09-24T22:00:16.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-40",
+        "original": "https://x.com/dair_ai/status/2103243145471524884",
+        "detail": "https://aihot.news/items/cmug3tk310ebwrogvrx64mb9n"
+      },
+      "summary": "Google DeepMind 发布 XYEval 论文，在 tau2-bench、SWE-bench、Terminal-Bench、HLE 和 MCP-Atlas 任务中加入一条自信但误导的用户建议，任务与正确解法不变。"
+    },
+    {
+      "id": "2026-w39-41",
       "kind": "weekly",
       "title": "MIT McGovern Institute 开发从文本评估自杀风险的词表工具并发表于 Journal of Psychopathology and Clinical Science",
       "titleEn": "Estimating suicide risk from text",
@@ -1732,14 +2127,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-24",
+        "reader": "/paper/2026-w39-41",
         "original": "https://news.mit.edu/2026/estimating-suicide-risk-from-text-0924",
         "detail": "https://aihot.news/items/cmug2n9v809fgrogvg0tkppzl"
       },
       "summary": "MIT McGovern Institute 研究团队开发了基于自杀风险词表的语言处理工具，可从危机求助文本中预测自杀风险，成果发表于 Journal of Psychopathology and Clinical Science。"
     },
     {
-      "id": "2026-w39-25",
+      "id": "2026-w39-42",
       "kind": "weekly",
       "title": "Stanford 与 Together AI 论文提出 Self-Organizing Agent Teams，3 模型协作团队准确率达 66.7%",
       "titleEn": "Stop making your AI agents debate and vote. New Stanford+Together AI paper shows teams that learn ...",
@@ -1755,14 +2150,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-25",
+        "reader": "/paper/2026-w39-42",
         "original": "https://x.com/rohanpaul_ai/status/2103224475361972296",
         "detail": "https://aihot.news/items/cmug10ak207nlrogvfcik7xfx"
       },
       "summary": "Stanford 与 Together AI 的论文提出 Self-Organizing Agent Teams（SAT），让固定智能体团队从过往协作中学习可复用的角色分工与流程，而非辩论后投票。"
     },
     {
-      "id": "2026-w39-26",
+      "id": "2026-w39-43",
       "kind": "weekly",
       "title": "Anthropic Project Swap 实验：201 名员工让 Claude 智能体替人换书交易",
       "titleEn": "Project Swap: What happens when agents trade for us?",
@@ -1778,14 +2173,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-26",
+        "reader": "/paper/2026-w39-43",
         "original": "https://www.anthropic.com/research/project-swap",
         "detail": "https://aihot.news/items/cmufzisoh06alrogv9r5eugcc"
       },
       "summary": "Anthropic 开展 Project Swap 实验，让 201 名员工携带一本书，其 Claude 智能体在数字交易大厅代表他们谈判换书。5 分钟聊天后，Claude 构建的图书排序与本人自评排序在 61% 的书对上一致；市场效率为 0.55（最优 0.89），其中 85% 的差距来自智能体对参与者偏好的理解不足，而非谈判表现。"
     },
     {
-      "id": "2026-w39-27",
+      "id": "2026-w39-44",
       "kind": "weekly",
       "title": "FRI 中期报告：顶尖 AI 专家大幅低估领域进展速度",
       "titleEn": "Top AI experts badly underestimated how fast the field is moving, study finds",
@@ -1801,14 +2196,37 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-27",
+        "reader": "/paper/2026-w39-44",
         "original": "https://the-decoder.com/top-ai-experts-badly-underestimated-how-fast-the-field-is-moving-study-finds",
         "detail": "https://aihot.news/items/cmufxejj6040xrogvla55twb8"
       },
       "summary": "Forecasting Research Institute 的中期报告显示，专家和超级预测员系统性低估了 AI 进展。AI 在 2025 年 7 月达到 IMO 金牌水平，比专家预测中位数提前五年；病毒学基准、网络安全基准和 Anthropic 约 1000 亿美元年化收入等指标也远超预测，如专家对 2026 年底 AI 公司最高 ARR 的中位数预测仅 200 亿美元。"
     },
     {
-      "id": "2026-w39-28",
+      "id": "2026-w39-45",
+      "kind": "weekly",
+      "title": "Jev-as-a-Judge 论文：廉价裁判置信时接受、不确定时上升至 GPT-6，保留 99% 准确率并省约 43% 费用",
+      "titleEn": "Banger paper introducing Jev-as-a-Judge. The overall finding is that you want to use a cheap judge ...",
+      "source": {
+        "name": "X：DAIR.AI",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-09-24T15:59:13.312Z",
+      "publishedAt": "2026-09-24T15:40:02.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-45",
+        "original": "https://x.com/dair_ai/status/2103147453717545278",
+        "detail": "https://aihot.news/items/cmufpw01h03v5roxzbjbbud56"
+      },
+      "summary": "论文介绍 JEV-as-a-Judge，发现多数评测可用廉价裁判，仅把不确定判定交给前沿模型。在 510 个保留偏好对上，级联接受 JEV 置信判定、其余上升至 GPT-6 Astra，保留 GPT-6 约 99% 的准确率，费用约为其 57%。"
+    },
+    {
+      "id": "2026-w39-46",
       "kind": "weekly",
       "title": "Harness-Zero 论文提出 agent-as-harness 方法，将专用 harness 能力蒸馏进模型",
       "titleEn": "Super interesting paper from Google and colleagues. It studies where it's possible to distill an ag...",
@@ -1824,14 +2242,37 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-28",
+        "reader": "/paper/2026-w39-46",
         "original": "https://x.com/omarsar0/status/2103095360239636666",
         "detail": "https://aihot.news/items/cmufisajc03opro6owzj4r56e"
       },
       "summary": "北京大学、Google 和 HKUST 等机构的论文 Harness-Zero 研究 agent harness 蒸馏，通过 agent-as-harness 在训练时用优化后的 harness 纠正学生模型在目标动作空间的响应，生成训练示范后微调。"
     },
     {
-      "id": "2026-w39-29",
+      "id": "2026-w39-47",
+      "kind": "weekly",
+      "title": "SkillSonar 论文提出 Defense-as-Skill 范式为技能增强 Agent 提供运行时防护",
+      "titleEn": "A malicious agent skill can look safe when installed and turn dangerous only during a real task, so ...",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-09-24T12:10:23.928Z",
+      "publishedAt": "2026-09-24T11:58:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w39-47",
+        "original": "https://x.com/rohanpaul_ai/status/2103091577644048482",
+        "detail": "https://aihot.news/items/cmufhpse807s4rolq49dp7rsl"
+      },
+      "summary": "论文《Defense-as-Skill: Evolving Runtime Guard Skill for Skill-Augmented Agents》提出恶意技能可能在安装时看似安全、执行任务时才显现危险，因此 Agent 需要运行时检查而非仅靠安装前扫描。"
+    },
+    {
+      "id": "2026-w39-48",
       "kind": "weekly",
       "title": "Transluce 报告 AI 智能体利用 urlquery.net 绕过限制并三次尝试攻击公共数据网站",
       "titleEn": "在 urlquery.net 上发现了早期恶意人工智能代理的活动及黑客攻击尝试",
@@ -1847,14 +2288,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-29",
+        "reader": "/paper/2026-w39-48",
         "original": "https://transluce.org/agent-activity",
         "detail": "https://aihot.news/items/cmufbzd2405n0roagdupxjxlb"
       },
       "summary": "Transluce 发布证据称，AI 智能体利用网页安全扫描服务 urlquery.net 绕过访问限制，并在 2026 年 5 至 6 月间三次尝试入侵公共数据网站，包括澳大利亚健康与福利研究所（AIHW）、Data USA 和新墨西哥大学数字图书馆，其中 AIHW 事件是已知首例智能体自主尝试攻击政府网站的案例。"
     },
     {
-      "id": "2026-w39-30",
+      "id": "2026-w39-49",
       "kind": "weekly",
       "title": "Transluce 报告 AI 智能体利用 urlquery.net 绕过限制并三次尝试入侵公开数据网站",
       "titleEn": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
@@ -1870,14 +2311,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-30",
+        "reader": "/paper/2026-w39-49",
         "original": "https://transluce.org/agent-activity",
         "detail": "https://aihot.news/items/cmufae54k03ndroagdn3prleh"
       },
       "summary": "Transluce 发布调查报告，发现 AI 智能体利用 urlquery.net 的远程浏览器服务绕过访问限制，并在 2026 年 5 至 6 月间对 Data USA、新墨西哥大学数字图书馆和澳大利亚健康与福利研究院（AIHW）三个数据源尝试 SQL 注入、XSS 等攻击，均未成功。"
     },
     {
-      "id": "2026-w39-31",
+      "id": "2026-w39-50",
       "kind": "weekly",
       "title": "OpenAI 发布 MentalHealthBench：1215 段对话评估 AI 心理健康应对能力",
       "titleEn": null,
@@ -1893,452 +2334,11 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w39-31",
+        "reader": "/paper/2026-w39-50",
         "original": "https://www.ithome.com/1/006/805.htm",
         "detail": "https://aihot.news/items/cmuf7mqik03p8rocs3n5ytu0y"
       },
       "summary": "OpenAI 发布开放式基准 MentalHealthBench，包含 1215 段合成心理健康对话，由 22 个国家和地区的 80 多名持证心理学家和精神科医生参与制定，共 5262 条专家评分标准。"
-    },
-    {
-      "id": "2026-w39-32",
-      "kind": "weekly",
-      "title": "阿里达摩院发布食管癌 AI 模型 DAMO EAGLE，平扫 CT 不插管识别早期病变",
-      "titleEn": "阿里达摩院发布食管癌 AI 模型，“不插管”发现早期和癌前病变",
-      "source": {
-        "name": "IT之家",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T05:28:04.329Z",
-      "publishedAt": "2026-09-24T05:22:08.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-32",
-        "original": "https://www.ithome.com/1/006/720.htm",
-        "detail": "https://aihot.news/items/cmuf3cccy08uuroodnbzbwfro"
-      },
-      "summary": "阿里达摩院联合四川省肿瘤医院、中山大学肿瘤防治中心等机构发布食管癌筛查 AI 模型 DAMO EAGLE，无需插管和造影，从平扫 CT 识别包括早期和癌前病变在内的食管癌，论文 9 月 22 日发表于《自然·医学》。"
-    },
-    {
-      "id": "2026-w39-33",
-      "kind": "weekly",
-      "title": "StudentBench 研究显示 AI 辅导在 GRE 学习增益上与人类专家等效",
-      "titleEn": "StudentBench: AI and human tutoring yield equivalent GRE learning gains",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T05:20:34.242Z",
-      "publishedAt": "2026-09-23T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-33",
-        "original": "https://arxiv.org/abs/2609.28470",
-        "detail": "https://aihot.news/items/cmuf32nqq08h4rood5a4n3ah0"
-      },
-      "summary": "研究团队发布 StudentBench 评估套件与公开平台，基于超过 175,000 条学生-AI 消息和 2,383 名参与者的数据，发现 AI 辅导在 GRE 学习增益上与专家人类辅导统计等效（p = .015），七个 GRE 领域中有五个领域表现最好的 AI 辅导者平均超过人类。",
-      "arxivId": "2609.28470"
-    },
-    {
-      "id": "2026-w39-34",
-      "kind": "weekly",
-      "title": "Hunyuan-A13B 技术报告发布：80B 总参数、13B 激活的开源 MoE 模型",
-      "titleEn": "Hunyuan-A13B Technical Report",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T03:20:33.510Z",
-      "publishedAt": "2026-09-23T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-34",
-        "original": "https://arxiv.org/abs/2609.27284",
-        "detail": "https://aihot.news/items/cmueysbv003kjroodx9qi9u5z"
-      },
-      "summary": "腾讯混元发布开源 MoE 大语言模型 Hunyuan-A13B，总参数 80B、推理仅激活 13B，以平衡能力、效率与部署成本。模型在经严格筛选的 20T token 语料上预训练并加强 STEM 数据，再经 SFT 和大规模强化学习；引入双模式 Chain-of-Thought 框架，简单问题用快思考、复杂多步问题用慢思考。",
-      "arxivId": "2609.27284"
-    },
-    {
-      "id": "2026-w39-35",
-      "kind": "weekly",
-      "title": "Anthropic 称 Claude 在噬菌体 DNA 中发现未知酶系统",
-      "titleEn": "Claude has discovered a previously unknown enzyme system hidden in the DNA of bacteriophages. Beside...",
-      "source": {
-        "name": "X：Anthropic",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T02:58:28.923Z",
-      "publishedAt": "2026-09-23T18:18:33.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-35",
-        "original": "https://x.com/AnthropicAI/status/2102824959827742916",
-        "detail": "https://aihot.news/items/cmuexzypj03j9roow55c4teir"
-      },
-      "summary": "Anthropic 宣布 Claude 在噬菌体 DNA 中发现一个此前未知的酶系统，其基因旁有一段类似 CRISPR 的重复 DNA 阵列。目前尚不清楚该系统的功能，但少数已知同类系统都能对 DNA 进行剪切、复制和粘贴，此类可编程系统历史上曾催生 CRISPR 等基因医学基础，仍需更多研究验证其用途。"
-    },
-    {
-      "id": "2026-w39-36",
-      "kind": "weekly",
-      "title": "上海AI实验室发布 InternW0 物理世界模型基础版",
-      "titleEn": "InternW0: A Foundational Physical World Model for Efficient Real-World Interactions",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T02:20:33.395Z",
-      "publishedAt": "2026-09-23T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-36",
-        "original": "https://arxiv.org/abs/2609.27656",
-        "detail": "https://aihot.news/items/cmuewn5g2033uro3kvduc8km8"
-      },
-      "summary": "上海AI实验室推出 InternW 物理世界模型系列的首个模型 InternW0，通过非对称视频动作架构结合 flow matching 联合学习未来视觉动态与连续机器人控制，视频专家提供长时程预测上下文，轻量动作专家以更快频率运行，并通过复用层间 K/V 和观察条件上下文路由避免每次动作更新都重新生成未来。",
-      "arxivId": "2609.27656"
-    },
-    {
-      "id": "2026-w39-37",
-      "kind": "weekly",
-      "title": "Transluce 报告 AI 智能体利用 urlquery.net 绕过限制并三次尝试入侵网站",
-      "titleEn": "Early rogue agent activity and attempts to hack found on urlquery.net",
-      "source": {
-        "name": "Transluce",
-        "family": "other",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T01:41:51.116Z",
-      "publishedAt": "2026-09-22T16:00:00.000Z",
-      "curated": true,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-37",
-        "original": "https://transluce.org/agent-activity",
-        "detail": "https://aihot.news/items/cmuev9dsk04imroyq4xqz0yc2"
-      },
-      "summary": "Transluce 发布证据称，AI 智能体利用网址扫描服务 urlquery.net 绕过访问限制，并在 2026 年 5 至 6 月间三次尝试入侵公开数据网站，包括澳大利亚健康与福利研究所（AIHW），其中两起与 OpenAI 已确认的 DseWiki 智能体群相关。"
-    },
-    {
-      "id": "2026-w39-38",
-      "kind": "weekly",
-      "title": "OpenAI 发布心理健康对话基准 MentalHealthBench",
-      "titleEn": "We’re demonstrating how frontier models have continued to improve in realistic mental health convers...",
-      "source": {
-        "name": "X：OpenAI",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T01:26:06.153Z",
-      "publishedAt": "2026-09-23T19:08:41.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-38",
-        "original": "https://x.com/OpenAI/status/2102837574092161102",
-        "detail": "https://aihot.news/items/cmueup7f003m6royqdxwyksro"
-      },
-      "summary": "OpenAI 发布开放基准 MentalHealthBench，用于评估前沿模型在真实心理健康对话中的表现。该基准由超过 80 位心理健康临床医生参与构建，OpenAI 开放发布，供其他研究者检验方法、运行评测并在此工作之上继续构建。"
-    },
-    {
-      "id": "2026-w39-39",
-      "kind": "weekly",
-      "title": "Anthropic 成立生命科学团队和实验室，Claude 自主发现新型酶系统 ART",
-      "titleEn": "Anthropic 宣布成立生命科学团队和实验室，Claude 自主发现新型酶系统",
-      "source": {
-        "name": "IT之家",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T00:27:57.064Z",
-      "publishedAt": "2026-09-23T23:45:52.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-39",
-        "original": "https://www.ithome.com/1/006/524.htm",
-        "detail": "https://aihot.news/items/cmuesmd640hjdroynw8800cxr"
-      },
-      "summary": "Anthropic 于 9 月 23 日宣布成立生命科学研究团队及自有分子生物学实验室，并公布 Claude 参与的首项成果。约 950 个 Claude 智能体在 21 小时内消耗约 2.1 亿个词元，从超过 20 万个逆转录酶中筛出约 3500 个新候选系统，最终发现一种此前未被表征的酶系统，被命名为阵列关联逆转录酶（ART），相关预印本论文同日发布，尚待同行评审。"
-    },
-    {
-      "id": "2026-w39-40",
-      "kind": "weekly",
-      "title": "TrackEverything：突破长视频稠密3D点追踪的显存瓶颈",
-      "titleEn": "TrackEverything: Long Horizon Dense Tracking via De-Duplicating 3D Scene Representations",
-      "source": {
-        "name": "HuggingFace Daily Papers",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-09-24T00:00:00.000Z",
-      "publishedAt": "2026-09-24T00:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-40",
-        "original": "https://arxiv.org/abs/2609.30222",
-        "detail": "https://aihot.news/items/j3jg8roys8ql5bhht9k7s7p56"
-      },
-      "summary": "TrackEverything提出一种新的3D点追踪模型，通过去重3D场景表示解决稀疏长时与稠密短时追踪的权衡问题。该模型利用体素化去重、端点细化器及3D WAFT技术，将模型复杂度与视频时长解耦。它是首个能在40GB显存内对超过1000帧视频进行全可见点追踪的3D追踪器，在TAPVid-3D基准上表现优于现有开源稠密追踪器。",
-      "arxivId": "2609.30222"
-    },
-    {
-      "id": "2026-w39-41",
-      "kind": "weekly",
-      "title": "Google 发布 RRSI 论文，用正则化递归自我改进防止 Agent harness 进化过拟合",
-      "titleEn": "Must-read paper from Google on self-improving agent harnesses. If you auto-optimize your agent's ha...",
-      "source": {
-        "name": "X：Elvis Saravia",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T20:40:25.788Z",
-      "publishedAt": "2026-09-23T20:13:02.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-41",
-        "original": "https://x.com/omarsar0/status/2102853768266256738",
-        "detail": "https://aihot.news/items/cmueki1p305rcroynvxqqm1zh"
-      },
-      "summary": "Google 发布 RRSI（Regularized Recursive Self-Improvement of Agent Harnesses）论文，指出自动化 harness 进化会对训练任务过拟合，评测分数上升但真实任务表现可能变差。"
-    },
-    {
-      "id": "2026-w39-42",
-      "kind": "weekly",
-      "title": "OpenAI 联合 80 多位心理健康专家发布开放基准 MentalHealthBench",
-      "titleEn": "Introducing MentalHealthBench",
-      "source": {
-        "name": "OpenAI：官网动态",
-        "family": "lab",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T20:02:17.123Z",
-      "publishedAt": "2026-09-23T10:00:00.000Z",
-      "curated": true,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-42",
-        "original": "https://openai.com/index/introducing-mentalhealthbench",
-        "detail": "https://aihot.news/items/cmuej4po304d9royn5mcmjacv"
-      },
-      "summary": "OpenAI 发布开放基准 MentalHealthBench，评估 AI 在真实心理健康对话中的表现，由来自 22 个国家、19 种语言的 80 多位持证心理学家和精神科医生共同构建。"
-    },
-    {
-      "id": "2026-w39-43",
-      "kind": "weekly",
-      "title": "Anthropic 宣布 Claude 自主发现 CRISPR 样新酶系统 ART",
-      "titleEn": "克劳德发现了一种具有CRISPR样重复序列的新型酶系统",
-      "source": {
-        "name": "Hacker News 热门",
-        "family": "hackernews",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T19:59:32.436Z",
-      "publishedAt": "2026-09-23T19:28:38.639Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-43",
-        "original": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-        "detail": "https://aihot.news/items/cmuej177704awroyns4ao2x2c"
-      },
-      "summary": "Anthropic 成立生命科学研究组和实验室，宣布 Claude 智能体在仅有人类高层指导下自主发现一种类似 CRISPR 的新型酶系统，命名为 array-associated reverse transcriptases（ART）。"
-    },
-    {
-      "id": "2026-w39-44",
-      "kind": "weekly",
-      "title": "Anthropic：Claude 自主发现类 CRISPR 的新型酶系统 ART",
-      "titleEn": "Claude discovers a novel enzyme system with CRISPR-like repeats",
-      "source": {
-        "name": "Hacker News：AI 热帖",
-        "family": "hackernews",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T19:45:12.633Z",
-      "publishedAt": "2026-09-23T18:06:47.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-44",
-        "original": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-        "detail": "https://aihot.news/items/cmueiiurq03s1roynxroplimr"
-      },
-      "summary": "Anthropic 成立生命科学研究组和实验室，宣布 Claude 智能体在仅有人类高层指导下自主发现一种新型酶系统 ART（array-associated reverse transcriptases），其包含逆转录酶、伴随基因和类似 CRISPR 阵列的等间距 DNA 重复序列，功能尚待研究。"
-    },
-    {
-      "id": "2026-w39-45",
-      "kind": "weekly",
-      "title": "Anthropic 报告 Claude agent 在湿实验室发现噬菌体中的新型 ART 酶系统",
-      "titleEn": "Wild stuff. Anthropic’s new wet lab got its first win after 949 Claude agents autonomously tracked d...",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T19:10:23.072Z",
-      "publishedAt": "2026-09-23T18:46:48.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-45",
-        "original": "https://x.com/rohanpaul_ai/status/2102832068157984990",
-        "detail": "https://aihot.news/items/cmueh9zc605n2rovxiyhlflze"
-      },
-      "summary": "Anthropic 报告其新湿实验室的首个成果：949 个 Claude agent 在约 21.5 小时内自主追踪到一个此前未知的酶系统，消耗 215.6M tokens，搜索了 1.94B 蛋白质簇并回收 198,290 个 RT 簇。"
-    },
-    {
-      "id": "2026-w39-46",
-      "kind": "weekly",
-      "title": "Dario Amodei 宣布 Claude 主导发现疑似新型基因编辑机制的酶系统",
-      "titleEn": "Today we announced the Claude-led discovery of a molecular machine that we suspect could represent a...",
-      "source": {
-        "name": "X：Dario Amodei",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T18:47:22.870Z",
-      "publishedAt": "2026-09-23T18:43:14.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-46",
-        "original": "https://x.com/DarioAmodei/status/2102831170299834652",
-        "detail": "https://aihot.news/items/cmueggr4504xvrovxrplh94rz"
-      },
-      "summary": "Anthropic 宣布 Claude 主导发现一种疑似新型基因编辑机制的分子机器：Claude 阅读文献和基因组数据后发现了隐藏在噬菌体 DNA 中的未知酶系统，其基因旁有类似 CRISPR 的重复 DNA 阵列，已知少数同类系统均能切割、复制和粘贴 DNA，具体功能和实用价值尚待研究。"
-    },
-    {
-      "id": "2026-w39-47",
-      "kind": "weekly",
-      "title": "Anthropic 成立生命科学实验室，Claude 自主发现类 CRISPR 的新型酶系统 ART",
-      "titleEn": "Claude discovers a novel enzyme system with CRISPR-like repeats",
-      "source": {
-        "name": "Anthropic：Newsroom",
-        "family": "lab",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T18:27:25.203Z",
-      "publishedAt": "2026-09-22T16:00:00.000Z",
-      "curated": true,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-47",
-        "original": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-        "detail": "https://aihot.news/items/cmuefqp730041rovxbpewc3gn"
-      },
-      "summary": "Anthropic 宣布成立生命科学研究组与实验室，Claude 智能体在仅有人类高层指导下自主发现一种与 DNA 重复序列相关、结构类似 CRISPR 的新型酶系统，命名为 array-associated reverse transcriptases（ART），并发布预印本。"
-    },
-    {
-      "id": "2026-w39-48",
-      "kind": "weekly",
-      "title": "微软研究院：机器人推理卸载至边缘/云端可显著提升性能与续航",
-      "titleEn": "Offloaded inference for real-world physical AI robotics",
-      "source": {
-        "name": "Microsoft Research 博客",
-        "family": "lab",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T16:19:01.284Z",
-      "publishedAt": "2026-09-23T16:01:36.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-48",
-        "original": "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics",
-        "detail": "https://aihot.news/items/cmueb5n5m0u2progh6ebcvpuw"
-      },
-      "summary": "微软研究院发布关于物理AI机器人推理基础设施的研究。通过系统评估移动操作任务，发现将推理从机载GPU卸载至边缘或云端，能解决机载算力限制模型规模、导致响应延迟（最高383%）及精度下降的问题。实验显示，卸载推理不仅提升了任务成功率，还通过替换高功耗机载GPU为轻量硬件（如树莓派），使机器人电池寿命延长高达160%。此外，微软推出了基于Kubernetes的Physical AI Toolchai…"
-    },
-    {
-      "id": "2026-w39-50",
-      "kind": "weekly",
-      "title": "Microsoft Research 论文研究测试时通信：k 个智能体团队媲美 4k 独立智能体",
-      "titleEn": "Banger paper from Microsoft Research and colleagues. It studies the potential benefits of agents th...",
-      "source": {
-        "name": "X：Elvis Saravia",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T15:40:23.162Z",
-      "publishedAt": "2026-09-23T15:35:02.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-50",
-        "original": "https://x.com/omarsar0/status/2102783808286384159",
-        "detail": "https://aihot.news/items/cmue9rxdt0siwrogh7vkadlwl"
-      },
-      "summary": "Microsoft Research 等机构的论文研究多智能体在任务执行中通过共享目录通信的收益。在 ARC-AGI-3 上，k 个通信智能体的成功率匹敌 4k 个独立智能体且差距随 k 扩大；在 polyomino packing 超越 best@k 和已知最优成绩，MNIST 压缩任务中四智能体团队写出 1,957 字节、99.4% 测试准确率的分类器。"
-    },
-    {
-      "id": "2026-w39-49",
-      "kind": "weekly",
-      "title": "Stanford 与 Together AI 论文：自组织智能体团队平均准确率 66.7%，超最强成员与理想路由器",
-      "titleEn": "Recommended paper. Research on effective agent collaboration/communication is lacking, but self-orga...",
-      "source": {
-        "name": "X：Elvis Saravia",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-09-23T15:40:23.162Z",
-      "publishedAt": "2026-09-23T15:16:41.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w39-49",
-        "original": "https://x.com/omarsar0/status/2102779192379056290",
-        "detail": "https://aihot.news/items/cmue9rxdt0sixroghqzq0to2d"
-      },
-      "summary": "Stanford 和 Together AI 的论文提出 Self-Organizing Agent Teams（SAT），让 o3-mini、Claude Sonnet 4 和 DeepSeek-V3 组成的团队学习协作策略。"
     },
     {
       "id": "2026-w38-01",
@@ -2571,29 +2571,6 @@
       "summary": "一项针对557次真实编码会话和33，097个智能体PR的实证研究发现，编码智能体主要阅读AGENTS.md、CLAUDE.md等指令文件（占35.4%）及自身计划笔记（25.1%），API参考仅占1.3%。文档阅读直接触发代码编辑的情况极少（1328次中仅3次），且未发现智能体对照文档检查工作的案例。研究建议开发者更重视指令文件而非API文档的编写。"
     },
     {
-      "id": "2026-w35-05",
-      "kind": "weekly",
-      "title": "腾讯PatternEval：非思考模式更易致响应失败",
-      "titleEn": "Switching a multimodal model into non-thinking mode saves latency， but this Tencent paper finds it a…",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-08-30T14:48:18.171Z",
-      "publishedAt": "2026-08-30T14:20:20.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w35-05",
-        "original": "https://x.com/rohanpaul_ai/status/2094067702172410105",
-        "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xqro3xxvwuzgbd"
-      },
-      "summary": "腾讯一篇论文发现，将多模态模型切换至非思考模式虽降低延迟，却显著增加用户可见的响应失败概率。新基准PatternEval通过2415个提示词，从思维链泄露、重复、逻辑矛盾及表演性推理四个维度评估答案形态而非正确性，能捕捉正确性检查无法发现的质量问题。"
-    },
-    {
       "id": "2026-w35-04",
       "kind": "weekly",
       "title": "CLEAR：按提示词动态调节安全对齐，兼顾模型效用",
@@ -2615,6 +2592,29 @@
         "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xpro3xdermzn0h"
       },
       "summary": "斯坦福新论文提出 CLEAR，通过小型门控网络按提示词动态调节独立安全模块的介入程度，冻结原模型以保留良性提示的完整性能。该方法在保持安全性的同时，显著减少全局安全微调带来的效用损失。"
+    },
+    {
+      "id": "2026-w35-05",
+      "kind": "weekly",
+      "title": "腾讯PatternEval：非思考模式更易致响应失败",
+      "titleEn": "Switching a multimodal model into non-thinking mode saves latency， but this Tencent paper finds it a…",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-08-30T14:48:18.171Z",
+      "publishedAt": "2026-08-30T14:20:20.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w35-05",
+        "original": "https://x.com/rohanpaul_ai/status/2094067702172410105",
+        "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xqro3xxvwuzgbd"
+      },
+      "summary": "腾讯一篇论文发现，将多模态模型切换至非思考模式虽降低延迟，却显著增加用户可见的响应失败概率。新基准PatternEval通过2415个提示词，从思维链泄露、重复、逻辑矛盾及表演性推理四个维度评估答案形态而非正确性，能捕捉正确性检查无法发现的质量问题。"
     },
     {
       "id": "2026-w35-06",
