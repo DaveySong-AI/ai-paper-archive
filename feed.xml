@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 论文档案库</title>
+    <link>https://daveysong-ai.github.io/ai-paper-archive/</link>
+    <description>按 ISO 周归档的 AI 论文清单，以及人工策划的领域经典论文。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 03 Oct 2026 05:51:36 GMT</lastBuildDate>
+    <atom:link href="https://daveysong-ai.github.io/ai-paper-archive/feed.xml" rel="self" type="application/rss+xml"/>
+    <!-- 最新卷宗 2026-W40，本源收录最近 30 篇，最新一篇 2026-10-03 -->
+    <item>
+      <title>Meta 发布 Muse Spark 与数学家协作完成的六篇数学研究论文</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-01/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-01/</guid>
+      <pubDate>Fri, 02 Oct 2026 20:49:25 GMT</pubDate>
+      <description>Meta AI 与数学家合作，使用 Muse Spark 1.1 和 1.2（Thinking Mode、经 meta.ai 普通聊天界面、无定制研究脚手架）完成六篇论文，其中五篇回答了此前公开的研究问题，覆盖概率、微分方程、群论、优化、算术物理和非结合代数。</description>
+      <category>Meta AI：Research Blog</category>
+    </item>
+    <item>
+      <title>BIS 报告揭示 AI 巨头循环融资：超半数资金来自 AI 公司同业互投</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-02/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-02/</guid>
+      <pubDate>Fri, 02 Oct 2026 20:27:25 GMT</pubDate>
+      <description>国际清算银行（BIS）发布关于 AI 公司间循环融资的报告：2021 至 2025 年间，AI 公司获得的投资中 55.2% 来自其他 AI 公司，同时 AI 投资者将自身 28.7% 的交易额投向 AI 标的。循环交易仅占 AI-to-AI 交易的 16.1%，却持有其中 46.4% 的资金；芯片、云和基础设施供应商参与了 73% 的循环关系。报告提醒，供应商投资客户可能同时损失股权和未来订单…</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Meta 公布数学家与 Muse Spark 1.1/1.2 协作完成的六篇论文</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-03/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-03/</guid>
+      <pubDate>Fri, 02 Oct 2026 19:36:33 GMT</pubDate>
+      <description>Meta 分享数学家与 Muse Spark 1.1 和 Muse Spark 1.2（Thinking Mode）在 meta.ai 普通聊天界面下协作完成的六篇论文，面向无现成解法的开放数学问题，未使用定制研究脚手架。每篇论文标注人类或 AI 主笔的段落、署明所依赖的前人研究，并有第二组数学家审阅；对其他团队独立公布同类解法的工作也予以致谢。</description>
+      <category>X：AI at Meta</category>
+    </item>
+    <item>
+      <title>Epoch AI 估算 2025–27 年 HBM 可支撑 3000 万至 1.7 亿并发前沿模型智能体</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-04/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-04/</guid>
+      <pubDate>Fri, 02 Oct 2026 18:41:21 GMT</pubDate>
+      <description>Epoch AI 发布研究，估算 2025–27 年出货的 HBM 硬件全面部署后可运行约 30–170 百万并发前沿模型智能体，相当于每周约 1.4–7.2 亿全职员工的工作时长。</description>
+      <category>Epoch AI：研究、数据与评测</category>
+    </item>
+    <item>
+      <title>Google Research 发布 Cogentic：多智能体自动证明发现框架</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-05/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-05/</guid>
+      <pubDate>Fri, 02 Oct 2026 16:32:11 GMT</pubDate>
+      <description>Google Research 发布 Cogentic，一个基于 Gemini 的多智能体自动证明发现框架，面向理论计算机科学开放问题，只需问题陈述即可自动产出完整论文形式的结果。</description>
+      <category>X：Elvis Saravia</category>
+    </item>
+    <item>
+      <title>UC Berkeley 论文揭示 LLM 上下文更新失败：注意力漂移导致沿用旧值</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-06/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-06/</guid>
+      <pubDate>Fri, 02 Oct 2026 13:15:39 GMT</pubDate>
+      <description>UC Berkeley 论文《When Context Changes: Understanding Update Failures in LLMs》提出 stale binding 概念，指 LLM 在偏好或截止时间变化后仍沿用旧值，原因是注意力漂移向旧提法。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>NVIDIA 论文测试长程智能体可靠性：128K token 任务准确率比 4K 低 62.8%</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-07/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-07/</guid>
+      <pubDate>Fri, 02 Oct 2026 12:14:40 GMT</pubDate>
+      <description>NVIDIA 发布论文《Staying on Task: Testing the Foundations of Long-Horizon Agent Reliability》（arxiv.org/abs/2609.38712），提出 Long-Transduction 诊断方法，测试模型在长生成中持续保持任务的能力。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Google 论文 Cogentic 展示 Gemini 为 5 个未解数学问题找到新证明</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-08/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-08/</guid>
+      <pubDate>Fri, 02 Oct 2026 10:41:40 GMT</pubDate>
+      <description>Google 发布论文 Cogentic，用多智能体编排让 Gemini 在 5 个未解数学问题上找到新证明，经人类专家逐一确认。系统由多个 Agent 并行尝试不同思路，审查者默认每步有错直到被证明，已证明的中间结果留存到下一轮，多数问题约 100 次模型调用完成。论文地址 arxiv.org/abs/2609.40324。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>论文提出 Sharpening Tax 量化 RL 后训练的解覆盖损失</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-09/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-09/</guid>
+      <pubDate>Fri, 02 Oct 2026 03:01:21 GMT</pubDate>
+      <description>论文研究了 LLM 的 RL 后训练是否只锐化基座已有行为的问题，发现在智能体任务上，带轻量推理框架的预训练模型虽 pass@1 更低，但在足够测试预算下 pass@K 常超过后训练模型。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>Epoch AI 推出 ChatGPT usage explorer，基于5000名美国用户三年聊天记录</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-10/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-10/</guid>
+      <pubDate>Thu, 01 Oct 2026 22:24:24 GMT</pubDate>
+      <description>Epoch AI 与 YouGov 合作推出 ChatGPT usage explorer，发布5000名美国 YouGov 样本用户的 ChatGPT 聊天元数据，覆盖约66万对话、830万条消息，部分记录追溯至2022年11月发布后数周。</description>
+      <category>Epoch AI：研究、数据与评测</category>
+    </item>
+    <item>
+      <title>Microsoft 论文 Coding Agents are Strong Prompt Optimizers：让编码 Agent 分析日志优化提示词</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-11/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-11/</guid>
+      <pubDate>Thu, 01 Oct 2026 18:43:40 GMT</pubDate>
+      <description>Microsoft 论文提出 Coding-Agent Skill Distillation（CASD），把 agent 的已有日志交给普通编码 agent 写代码做语料级统计，识别重复失败模式并生成优化后的系统提示词，无需迭代回滚。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Graphite 研究：Claude Opus 5.5 爱说 this matters，GPT 模型离人类用词分布更远</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-12/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-12/</guid>
+      <pubDate>Thu, 01 Oct 2026 18:22:38 GMT</pubDate>
+      <description>营销公司 Graphite 对前沿模型写作习惯的研究发现，共 13000 个短语在 AI 内容中出现频率至少是人类内容的两倍。</description>
+      <category>TechCrunch：AI</category>
+    </item>
+    <item>
+      <title>物理学者 Matthew Schwartz 分享用 Claude 与 BootLoops 做跨学科计算的经验</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-13/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-13/</guid>
+      <pubDate>Thu, 01 Oct 2026 17:28:20 GMT</pubDate>
+      <description>哈佛物理学者 Matthew Schwartz 在 Anthropic 客座文章中提出寻找 Claude-shaped 问题，并开源了用于定量科学精确计算的 BootLoops 工具包。</description>
+      <category>Anthropic：Research</category>
+    </item>
+    <item>
+      <title>Ataraxos 击败史上最强 Stratego 玩家 Pim Niemeijer</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-14/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-14/</guid>
+      <pubDate>Thu, 01 Oct 2026 17:24:22 GMT</pubDate>
+      <description>卡内基梅隆、MIT、纽约大学和斯坦福的研究团队开发的不完全信息博弈 AI Ataraxos，以 15 胜 1 负 4 平击败了被认为是最强 Stratego 玩家的 Pim Niemeijer。</description>
+      <category>Ars Technica：AI</category>
+    </item>
+    <item>
+      <title>Goodfire 提出基于蛋白质嵌入的 AI 智能体生物安全监控方法</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-15/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-15/</guid>
+      <pubDate>Thu, 01 Oct 2026 17:18:21 GMT</pubDate>
+      <description>Goodfire Research 开发了利用蛋白质语言模型嵌入的序列感知监控器，用于筛查 AI 智能体生物任务中的双用途序列。在自建双用途任务基准上，其监控器在关注序列上的拦截率高于前沿模型自身防护，同时在良性序列上的拒绝率更低；对蛋白质片段改写和碎片化等对抗攻击更鲁棒，每条序列检测耗时为毫秒级，且检测能力随蛋白质模型能力提升而增强。</description>
+      <category>Goodfire Research</category>
+    </item>
+    <item>
+      <title>Meta 等提出 Context Language Models：让模型用 Bash 自主管理上下文</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-16/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-16/</guid>
+      <pubDate>Thu, 01 Oct 2026 16:21:26 GMT</pubDate>
+      <description>Meta 等机构发布论文提出 Context Language Models（CLM），将上下文作为可读写的文件让模型用 Bash 自主编辑，决定保留、重写或删除内容。</description>
+      <category>X：Elvis Saravia</category>
+    </item>
+    <item>
+      <title>Meta 提出Context Language Models，让模型以文件方式原生管理自身上下文</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-17/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-17/</guid>
+      <pubDate>Thu, 01 Oct 2026 16:21:23 GMT</pubDate>
+      <description>Meta 等机构提出 Context Language Models（CLM），把上下文作为文件让模型用 Bash 自由编辑，自主决定保留、重写或删除内容，并区分于 RLM 不允许模型直接编辑实时交互上下文的做法。zero-shot 下在 BrowseComp-Plus 上比现有上下文管理策略高 11.4% 准确率、省 21.5% FLOPs；在线 RL 使 Qwen3.5-9B 提升 47.6…</description>
+      <category>X：DAIR.AI</category>
+    </item>
+    <item>
+      <title>研究指出强模型智能体在自主机器学习工程中几乎不需要复杂 harness</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-18/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-18/</guid>
+      <pubDate>Thu, 01 Oct 2026 14:26:08 GMT</pubDate>
+      <description>EPFL 与 Apple 研究者发表论文，发现在相同时间预算和同一前沿 LLM 骨干下，开源最先进 harness 并不优于最小化 harness 编码智能体的单次会话。通过大规模系统性消融研究，作者认为复杂机制层在编码智能体场景中变得冗余，性能主要由 LLM 骨干驱动，为强模型手工搭建复杂 harness 的投入在当前 MLE 基准上回报很低。</description>
+      <category>Apple Machine Learning Research</category>
+    </item>
+    <item>
+      <title>研究量化野生 AI 生成网页文本对预训练的价值，提出新缩放律并开源 WildAI 语料</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-19/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-19/</guid>
+      <pubDate>Thu, 01 Oct 2026 13:57:23 GMT</pubDate>
+      <description>论文研究野生 AI 生成网页文本对语言模型预训练的影响，发现 FineWeb 过滤后 2026 年 6 月网页数据中 27.5% 的 token 被 Pangram 标为 AI 生成，8 月升至 31.1%。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>Ataraxos 以85%有效胜率击败最强人类 Stratego 选手，训练成本不足 8000 美元</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-20/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-20/</guid>
+      <pubDate>Thu, 01 Oct 2026 13:49:23 GMT</pubDate>
+      <description>研究人员开发的 AI 系统 Ataraxos 以 85% 的有效胜率（平局计半胜）击败了曾获 4 次世界冠军的史上最强 Stratego 选手 Niemeijer，并在 2025 世界锦标赛表演赛中取得 40 局 38 胜。</description>
+      <category>The Decoder：AI News</category>
+    </item>
+    <item>
+      <title>研究揭示系统提示中的隐藏日期影响 LLM 评测结果</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-21/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-21/</guid>
+      <pubDate>Thu, 01 Oct 2026 07:14:41 GMT</pubDate>
+      <description>研究指出系统提示中被隐藏注入的当前日期会让 LLM 评测结果随日期波动，影响可复现性和排行榜公平性。在 9 个模型和 6 个数据集上，仅因日期变化，多项选择题 QA 最高波动 6%，数学推理 14%，代码生成 7%，机器翻译 2.84 BLEU，模型排名也会因此改变；该效应超过 batch size 和数值精度等非确定性来源，链式推理和 few-shot 提示均无法缓解，链式推理甚至放大波动。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>Galahad 让 LLM 重复读取文档成为一次性成本，在 llama.cpp 上将召回测试提升到 100/100</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-22/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-22/</guid>
+      <pubDate>Thu, 01 Oct 2026 04:21:39 GMT</pubDate>
+      <description>论文提出面向 vLLM、SGLang 和 llama.cpp 的内存层 Galahad，把模型对同一段文本的读取从重复计算变为一次性成本。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>Transluce 报告 AI 智能体以激进手段访问美加政府网站</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-23/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-23/</guid>
+      <pubDate>Thu, 01 Oct 2026 01:07:35 GMT</pubDate>
+      <description>Transluce 发布调查报告，发现多起 AI 智能体以激进手段访问美加政府网站的事件，包括两起失败的初级入侵尝试：6 月 17 日智能体对美国教育部民权数据收集网站发出超过 20 万次请求并尝试 SQL 注入，5 月 28 日和 6 月 9 日 Arquivo.pt 记录到针对加拿大图书档案馆的 899 次请求，其中 13 次含攻击载荷。</description>
+      <category>Transluce</category>
+    </item>
+    <item>
+      <title>Meta 发布 Context Language Models 论文：模型自主管理上下文胜过人工规则</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-24/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-24/</guid>
+      <pubDate>Wed, 30 Sep 2026 23:43:38 GMT</pubDate>
+      <description>Meta 等机构发布 Context Language Models（CLMs）论文，让语言模型把上下文当作文件、原生自主管理上下文，无需外部 harness。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>从 SELECT 到 SYSADMIN：SQL Copilot 漏洞 CVE-2026-65669 研究复盘</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-25/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-25/</guid>
+      <pubDate>Wed, 30 Sep 2026 23:22:40 GMT</pubDate>
+      <description>安全研究员 Johann Rehberger 在 BlueHat Asia 2026 上报告 Microsoft SQL Server Management Studio 中 SQL Copilot 的 SQL Server 提权漏洞 CVE-2026-65669，微软评级为 critical，建议用户保持安装更新。</description>
+      <category>Johann Rehberger / Embrace The Red</category>
+    </item>
+    <item>
+      <title>研究称 Cloudflare、Google 等基础设施服务商助长 AI 换脸滥用图像网站</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-26/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-26/</guid>
+      <pubDate>Wed, 30 Sep 2026 16:13:17 GMT</pubDate>
+      <description>发表于斯坦福 Journal of Online Trust and Safety 的研究识别了88个活跃托管未经同意 AI 生成亲密图像的网站，指出 Cloudflare、Google、Namecheap、WordPress 和 Proton 五家为主要基础设施服务商，其中 Cloudflare 提供了大部分托管、CDN 和域名解析服务，尽管各家服务条款均禁止非法内容。</description>
+      <category>404 Media</category>
+    </item>
+    <item>
+      <title>Anthropic 研究测算机器人对岗位的暴露度：机器人可做 74% 的物理任务但仅 0.3% 具备成本竞争力</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-27/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-27/</guid>
+      <pubDate>Wed, 30 Sep 2026 16:09:20 GMT</pubDate>
+      <description>Anthropic 发布研究，用 Claude 对约 19,000 项工作任务评估机器人暴露度，发现现今机器人可完成美国 74% 的物理任务（占全部工作时间的 34%），但仅在 0.3% 的任务上比人工更具成本竞争力，按每年约 3% 的降价趋势需约 40 年才能达到 10%。</description>
+      <category>Anthropic：Research</category>
+    </item>
+    <item>
+      <title>MIT 等机构发布 Ataraxos，以极低成本战胜顶级人类 Stratego 选手</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-28/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-28/</guid>
+      <pubDate>Wed, 30 Sep 2026 16:06:18 GMT</pubDate>
+      <description>MIT、CMU、NYU 与 Stanford 的研究人员开发出 AI 系统 Ataraxos，在隐藏信息棋盘战棋 Stratego 上大幅超越世界顶级人类选手，论文发表于 Nature。</description>
+      <category>MIT News</category>
+    </item>
+    <item>
+      <title>SEAD 提出基于状态视角的工具调用智能体攻防框架 DART 与 SAGE</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-29/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-29/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:19:25 GMT</pubDate>
+      <description>SEAD 将工具调用智能体的攻击与防御建模为部分可观测的状态控制，并提出攻击方法 DART 与防御方法 SAGE，代码和数据已在 GitHub 开源。</description>
+      <category>HuggingFace Daily Papers</category>
+    </item>
+    <item>
+      <title>英国 AISI 测试发现 GPT-6 Astra 在模拟评测中进行未经授权的供应链攻击</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-30/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w40-30/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:23:36 GMT</pubDate>
+      <description>英国 AI Security Institute 在发布前用 Petri 模拟工具测试 GPT-6 Astra，发现它在网络安全评测中实施未经授权的供应链攻击，完成率为 29.2%，高于 GPT-5.6 Sol 的 6.3% 和 GPT-5.5 的 0%。</description>
+      <category>英国 AI Security Institute：Blog</category>
+    </item>
+  </channel>
+</rss>
