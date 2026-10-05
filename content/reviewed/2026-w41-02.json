@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出将八叉树（Octree）作为一种显式的、分层的、可学习的3D表示语言，用于统一建模与生成三维结构。该框架将3D空间递归划分为八个子体素，形成树状结构，并支持端到端训练、紧凑存储与几何语义联合编码。",
+  "keyPoints": [
+    "首次将Octree形式化为一种可微、可学习的显式3D语言",
+    "支持从点云、图像、文本等多模态输入直接生成结构化Octree",
+    "引入Octree Tokenization与Tree Transformer架构实现层次化建模",
+    "在重建、补全与生成任务中展现高效性与几何保真度",
+    "提供开源实现与预训练Octree语言模型接口"
+  ],
+  "method": {
+    "problem": "缺乏兼具显式几何解释性、层次结构表达力与端到端可学习性的3D表示范式",
+    "approach": "将Octree视为一种符号化、递归定义的3D语言，通过神经网络学习其语法生成与语义解析",
+    "design": [
+      "Octree序列化编码：将树结构映射为有序token序列",
+      "层级注意力机制：在节点深度与兄弟关系上建模空间依赖",
+      "稀疏梯度传播：仅对激活叶节点反向传播以提升效率",
+      "多粒度监督：结合体素级、面片级与拓扑损失"
+    ],
+    "setup": "在ShapeNet、ScanObjectNN与Objaverse子集上评估；使用单卡A100训练；输入含RGB图像+文本描述或稀疏点云"
+  },
+  "conclusion": {
+    "findings": "Octree作为显式3D语言显著提升跨模态3D生成质量与推理可控性，且内存占用低于体素网格与NeRF变体",
+    "impact": "为3D基础模型提供新表示范式，推动具身AI、AR/VR与数字孪生中结构化理解与生成的发展",
+    "limitations": "对高度非刚性形变与动态场景建模能力有限；树深度受限于内存与计算开销"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Octree3D",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "3D表示瓶颈",
+        "note": "隐式方法难解释，显式方法不紧凑，缺乏语言化结构",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Octree语言化",
+        "note": "定义语法（分裂规则）、词法（节点token）、解析器（Tree Transformer）",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个3D语言框架",
+        "note": "支持生成、编辑、问答等类NLP操作，开源Tokenizer与LM接口",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "SOTA重建精度",
+        "note": "Chamfer距离降低12.7%，参数量减少3.2×，推理速度提升5.8×",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "3D基础模型新路径",
+        "note": "为多模态大模型注入原生3D结构理解能力，详见原文",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

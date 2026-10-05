@@ -1,0 +1,72 @@
+{
+  "abstract": "UT Austin 系统研究了大语言模型智能体中的上下文压缩策略，在 SWE-bench Verified 和 Terminal-Bench 上开展近 35,000 次实验，系统评估不同压缩方式、触发时机与删除量对智能体性能的影响，发现盲目省 token 可能导致推理变慢甚至失败。",
+  "keyPoints": [
+    "上下文压缩并非越激进越好，过度删减会损害智能体任务完成率与响应速度",
+    "压缩触发时机（如每步/固定长度/关键事件）对性能影响显著，优于单纯压缩量调控",
+    "不同基准（SWE-bench vs Terminal-Bench）对压缩策略敏感度存在差异",
+    "基于语义重要性而非位置或长度的动态压缩更鲁棒",
+    "token 节省与端到端延迟呈非单调关系，存在性能拐点"
+  ],
+  "method": {
+    "problem": "LLM智能体在长程交互中因上下文膨胀导致成本高、延迟大、性能下降",
+    "approach": "通过大规模控制变量实验，解耦分析压缩方式、触发机制与删除比例三要素的影响",
+    "design": [
+      "构建统一实验框架，支持多种压缩器（LLM-based summarization、rule-based truncation、attention-based pruning）",
+      "定义6类触发策略：step-wise、token-threshold、error-triggered、goal-aligned、history-age-based、hybrid",
+      "在相同模型与环境配置下，遍历删除率（10%–90%）与压缩时机组合",
+      "引入细粒度指标：task success rate、steps-to-solution、token cost per step、wall-clock latency"
+    ],
+    "setup": "SWE-bench Verified（代码修复）、Terminal-Bench（终端操作）；近35,000次运行；GPT-4o/Claude-3等主流模型"
+  },
+  "conclusion": {
+    "findings": "最优压缩策略高度依赖任务类型与执行阶段，不存在普适‘最简’上下文；省token不等于提效，需权衡信息保真度与计算开销",
+    "impact": "为LLM智能体工程实践提供实证基准，推动上下文管理从启发式走向系统化设计",
+    "limitations": "实验集中于开源可复现benchmarks，真实世界多模态/长周期场景覆盖有限"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "UT Austin C…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "上下文膨胀瓶颈",
+        "note": "智能体交互中历史累积导致延迟高、成本高、易失效",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "三轴控制实验",
+        "note": "系统调节压缩方式、触发时机、删除量，覆盖35k次运行",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "触发时机最关键",
+        "note": "相比压缩算法或删减比例，何时压缩对性能影响最大",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "省token≠提速",
+        "note": "过度压缩反致步骤增加、重试增多、端到端延迟上升",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动智能体工程标准化",
+        "note": "为上下文管理提供可复现实验范式与评估维度",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

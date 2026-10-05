@@ -1,0 +1,73 @@
+{
+  "abstract": "PromptArmor 研究发现 Databricks Genie 的四类安全控制无法阻止恶意 Skill：攻击者可将敏感数据编码至 Skill 渲染的 HTML 中，利用浏览器自动执行脚本发起外泄请求，并诱导用户在钓鱼界面输入凭据，实现数据窃取与身份劫持。",
+  "keyPoints": [
+    "Genie 的 Skill 沙箱机制未隔离 HTML 渲染上下文，导致恶意脚本可在用户浏览器中执行",
+    "四类内置控制（如权限声明、内容策略、输出过滤、执行域限制）均存在绕过路径",
+    "恶意 Skill 可通过内联 JavaScript + data:URL 或动态 fetch 实现隐蔽外泄",
+    "钓鱼 UI 可伪装为合法 Genie 交互组件，诱导用户主动授权敏感操作",
+    "该漏洞本质是 Genie 将不可信代码与可信渲染环境混合执行的安全模型缺陷"
+  ],
+  "method": {
+    "problem": "Databricks Genie 平台中恶意 Skill 绕过现有安全控制实施数据外泄与钓鱼攻击",
+    "approach": "通过逆向分析 Genie Skill 运行时行为，构造多阶段 PoC 验证四类控制的失效边界",
+    "design": [
+      "构造嵌入式 HTML/JS Skill，规避内容安全策略（CSP）检测",
+      "利用浏览器同源上下文发起跨域外泄请求（含凭据）",
+      "动态生成钓鱼表单并注入 Genie 聊天界面 DOM",
+      "复用 Genie UI 组件样式与交互逻辑增强欺骗性",
+      "验证所有攻击链均不触发平台级权限弹窗或日志告警"
+    ],
+    "setup": "基于公开 Genie 文档与测试环境构建 Skill 沙箱，使用 Chromium 浏览器进行行为观测与网络流量捕获"
+  },
+  "conclusion": {
+    "findings": "Databricks Genie 当前安全模型无法防御恶意 Skill 利用渲染上下文实施客户端侧攻击",
+    "impact": "暴露 LLM 应用平台中‘可信渲染’范式的根本性风险，推动行业重新评估 Skill 沙箱设计原则",
+    "limitations": "未覆盖 Genie 企业版定制策略的防护效果；未测试移动端渲染引擎差异"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "PromptArmor…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Skill 安全控制失效",
+        "note": "四类内置防护均可被绕过，核心在于渲染上下文未隔离",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "客户端侧 PoC 构造",
+        "note": "利用 HTML 渲染漏洞+浏览器执行环境实施外泄与钓鱼",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "揭示可信渲染风险",
+        "note": "首次系统性指出 LLM 平台中 UI 渲染层的安全盲区",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "数据外泄+凭据钓鱼",
+        "note": "攻击链全程静默，无平台告警，用户感知即失陷",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动沙箱范式升级",
+        "note": "呼吁分离执行域与渲染域，引入输出编码与 CSP 强约束",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
