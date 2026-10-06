@@ -1,0 +1,71 @@
+{
+  "abstract": "本文提出Rollout-Marginal Distillation（RMD），一种面向长时程自回归视频生成的新型知识蒸馏方法。针对自回归模型在长序列生成中误差累积与边际分布失配问题，RMD通过联合优化 rollout 轨迹与单步边际分布，提升生成一致性与长期保真度。",
+  "keyPoints": [
+    "提出Rollout-Marginal Distillation（RMD）框架，统一建模多步rollout与单步边际分布",
+    "解决长时程自回归视频生成中误差传播与分布偏移的核心挑战",
+    "无需额外判别器或对抗训练，仅依赖教师-学生蒸馏范式",
+    "在保持计算效率的同时显著提升生成视频的时序连贯性与结构稳定性"
+  ],
+  "method": {
+    "problem": "长时程自回归视频生成中的误差累积与边际分布失配问题",
+    "approach": "基于知识蒸馏的联合优化：同步约束学生模型在rollout轨迹和单步边际分布上逼近教师模型",
+    "design": [
+      "定义rollout损失，对齐教师与学生在多步自回归采样路径上的联合分布",
+      "引入marginal匹配项，强制单帧/单步输出分布一致",
+      "采用渐进式蒸馏调度，从短序列向长序列扩展训练",
+      "支持任意自回归视频主干模型，无需架构修改"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "RMD在多个长视频生成基准上优于标准蒸馏与自回归基线，显著缓解时序退化",
+    "impact": "为长时程生成任务提供可扩展、稳定且无需对抗训练的新蒸馏范式",
+    "limitations": "对教师模型质量高度依赖；未验证超长序列（>100帧）泛化性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "RMD",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "误差累积失配",
+        "note": "长时程自回归中分布漂移与误差放大导致生成崩溃",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Rollout-边际蒸馏",
+        "note": "联合优化多步轨迹对齐与单步分布匹配",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "无对抗蒸馏新范式",
+        "note": "仅需教师模型输出，不引入判别器或GAN目标",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "时序连贯性提升",
+        "note": "在标准长视频基准上验证了长期结构稳定性增强",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动AR视频实用化",
+        "note": "降低长时程生成部署门槛，兼容现有自回归架构",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

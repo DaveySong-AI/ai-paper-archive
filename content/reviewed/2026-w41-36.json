@@ -1,0 +1,72 @@
+{
+  "abstract": "微软提出ActiveSaddler，一种面向AI智能体的自动化harness优化方法。它动态追踪任务执行中的未修复失败模式，按潜在修复价值对任务进行优先级排序，主动选择最值得修复的失败案例或探索未见任务以发现新失效场景，提升智能体鲁棒性与泛化能力。",
+  "keyPoints": [
+    "提出首个面向智能体harness的主动优化框架ActiveSaddler",
+    "引入失败模式追踪与价值评估机制，实现问题驱动的任务选择",
+    "支持两类主动策略：聚焦修复高影响未修复失败，或探索未知任务以暴露新缺陷",
+    "无需人工标注失败原因，依赖执行轨迹与反馈信号自动建模失败分布",
+    "目标是提升智能体在开放、长尾任务分布下的持续可靠性"
+  ],
+  "method": {
+    "problem": "AI智能体在多样化任务中频繁遭遇未修复失败，现有harness缺乏对失败模式的主动识别与优化优先级调度能力",
+    "approach": "将harness优化建模为序列化主动学习问题，通过在线失败监测、价值估计与任务采样决策闭环迭代改进",
+    "design": [
+      "失败模式编码器：从执行日志中提取结构化失败特征",
+      "价值估计器：基于失败频次、传播影响与修复成本预测修复收益",
+      "双模任务采样器：在exploitation（修复高价值失败）与exploration（探索未覆盖任务）间自适应平衡",
+      "增量式harness更新机制：仅针对选定任务生成/增强测试用例并反馈验证结果"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "ActiveSaddler显著提升智能体在长尾任务上的失败修复效率与泛化稳定性，相比随机或覆盖率驱动基线更早收敛至低失败率状态",
+    "impact": "为AI智能体的自主可靠性演进提供新范式，推动测试即服务（TaaS）与自愈型智能体系统发展",
+    "limitations": "依赖执行可观测性，对黑盒内部状态建模能力有限；当前未验证跨模型架构迁移性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ActiveSaddl…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "harness优化低效",
+        "note": "传统方法无法主动识别高价值失败，修复滞后且覆盖不均",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "主动失败驱动",
+        "note": "结合失败模式追踪、价值估计与双模任务采样，形成闭环优化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个Agent har…",
+        "note": "支持exploitation与exploration协同，无需人工失败归因",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "提升修复效率与泛化性",
+        "note": "在长尾任务分布下更快收敛至稳定低失败率，优于基线方法",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动自愈型智能体发展",
+        "note": "为测试即服务（TaaS）与智能体持续可靠性演进提供新路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

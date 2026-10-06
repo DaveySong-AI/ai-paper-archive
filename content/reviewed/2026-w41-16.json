@@ -1,0 +1,72 @@
+{
+  "abstract": "ASCENT 提出一种面向长程 LLM 智能体的在线测试时训练框架，利用冻结初始模型对已验证成功轨迹进行自蒸馏，将经验知识注入持久 LoRA 快速权重，无需外部教师或参考解。在 ALFWorld、WebShop 和 AppWorld 上验证其可随交互持续提升任务成功率与效率，并支持跨场景迁移。",
+  "keyPoints": [
+    "首创测试时自蒸馏机制，以验证轨迹为特权信号指导在线学习",
+    "冻结主干模型，仅更新持久 LoRA 权重，兼顾稳定性与适应性",
+    "不依赖外部参考解或更强教师模型，降低部署门槛",
+    "支持经验积累式持续改进，突破传统终止信号单一反馈局限",
+    "在多智能体环境（ALFWorld/WebShop/AppWorld）中展现跨任务泛化能力"
+  ],
+  "method": {
+    "problem": "长程智能体在部署阶段缺乏持续自我改进能力，仅靠稀疏终止信号难以优化策略",
+    "approach": "利用已验证成功的执行轨迹作为特权经验，通过冻结教师模型生成 token-level 分布，蒸馏至可更新的 LoRA 快速权重",
+    "design": [
+      "验证轨迹筛选：仅保留经环境确认成功的完整轨迹",
+      "自蒸illation 目标：最小化冻结教师输出分布与 LoRA 学生预测分布的 KL 散度",
+      "持久快速权重：LoRA 参数在测试全程持续更新并保留，非一次性适配",
+      "无监督在线触发：基于任务完成信号自动启动蒸馏，无需人工标注"
+    ],
+    "setup": "实验基于 ALFWorld、WebShop、AppWorld 三个长程决策基准；采用 LLaMA-2/3 系列主干；对比基线包括 TTT、Adapter-Tuning、RLHF 微调等"
+  },
+  "conclusion": {
+    "findings": "ASCENT 在线训练显著提升长程任务成功率与每任务交互步数效率，且性能随经验积累单调上升",
+    "impact": "为 LLM 智能体提供轻量、安全、免监督的部署期自主进化范式，推动测试时学习实用化",
+    "limitations": "依赖高质量验证轨迹覆盖，对部分高不确定性长尾场景泛化仍需验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ASCENT",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "测试时难改进",
+        "note": "长程智能体仅靠终止信号无法持续优化策略，缺乏细粒度反馈",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "自蒸馏验证经验",
+        "note": "用冻结模型对成功轨迹做 next-token 预测，蒸馏至持久 LoRA 权重",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "免教师在线训练",
+        "note": "无需外部参考解或更强教师，仅依赖环境验证的特权轨迹",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "成功率持续提升",
+        "note": "在 ALFWorld/WebShop/AppWorld 上任务成功率与交互效率随经验积累上升",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动TTT实用化",
+        "note": "为长程智能体提供稳定、低开销、可部署的在线自主进化新路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

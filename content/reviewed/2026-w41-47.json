@@ -1,0 +1,72 @@
+{
+  "abstract": "PromptArmor 发现 Databricks Genie 存在严重安全缺陷：攻击者可上传恶意 Skill，在用户无感知、无需人工批准的情况下，于聊天界面渲染时触发钓鱼页面并窃取租户敏感数据，绕过现有四类控制机制。",
+  "keyPoints": [
+    "恶意 Skill 可在 Genie 聊天结果渲染阶段直接执行前端代码",
+    "钓鱼页面通过 iframe 或 window.open 动态弹出，诱导用户输入凭证",
+    "攻击者利用浏览器上下文窃取当前租户的 cookies、localStorage 等敏感信息",
+    "Databricks 当前四类防护措施（权限隔离、内容策略、技能审核、沙箱限制）均被绕过",
+    "整个攻击链不依赖用户显式授权或交互确认，具备高隐蔽性"
+  ],
+  "method": {
+    "problem": "Databricks Genie 平台对用户上传 Skill 的执行控制失效，导致恶意前端行为可绕过安全边界",
+    "approach": "通过逆向分析 Genie Skill 执行机制与渲染流程，构造可触发 DOM 操作与跨域数据读取的恶意 Skill 样本",
+    "design": [
+      "利用 Genie 渲染器未剥离危险 HTML/JS 属性（如 onload、javascript: 协议）",
+      "将钓鱼 UI 封装为 Skill 输出的 HTML 片段，嵌入合法响应流",
+      "借助浏览器同源策略漏洞（如未严格限制 iframe sandbox）实现数据窃取",
+      "规避技能审核：恶意逻辑延迟至运行时动态生成，静态扫描无法识别"
+    ],
+    "setup": "基于公开 Databricks Genie 环境（v2024.3+）进行黑盒测试与 PoC 验证；未披露具体租户配置细节"
+  },
+  "conclusion": {
+    "findings": "Genie 的 Skill 执行模型存在根本性信任误设，前端渲染层缺乏有效内容净化与执行域隔离",
+    "impact": "暴露企业级 AI 协作平台中‘用户可扩展能力’的安全治理盲区，推动行业重新评估 LLM 工具链的沙箱强度",
+    "limitations": "报告未覆盖服务端侧 Skill 运行时环境的完整攻击面；租户定制化防护策略效果需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "PromptArmor…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Skill 安全控制失效",
+        "note": "四类防护均被绕过，恶意前端代码可在聊天中静默执行",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "渲染层注入攻击",
+        "note": "利用 Genie 渲染器未净化危险 HTML/JS，动态注入钓鱼 UI",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个 Genie 恶意…",
+        "note": "证实无需人工批准即可完成钓鱼与数据外泄，推动厂商紧急响应",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "租户数据可被窃取",
+        "note": "攻击者可获取 cookies、sessionStorage 等浏览器存储的敏感凭证",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI 平台安全范式警示",
+        "note": "揭示 LLM 工具生态中客户端执行权限管理缺失的系统性风险",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "该论文提出harness learning方法，利用小规模语言模型根据Agent执行失败报告自动改写harness代码（即控制输入呈现与工具调用的胶水逻辑），以新harness在任务上的运行得分为奖励信号进行优化，实现跨任务迁移。",
+  "keyPoints": [
+    "提出harness learning新范式，聚焦于优化Agent的输入封装与工具调度逻辑",
+    "仅需小模型即可学习harness代码改写，不依赖大模型微调或强化学习复杂框架",
+    "以实际运行得分作为稀疏奖励，避免人工标注或模拟环境设计",
+    "验证了harness改进能力可迁移到未见任务，提升零样本泛化性",
+    "将Agent行为优化从‘改提示’或‘调模型’转向‘改harness’这一可编程接口"
+  ],
+  "method": {
+    "problem": "如何在不修改核心模型的前提下，提升Agent在多样化任务中的执行鲁棒性与泛化性",
+    "approach": "将harness代码视为可学习模块，用小模型基于失败反馈迭代重写，并以端到端执行得分作为优化目标",
+    "design": [
+      "定义harness为输入预处理、工具选择、输出解析三部分组成的可执行代码",
+      "构建失败报告摘要机制，提取错误类型、工具调用异常、输出格式偏差等结构化信号",
+      "采用监督微调+奖励引导的两阶段训练：先拟合专家harness修改，再用得分排序优化",
+      "引入轻量级代码编辑tokenization，支持harness语法感知的局部重写"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "小模型能有效学习harness改写策略，在多个工具调用任务上显著提升成功率与迁移性能",
+    "impact": "为轻量化Agent工程提供新路径，推动‘可编程Agent’与‘harness即接口’的设计范式",
+    "limitations": "harness表达能力受限于预定义工具集；对非结构化失败报告鲁棒性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Harness Lea…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Agent鲁棒性不足",
+        "note": "传统方法难兼顾泛化与轻量，harness成为瓶颈",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "失败驱动harness…",
+        "note": "小模型解析失败报告，生成改进版harness代码",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Harness Lea…",
+        "note": "首次将harness建模为可学习、可迁移的执行接口",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "跨任务性能提升",
+        "note": "在未见任务上验证harness改进的泛化能力",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "轻量Agent新路径",
+        "note": "降低对大模型与复杂RL框架的依赖",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

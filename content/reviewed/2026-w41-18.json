@@ -1,0 +1,72 @@
+{
+  "abstract": "Dust 是 Q Labs Research 提出的无需反向传播的 Transformer 预训练方法，采用零阶优化思想，在每个 token 的激活层引入独立随机扰动（构建虚拟种群），通过评估扰动后损失变化直接更新参数，规避梯度计算与反向传播。",
+  "keyPoints": [
+    "完全摒弃反向传播，实现纯前向式预训练",
+    "基于零阶优化，在 token 粒度上施加独立激活扰动",
+    "引入‘虚拟种群’机制模拟多候选解并行评估",
+    "适配标准 GPT 架构，无需修改模型结构",
+    "降低显存与计算依赖，提升训练硬件兼容性"
+  ],
+  "method": {
+    "problem": "传统 Transformer 预训练严重依赖反向传播，带来高显存占用、长时序梯度累积及硬件限制问题",
+    "approach": "用零阶随机扰动替代一阶梯度，通过扰动-评估-选择循环实现参数更新",
+    "design": [
+      "Token-wise 激活扰动：对每个 token 的中间激活施加独立高斯噪声",
+      "虚拟种群采样：生成多个扰动副本构成轻量候选集",
+      "无梯度损失评估：基于扰动后 logits 的自回归损失差异估计更新方向",
+      "符号化参数更新：依据扰动收益符号决定参数增减，避免步长敏感性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Dust 在语言建模任务上达到接近标准 SGD/BF16 训练的困惑度，验证零阶预训练可行性",
+    "impact": "为低资源设备、边缘训练及新型硬件（如模拟芯片）上的大模型预训练提供新范式",
+    "limitations": "收敛速度与大规模数据下的泛化性尚待系统验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Dust",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "反向传播瓶颈",
+        "note": "高显存、长依赖、硬件受限，阻碍轻量化预训练",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "零阶虚拟种群",
+        "note": "token级扰动+多副本评估+符号更新，全程无梯度",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个无BP预训练框架",
+        "note": "开源实现，兼容Hugging Face生态，支持GPT类架构",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "逼近有监督性能",
+        "note": "在OpenWebText等数据集上困惑度接近基线，训练稳定性良好",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "拓展训练硬件边界",
+        "note": "为非GPU平台、低精度/模拟计算场景提供可行路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "UT Austin 系统研究了 LLM 智能体中上下文压缩的影响，在 SWE-bench Verified 和 Terminal-Bench 上开展近 35,000 次实验，系统评估不同压缩方式、触发时机与删除量对智能体性能与延迟的影响，发现盲目省 token 可能导致推理变慢、成功率下降。",
+  "keyPoints": [
+    "上下文压缩并非总能提升效率，不当压缩会增加 LLM 推理轮次与端到端延迟",
+    "压缩触发时机（如每步/仅初始/错误后）显著影响任务完成率与速度",
+    "不同压缩方法（摘要、截断、关键信息提取）在代码任务中表现差异显著",
+    "在 Terminal-Bench 等交互密集型任务中，过度压缩导致状态感知丢失，失败率上升",
+    "实验表明 token 节省与智能体效率之间存在非单调关系"
+  ],
+  "method": {
+    "problem": "LLM 智能体中上下文压缩策略缺乏系统性实证评估，其对效率与正确性的权衡不明确",
+    "approach": "通过大规模控制变量实验，量化不同压缩维度对智能体性能的影响",
+    "design": [
+      "三轴控制：压缩算法类型、触发时机、上下文保留比例",
+      "双基准测试：SWE-bench Verified（代码修复）与 Terminal-Bench（终端交互）",
+      "指标覆盖：成功率、token 使用量、端到端延迟、平均推理步数",
+      "消融设计：分离压缩对模型内部推理与外部环境交互的影响"
+    ],
+    "setup": "近 35,000 次运行；覆盖主流开源智能体框架；详见原文"
+  },
+  "conclusion": {
+    "findings": "压缩效果高度依赖任务类型与智能体架构；省 token 不等于提效，可能引入重试与状态错位",
+    "impact": "为智能体系统设计提供首个大规模上下文压缩实证基准，推动‘质量感知压缩’范式",
+    "limitations": "未覆盖多模态或长时记忆增强型智能体；真实部署延迟未纳入网络与IO变量"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "UT Austin C…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "压缩策略不透明",
+        "note": "缺乏统一评估框架，压缩收益与代价关系未知",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "大规模控制实验",
+        "note": "35k次运行，三轴调控：算法/时机/删减量",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个实证基准",
+        "note": "覆盖SWE-bench与Terminal-Bench双场景",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "省token≠提效",
+        "note": "不当压缩增加延迟与失败率，呈非单调关系",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动质量感知压缩",
+        "note": "促使智能体系统从‘纯token优化’转向‘任务完整性优先’",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

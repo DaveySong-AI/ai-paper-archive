@@ -1,0 +1,72 @@
+{
+  "abstract": "SemiAnalysis 通过构建用量表与价格模型，逐项测算 Anthropic 与 OpenAI 订阅服务在中端模型档位（如 Claude Sonnet vs GPT-3.5 Turbo）的 API 等价价值，发现 Anthropic 订阅提供的实际调用量、速率限制、附加权益等综合折算后，其单位价格对应的 API 价值约为 OpenAI 的 5 倍以上。",
+  "keyPoints": [
+    "采用用量表（usage ladder）方法量化订阅制下不同 tier 的实际 API 可用性",
+    "重点对比中端模型档位（非旗舰）的性价比，因该档位用户覆盖最广",
+    "Anthropic 订阅包含更高基础配额、更宽松的 RPM/TPM 限制及优先访问权",
+    "OpenAI 订阅未显著提升中端模型的免费额度或速率上限，API 价值释放有限",
+    "价值倍数结论基于公开定价与服务条款推算，未含私有部署或企业定制场景"
+  ],
+  "method": {
+    "problem": "如何客观衡量 LLM 订阅服务的 API 等价价值",
+    "approach": "构建标准化用量表，将订阅权益映射为等效 API 调用量与访问能力",
+    "design": [
+      "定义核心指标：基础请求配额、RPM/TPM 上限、模型可用性等级、响应延迟保障",
+      "按 tier 对齐 Anthropic 与 OpenAI 订阅计划（如 Pro / Team），排除免费层干扰",
+      "以中端模型（Claude Sonnet / GPT-3.5 Turbo）为基准进行单位价值归一化",
+      "引入隐性权益折算因子（如优先队列、早期功能访问）进行加权估算"
+    ],
+    "setup": "基于 2024 年 Q2 公开定价页与服务文档；未使用真实调用日志，属理论建模分析"
+  },
+  "conclusion": {
+    "findings": "Anthropic 订阅在中端模型档位提供显著更高的 API 等价价值，保守估算达 OpenAI 的 5 倍以上",
+    "impact": "挑战当前主流 API 定价范式，推动行业关注订阅制下的真实服务能力交付",
+    "limitations": "未涵盖模型性能差异、地域延迟、企业 SLA 等变量；价值倍数不适用于旗舰模型对比"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SemiAnalysi…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "订阅价值难量化",
+        "note": "API 订阅缺乏统一计量标准，价格与实际能力脱钩",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "用量表建模法",
+        "note": "将配额、速率、优先级等权益映射为等效 API 调用量",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "5x 价值倍数结论",
+        "note": "首次系统揭示 Anthropic 订阅在中端档位的显著性价比优势",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "中端模型为关键分水岭",
+        "note": "价值差距在 Sonnet/GPT-3.5 Turbo 档位最显著，旗舰档趋同",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重塑定价认知",
+        "note": "促使开发者重估订阅成本结构，影响企业采购决策逻辑",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

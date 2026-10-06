@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出将八叉树（Octree）作为一种显式的、分层的3D语言，用于统一表示和生成三维几何与语义结构。通过将空间递归划分建模为离散符号序列，该框架支持类文本的序列建模方法直接应用于3D理解与生成任务。",
+  "keyPoints": [
+    "首次将Octree结构形式化为一种可学习、可生成的显式3D语言",
+    "支持无网格、无体素的端到端3D序列建模",
+    "实现3D重建、补全与跨模态生成（如文本→3D）的统一架构",
+    "在保持几何精度的同时显著降低内存与计算开销",
+    "开源了基于Hugging Face的Octree tokenizer与基准模型"
+  ],
+  "method": {
+    "problem": "如何构建一种兼具表达力、可学习性与计算效率的显式3D表示，以替代隐式场或稠密体素",
+    "approach": "将Octree编码过程视为符号化语言建模：空间划分路径映射为离散token序列，利用Transformer进行序列级3D理解与生成",
+    "design": [
+      "Octree Tokenizer：将节点分裂/终止操作映射为可学习token",
+      "层级感知位置编码：嵌入深度与空间坐标信息",
+      "自回归Octree解码器：按深度优先顺序生成结构",
+      "多粒度监督：联合优化几何完整性与拓扑一致性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Octree作为显式3D语言可在重建质量、推理速度与泛化能力间取得更好权衡",
+    "impact": "为3D基础模型提供新范式，推动3D大模型向语言模型对齐的统一架构演进",
+    "limitations": "对高度非均匀结构的压缩效率有待提升；动态场景支持尚未验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Octree-3D",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "3D表示瓶颈",
+        "note": "隐式场难训练、体素开销大、网格不规则",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Octree序列化",
+        "note": "将空间划分路径转为离散token流，支持Transformer建模",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "显式3D语言",
+        "note": "首个将Octree形式化为可学习、可生成、可评估的3D语言",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高效高保真",
+        "note": "在ShapeNet等基准上达到SOTA重建精度，显存降低40%+",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "3D基础模型",
+        "note": "为文本/图像→3D生成提供统一token接口，加速3D大模型落地",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

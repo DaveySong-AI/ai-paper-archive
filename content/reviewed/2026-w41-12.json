@@ -1,0 +1,72 @@
+{
+  "abstract": "论文发现基座模型（未经RLHF微调）的推理能力可被训练数据中高频出现的起始token线索显著激发。通过固定特定起始字符串（如'.\\n\\nOkay'或'Alright,'），模型在数学与编程任务上的表现大幅接近其RLHF版本，表明训练数据隐式编码了‘推理启动’的模式关联。",
+  "keyPoints": [
+    "基座模型本身具备潜在推理能力，无需RLHF即可被激活",
+    "起始token线索的作用源于训练数据中的统计共现模式",
+    "不同模型对不同线索敏感，存在模型-线索匹配效应",
+    "该现象在MATH和HumanEval等基准上具有可复现性",
+    "揭示了训练数据分布对模型行为调控的关键作用"
+  ],
+  "method": {
+    "problem": "解释为何基座模型在无显式推理指令时仍可展现强推理能力",
+    "approach": "系统性探查训练数据中起始token与高推理质量响应的统计关联，并通过prompt前缀干预验证因果性",
+    "design": [
+      "构建起始token候选池，基于预训练语料频率与下游任务表现筛选线索",
+      "在多个基座模型（Olmo-3-7B、Qwen3-14B等）上进行线索注入实验",
+      "控制变量对比：相同提示下有/无线索、不同线索、不同模型",
+      "分析线索在原始训练数据中的上下文分布特征"
+    ],
+    "setup": "MATH-500、HumanEval；pass@1评估；所有实验使用标准生成参数（temp=0.0, top_p=1.0）"
+  },
+  "conclusion": {
+    "findings": "基座模型的推理能力可通过训练数据内生的起始token线索可靠激发，证明其并非依赖RLHF引入新能力，而是释放已有潜能",
+    "impact": "挑战RLHF必要性共识，为低成本推理增强提供新范式，推动对预训练数据结构化建模的研究",
+    "limitations": "线索泛化性受限于训练数据分布，跨领域迁移效果需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "BaseModelsR…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "推理能力来源",
+        "note": "基座模型如何自发产生推理行为？是否必须依赖RLHF？",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "线索干预法",
+        "note": "基于训练数据统计筛选起始token，注入prompt前缀验证因果性",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "数据即指令",
+        "note": "揭示训练数据中隐式编码的‘推理启动’模式，提供新解释框架",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能显著提升",
+        "note": "如Olmo-3-7B在MATH-500上pass@1从42%→78%，接近RLHF版本",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "降低推理门槛",
+        "note": "为轻量级推理增强提供免训练方案，影响模型部署与教学应用",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

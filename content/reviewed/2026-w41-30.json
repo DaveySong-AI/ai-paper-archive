@@ -1,0 +1,72 @@
+{
+  "abstract": "Living Models 实验室将 Gemma 4 与植物 DNA 专用模型 BOTANIC-1 结合，实现对作物关键性状突变的快速精准定位。在甜瓜产量基因测试中，该组合仅用不到4分钟即从2494个候选突变中将真实目标排至首位，显著优于传统方法，有望大幅缩短气候适应型作物育种周期。",
+  "keyPoints": [
+    "Gemma 4 与 BOTANIC-1 协同用于植物DNA功能解析",
+    "BOTANIC-1 基于320种植物基因组数据训练",
+    "突变优先级排序任务中实现分钟级响应与Top-1精准召回",
+    "相较传统工具大幅减少假阳性候选突变数量",
+    "面向农业育种场景，提升气候适应性作物研发效率"
+  ],
+  "method": {
+    "problem": "从海量候选突变中快速识别决定作物关键性状的功能性突变",
+    "approach": "融合通用轻量语言模型（Gemma 4）与植物特异性DNA理解模型（BOTANIC-1）构建协同推理流程",
+    "design": [
+      "BOTANIC-1 提供植物基因组上下文感知的突变表征",
+      "Gemma 4 执行跨模态指令理解与排序逻辑推理",
+      "端到端联合微调或提示工程实现任务导向协同",
+      "针对作物性状关联性设计突变-表型映射评估模块"
+    ],
+    "setup": "甜瓜产量相关基因位点测试，2494个候选突变输入，评估Top-1命中率与耗时"
+  },
+  "conclusion": {
+    "findings": "Gemma 4 + BOTANIC-1 组合可在数分钟内完成高精度突变优先级排序，验证其在植物功能基因组学中的实用性",
+    "impact": "为农业AI提供新型可解释、可部署的DNA解析范式，加速气候智能型作物设计",
+    "limitations": "模型泛化性依赖训练植物覆盖度；未披露跨物种迁移能力；实际育种闭环验证尚未展开"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Gemma4+BOTA…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "突变定位慢",
+        "note": "传统方法需数月/年，且难以从数千候选中识别关键突变",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "双模型协同",
+        "note": "Gemma 4负责推理调度，BOTANIC-1提供植物DNA语义理解，联合完成突变排序",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "分钟级解析",
+        "note": "在甜瓜测试中4分钟内实现2494个突变中Top-1精准召回",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能跃升",
+        "note": "相较基线工具显著降低假阳性，提升育种靶点发现效率",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "育种加速",
+        "note": "推动气候适应型作物从实验室到田间的周期压缩，助力粮食安全",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

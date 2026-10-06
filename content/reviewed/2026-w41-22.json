@@ -1,0 +1,73 @@
+{
+  "abstract": "NVIDIA Olympus 是一款面向服务器的10发射乱序执行核心，主频3.3 GHz，通过高IPC和SMT设计实现卓越单线程性能，SPEC CPU2026中分支预测略逊于Zen 5但优于Lion Cove，浮点性能领先两者。",
+  "keyPoints": [
+    "10宽发射乱序执行架构，强调每周期指令吞吐而非高频",
+    "采用SMT支持多线程，兼顾服务器吞吐与单线程响应能力",
+    "分支预测器在SPEC CPU2026中表现介于AMD Zen 5与Intel Lion Cove之间",
+    "浮点性能在同类服务器核心中领先AMD与Intel最新架构",
+    "设计目标明确：突破服务器场景下单线程性能瓶颈"
+  ],
+  "method": {
+    "problem": "服务器CPU长期受限于单线程性能瓶颈，难以满足低延迟、高响应需求",
+    "approach": "以高宽度乱序执行+精细微架构优化替代单纯提升频率",
+    "design": [
+      "10发射宽度的前端与后端流水线",
+      "深度优化的分支预测器（含TAGE变体）",
+      "增强型浮点执行单元与向量寄存器文件",
+      "低延迟SMT上下文切换机制",
+      "面向服务器负载的缓存与内存子系统协同设计"
+    ],
+    "setup": "SPEC CPU2026基准测试，对比AMD Zen 5与Intel Lion Cove"
+  },
+  "conclusion": {
+    "findings": "Olympus证明服务器核心可通过宽度与微架构效率提升单线程性能，无需依赖高频",
+    "impact": "为AI推理、数据库事务等低延迟服务器场景提供新架构范式，挑战x86主导地位",
+    "limitations": "工艺节点与功耗墙限制进一步扩展空间；软件生态适配尚不成熟"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Olympus核心",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "单线程性能瓶颈",
+        "note": "服务器负载对低延迟响应需求上升，传统多核缩放难解",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "10宽乱序+SMT",
+        "note": "以IPC提升替代频率竞赛，SMT平衡吞吐与单线程响应",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "浮点性能领先",
+        "note": "在SPEC CPU2026浮点测试中超越Zen 5与Lion Cove",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "分支预测居中",
+        "note": "SPEC CPU2026中略逊Zen 5、略优于Lion Cove，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "挑战x86生态",
+        "note": "为服务器CPU提供新架构路径，推动异构计算范式演进",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
