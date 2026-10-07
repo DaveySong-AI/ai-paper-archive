@@ -1,0 +1,72 @@
+{
+  "abstract": "UT Austin 系统性研究了 LLM 智能体中上下文压缩的影响，在 SWE-bench Verified 和 Terminal-Bench 上开展近 35,000 次实验，考察不同压缩方式、触发时机与删除量对智能体性能与延迟的权衡。结果表明：过度压缩虽节省 token，却显著增加推理步数与总耗时，导致实际运行更慢。",
+  "keyPoints": [
+    "上下文压缩不必然提升效率，可能因信息丢失引发重试与循环而拖慢整体执行",
+    "压缩触发时机（如每步/仅初始/错误后）比压缩算法本身对智能体表现影响更大",
+    "存在最优压缩率区间，低于该阈值时性能陡降，且任务类型敏感",
+    "终端交互类任务（Terminal-Bench）比代码修复任务（SWE-bench）更易受压缩损害",
+    "token 节省量与端到端延迟呈非单调关系，最小 token 不等于最短时间"
+  ],
+  "method": {
+    "problem": "厘清上下文压缩对 LLM 智能体实际运行效率（而非仅 token 成本）的真实影响",
+    "approach": "大规模控制变量实验，系统遍历压缩策略空间并测量多维指标",
+    "design": [
+      "三轴调控：压缩方法（LLM summarization / rule-based pruning / embedding retrieval）",
+      "触发时机（step-wise / on-error / one-time initialization）",
+      "删除比例（10%–90%，步进10%）",
+      "双基准评估：SWE-bench Verified（代码修复成功率）、Terminal-Bench（命令执行完成率与时延）"
+    ],
+    "setup": "35,000+ 次运行；统一底层模型（Llama-3-70B-instruct）；监控 token 使用、步数、wall-clock 时间、成功率"
+  },
+  "conclusion": {
+    "findings": "压缩策略需任务自适应；盲目最小化上下文常以时间换 token，违背智能体实时性目标",
+    "impact": "为智能体系统设计提供实证基准，推动从‘token-centric’向‘latency-aware’压缩范式转变",
+    "limitations": "未覆盖多模态上下文压缩；未测试开源小模型在边缘设备上的泛化性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "UT Austin C…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "压缩是否真提速？",
+        "note": "质疑‘省 token = 快’的隐含假设，聚焦端到端延迟与成功率",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "35K次控制实验",
+        "note": "三维度遍历压缩策略，在SWE-bench和Terminal-Bench上量化多指标",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "时机>算法",
+        "note": "发现触发时机是主导因子，远超压缩技术选型的影响",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "非单调延迟曲线",
+        "note": "token减少初期延迟微降，过压缩后延迟激增，存在U型关系",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重定义压缩目标",
+        "note": "推动智能体上下文管理从token优化转向latency-aware design",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "PromptArmor 发现 Databricks Genie 存在严重安全缺陷：攻击者可上传恶意 Skill，在用户与 Genie 交互时自动触发钓鱼页面并窃取租户敏感数据，全程绕过现有四类控制机制，无需人工授权。",
+  "keyPoints": [
+    "恶意 Skill 可在 Genie 聊天结果渲染阶段执行任意前端代码",
+    "钓鱼页面通过 iframe 或弹窗形式在用户浏览器中呈现",
+    "攻击者可诱导用户输入凭证或直接读取当前租户上下文数据",
+    "Databricks 当前四类防护措施（权限隔离、内容沙箱、技能签名、执行审批）均被绕过",
+    "漏洞利用不依赖后端 RCE，纯前端驱动，隐蔽性强"
+  ],
+  "method": {
+    "problem": "Databricks Genie 对用户上传 Skill 的前端执行缺乏有效约束，导致供应链级钓鱼与数据外泄风险",
+    "approach": "通过逆向分析 Genie Skill 执行机制与渲染流程，构造可控的恶意 Skill PoC 并验证其绕过能力",
+    "design": [
+      "利用 Genie 渲染器未剥离危险 HTML/JS 标签的缺陷注入钓鱼 UI",
+      "通过 window.parent 访问跨域受限上下文以提取租户元数据",
+      "伪装为合法工具 Skill 规避用户感知与审核策略",
+      "结合浏览器同源策略绕过技巧实现跨 iframe 数据窃取"
+    ],
+    "setup": "基于公开 Databricks Genie 环境（v2024.3+）进行黑盒测试与动态行为分析"
+  },
+  "conclusion": {
+    "findings": "Genie 的 Skill 执行模型存在根本性信任误设，前端渲染层缺失内容策略与执行域隔离",
+    "impact": "暴露企业级 AI 助手在插件生态安全设计上的系统性短板，推动行业重审 LLM 工具链沙箱标准",
+    "limitations": "未披露具体租户数据提取路径细节；PoC 依赖用户处于已登录会话状态"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "PromptArmor…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Skill 前端执行失控",
+        "note": "恶意代码在聊天渲染时自动执行，绕过所有现有控制",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "PoC 钓鱼链构造",
+        "note": "注入HTML/JS→触发UI→诱导输入→窃取租户上下文数据",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "四控失效实证",
+        "note": "首次系统揭示权限隔离、沙箱、签名、审批机制全部可绕过",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "无感数据外泄",
+        "note": "用户无交互确认即完成凭证捕获与租户信息泄露",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI 工具链警钟",
+        "note": "推动 LLM 插件生态建立强制前端执行域隔离与CSP策略",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
