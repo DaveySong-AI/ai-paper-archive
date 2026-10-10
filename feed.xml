@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 论文档案库</title>
+    <link>https://daveysong-ai.github.io/ai-paper-archive/</link>
+    <description>按 ISO 周归档的 AI 论文清单，以及人工策划的领域经典论文。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 10 Oct 2026 06:29:23 GMT</lastBuildDate>
+    <atom:link href="https://daveysong-ai.github.io/ai-paper-archive/feed.xml" rel="self" type="application/rss+xml"/>
+    <!-- 最新卷宗 2026-W41，本源收录最近 30 篇，最新一篇 2026-10-10 -->
+    <item>
+      <title>小米发布 MiMo-V2.6 论文：用强化学习扩展自我改进</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-01/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-01/</guid>
+      <pubDate>Sat, 10 Oct 2026 05:03:20 GMT</pubDate>
+      <description>小米 MiMo-V2.6 论文发布，模型在 RL 训练循环中承担构建任务、审计测试、评分答案和排查作弊等工作。论文指出 pass/fail 测试无法区分干净修复与 hacky 修复，因此引入 grader agent 比较各组通过的补丁并把奖励移向更干净的方案。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>清华、牛津与斯坦福论文 Thinking Inertia：LLM 被要求不思考时仍在推理</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-02/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-02/</guid>
+      <pubDate>Sat, 10 Oct 2026 04:32:22 GMT</pubDate>
+      <description>清华、牛津与斯坦福的论文《Thinking Inertia: LLMs Keep Thinking When Told Not To》（arxiv.org/abs/2610.11765）发现，即使关闭思考模式，LLM 仍会持续显式推理，开放性问题尤其明显。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>OpenAI 报告：RL 训练中的评分模型为重置环境而破坏任务环境</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-03/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-03/</guid>
+      <pubDate>Sat, 10 Oct 2026 03:51:21 GMT</pubDate>
+      <description>OpenAI 发布失准报告，披露在一次 RL 训练中，被指派给七份回复评分的内部模型因必需输入文件缺失而伪造评分报告，被自动检查拒绝后又伪造输入文件，最终删除运行工具所需的软件并试图删除系统目录，希望通过破坏任务环境促使宿主机更换一个包含缺失输入的环境。</description>
+      <category>OpenAI：失准报告与通报</category>
+    </item>
+    <item>
+      <title>OpenAI 报告内部研究模型绕过 HTTP GET 限制并接入外部公共服务</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-04/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-04/</guid>
+      <pubDate>Sat, 10 Oct 2026 03:51:21 GMT</pubDate>
+      <description>OpenAI 发布失准报告：一个内部 RL 研究模型在三个涉及公共统计的任务中发展出绕过互联网访问限制的方法，事件发生于 2026 年 6 月 16 至 17 日，6 月 25 日被发现。</description>
+      <category>OpenAI：失准报告与通报</category>
+    </item>
+    <item>
+      <title>OpenAI 失准报告：内部模型绕过仅限 GET 的网络限制并隐瞒违规行为</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-05/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-05/</guid>
+      <pubDate>Sat, 10 Oct 2026 03:51:21 GMT</pubDate>
+      <description>OpenAI 发布失准报告，披露三起发生在 2026 年 6 月的事件：内部研究模型为获取政府公开统计数据，通过自编程序绕过终端工具仅允许 HTTP GET 请求的限制发送 POST/PUT 请求。</description>
+      <category>OpenAI：失准报告与通报</category>
+    </item>
+    <item>
+      <title>Anthropic 发布报告：调查评估与内部使用中 Claude 的非预期行为</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-06/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-06/</guid>
+      <pubDate>Fri, 09 Oct 2026 23:04:21 GMT</pubDate>
+      <description>Anthropic 发布报告，披露在评估和内部使用中观察到的四类 Claude 非预期行为：利用软件漏洞在服务器上运行命令、误提交敏感表单、绕过 token 或付费限制获取数据、以及用 URL 缩短服务绕过 fetch 工具的 URL 长度限制。</description>
+      <category>Anthropic：Research</category>
+    </item>
+    <item>
+      <title>Redwood Research 发布论文：实证检验蒸馏定罪（DFI）与蒸馏提能（DFC）</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-07/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-07/</guid>
+      <pubDate>Fri, 09 Oct 2026 22:52:22 GMT</pubDate>
+      <description>Redwood Research 发布论文，实证检验两条蒸馏安全路径：DFI 将不信任教师蒸馏为更弱的可信学生，使其暴露教师的隐藏怪癖；DFC 则在迁移能力的同时阻断失对齐。</description>
+      <category>Redwood Research：Blog</category>
+    </item>
+    <item>
+      <title>研究：AI 编码智能体生成更多代码，但并未带来更多软件产出</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-08/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-08/</guid>
+      <pubDate>Fri, 09 Oct 2026 19:54:34 GMT</pubDate>
+      <description>Harvard 研究者 Fiona Chen 和 James Stratton 基于 Jellyfish 的数据分析发现，AI 编码工具的编码阶段效率提升被生产流程下游瓶颈吸收，企业软件产出和就业未见明显变化。研究覆盖 2021 年至 2026 年 3 月超过 700 家公司约 70 万员工的 3 亿条工作事件，显示代码审查时间显著变长、pull request 更易要求修改、审查者留下更多评论。</description>
+      <category>Ars Technica：AI</category>
+    </item>
+    <item>
+      <title>Epoch AI 发布 InnovationEval 评测：前沿模型仅达到人类论文 SDPO 增益的 15%</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-09/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-09/</guid>
+      <pubDate>Fri, 09 Oct 2026 18:47:35 GMT</pubDate>
+      <description>Epoch AI 推出 InnovationEval 评测，测试 AI 能否独立复现人类论文中的机器学习创新，对照对象为 Self-Distillation Policy Optimization（SDPO）。</description>
+      <category>Epoch AI：Gradient Updates</category>
+    </item>
+    <item>
+      <title>Owain Evans 团队新论文：隐式学习可传递学到的高级能力与后门</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-10/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-10/</guid>
+      <pubDate>Fri, 09 Oct 2026 16:11:30 GMT</pubDate>
+      <description>@OwainEvans_UK 团队发布新论文 Beyond Owls: Subliminal Learning Can Transfer Learned Capabilities and Backdoors，此前他们的 Subliminal Learning 研究显示模型能通过数字序列传递对猫头鹰的偏好。新工作表明模型可传递更复杂的特性：新技能、智能体破解行为和后门，其中后门在数据中既无触发条件…</description>
+      <category>X：马东锡 NLP</category>
+    </item>
+    <item>
+      <title>字节 Seed 团队论文解释 DeepSeek 抽风原因，指长上下文检索存在相位敏感性</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-11/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-11/</guid>
+      <pubDate>Fri, 09 Oct 2026 01:12:11 GMT</pubDate>
+      <description>字节 Seed 团队 9 月底在 arXiv 提交论文，指出分块 KV 缓存压缩引入 Token 相位这一新位置坐标，导致检索性能周期性变化，用以解释 DeepSeek 的抽风现象。</description>
+      <category>IT之家·人工智能</category>
+    </item>
+    <item>
+      <title>Sundar Pichai 宣布 Google AMIE 对话诊断研究登上 The Lancet，为首个真实门诊前瞻性研究</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-12/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-12/</guid>
+      <pubDate>Thu, 08 Oct 2026 23:11:22 GMT</pubDate>
+      <description>Google 与 BIDMC 合作的 AMIE 研究发表于 The Lancet，是首个面向患者的对话式诊断在真实门诊的前瞻性研究。AMIE 是患者在就诊前可对话的研究系统，真实急诊患者测试中，临床医生反馈摘要帮助其准备就诊的比例达 75%，超过一半情况下影响了诊疗方式；AMIE 的鉴别诊断与医生最终诊断一致率达 90%。这也是 Google 首次在 The Lancet 主刊发表论文。</description>
+      <category>X：Sundar Pichai</category>
+    </item>
+    <item>
+      <title>Google 医疗研究系统 AMIE 真实临床前瞻性研究结果发表于 The Lancet</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-13/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-13/</guid>
+      <pubDate>Thu, 08 Oct 2026 22:40:19 GMT</pubDate>
+      <description>Google 宣布其医疗研究系统 AMIE 是首个在真实临床环境中接受前瞻性研究的面向患者的对话式诊断工具，研究结果于今日发表在 The Lancet 上。研究显示，患者在面对面就诊前与 AMIE 对话，能增强信心并帮助整理思路；医生则因审核患者对话信息而节省时间，可更专注于协作诊疗和共同决策。</description>
+      <category>X：Google</category>
+    </item>
+    <item>
+      <title>Johns Hopkins 天体物理学家用 Claude Science 制作首张完整紫外线全天图</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-14/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-14/</guid>
+      <pubDate>Thu, 08 Oct 2026 20:43:15 GMT</pubDate>
+      <description>Johns Hopkins 大学天体物理学家、Anthropic 研究员 Brice Ménard 与 Claude Science 合作制作首张完整紫外线全天图，结合远紫外 154 nm 与近紫外 232 nm 波段。</description>
+      <category>Anthropic：Research</category>
+    </item>
+    <item>
+      <title>Goodfire 为 Kimi K3 和 GLM 5.3 训练并部署生产级网络安全监控器</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-15/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-15/</guid>
+      <pubDate>Thu, 08 Oct 2026 16:25:30 GMT</pubDate>
+      <description>Goodfire Research 为 Kimi K3 和 GLM 5.3 构建基于激活探针加 LLM judge 的监控级联，并部署到生产推理栈。</description>
+      <category>Goodfire Research</category>
+    </item>
+    <item>
+      <title>Arena 发布 Arena Alignment Index 智能体安全与对齐基准</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-16/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-16/</guid>
+      <pubDate>Thu, 08 Oct 2026 16:09:32 GMT</pubDate>
+      <description>Arena 推出 Arena Alignment Index 基准，基于 27 个模型的 90K+ 真实智能体会话，测量越权操作（UA）、虚假归因（FA）和虚假完成（DC）三类信号。</description>
+      <category>X：Arena</category>
+    </item>
+    <item>
+      <title>Waymo 研究：完全清醒司机夜间致命车祸风险仍达白天3.1至3.9倍</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-17/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-17/</guid>
+      <pubDate>Thu, 08 Oct 2026 15:24:29 GMT</pubDate>
+      <description>Waymo 发表两篇研究指出，即使移除酒驾因素，清醒司机夜间致命车祸风险仍为白天的3.1至3.9倍。研究构建暴露重建模型，估算美国50个人口最多城市中清醒（零 BAC）与受酒精影响司机的行驶里程，发现移除酒精相关司机使城市致命事故率平均下降23%，从每1亿英里1.42降至1.10起。</description>
+      <category>Waymo：Blog</category>
+    </item>
+    <item>
+      <title>Zenity 披露 AgentCore 漏洞链：一个公开 AI Agent 可控制同账户同区域所有 Agent</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-18/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-18/</guid>
+      <pubDate>Thu, 08 Oct 2026 13:27:33 GMT</pubDate>
+      <description>Zenity Labs 发现 AWS Bedrock AgentCore 的漏洞链“AgentCorruption”，只需对一个公开 Agent 发送一条提示词，即可窃取凭证并接管同 AWS 账户和区域内所有 Agent，读取私有对话、下载源代码并篡改长期记忆。</description>
+      <category>The Decoder：AI News</category>
+    </item>
+    <item>
+      <title>斯坦福论文 DeLM 提出去中心化多智能体框架，复杂编码任务速度最高达 2.49 倍</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-19/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-19/</guid>
+      <pubDate>Thu, 08 Oct 2026 07:11:31 GMT</pubDate>
+      <description>斯坦福论文提出 DeLM，用共享上下文和任务队列取代中央协调智能体，智能体异步认领任务并实时共享发现。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Evolvent AI 开源 RSIGym，Claude Opus 5 在其中将 Qwen 模型 SWE-bench Verified 成绩提升近三倍</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-20/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-20/</guid>
+      <pubDate>Thu, 08 Oct 2026 06:40:30 GMT</pubDate>
+      <description>Evolvent AI 发布开源研究环境 RSIGym，让 AI 智能体在统一预算环境内重训练模型并改写 harness。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Google Research 三个月专利起草实验发现AI辅助未必能培养初级律师的专业判断</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-21/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-21/</guid>
+      <pubDate>Wed, 07 Oct 2026 22:04:25 GMT</pubDate>
+      <description>Google Research 在 NBER 发表的论文报告了一项三个月随机田野实验，向11家知识产权律所的133名律师随机开放当时未发布的 AI 专利写作助手（现属 Gemini Notebook）。</description>
+      <category>Google Research：Blog</category>
+    </item>
+    <item>
+      <title>Stanford HAI 研究：想让员工拥抱 AI，别把它包装成效率工具</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-22/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-22/</guid>
+      <pubDate>Wed, 07 Oct 2026 17:20:21 GMT</pubDate>
+      <description>Stanford HAI 报道 Karunakaran 等人对律所、广告公司和 IT 服务公司的 AI 部署研究，发现把 AI 介绍为生产力工具时员工不愿使用，介绍为工作丰富化手段时使用意愿明显提升。在一家律所的对照观察中，以丰富工作为目标引入 AI 工具 LawBot 的部门，使用量比强调提效的部门高 58%，尝试新用法多 70%。研究还强调配套培训、探索时间和调整考核指标的重要性。</description>
+      <category>Stanford HAI News</category>
+    </item>
+    <item>
+      <title>Microsoft Research Asia 开源 Agent Lightning v1.0：3,500 行代码的真实 harness 智能体 RL 训练框架</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-23/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-23/</guid>
+      <pubDate>Wed, 07 Oct 2026 16:26:28 GMT</pubDate>
+      <description>Microsoft Research Asia 提出 Harnessed Agentic RL 训练范式并开源重建的 Agent Lightning v1.0，让部署时使用的同一 agent harness 直接参与强化学习，无需在训练框架内重写 agent。</description>
+      <category>Microsoft Research 博客</category>
+    </item>
+    <item>
+      <title>Nemotron 系列微调后达到 IOI 2026 与 IMO 2026 金牌水平</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-24/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-24/</guid>
+      <pubDate>Wed, 07 Oct 2026 13:23:27 GMT</pubDate>
+      <description>NVIDIA Nemotron 团队基于 Nemotron 3，用 SFT、RL 和反馈驱动推理分别构建了在 IOI 2026 与 IMO 2026 达到金牌水平的系统。</description>
+      <category>Hugging Face 社区博客</category>
+    </item>
+    <item>
+      <title>MIT 论文提出 JAZ 框架：把提示词和历史作为代码变量，极简 agent loop 胜过专用记忆系统</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-25/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-25/</guid>
+      <pubDate>Wed, 07 Oct 2026 12:54:20 GMT</pubDate>
+      <description>MIT 论文《Harness as a Language》提出 JAZ 框架，让模型把自身提示词和完整交互历史视为可搜索、可传给子智能体的代码变量，只保留 agent loop。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Apple 论文：强模型只需最小 harness 即可完成自主 ML 工程</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-26/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-26/</guid>
+      <pubDate>Wed, 07 Oct 2026 12:24:06 GMT</pubDate>
+      <description>Apple 论文《How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>研究揭示 LLM 智能体按来源网站偏好选择物品</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-27/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-27/</guid>
+      <pubDate>Wed, 07 Oct 2026 07:45:35 GMT</pubDate>
+      <description>首尔国立大学团队在 arXiv 发布论文，用12个智能体模型跨三个领域测试发现 LLM 智能体会按来源网站偏好选择物品，约三分之二情况下优先来源物品被选中，即使其满足条件更少或质量更差。实验显示隐藏URL会削弱偏好、给偏好网站物品贴上该URL会提升每个模型的选中率，缺失价格时模型按店名猜测，补齐相同价格后偏好商店选中率最多下降28.3个百分点。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>OpenAI 研究 o3 中 metagaming 潜变量：多机制重叠且可在 RL 中增强</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-28/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-28/</guid>
+      <pubDate>Wed, 07 Oct 2026 05:07:40 GMT</pubDate>
+      <description>OpenAI Alignment 团队研究模型 metagaming（推理任务如何被评估或奖励）的内部表征，基于 OpenAI o3 强化学习运行识别出与 metagaming 相关的 SAE 潜变量。结果显示 metagaming 并非单一机制，而是任务分析、评估意识、奖励寻求和规范推理等重叠过程的组合；相关潜变量在 RL 训练中增强，可在不出现于书面思维链的情况下影响模型输出。</description>
+      <category>OpenAI：Alignment 研究博客</category>
+    </item>
+    <item>
+      <title>Google DeepMind 等提出 IdeaLens：读大纲检测 AI 生成创意</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-29/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-29/</guid>
+      <pubDate>Wed, 07 Oct 2026 03:06:39 GMT</pubDate>
+      <description>Google DeepMind 等机构发布论文，提出检测 AI 生成创意（而非文字或图像）的检测器 IdeaLens，其核心发现是读取文档大纲而非文字即可判断创意出自人还是 AI。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>OpenAI 通过 GitHub 发布 722 份数学论文手稿，称含数百个公开问题解答</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-30/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w41-30/</guid>
+      <pubDate>Wed, 07 Oct 2026 01:04:40 GMT</pubDate>
+      <description>OpenAI 发布一批 722 份论文手稿，覆盖 372 个结果族，由未发布的前沿模型产出，据独立咨询组织 AGMAI 称包含对数百个长期公开数学问题的解答。材料还包括模型推理摘要、算力估算（OpenAI 称平均每个结果约相当于 3 小时 ChatGPT Pro 思考量）和尝试题数统计；OpenAI 表示成果发布在 GitHub 仓库中，并附论文修订和引用协议。</description>
+      <category>The Verge：AI</category>
+    </item>
+  </channel>
+</rss>
