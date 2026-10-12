@@ -1,0 +1,72 @@
+{
+  "abstract": "Vals AI 在 Vibe Code Bench 上评估多智能体团队与单智能体在代码推理任务中的表现，发现团队方案 token 消耗高达单体的 1.8–5.1 倍，但质量提升微弱：仅 GPT-6 Sol 在 medium reasoning 子项中显著高出 7.3 分，其余对比均无统计显著性提升。",
+  "keyPoints": [
+    "多智能体团队 token 成本显著增加，达单智能体的 1.8–5.1 倍",
+    "四组对比中仅一组（GPT-6 Sol, medium reasoning）呈现统计显著的质量提升",
+    "多数场景下团队未带来可测量的性能增益",
+    "结果质疑当前多智能体协作范式的成本效益比",
+    "实验基于 Vibe Code Bench，聚焦代码推理任务"
+  ],
+  "method": {
+    "problem": "评估多智能体团队在代码推理任务中是否带来可验证的质量提升",
+    "approach": "在统一基准（Vibe Code Bench）上对比单智能体与多智能体团队的性能与 token 开销",
+    "design": [
+      "选用 GPT-6 Sol 和 Claude Opus 5.5 作为基座模型",
+      "构建多智能体团队架构（具体协作机制未公开）",
+      "按 task difficulty（如 medium reasoning）分组对比",
+      "以 token 消耗量和任务得分双维度量化效率与效果"
+    ],
+    "setup": "Vibe Code Bench 测试集；对比单体 vs 团队在相同 prompt setting 下的表现"
+  },
+  "conclusion": {
+    "findings": "多智能体团队在代码推理任务中普遍呈现高成本、低增益特征，仅特定模型与子任务下存在有限显著提升",
+    "impact": "为多智能体系统设计提供实证警示，推动轻量、定向协作机制研究",
+    "limitations": "实验局限于 Vibe Code Bench 和两类闭源模型，协作策略细节未披露"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Vals AI 多智能…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "团队性价比存疑",
+        "note": "是否值得用更高token成本换取微弱质量提升？",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Vibe Code B…",
+        "note": "统一基准下对比单体与团队的token消耗与得分",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "量化成本-收益失衡",
+        "note": "首次在代码推理任务中系统报告1.8x–5.1x token开销与极低增益",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "仅1/4对比显著",
+        "note": "GPT-6 Sol在medium reasoning中+7.3分且p<0.05，其余不显著",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重审多智能体范式",
+        "note": "促使社区关注协作必要性、精简通信与角色设计",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
