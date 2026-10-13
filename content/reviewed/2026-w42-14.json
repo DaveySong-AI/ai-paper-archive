@@ -1,0 +1,72 @@
+{
+  "abstract": "Artificial Analysis 发布 FrontierCode 1.1 编程评测，基于 100 个真实开源仓库任务，采用统一 Stirrup agent harness 测试主流 AI 模型代码生成能力。Claude Opus 5.5 以 52% 合并通过率居首，但所有领先模型失败率仍超 40%，凸显当前 AI 在生产级代码维护任务中的显著局限。",
+  "keyPoints": [
+    "首次在真实开源仓库场景下开展大规模、统一框架的编程能力评测",
+    "引入 Stirrup agent harness 实现标准化测试环境与评估流程",
+    "Claude Opus 5.5 表现最优（52% 合并通过率），但整体成功率仍不足六成",
+    "所有前沿模型在真实维护任务中失败率超 40%，暴露工程鲁棒性短板",
+    "评测聚焦‘可被维护者接受’而非单纯功能正确，强调代码可维护性与协作性"
+  ],
+  "method": {
+    "problem": "评估大模型在真实开源协作场景中生成可被维护者直接合并的代码能力",
+    "approach": "构建基于真实仓库的端到端编程评测框架，以 Pull Request 可合并性为核心指标",
+    "design": [
+      "选取 100 个活跃开源项目的真实 issue 作为任务源",
+      "使用 Stirrup agent harness 统一执行环境、工具调用与反馈循环",
+      "定义‘maintainer-mergeable’为成功标准：代码需通过 CI、风格合规、无回归且文档完备",
+      "多轮人工复核与自动化验证结合，确保评估可信度"
+    ],
+    "setup": "测试 10+ 主流闭源/开源模型，每任务最多 3 次尝试，所有运行在相同硬件与 API 配置下"
+  },
+  "conclusion": {
+    "findings": "当前最先进模型在真实维护任务中仍无法稳定交付可合并代码，成功率未达临界阈值",
+    "impact": "推动编程评测从功能正确转向协作可信，为 Agent 编程基准设立新范式",
+    "limitations": "任务覆盖语言与项目类型有限；未评估长期维护成本与技术债影响"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "FrontierCod…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "真实维护能力",
+        "note": "评估模型生成代码是否真能被开源维护者直接合并，而非仅逻辑正确",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Stirrup 测试框架",
+        "note": "统一 agent harness，集成真实 CI、linter、PR 模拟与人工审核流水线",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "100 真实仓库任务",
+        "note": "全部源自 GitHub 活跃项目 issue，涵盖 bug 修复、小特性添加等典型维护场景",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "Claude Opus…",
+        "note": "最高合并通过率，但失败率仍超 40%，其余模型表现明显落后",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重定义编程基准",
+        "note": "从 unit test 通过转向 maintainer acceptance，强调工程落地可信度",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

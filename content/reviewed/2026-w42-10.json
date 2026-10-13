@@ -1,0 +1,72 @@
+{
+  "abstract": "阿里Qwen团队提出QwenGyre，一种面向超长时程（XLong-Horizon）智能体的弹性强化学习框架，支持在未经修改的黑盒环境（harness）中进行在线RL训练；单次rollout可持续数小时、处理近1M tokens，显著突破传统RL在时序长度与环境交互稳定性上的瓶颈。",
+  "keyPoints": [
+    "首创面向超长时程（XLong-Horizon）智能体的弹性RL训练框架",
+    "支持在原始黑盒环境（如编码沙箱）中直接在线RL训练，无需环境改造",
+    "单次rollout可扩展至数小时、近1M tokens，实现跨尺度时序建模",
+    "引入弹性状态缓存与渐进式信用分配机制，缓解长程稀疏奖励问题",
+    "以编码智能体为典型用例，验证复杂多步任务（如全栈调试、项目级生成）的可行性"
+  ],
+  "method": {
+    "problem": "传统强化学习难以稳定训练超长时程（数小时/百万token级）智能体，受限于环境兼容性、内存爆炸、信用分配失效与rollout中断风险。",
+    "approach": "构建弹性RL框架QwenGyre，在保持环境黑盒前提下，通过动态rollout管理、分段状态持久化与自适应策略更新实现长程训练。",
+    "design": [
+      "弹性rollout调度器：支持中断恢复、时间/Token双维度截断与重放",
+      "轻量级状态快照机制：仅保存关键决策点上下文，降低内存占用",
+      "渐进式优势估计（PAE）：融合多粒度时序折扣，适配稀疏长程奖励",
+      "环境无关动作封装层：统一黑盒harness的I/O接口与错误恢复协议"
+    ],
+    "setup": "基于开源编码沙箱（如SWE-bench兼容harness），使用Qwen2-7B作为策略基座模型；训练采用PPO变体，rollout最大长度设为1M tokens。"
+  },
+  "conclusion": {
+    "findings": "QwenGyre在未修改黑盒环境中成功训练出具备小时级连续推理能力的编码智能体，显著提升长程任务完成率与鲁棒性。",
+    "impact": "为大模型智能体向真实世界复杂任务（如自动化运维、科研实验闭环）演进提供可扩展RL基础设施。",
+    "limitations": "当前依赖高质量环境反馈信号；对极低信噪比奖励场景的泛化性有待验证。"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "QwenGyre",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "超长时程训练难",
+        "note": "传统RL受限于环境兼容性、内存与信用分配，难以支持小时级/百万token级智能体训练。",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "弹性RL框架",
+        "note": "含弹性rollout调度、状态快照、渐进式优势估计与黑盒接口封装四核心设计。",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "黑盒在线训练",
+        "note": "首次实现无需修改harness的超长rollout在线RL训练，降低部署门槛。",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "百万token级rol…",
+        "note": "单次运行达数小时、近1M tokens，在编码任务中验证长程连贯性与容错性。",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "智能体实用化",
+        "note": "推动LLM智能体从短程对话迈向真实世界长周期自主任务执行。",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

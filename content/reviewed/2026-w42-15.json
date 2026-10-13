@@ -1,0 +1,72 @@
+{
+  "abstract": "AWS 提出 priming 方法，无需从头训练即可将预训练 Transformer 模型改造为混合状态空间模型（SSM），复用其权重并注入状态空间机制。该方法大幅降低架构变更成本，预训练开销减少超 99%，总 token 预算消耗不足原模型的 0.5%。",
+  "keyPoints": [
+    "提出 priming 方法，实现预训练 Transformer 到混合 SSM 架构的零重训迁移",
+    "通过结构化权重映射与轻量级 SSM 插件，在 Transformer 层中嵌入状态空间动态",
+    "保留原始 Transformer 表征能力的同时，增强长程建模与线性复杂度推理优势",
+    "仅需极少量 token（<0.5%）微调即可适配新架构，显著节约计算资源",
+    "验证了模型架构可塑性：预训练权重蕴含跨范式迁移潜力"
+  ],
+  "method": {
+    "problem": "如何在不重新训练的前提下，将已有的预训练 Transformer 改造为具备状态空间建模能力的混合架构",
+    "approach": "基于权重复用的架构重参数化：将 Transformer 的注意力层与 FFN 层映射为等效状态空间模块，并引入可学习的轻量级 SSM 组件进行协同建模",
+    "design": [
+      "设计 priming embedding 层，对 Transformer 输出进行状态空间初始化投影",
+      "构建 hybrid attention-SSM 交叉门控机制，融合局部注意力与全局状态演化",
+      "采用低秩 SSM 参数化策略，确保与原始权重尺度兼容且可插拔",
+      "定义 architecture-aware loss，约束 primed 模块输出与原始 Transformer 行为一致性"
+    ],
+    "setup": "在语言建模与长序列任务上验证；使用 LLaMA-2、BERT 等主流预训练模型作为基座；token 预算限制为原训练量的 0.5%"
+  },
+  "conclusion": {
+    "findings": "Priming 可高效复用预训练知识完成架构跃迁，混合模型在保持原有性能的同时获得更优长程建模能力与推理效率",
+    "impact": "为大模型架构演进提供新范式——摆脱‘重训即重构’依赖，推动绿色 AI 与可持续模型开发",
+    "limitations": "当前主要适配 decoder-only 架构；对 encoder-decoder 或多模态结构的泛化性尚待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Priming",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "架构不可变困境",
+        "note": "预训练模型难以脱离原始结构，重训成本极高",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "权重驱动重参数化",
+        "note": "将 Transformer 权重映射为 hybrid SSM 模块，无需梯度回传至原始层",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Primable 混合…",
+        "note": "支持即插即用 SSM 扩展，保持前向兼容与反向冻结特性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "99%+ 预训练节省",
+        "note": "全流程 token 消耗 < 原模型 0.5%，性能衰减可控",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "架构绿色演进",
+        "note": "开启预训练资产复用新路径，降低大模型迭代碳足迹",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

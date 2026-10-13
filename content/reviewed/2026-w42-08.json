@@ -1,0 +1,73 @@
+{
+  "abstract": "Minions 是 Apple 提出的动态分布式虚拟 GPU 云系统，利用闲置的 Apple Silicon macOS 设备（如 Mac Studio、MacBook Pro）中未使用的 GPU 资源，聚合构建可伸缩的推理基础设施。系统支持任务调度、容错、资源动态发现与释放，无需新增硬件即可提升 ML 推理吞吐。实证表明其在资源受限场景下显著提升现有设备利用率。",
+  "keyPoints": [
+    "首创将 Apple Silicon 设备的 Metal GPU 作为分布式虚拟 GPU 资源池统一调度",
+    "实现轻量级、低开销的跨设备 GPU 内存与计算状态虚拟化",
+    "支持细粒度任务分片、自动故障迁移与空闲资源秒级回收",
+    "完全基于 macOS 原生框架（Metal、MPS、XPC），无虚拟机或容器依赖",
+    "面向推理优化，不支持训练，强调低延迟、高吞吐与能效比"
+  ],
+  "method": {
+    "problem": "如何在无专用 GPU 集群条件下，安全、高效、动态地复用大量分散且异构的 Apple Silicon 设备 GPU 进行 ML 推理",
+    "approach": "构建去中心化虚拟 GPU 层，通过 Metal API 抽象物理 GPU，设计分布式运行时协调空闲设备资源",
+    "design": [
+      "基于 Metal Performance Shaders（MPS）的轻量级模型适配层",
+      "设备端代理（Minion Agent）实现 GPU 状态心跳、负载感知与安全沙箱隔离",
+      "中央协调器（Orchestrator）执行任务路由、拓扑感知调度与故障重试",
+      "共享内存映射式跨设备张量传输协议，规避序列化开销",
+      "按需激活/休眠机制，确保用户交互优先级与隐私合规"
+    ],
+    "setup": "测试环境包含 32 台混合型号 Apple Silicon Mac（M1–M3），运行 macOS 14+；基准任务为 Llama-2-7B、Whisper-large 推理；对比基线为单机 M3 Ultra 和本地 A10G 集群"
+  },
+  "conclusion": {
+    "findings": "Minions 在 95% 以上设备空闲率下，实现接近线性推理吞吐扩展；端到端 P99 延迟增加 <12%，资源利用率提升 4.8×；支持热插拔与跨网络部署。",
+    "impact": "为 Apple 生态内 ML 工程团队提供零新增硬件成本的弹性推理能力，推动边缘-云协同推理范式落地，拓展 Metal 计算生态边界。",
+    "limitations": "仅支持 Metal 兼容模型与算子；不支持梯度计算与训练；依赖 macOS 系统更新节奏；多租户隔离强度弱于硬件级 GPU 分区"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Minions",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "闲置GPU资源浪费",
+        "note": "大量 Apple Silicon Mac 的 GPU 在办公场景长期空闲，无法参与集中式ML推理",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "虚拟GPU聚合",
+        "note": "通过Metal抽象+分布式运行时，将物理GPU虚拟为统一可调度的逻辑GPU池",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "轻量级跨设备调度",
+        "note": "无VM/容器依赖，基于XPC和MPS实现毫秒级任务分发与状态同步",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高利用率低延迟",
+        "note": "实测吞吐近似线性扩展，P99延迟增幅<12%，空闲资源利用率提升4.8倍",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "Apple生态推理基建",
+        "note": "降低团队GPU采购依赖，推动Metal成为AI推理主流后端，影响macOS AI工具链演进",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

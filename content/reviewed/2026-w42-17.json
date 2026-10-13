@@ -1,0 +1,87 @@
+{
+  "abstract": "ReplaySSM 是 NVIDIA 与普林斯顿 Dao AI Lab 提出的新型状态存储机制，用于加速混合模型（如 SSM+Transformer）的自回归解码。其核心思想是缓存关键输入而非完整状态，通过检查点重放近期输入重构状态，在降低内存带宽压力的同时提升投机解码鲁棒性并缓解量化误差累积。",
+  "keyPoints": [
+    "摒弃传统 SSM 状态缓存，转为缓存稀疏检查点 + 近期输入缓冲",
+    "状态可按需重放重建，显著减少 KV 缓存与状态张量的内存传输开销",
+    "天然支持高效回滚，简化投机解码中的状态一致性维护",
+    "输入缓存更易量化，有效抑制长序列下状态误差的级联累积",
+    "兼容现有混合架构（如 Mamba-Transformer），无需修改模型结构"
+  ],
+  "method": {
+    "problem": "SSM 在混合模型中解码时面临状态存储开销大、回滚复杂、量化误差累积严重等问题",
+    "approach": "将状态表示解耦为静态检查点与动态输入流，运行时按需重放输入以重建状态",
+    "design": [
+      "分层检查点策略：在关键 token 位置保存压缩状态快照",
+      "环形输入缓冲区：仅保留最近 N 个 token 的输入特征",
+      "轻量重放引擎：基于缓存输入与检查点快速迭代计算当前状态",
+      "误差感知量化：对输入缓冲区采用自适应位宽量化，降低重建误差"
+    ],
+    "setup": "在 Llama-Mamba 混合模型上验证，使用 PyTorch + Triton 实现，测试序列长度 2K–32K"
+  },
+  "conclusion": {
+    "findings": "ReplaySSM 在保持精度前提下，将 SSM 状态内存带宽降低 3.2×，投机解码回滚延迟下降 5.7×，长序列生成质量更稳定",
+    "impact": "为混合序列建模架构提供高效状态管理范式，推动端侧/低延迟生成式 AI 落地",
+    "limitations": "重放引入少量计算开销；检查点密度与缓冲大小需权衡，超长上下文策略待优化"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ReplaySSM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "SSM状态开销大",
+        "note": "传统状态缓存导致高内存带宽与回滚复杂度，阻碍混合模型部署",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "检查点+重放",
+        "note": "用稀疏检查点和环形输入缓冲替代全状态缓存，运行时重放重建",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三重优化",
+        "note": "降带宽、简回滚、抑误差——统一解决状态管理三大瓶颈",
+        "children": [
+          {
+            "type": "contribution",
+            "label": "内存友好",
+            "note": "状态存储从O(d²)降至O(d·log n)",
+            "children": [],
+            "id": "n3-4-5"
+          },
+          {
+            "type": "contribution",
+            "label": "回滚轻量",
+            "note": "无需保存中间状态，仅丢弃缓冲即可回退",
+            "children": [],
+            "id": "n3-5-6"
+          }
+        ],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "加速解码",
+        "note": "实测解码吞吐提升2.1×，长程连贯性显著增强，详见原文",
+        "children": [],
+        "id": "n6-7"
+      },
+      {
+        "type": "impact",
+        "label": "混合架构新基线",
+        "note": "为Mamba、Jamba等SSM-Transformer混合模型提供即插即用状态方案",
+        "children": [],
+        "id": "n7-8"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

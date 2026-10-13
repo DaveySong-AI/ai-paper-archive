@@ -1,0 +1,72 @@
+{
+  "abstract": "本文量化了Meta Muse系列模型在分布外（OOD）任务上的泛化能力，发现Muse Wonder Full在相同分布内性能下，对陌生任务的表现显著优于Muse Spark 1.3的预测趋势，归因于其更强的基座模型提升了后训练增益向未见任务的迁移效率。",
+  "keyPoints": [
+    "提出测试时计算扩展对比法，用于量化模型对陌生任务的适应能力",
+    "发现OOD任务性能提升与ID任务不完全耦合，存在模型特异性偏移",
+    "Muse Wonder Full展现出更优的后训练迁移效率",
+    "基座模型质量是决定OOD泛化上限的关键因素",
+    "挑战了‘ID性能即OOD性能代理’的隐含假设"
+  ],
+  "method": {
+    "problem": "如何客观评估大模型在未参与后训练的任务（分布外）上的泛化能力",
+    "approach": "通过控制测试时计算资源（如解码步数、采样数）的扩展曲线，对比同一模型在ID与OOD任务上的性能增益差异",
+    "design": [
+      "构建ID任务集（后训练中显式优化的任务）与OOD任务集（完全未出现的任务）",
+      "固定模型权重，仅调节推理时计算预算，绘制性能-计算曲线",
+      "以ID任务得分作为锚点，校准并比较OOD任务的相对表现偏移",
+      "跨模型（Muse Spark 1.3 vs Muse Wonder Full）控制ID性能水平，隔离基座影响"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "OOD任务性能不能仅由ID任务表现线性外推；更强基座模型可带来OOD性能的系统性上移",
+    "impact": "为大模型后训练评估提供新维度，推动关注基座能力与迁移鲁棒性的协同设计",
+    "limitations": "OOD任务定义依赖于后训练数据边界，实际部署中边界可能模糊"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Meta Muse O…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "OOD泛化评估难",
+        "note": "传统ID指标无法反映模型应对未知任务的真实能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "测试时计算扩展",
+        "note": "通过调节推理预算，绘制ID/OOD双曲线进行对比分析",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "基座驱动迁移增益",
+        "note": "揭示基座模型强度是OOD性能上移的核心机制",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "Muse Wonder…",
+        "note": "在匹配ID性能前提下，OOD表现显著超越Spark 1.3预测线",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重定义后训练评估",
+        "note": "推动从‘ID优化程度’转向‘OOD迁移效率’的评估范式",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

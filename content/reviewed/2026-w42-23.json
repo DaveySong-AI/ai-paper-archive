@@ -1,0 +1,72 @@
+{
+  "abstract": "千问推出QwenGyre弹性RL框架，专为超长时程（XLong）智能体训练设计，通过Elastic Scheduler动态调节训练节奏与资源分配，并结合Trajectory Processor实现高效轨迹管理与重放，提升长周期任务的稳定性与可扩展性。",
+  "keyPoints": [
+    "首次提出面向XLong场景的弹性强化学习框架QwenGyre",
+    "Elastic Scheduler支持运行时动态调整采样频率、更新步长与并行规模",
+    "Trajectory Processor实现跨时间尺度的轨迹分段压缩、优先级重放与内存感知缓存",
+    "框架解耦训练逻辑与硬件调度，兼容异构计算资源与分布式环境",
+    "在多类长周期决策任务中验证了训练效率与策略收敛性的显著提升"
+  ],
+  "method": {
+    "problem": "超长时程（XLong）智能体训练中因轨迹过长导致的内存爆炸、梯度不稳定与采样低效问题",
+    "approach": "构建弹性化RL训练范式，将调度策略与轨迹处理内置于训练循环，实现资源-时序-算法三者协同优化",
+    "design": [
+      "Elastic Scheduler：基于延迟反馈与性能指标自适应调节rollout长度与更新间隔",
+      "Trajectory Processor：支持流式分块存储、语义关键帧提取与稀疏重放",
+      "Memory-Aware Buffer：按轨迹生命周期与重要性分级管理经验回放缓冲区",
+      "Decoupled Execution Core：分离环境交互、数据预处理与模型更新阶段，支持异步流水线"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "QwenGyre在XLong任务中显著降低显存峰值35%以上，提升单位时间样本利用率2.1倍，且保持策略收敛稳定性",
+    "impact": "为大模型智能体在复杂现实场景（如自主科研、长期规划）中的持续训练提供新基础设施范式",
+    "limitations": "当前对非马尔可夫性极强的任务泛化能力有待验证；弹性策略依赖领域先验指标定义"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "QwenGyre",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "XLong训练瓶颈",
+        "note": "轨迹过长引发内存溢出、梯度失稳、采样低效三大挑战",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "弹性RL架构",
+        "note": "Elastic Scheduler + Trajectory Processor双核心协同机制",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "两大创新组件",
+        "note": "Elastic Scheduler实现动态节奏调控；Trajectory Processor支持流式轨迹管理",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "效率与稳定性提升",
+        "note": "显存峰值↓35%+，样本利用率↑2.1倍，收敛曲线更平滑",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "XLong智能体基建",
+        "note": "支撑大模型智能体在科研、规划等现实长周期场景落地",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
