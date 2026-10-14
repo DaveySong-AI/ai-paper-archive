@@ -1,0 +1,72 @@
+{
+  "abstract": "QwenGyre 是通义千问团队提出的面向超长程智能体强化学习（XLong-horizon agentic RL）的新型框架，旨在系统性应对任务跨度极大、环境反馈稀疏与策略信用分配困难两大核心挑战，通过动态记忆机制与分层推理结构提升长程决策一致性与可扩展性。",
+  "keyPoints": [
+    "提出动态滚动记忆机制，缓解超长轨迹中的信息遗忘问题",
+    "设计分层动作抽象架构，解耦短期执行与长期规划",
+    "引入跨步信用重标定（Cross-step Credit Re-calibration）提升稀疏奖励下的策略学习效率",
+    "支持多尺度环境交互，适配从单任务到复杂多阶段任务的泛化需求",
+    "基于Qwen系列大模型构建，具备强语言理解与工具调用协同能力"
+  ],
+  "method": {
+    "problem": "超长程智能体RL中任务跨度大、奖励稀疏、信用分配难",
+    "approach": "融合大语言模型能力的分层记忆增强型强化学习框架",
+    "design": [
+      "动态滑动窗口式记忆缓存与关键事件摘要压缩",
+      "双层级策略网络：高层生成目标序列，底层生成可执行动作链",
+      "基于因果注意力的跨步奖励归因模块",
+      "在线轨迹回溯与反事实状态重评估机制"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "QwenGyre 在多个长程基准任务（如WebShop-X、ALFWorld-Extended）上显著提升成功率与样本效率",
+    "impact": "为大模型驱动的具身智能与复杂任务自动化提供可扩展RL范式",
+    "limitations": "对实时性要求极高的控制任务适配性待验证；依赖高质量指令微调数据"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "QwenGyre",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "长程RL两大挑战",
+        "note": "任务跨度大、奖励稀疏、信用分配难",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "分层记忆增强框架",
+        "note": "动态记忆+双层策略+跨步信用重标定",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三大核心技术",
+        "note": "滚动记忆、分层动作抽象、因果信用重标定",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "长程任务性能提升",
+        "note": "在WebShop-X等基准上显著优于基线方法",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动具身智能发展",
+        "note": "为大模型+RL长程决策提供新范式",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "ReplaySSM 是 NVIDIA 与普林斯顿 Dao AI Lab 提出的新型状态存储机制，用于加速混合模型（如 SSM+Transformer）的自回归解码。其核心思想是缓存关键检查点状态与近期输入序列，而非完整中间状态，从而降低内存带宽压力、简化投机解码中的回滚逻辑，并缓解状态量化带来的误差累积问题。",
+  "keyPoints": [
+    "摒弃传统 SSM 全状态缓存，转为‘检查点 + 近期输入’的轻量表示",
+    "显著减少解码阶段的状态内存读写流量",
+    "天然支持高效投机解码回滚，无需保存冗余中间状态",
+    "缓解状态量化引入的误差随步长累积的问题",
+    "兼容现有混合架构（如 Mamba-Transformer），无需修改模型结构"
+  ],
+  "method": {
+    "problem": "SSM 在混合模型中解码时面临状态存储开销大、回滚复杂、量化误差累积等问题",
+    "approach": "将 SSM 状态重构为可重放（replayable）形式：仅保存稀疏检查点状态与对应输入窗口，其余状态在需要时通过重放输入实时重建",
+    "design": [
+      "基于时间局部性设计分层检查点策略",
+      "定义最小重放窗口以平衡计算与存储开销",
+      "引入输入缓冲区对齐机制保障重放一致性",
+      "支持状态量化与重放联合优化"
+    ],
+    "setup": "在 Llama-Mamba 混合模型上验证，使用标准语言建模与生成任务（如 PG19、WikiText），对比基线包括原生 Mamba 和 FlashSSM"
+  },
+  "conclusion": {
+    "findings": "ReplaySSM 在保持精度前提下，将 SSM 解码内存带宽降低 2.3×，投机解码回滚延迟下降 5.1×，量化误差增长速率降低约 40%",
+    "impact": "为高效部署混合序列模型提供新范式，推动边缘端与高吞吐推理场景落地",
+    "limitations": "重放引入额外计算开销，在极长上下文或低计算带宽设备上收益受限"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ReplaySSM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "SSM状态开销大",
+        "note": "传统全状态缓存导致内存带宽瓶颈与回滚复杂",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "检查点+重放",
+        "note": "用稀疏检查点和输入缓冲替代完整状态存储",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三重优化",
+        "note": "降带宽、简回滚、抑量化误差，兼容混合架构",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "实测显著加速",
+        "note": "内存带宽↓2.3×，回滚延迟↓5.1×，误差累积减缓",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "混合模型实用化",
+        "note": "支撑低延迟、低功耗、高精度序列生成部署",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "Google DeepMind 的 AlphaProof Nexus 系统在 Erdős 数学问题上取得突破，独立解决 353 个开放问题中的 9 个，其中包括两个悬置长达 56 年的难题；其成果经同行评审并发表于 Science，标志 AI 在形式化数学推理与可验证证明生成方面迈出关键一步。",
+  "keyPoints": [
+    "首次系统性攻克多个经典 Erdős 组合数论开放问题",
+    "解决的 9 个问题中含 2 个悬置 56 年的长期未解难题",
+    "所有证明均以形式化语言（如 Lean）生成并可机器验证",
+    "成果通过传统学术流程：提交、审稿、被 Science 接收",
+    "AlphaProof Nexus 是 AlphaProof 与 Nexus 框架协同增强的新范式"
+  ],
+  "method": {
+    "problem": "如何让 AI 稳健、可信地解决高难度开放数学问题并产出可验证证明",
+    "approach": "融合强化学习驱动的搜索、形式化定理证明器与大型语言模型的协同推理框架",
+    "design": [
+      "基于 Lean 的形式化环境构建问题编码与验证闭环",
+      "多阶段证明策略：猜想生成 → 引理探索 → 形式化推导 → 反例检验",
+      "Nexus 模块实现跨任务知识迁移与证明草稿优化",
+      "人类反馈微调（HFT）提升证明简洁性与数学合理性"
+    ],
+    "setup": "在 Erdős 问题基准集（353 题）上评估，覆盖加性组合、图论、极值集合论等子领域；对比基线包括 AlphaProof v1、Lean-GPT 等"
+  },
+  "conclusion": {
+    "findings": "AlphaProof Nexus 显著提升开放数学问题求解成功率与证明质量，验证了 AI 辅助前沿数学研究的可行性",
+    "impact": "推动数学发现范式变革，为形式化数学、AI for Science 提供新方法论与基础设施参考",
+    "limitations": "问题覆盖仍限于特定组合结构；对高度抽象或依赖新公理的问题尚无突破；依赖高质量形式化库支持"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AlphaProof …",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Erdős开放问题",
+        "note": "353个组合数论难题，含56年悬案；需形式化可验证解",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "形式化协同推理",
+        "note": "Lean+RL+LLM三元架构，Nexus模块实现策略迁移与优化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "9题全解+同行评审",
+        "note": "首例AI解题成果登Science，2题破56年纪录，证明全程可机验",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "数学发现新范式",
+        "note": "验证AI可参与前沿猜想求证，推动人机协作数学研究流程标准化",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI for Scie…",
+        "note": "为形式化数学基建、自动定理证明及科学智能体设计提供关键实证",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

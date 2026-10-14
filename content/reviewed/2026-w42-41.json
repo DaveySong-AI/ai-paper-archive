@@ -1,0 +1,72 @@
+{
+  "abstract": "千问推出QwenGyre弹性强化学习框架，专为超长时程（XLong）智能体训练设计。通过Elastic Scheduler动态调节训练节奏与资源分配，并结合Trajectory Processor实现长序列轨迹的高效分块、缓存与重放，显著提升训练稳定性与可扩展性。",
+  "keyPoints": [
+    "提出面向XLong任务的弹性RL训练范式，突破固定步长与静态批次限制",
+    "Elastic Scheduler支持运行时自适应调整rollout长度、更新频率与并行规模",
+    "Trajectory Processor实现超长轨迹的流式分块、选择性缓存与跨时段重放",
+    "框架解耦策略优化与环境交互节奏，提升样本效率与硬件利用率",
+    "已在多智能体协作与长流程规划任务中验证可行性"
+  ],
+  "method": {
+    "problem": "超长时程（XLong）智能体训练中因轨迹过长导致的内存爆炸、梯度不稳定与采样低效问题",
+    "approach": "构建弹性RL训练框架，将训练节奏控制与轨迹处理解耦，实现动态适配",
+    "design": [
+      "Elastic Scheduler：基于延迟、奖励方差与显存占用实时决策rollout长度与更新时机",
+      "Trajectory Processor：支持滑动窗口分块、优先级缓存与跨episode轨迹拼接",
+      "Stateful Replay Buffer：保留隐状态快照，支持长依赖建模下的断点续训",
+      "Gradient-aware Batch Resampling：根据梯度幅值动态重加权轨迹片段"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "QwenGyre在XLong任务上相较传统PPO/IMPALA提升训练吞吐3.2×，收敛步数减少41%，且支持单卡训练万步级轨迹",
+    "impact": "为具身智能、复杂系统控制等需超长决策链的领域提供可扩展RL基础设施",
+    "limitations": "对极稀疏奖励场景的探索机制未作专门优化"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "QwenGyre",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "XLong训练瓶颈",
+        "note": "轨迹过长导致内存溢出、梯度失稳、采样低效",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "弹性RL框架",
+        "note": "Elastic Scheduler + Trajectory Processor双核心设计",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "动态节奏控制",
+        "note": "运行时自适应rollout长度、更新频率与资源分配",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高效稳定训练",
+        "note": "万步级轨迹单卡可训，吞吐提升3.2×，收敛加速41%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "XLong应用拓展",
+        "note": "支撑具身智能、工业流程控制等超长决策链任务",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

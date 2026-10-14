@@ -1,0 +1,72 @@
+{
+  "abstract": "研究在 Vibe Code Bench 上评估多智能体团队与单智能体在代码推理任务中的性能与成本。结果表明，团队方案 token 消耗为单体的 1.8–5.1 倍，但质量提升微弱：仅 GPT-6 Sol 在 medium reasoning 任务中显著高出 7.3 分，其余对比均无统计显著性提升。",
+  "keyPoints": [
+    "多智能体团队 token 成本显著增加，达单智能体的 1.8–5.1 倍",
+    "四组实验中仅一组（GPT-6 Sol, medium reasoning）呈现统计显著的质量提升",
+    "多数场景下团队未带来可测量的性能增益",
+    "质疑当前多智能体协作范式的性价比与必要性",
+    "强调需建立更精细的成本-收益评估框架"
+  ],
+  "method": {
+    "problem": "评估多智能体团队相较于单智能体在代码推理任务中的实际效益",
+    "approach": "在统一基准 Vibe Code Bench 上，对比主流模型单体与团队配置的性能与 token 消耗",
+    "design": [
+      "选用 GPT-6 Sol 和 Claude Opus 5.5 作为基座模型",
+      "构建标准化多智能体团队架构（含角色分工与通信协议）",
+      "在相同任务集（easy/medium/hard reasoning）上执行单体与团队推理",
+      "同步记录 token 使用量与任务得分，进行统计显著性检验"
+    ],
+    "setup": "测试平台为 Vibe Code Bench；模型版本为 GPT-6 Sol 和 Claude Opus 5.5；评估维度为代码推理准确率与 token 效率"
+  },
+  "conclusion": {
+    "findings": "多智能体团队在多数设置下无法以合理成本换取可观质量提升，仅特定模型与任务组合存在边际增益",
+    "impact": "推动社区重新审视多智能体系统的设计目标，从‘结构复杂性’转向‘成本感知的有效协作’",
+    "limitations": "实验局限于代码推理任务与两个闭源模型，泛化性有待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AgentTeamCo…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "成本效益失衡",
+        "note": "团队高token消耗 vs 微弱质量提升，核心问题在于性价比缺失",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "基准对比实验",
+        "note": "在Vibe Code Bench上对GPT-6 Sol和Claude Opus 5.5开展单体vs团队测试",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "量化浪费现象",
+        "note": "首次系统报告1.8x–5.1x token开销及仅1/4场景具统计显著增益",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "边际增益有限",
+        "note": "仅GPT-6 Sol在medium reasoning任务中+7.3分且p<0.05，其余不显著",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "范式反思触发",
+        "note": "促使研究者关注轻量协作、通信压缩与价值驱动的智能体编排",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

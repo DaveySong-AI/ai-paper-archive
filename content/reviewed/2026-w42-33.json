@@ -1,0 +1,72 @@
+{
+  "abstract": "AWS 提出 priming 方法，无需从头训练即可将预训练 Transformer 改造成混合状态空间模型（SSM-Transformer），通过权重重映射与结构注入复用原有参数，在极低 token 预算（<0.5%）下实现架构升级，预训练成本降低超 99%。",
+  "keyPoints": [
+    "提出 priming 范式：在不修改原始预训练权重的前提下，注入状态空间模块并建立可学习的跨架构连接",
+    "实现 Transformer 到混合 SSM-Transformer 的零初始化迁移，避免全量重训练",
+    "仅需极少量下游 token（不足原预训练量的 0.5%）即可完成架构适配与微调",
+    "保持原始模型语言能力的同时，增强长程建模与线性复杂度推理能力",
+    "验证了预训练权重蕴含的架构可塑性，挑战‘权重-架构强绑定’传统认知"
+  ],
+  "method": {
+    "problem": "如何在不重训前提下将成熟预训练 Transformer 改造为更高效的状态空间混合架构",
+    "approach": "通过权重感知的结构插入与轻量适配层，将预训练注意力块与新引入的 SSM 模块协同激活",
+    "design": [
+      "设计 priming adapter：低秩、可学习的投影层，桥接 Transformer 输出与 SSM 输入",
+      "采用冻结主干 + 解耦初始化策略，SSM 参数从 Transformer 权重中启发式初始化",
+      "引入动态门控机制，自适应融合注意力与状态空间路径输出",
+      "定义 token-efficient priming loss，联合优化适配参数与门控权重"
+    ],
+    "setup": "在 LLaMA-2、Pythia 等开源预训练模型上验证；任务涵盖语言建模、长文本推理与合成序列建模"
+  },
+  "conclusion": {
+    "findings": "Priming 可在保留原始模型性能基础上，成功嵌入状态空间能力，显著提升长程依赖建模效率与推理吞吐",
+    "impact": "为大模型架构演进提供新范式——解耦预训练与架构设计，推动绿色AI与模型即服务（MaaS）落地",
+    "limitations": "当前限于 decoder-only 架构；对 encoder-decoder 或多模态模型的泛化性尚待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Priming",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "架构不可变瓶颈",
+        "note": "预训练模型难以升级为新型高效架构，重训成本过高",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "权重感知结构注入",
+        "note": "冻结原始权重，插入适配器与SSM模块，端到端轻量优化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "零重训架构改造",
+        "note": "首次实现预训练Transformer到混合SSM架构的免重训迁移",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "99%+成本削减",
+        "note": "全流程token消耗不足源模型0.5%，性能媲美全训混合模型",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "解耦预训练与架构",
+        "note": "开启模型架构即插即用新路径，降低大模型迭代门槛",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

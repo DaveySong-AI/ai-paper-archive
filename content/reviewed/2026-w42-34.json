@@ -1,0 +1,72 @@
+{
+  "abstract": "本文量化了大模型处理分布外（OOD）陌生任务的能力，通过对比测试时计算扩展在分布内与分布外任务上的表现。发现Muse Wonder Full在相同分布内性能下，OOD任务表现显著优于Muse Spark 1.3的预测趋势，归因于其更强基座模型带来的后训练增益迁移能力。",
+  "keyPoints": [
+    "提出用测试时计算扩展作为OOD任务能力的量化指标",
+    "Muse Wonder Full在OOD任务上表现出系统性性能上移",
+    "性能提升源于更优基座模型对后训练增益的泛化迁移",
+    "分布内任务性能不能完全预测分布外任务表现",
+    "后训练策略的OOD鲁棒性依赖于基座模型质量"
+  ],
+  "method": {
+    "problem": "如何量化并解释大模型在未见过任务上的泛化能力差异",
+    "approach": "通过控制变量法比较不同模型在分布内与分布外任务上的测试时计算扩展曲线",
+    "design": [
+      "定义分布内任务为后训练阶段显式覆盖的任务",
+      "将未参与后训练的任务视为分布外任务",
+      "固定测试时计算预算，测量各任务性能变化",
+      "拟合性能-计算曲线并分析截距与斜率差异"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "基座模型质量是决定后训练增益能否有效迁移到OOD任务的关键因素",
+    "impact": "为大模型架构设计与后训练策略提供新评估维度，强调基座能力的基础性作用",
+    "limitations": "任务划分依赖后训练数据边界，OOD定义存在主观性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Meta对比Muse",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "OOD任务评估",
+        "note": "如何量化模型处理未见任务的能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "测试时计算扩展",
+        "note": "对比分布内/外任务在不同计算预算下的性能变化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "性能上移现象",
+        "note": "Muse Wonder Full在OOD任务上超越Spark 1.3预测趋势",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "基座模型关键性",
+        "note": "更强基座提升后训练增益向未知任务的迁移效率",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "后训练新范式",
+        "note": "提示需协同优化基座能力与后训练策略",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
