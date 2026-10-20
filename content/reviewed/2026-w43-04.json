@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出面向可扩展潜在token化的生成式表征学习框架，旨在解决传统离散token化在长序列建模、跨模态对齐与计算效率方面的瓶颈。通过将输入映射为连续潜在空间中的可学习token集合，支持动态长度、层次化结构与端到端优化。",
+  "keyPoints": [
+    "引入可扩展潜在token化机制，替代固定词表的离散token化",
+    "采用生成式目标联合优化表征质量与token化结构",
+    "支持长度自适应与跨模态共享潜在token空间",
+    "无需预定义词汇表，降低领域迁移门槛",
+    "在语言与多模态任务中验证表征泛化性"
+  ],
+  "method": {
+    "problem": "传统离散token化导致模型难以扩展至长序列、跨模态及低资源场景",
+    "approach": "构建生成式潜在token化器，将原始信号编码为连续、可微、可扩展的token序列",
+    "design": [
+      "潜在token嵌入的软分配与重参数化采样",
+      "基于变分重构目标的token生成与表征联合训练",
+      "层级token聚合模块实现多粒度表征",
+      "轻量级token数量预测头支持动态长度输出"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "潜在token化显著提升长程依赖建模能力与跨模态迁移性能",
+    "impact": "为大模型底层tokenization范式提供新路径，推动生成式表征学习统一框架发展",
+    "limitations": "训练稳定性与token语义可解释性仍需进一步研究"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ELT-Gen",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Token化瓶颈",
+        "note": "离散词表限制长序列、跨模态与低资源适配能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "生成式潜在化",
+        "note": "端到端学习连续token集合，支持软分配与动态长度",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "可扩展tokenizer",
+        "note": "无需预定义词表，支持层级聚合与跨模态共享空间",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "泛化性能提升",
+        "note": "在语言理解、生成及图文匹配任务中验证有效性",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "范式革新",
+        "note": "推动从离散token向生成式潜在表征的底层架构演进",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

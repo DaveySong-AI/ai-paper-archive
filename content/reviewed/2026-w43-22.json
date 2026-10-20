@@ -1,0 +1,72 @@
+{
+  "abstract": "AVRI 是一种面向安全漏洞检测的 AI 智能体优化工具，针对其 token 开销集中在代码理解与漏洞触发推理（占比60.4%）的问题，通过联合返回相关代码片段并显式保留程序输入与不安全操作间的语义链接，显著降低 token 成本。在20个新任务上，Codex与OpenCode总成本分别下降18.0%和23.7%，成功率与召回率未下降。",
+  "keyPoints": [
+    "安全AI智能体超六成token消耗于代码理解与漏洞触发推理",
+    "现有token节省方法仅24.4%能在不损性能前提下降低成本",
+    "AVRI显式建模输入与不安全操作间的语义链接",
+    "AVRI一并返回上下文相关代码，提升prompt信息密度",
+    "在20个新任务中实现成本下降且保持召回率与成功率"
+  ],
+  "method": {
+    "problem": "安全智能体在漏洞检测中token效率低，主因是冗余代码理解与隐式推理路径",
+    "approach": "设计轻量级中间表示机制AVRI，在检索阶段即结构化关联输入、代码片段与不安全操作",
+    "design": [
+      "构建输入-操作映射图，显式标注触发路径依赖",
+      "动态裁剪并打包高相关性代码上下文",
+      "保留原始变量名与控制流关键节点以维持可读性",
+      "与LLM prompt无缝集成，无需模型微调"
+    ],
+    "setup": "20个新安全任务；基线：Codex、OpenCode；评估指标：总token成本、成功率、召回率"
+  },
+  "conclusion": {
+    "findings": "AVRI在不牺牲检测效果前提下显著降低token开销，验证了结构化语义链接对安全智能体推理效率的关键作用",
+    "impact": "为面向安全分析的AI智能体提供可部署的token优化范式，推动低成本高可信漏洞挖掘实用化",
+    "limitations": "依赖静态/动态分析前置提取不安全操作点，对混淆代码或间接调用支持有限"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AVRI",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "token浪费严重",
+        "note": "60.4%用于代码理解与触发推理，效率瓶颈明显",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "语义链接增强",
+        "note": "显式建模输入→不安全操作路径，动态打包相关代码",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "轻量中间表示",
+        "note": "无需模型微调，兼容主流代码大模型，即插即用",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "成本显著下降",
+        "note": "Codex降18.0%，OpenCode降23.7%，成功率与召回率持平",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动实用化",
+        "note": "为安全智能体提供可落地的token优化方案",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

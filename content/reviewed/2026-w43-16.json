@@ -1,0 +1,73 @@
+{
+  "abstract": "Modal 工程团队基于自研无代理基准测试框架 Agentless Agent Bench，在 Modal Sandboxes 中实测 NVIDIA Vera CPU（Arm 架构兼容）性能。测试剥离网络依赖，采用 50 个 Terminal-Bench oracle 解法与验证器并发运行于 Docker 容器，结果显示 Vera 在高负载下沙箱吞吐量相较主流 x86 CPU 提升约两倍。",
+  "keyPoints": [
+    "首次公开 Vera CPU 在 serverless 沙箱场景下的实测性能数据",
+    "提出轻量级、无代理的终端行为基准测试框架 Agentless Agent Bench",
+    "验证 Vera 在高并发容器化工作负载中显著优于传统 x86 CPU",
+    "强调 Arm 架构在低延迟、高密度沙箱部署中的潜力",
+    "测试完全剥离网络调用，聚焦纯计算与容器调度性能"
+  ],
+  "method": {
+    "problem": "评估新型 Arm 架构 CPU（NVIDIA Vera）在 serverless 沙箱环境中的真实吞吐能力",
+    "approach": "构建可控、去干扰的终端行为基准，对比多款 CPU 在 Modal Sandboxes 中的并发执行效率",
+    "design": [
+      "设计 Agentless Agent Bench：50 个独立 Terminal-Bench oracle 解法+验证器",
+      "所有任务在隔离 Docker 容器中运行，禁用网络 I/O",
+      "统一 Modal runtime 环境，仅变量为底层 CPU 型号与架构",
+      "以单位时间完成的 oracle 验证次数为吞吐核心指标",
+      "采用多轮压力递增测试，覆盖中低至高负载区间"
+    ],
+    "setup": "Modal Sandboxes 环境；Vera CPU 与多款 x86 CPU（型号未公开）对比；Docker 容器并发规模动态适配；测试脚本开源详见原文"
+  },
+  "conclusion": {
+    "findings": "NVIDIA Vera CPU 在 Modal Sandboxes 高负载场景下实现近两倍吞吐提升，证实其在密集型无状态计算沙箱中的架构优势。",
+    "impact": "为 serverless 平台选用 Arm 架构 CPU 提供首个工程级实证，推动异构计算在 FaaS 场景落地。",
+    "limitations": "测试未涵盖 GPU 加速、持久存储 I/O 及长时任务调度等维度；Vera 量产状态与生态支持程度未说明"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Vera 沙箱实测",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "沙箱吞吐瓶颈",
+        "note": "serverless 环境下 CPU 密集型任务扩展性受限，需量化新型硬件收益",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Agentless B…",
+        "note": "50 个 Terminal-Bench oracle 并发验证，零网络依赖，Docker 容器隔离",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Vera 性能实证",
+        "note": "高负载吞吐翻倍，首份 Vera 在 FaaS 沙箱中的工程基准报告",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "吞吐显著提升",
+        "note": "相较 x86 CPU，Modal Sandboxes 吞吐接近 2x，延迟分布更优",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "Arm 进军 Serv…",
+        "note": "为云厂商提供 Arm CPU 在无服务器场景的选型依据与迁移参考",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

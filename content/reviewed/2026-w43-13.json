@@ -1,0 +1,72 @@
+{
+  "abstract": "Meta 提出 GenRecs Tokenization，以稳定语义词表替代传统广告 ID 表示，使推荐模型能泛化理解广告语义而非记忆 ID。该方法与 GEM 和自适应排序模型协同，在线上 A/B 测试中实现 +0.35% 转化率提升，显著增强跨广告主、跨时间的模型鲁棒性与可解释性。",
+  "keyPoints": [
+    "摒弃广告逐条目 ID 编码，改用基于语义聚类与对齐构建的稳定 token 词表",
+    "词表设计兼顾稳定性（长期不变）与表达力（覆盖多模态广告语义）",
+    "与 GEM（通用嵌入模块）和 Adaptive Ranking Model 深度协同，支持动态语义组合",
+    "解决 ID 系统固有的冷启动、稀疏性与跨域迁移难题",
+    "已在 Meta 全量广告推荐系统落地，支撑实时低延迟推理"
+  ],
+  "method": {
+    "problem": "传统 ID-based 表示导致广告推荐模型泛化弱、冷启动差、难以跨广告主/时间迁移",
+    "approach": "构建稳定、语义驱动的 token 词表，将广告映射为可复用、可组合的语义单元序列",
+    "design": [
+      "基于多模态特征（文本、图像、行为信号）学习广告语义嵌入",
+      "通过层次化语义聚类与人工校验构建固定大小的稳定 token 词表",
+      "引入 token-level attention 机制支持动态语义权重分配",
+      "设计 token 到 ID 的双路径回溯机制保障可解释性与调试能力"
+    ],
+    "setup": "线上 A/B 测试于 Meta 全量广告流量，评估指标为转化率（CVR）、点击率（CTR）及模型延迟"
+  },
+  "conclusion": {
+    "findings": "GenRecs Tokenization 显著提升模型泛化能力与线上转化率，+0.35% CVR 增益稳定通过统计显著性检验",
+    "impact": "推动广告推荐从 ID-centric 范式转向 semantic-centric 范式，为行业提供可复用的稳定语义表示框架",
+    "limitations": "词表更新需谨慎权衡稳定性与新鲜度；长尾广告语义覆盖仍依赖持续聚类优化"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GenRecs Tok…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "ID表示局限",
+        "note": "冷启动差、泛化弱、跨域难迁移，阻碍语义理解",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "稳定语义词表",
+        "note": "多模态嵌入→语义聚类→人工校验→固定词表，支持token序列化表示",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "范式转变",
+        "note": "首次在工业级广告推荐中系统实现ID到语义token的全链路替换",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "+0.35% CVR",
+        "note": "全量A/B测试验证，提升显著且延迟可控，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "语义推荐范式",
+        "note": "为跨平台、多场景推荐系统提供可迁移的稳定语义基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

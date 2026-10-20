@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出面向打包多模态掩码的精确序列并行（Exact Sequence Parallelism），支持在多GPU上无损复现单GPU数值结果。通过按层动态选择ring attention、稀疏all-to-all或Ulysses通信策略，在128块H100上于48个测试案例中47个超越FlashMask+Ulysses混合方案。",
+  "keyPoints": [
+    "首次实现打包多模态掩码下的精确序列并行，保证跨设备数值一致性",
+    "按Transformer层自适应选择最优通信原语（ring attention / 稀疏all-to-all / Ulysses）",
+    "无需修改模型结构或训练流程，兼容现有多模态架构",
+    "在大规模H100集群（最高128卡）上验证可扩展性与性能优势",
+    "在48个测试用例中47个超越当前SOTA混合方案FlashMask+Ulysses"
+  ],
+  "method": {
+    "problem": "多模态序列打包后掩码结构复杂导致传统序列并行引入数值误差且通信效率低",
+    "approach": "设计分层自适应通信调度机制，为每层选择数值精确、带宽最优的并行原语",
+    "design": [
+      "定义打包多模态掩码的层级结构约束",
+      "构建ring attention、稀疏all-to-all、Ulysses三类原语的数值等价性证明",
+      "基于掩码密度与序列长度动态决策每层通信策略",
+      "实现零拷贝跨设备梯度同步协议"
+    ],
+    "setup": "128×H100集群，48个多模态任务基准，对比FlashMask+Ulysses混合方案"
+  },
+  "conclusion": {
+    "findings": "精确序列并行可在不牺牲数值精度前提下显著提升多模态模型训练吞吐量",
+    "impact": "为多模态大模型分布式训练提供首个数值严格保障的序列并行范式",
+    "limitations": "依赖特定掩码结构假设，对非打包型动态掩码支持待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ESP-MM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "多模态掩码并行",
+        "note": "打包结构导致传统SP数值失真与通信瓶颈",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "分层自适应调度",
+        "note": "每层独立选择ring/Ulysses/稀疏all-to-all原语",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "精确数值保证",
+        "note": "理论证明所有路径均与单GPU输出完全一致",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "47/48案例领先",
+        "note": "128卡H100上超越FlashMask+Ulysses混合方案",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "多模态训练新基线",
+        "note": "为视频、图文等跨模态模型提供可扩展精确并行框架",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

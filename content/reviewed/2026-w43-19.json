@@ -1,0 +1,73 @@
+{
+  "abstract": "Google Research 提出 Harness² 框架，支持冻结语言模型的 Agent 在未见任务上递归地自我改进其执行 harness。该框架通过基线记录、Editor 生成候选编辑、Composer 合并有效编辑、Reflector 将经验沉淀至可检索库，实现 harness 的即插即用式迭代优化。",
+  "keyPoints": [
+    "提出首个面向 harness 自我改进的递归框架，无需微调模型参数",
+    "引入四角色协同机制：Baseline Recorder、Editor、Composer、Reflector",
+    "Harness 改进过程完全基于冻结模型的推理与检索增强",
+    "强调 harness 的可复用性与跨任务泛化能力",
+    "支持即插即用集成，兼容现有 Agent 系统"
+  ],
+  "method": {
+    "problem": "如何在不更新模型参数的前提下，使 Agent 能在未见任务上持续改进其执行 harness（即任务调度、工具调用、提示编排等执行逻辑）",
+    "approach": "构建递归式 harness 编辑-验证-沉淀闭环，依托冻结模型的推理能力驱动 harness 自演化",
+    "design": [
+      "Baseline Recorder：记录原始 harness 执行轨迹作为改进起点",
+      "Editor：基于当前任务反馈生成候选 harness 编辑方案",
+      "Composer：评估并融合多个候选编辑，产出优化后 harness",
+      "Reflector：将成功编辑经验结构化存入可检索知识库",
+      "跨任务经验复用：后续任务可检索历史有效编辑以加速适配"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Harness² 实现了冻结模型下 harness 的自动化、递归式提升，在多类未见任务中展现持续改进能力",
+    "impact": "为轻量级 Agent 自演化提供新范式，推动高效、可控、可解释的 Agent 构建",
+    "limitations": "依赖高质量初始 harness 与任务反馈信号；编辑空间覆盖范围与泛化边界尚待系统评估"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Harness²",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "harness自我改进",
+        "note": "冻结模型下提升Agent执行逻辑，应对未见任务",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "四角色闭环",
+        "note": "Recorder→Editor→Composer→Reflector递归迭代",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "即插即用框架",
+        "note": "无需训练，兼容现有Agent系统，支持harness演化",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "跨任务泛化",
+        "note": "通过Reflector库复用历史编辑经验，加速新任务适配",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "Agent轻量化演进",
+        "note": "开辟冻结模型+符号化harness优化的新路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
