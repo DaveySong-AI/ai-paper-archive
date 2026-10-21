@@ -1,0 +1,72 @@
+{
+  "abstract": "Cohere Labs 论文《Scaling Inference-Time Compute with Teams of Coding Agents》探讨多智能体编码团队中推理时算力的扩展策略，发现引入额外智能体可提升性能，但成本显著增加（3–7 倍）；最优配置是强模型担任领队执行核心编码，廉价模型仅负责研究与规划任务。",
+  "keyPoints": [
+    "多智能体编码团队性能增益存在边际递减，非线性依赖 agent 数量与角色分工",
+    "强模型（如 Cohere Command R+）适合作为执行核心，承担代码生成与调试",
+    "廉价模型适合承担轻量级任务（如需求分析、API 检索、步骤规划），不参与实际编码",
+    "任务解耦（规划 vs 执行）比同质化 agent 扩展更高效且更具成本效益",
+    "推理时算力分配应优先强化 leader agent 能力，而非盲目增加 agent 数量"
+  ],
+  "method": {
+    "problem": "如何在有限推理预算下，通过多智能体协作最大化代码生成质量与效率",
+    "approach": "系统性评估不同 agent 角色分配、模型能力层级与任务切分策略对端到端编码效果的影响",
+    "design": [
+      "构建分层 agent 团队：leader（强模型）+ planner/researcher（弱模型）",
+      "将编码流程解耦为 research → plan → generate → validate 四阶段并分配至不同 agent",
+      "控制变量对比：全强模型团队、全弱模型团队、混合团队、单 agent 基线",
+      "以 HumanEval 和 MBPP 为基准，测量 pass@1 与单位成本产出比"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "混合角色团队在成本可控前提下显著优于单 agent 或同质团队；规划类任务对模型能力要求低，廉价模型即可胜任",
+    "impact": "为 LLM 推理优化提供新范式：强调‘能力-任务’精准匹配，推动异构 agent 协作架构设计",
+    "limitations": "实验局限于 Python 编程任务，未覆盖多语言、长上下文或真实 IDE 环境集成"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Cohere 多智能体…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "推理算力分配瓶颈",
+        "note": "单 agent 算力受限，扩展 agent 数量带来高成本，需权衡性能与开销",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "分层角色解耦",
+        "note": "强模型做执行，弱模型只做研究与规划；四阶段流水线任务分配",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "低成本规划范式",
+        "note": "证明廉价模型在 research/plan 阶段有效性，降低整体推理成本",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "3–7 倍成本换增益",
+        "note": "团队优于单 agent，但性价比拐点取决于角色分工而非单纯堆 agent",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "异构协作新范式",
+        "note": "推动从‘大模型单干’转向‘强弱协同’的推理时工程实践",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

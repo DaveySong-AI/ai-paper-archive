@@ -1,0 +1,72 @@
+{
+  "abstract": "Princeton 与 Google 等机构提出 JevAgentHarness 框架，引入轻量级（4B 参数）专用决策模型处理智能体中的高频、结构化多选例行决策任务；该模型在高置信度时自主响应，低置信度时交由大语言模型（LLM）兜底，显著降低 LLM 调用开销并提升系统效率。",
+  "keyPoints": [
+    "提出分层决策机制：小型决策模型优先处理例行任务，LLM 仅作为高难度/低置信度场景的后备",
+    "决策模型专为多选型、结构化子任务优化，在孤立问题上准确率高但实际智能体任务完成率仅69.5%",
+    "JevAgentHarness 实现 LLM 调用频次大幅下降，同时保持端到端任务成功率",
+    "强调‘决策-执行解耦’：将推理决策与动作执行分离，提升模块可解释性与可替换性",
+    "实验验证了小模型在智能体流水线中承担确定性子任务的可行性与经济性"
+  ],
+  "method": {
+    "problem": "LLM 在智能体中频繁处理简单、重复性多选决策导致成本高、延迟大、可解释性差",
+    "approach": "构建双路径决策架构：小型专用决策模型主责 routine decision，LLM 作为 confidence-aware fallback",
+    "design": [
+      "设计轻量级 4B 参数决策模型，输入为结构化状态+候选动作，输出多类置信度分数",
+      "引入动态置信度阈值机制，自动触发 LLM 回退",
+      "定义标准化决策接口，支持与不同 LLM 和执行引擎解耦集成",
+      "构建面向智能体任务的决策微调数据集，聚焦 routine subtasks"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "专用小决策模型虽在孤立评测中表现优异，但在真实智能体流程中因上下文依赖和错误传播导致任务完成率受限；JevAgentHarness 通过置信驱动回退机制有效弥合性能鸿沟。",
+    "impact": "为 LLM 智能体工程化提供新范式——用小模型分担确定性决策，推动高效、低成本、可维护的智能体系统设计。",
+    "limitations": "对非结构化或长程依赖决策的支持能力未充分验证；阈值策略泛化性有待跨任务评估。"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "JevAgentHar…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "LLM 决策冗余",
+        "note": "智能体中大量例行多选决策由LLM处理，造成高成本与低效",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "置信驱动双路径",
+        "note": "小模型主决策 + LLM低置信回退，实现计算资源动态分配",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "4B 决策模型",
+        "note": "轻量、专用、结构化输入接口，适配智能体routine子任务",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "任务完成率提升",
+        "note": "相比纯LLM基线，在保障成功率前提下显著减少LLM调用次数",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "智能体工程范式",
+        "note": "推动决策-执行解耦、模块化、成本可控的下一代智能体架构",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

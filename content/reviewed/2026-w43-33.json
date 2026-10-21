@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出面向打包多模态掩码的精确序列并行（Exact Sequence Parallelism），支持在多GPU上无损复现单GPU数值结果。通过按层动态选择ring attention、稀疏all-to-all或Ulysses通信策略，在128块H100上于48个测试案例中47个超越FlashMask+Ulysses混合方案。",
+  "keyPoints": [
+    "实现打包多模态掩码下的精确序列并行，保证跨GPU数值一致性",
+    "按Transformer层自适应选择最优通信原语（ring attention / 稀疏all-to-all / Ulysses）",
+    "无需修改模型结构或训练流程，兼容现有多模态架构",
+    "在大规模H100集群（最高128卡）上验证可扩展性与性能优势",
+    "在48个测试案例中47个优于当前SOTA混合方案FlashMask+Ulysses"
+  ],
+  "method": {
+    "problem": "多模态模型中打包掩码导致的序列并行数值不一致与通信开销失衡问题",
+    "approach": "设计分层自适应通信调度机制，为每层掩码结构匹配最优并行原语",
+    "design": [
+      "定义打包多模态掩码的结构化表示，支持细粒度并行策略映射",
+      "构建ring attention、稀疏all-to-all、Ulysses三类原语的统一接口与误差分析框架",
+      "基于掩码密度与跨设备token分布动态决策每层通信策略",
+      "实现零精度损失的梯度同步与状态恢复机制"
+    ],
+    "setup": "实验基于H100集群，规模覆盖8–128卡；测试涵盖48个多模态任务场景"
+  },
+  "conclusion": {
+    "findings": "精确序列并行可在保持单GPU数值一致性前提下显著提升多模态训练吞吐与扩展效率",
+    "impact": "为多模态大模型分布式训练提供首个支持打包掩码的无损并行范式，推动工业级部署",
+    "limitations": "策略选择依赖掩码结构先验知识，对动态掩码泛化性需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ESP-MM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "打包掩码并行失准",
+        "note": "多模态输入打包后掩码不规则，导致传统SP数值漂移",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "分层自适应调度",
+        "note": "每层依据掩码结构选择ring/Ulysses/稀疏all-to-all之一",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "精确数值一致性",
+        "note": "首次实现多GPU上与单GPU完全一致的前向/反向计算结果",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "47/48案例领先",
+        "note": "128卡H100上较FlashMask+Ulysses混合方案取得压倒性胜率",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "多模态训练新基线",
+        "note": "为LMMs提供即插即用的无损分布式训练基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

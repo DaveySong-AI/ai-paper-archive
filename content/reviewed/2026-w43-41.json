@@ -1,0 +1,72 @@
+{
+  "abstract": "AVRI 是一种面向安全漏洞检测的 AI 智能体优化工具，针对其 token 开销集中在代码理解与漏洞触发推理（占比60.4%）的问题，通过联合返回相关代码片段并显式保留程序输入与不安全操作间的语义链接，显著降低 token 成本。在20个新任务上，Codex 和 OpenCode 的总成本分别下降18.0%和23.7%，同时保持成功率与召回率不变。",
+  "keyPoints": [
+    "安全智能体超六成 token 消耗于代码理解与漏洞触发推理",
+    "现有 token 节省方法仅24.4%能在不损性能前提下降低成本",
+    "AVRI 显式建模输入与不安全操作间的语义链接",
+    "AVRI 一并返回上下文相关代码，提升 prompt 效率",
+    "在20个新任务上验证，成本降幅达18.0%–23.7%，性能无损"
+  ],
+  "method": {
+    "problem": "安全智能体在漏洞检测中 token 利用率低，高成本集中于冗余代码理解与隐式推理",
+    "approach": "设计轻量级中间表示机制 AVRI，将漏洞触发路径结构化为‘输入→不安全操作→相关代码’三元关联",
+    "design": [
+      "提取触发漏洞的关键输入变量与不安全操作对",
+      "反向追踪并聚合依赖该操作的所有相关代码片段",
+      "构建带语义锚点的紧凑 prompt 模板",
+      "保持原始执行逻辑可追溯性以支持后续验证"
+    ],
+    "setup": "在20个新安全任务上对比 Codex 与 OpenCode，评估总 token 成本、成功率及召回率"
+  },
+  "conclusion": {
+    "findings": "AVRI 在不牺牲检测性能前提下显著压缩 token 开销，验证了结构化漏洞路径表示的有效性",
+    "impact": "为安全领域 AI 智能体提供可部署的 token 效率优化范式，推动低成本高可靠自动化漏洞挖掘",
+    "limitations": "未披露对不同语言/框架的泛化能力；未测试对抗性代码场景下的鲁棒性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AVRI",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "token 浪费严重",
+        "note": "60.4%用于代码理解与触发推理，效率瓶颈明确",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "结构化路径表示",
+        "note": "显式建模输入→不安全操作→相关代码三元链接",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "AVRI 工具",
+        "note": "轻量中间表示机制，兼容主流代码大模型",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "成本显著下降",
+        "note": "Codex降18.0%，OpenCode降23.7%，性能无损",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "安全智能体增效",
+        "note": "提供可落地的 token 优化范式，助力规模化漏洞挖掘",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

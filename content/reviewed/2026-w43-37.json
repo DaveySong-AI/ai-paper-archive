@@ -1,0 +1,72 @@
+{
+  "abstract": "商汤发布迄今最全面的GPT-6-Astra具身智能实证研究，覆盖12个仿真基准与8个真实机器人平台；同步开源SenseNova-RoboRSI框架及一个推理成本仅约1/50的27B轻量模型。",
+  "keyPoints": [
+    "首次系统评估GPT-6-Astra在具身智能任务中的跨平台泛化能力",
+    "实证范围覆盖12个仿真环境和8类真机硬件，规模空前",
+    "开源SenseNova-RoboRSI框架，支持高效具身智能研发",
+    "发布27B轻量模型，推理成本降低至原模型约1/50",
+    "强调实证驱动方法论，推动具身智能从理论走向落地验证"
+  ],
+  "method": {
+    "problem": "具身智能大模型在多样化仿真与真实环境中的一致性、鲁棒性与可部署性评估缺失",
+    "approach": "构建统一评测协议，开展横跨仿真与真机的多维度实证研究",
+    "design": [
+      "设计标准化任务接口适配12个仿真基准与8类真机平台",
+      "引入多粒度性能指标（成功率、时延、能耗、泛化误差）",
+      "开发SenseNova-RoboRSI框架实现模型-环境-硬件解耦",
+      "采用知识蒸馏与稀疏化技术压缩GPT-6-Astra为27B轻量模型"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "GPT-6-Astra在仿真中表现优异但真机迁移存在显著性能衰减；轻量模型在多数任务中保持>90%原始性能且大幅降低部署门槛",
+    "impact": "确立具身智能实证研究新范式，为工业级机器人AI提供可复现评估基准与开源基础设施",
+    "limitations": "真机实验受限于硬件访问权限，部分平台未公开详细配置"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GPT-6-Astra…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "具身评估缺失",
+        "note": "缺乏跨仿真与真机的统一实证体系，阻碍模型落地验证",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "多平台实证",
+        "note": "覆盖12仿真+8真机，定义标准化接口与多维指标",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "RoboRSI开源",
+        "note": "SenseNova-RoboRSI框架支持模型-环境-硬件解耦开发",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "27B轻量模型",
+        "note": "推理成本降至约1/50，关键任务性能保留超90%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "确立新范式",
+        "note": "推动具身智能从论文导向转向实证驱动与工程可复现",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

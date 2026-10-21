@@ -1,0 +1,73 @@
+{
+  "abstract": "Google Research 提出 Harness² 框架，支持冻结大模型下的递归 Agent 自我改进：通过基线记录、Editor 生成候选编辑、Composer 合并有效修改、Reflector 持久化经验至可检索库，实现跨未见任务的 harness 动态优化。",
+  "keyPoints": [
+    "提出首个即插即用的递归 harness 改进框架，无需微调底层模型",
+    "引入四角色协同机制（Editor/Composer/Reflector/Recorder）实现闭环自我演进",
+    "强调 harness 的可组合性与经验复用性，支持跨任务知识沉淀",
+    "聚焦冻结模型设定，提升部署安全性与推理一致性",
+    "将 harness 视为可编程、可迭代的执行接口层"
+  ],
+  "method": {
+    "problem": "如何在不更新冻结基础模型的前提下，使 Agent 能持续改进其任务执行 harness（即提示、工具调用、流程编排等）以泛化至未见任务",
+    "approach": "构建递归式 harness 编辑-验证-沉淀闭环，将 harness 改进建模为可检索、可组合的元操作序列",
+    "design": [
+      "Recorder：静态记录原始 harness 执行轨迹与结果",
+      "Editor：基于失败分析或启发式生成候选 harness 编辑方案",
+      "Composer：对多候选编辑进行融合、去重与有效性筛选",
+      "Reflector：将验证成功的编辑结构化存入可检索经验库",
+      "Harness Library：支持语义检索与上下文感知的 harness 片段复用"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Harness² 在冻结模型约束下实现了 harness 的跨任务迁移与累积改进，验证了 harness 可作为独立可进化层的可行性",
+    "impact": "为安全可控的 Agent 部署提供新范式，推动 harness engineering 成为独立研究方向",
+    "limitations": "依赖高质量初始 harness 与编辑空间设计；未公开基准评估细节"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Harness²",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "冻结模型改进harne…",
+        "note": "在不微调基础模型前提下，提升Agent对未见任务的执行适应性",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "四角色递归闭环",
+        "note": "Recorder→Editor→Composer→Reflector形成可迭代的harness进化链",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Harness即服务化",
+        "note": "将harness抽象为可检索、可组合、可沉淀的模块化执行接口",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "跨任务harness复用",
+        "note": "通过Reflector库实现经验迁移，支持零样本或少样本新任务适配",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "安全Agent新范式",
+        "note": "解耦模型权重与执行逻辑，兼顾稳定性、可控性与持续进化能力",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

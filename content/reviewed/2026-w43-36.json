@@ -1,0 +1,71 @@
+{
+  "abstract": "OpenBMB 提出 Trident 方法，通过多正样本视图的 InfoNCE 损失联合优化文本、图像及跨模态融合三种嵌入视图，缓解多模态检索中图文混合语料下文本偏好导致的相关图像被错误降权的‘Chaos in the Text’问题。",
+  "keyPoints": [
+    "揭示并命名多模态检索中的‘Chaos in the Text’现象：无关文本常因强语义信号压倒含答案图像",
+    "提出 Trident 架构，统一建模文本、图像、融合三类正样本视图",
+    "设计多正样本 InfoNCE 损失，增强跨模态对齐与模态内判别能力",
+    "在图文混合检索任务上显著提升图像相关性排序，抑制文本单模态偏差"
+  ],
+  "method": {
+    "problem": "多模态检索器在图文混合语料中过度偏好文本模态，导致含答案图像被低分排序",
+    "approach": "构建三视图联合训练框架，利用共享编码器与多正样本对比学习实现模态均衡",
+    "design": [
+      "文本视图：纯文本编码器输出作为独立正样本",
+      "图像视图：图像编码器输出作为独立正样本",
+      "融合视图：跨模态注意力融合后的联合表征作为正样本",
+      "多正样本 InfoNCE 损失同步拉近三类正样本与查询距离，推开负样本"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Trident 有效缓解文本偏好，提升多模态检索中图像结果的相关性与排序质量",
+    "impact": "为多模态检索系统提供模态均衡建模范式，推动混合语料下的公平跨模态理解",
+    "limitations": "未公开消融实验细节与不同模态噪声鲁棒性分析"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Trident",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "文本偏好现象",
+        "note": "‘Chaos in the Text’：无关文本压制含答案图像排序",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "三视图联合训练",
+        "note": "文本/图像/融合三路正样本，共享编码器+多正InfoNCE",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "多正样本InfoNCE",
+        "note": "统一优化三类正样本表征，增强跨模态对齐与判别",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "缓解文本偏好",
+        "note": "图文混合检索中图像相关性排序显著提升",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "模态均衡范式",
+        "note": "为多模态检索提供兼顾公平性与准确性的新训练框架",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

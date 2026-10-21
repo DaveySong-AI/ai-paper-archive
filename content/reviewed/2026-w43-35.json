@@ -1,0 +1,73 @@
+{
+  "abstract": "Modal 工程团队基于自研无代理基准测试框架 Agentless Agent Bench，在高负载场景下实测 NVIDIA Vera CPU（Arm 架构）对 Modal Sandboxes 的性能提升。结果显示，相比 x86 平台，Vera 在沙箱吞吐量上实现约两倍提升，验证了 Arm 架构在容器化轻量计算场景中的能效与并发优势。",
+  "keyPoints": [
+    "首次公开 NVIDIA Vera CPU 在真实 Serverless 沙箱环境中的实测性能数据",
+    "提出并开源 Agentless Agent Bench：去网络、多终端、50 个 oracle 验证的轻量基准框架",
+    "高并发 Docker 容器负载下，Vera 相比主流 x86 CPU 实现沙箱吞吐翻倍",
+    "验证 Arm 兼容 CPU 在低开销、高密度沙箱部署中的架构适配优势",
+    "Modal 沙箱运行时针对 Vera 进行了内核级调度与内存管理优化"
+  ],
+  "method": {
+    "problem": "评估新型 Arm 架构 CPU（NVIDIA Vera）在 Modal Serverless 沙箱场景下的实际吞吐与可扩展性",
+    "approach": "构建隔离、可控、可复现的端到端沙箱基准测试流程，聚焦 CPU-bound 任务，剥离网络与 I/O 干扰",
+    "design": [
+      "设计 Agentless Agent Bench：50 个独立 Terminal-Bench oracle 解法与验证器并行执行",
+      "全容器化部署：每个沙箱实例为独立 Docker 容器，共享宿主机内核但资源隔离",
+      "负载控制：固定任务复杂度、统一输入规模、动态调节并发数以逼近饱和吞吐",
+      "对比基线：覆盖多代 x86 CPU（含 Intel Xeon 和 AMD EPYC）作为对照组",
+      "监控粒度：采集每秒沙箱启动数、任务完成延迟、CPU 利用率及上下文切换频次"
+    ],
+    "setup": "测试环境为裸金属服务器集群，所有节点启用相同内核版本与 cgroup v2 配置；沙箱镜像统一为 Alpine Linux + Python 3.11 环境"
+  },
+  "conclusion": {
+    "findings": "NVIDIA Vera CPU 在 Modal Sandboxes 高并发场景下显著提升吞吐量，主要归因于更高核心密度、更低单核功耗及更优的 Arm 原生容器调度表现",
+    "impact": "为 Serverless 平台采用 Arm 架构 CPU 提供首个工程级实证，推动异构计算在 FaaS 场景的落地探索",
+    "limitations": "测试未涵盖 GPU 加速任务、持久化存储 I/O 密集型负载及跨架构二进制兼容性长尾问题"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Vera-Sandbox",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "沙箱吞吐瓶颈",
+        "note": "传统 x86 在高密度容器场景下受限于功耗与核心扩展性",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Agentless B…",
+        "note": "50个oracle验证器+无网络Docker并发，专注CPU-bound沙箱性能",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Vera实测翻倍",
+        "note": "高负载下Modal沙箱吞吐达x86基线2x，证实Arm架构适用性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "调度优化有效",
+        "note": "内核级cgroup与调度器调优使Vera核心利用率提升显著",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "Serverless异…",
+        "note": "为FaaS平台引入Arm CPU提供可复现工程范式与基准方法论",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
