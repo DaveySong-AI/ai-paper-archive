@@ -1,0 +1,72 @@
+{
+  "abstract": "本文系统梳理了当前主流 Web Agent 基准的三类范式：沙箱站点类（如 WebArena）、真实网页在线类（如 WebVoyager、Online-Mind2Web）和离线数据集类（如 Mind2Web），对比其可复现性、真实性、评估稳定性与人类操作对齐度，为基准选型提供结构化参考。",
+  "keyPoints": [
+    "沙箱站点基准（WebArena 等）具备高可复现性与可控性，但存在仿真失真问题",
+    "真实网页在线基准（WebVoyager、Online-Mind2Web 等）最贴近实际浏览器环境，但性能易受网站变更影响导致分数漂移",
+    "离线数据集基准（Mind2Web）支持细粒度动作回放与人类行为对比，但缺乏动态交互能力",
+    "三类基准在评估目标上存在本质差异：可控测试 vs 真实泛化 vs 行为建模",
+    "基准选型需权衡任务目标、部署场景与评估稳定性需求"
+  ],
+  "method": {
+    "problem": "如何系统分类、比较并指导 Web Agent 基准的合理选用",
+    "approach": "基于评估范式维度（部署方式、数据来源、交互性质）对主流基准进行横向归类与特性解构",
+    "design": [
+      "按运行环境划分为沙箱/在线/离线三类架构",
+      "引入‘真实性-可复现性-稳定性’三维评估框架",
+      "标注各基准对人类操作轨迹的覆盖粒度（页面级/元素级/动作级）",
+      "分析典型基准的构建逻辑与隐含假设（如 deterministic rendering, site uptime）"
+    ],
+    "setup": "无原始实验，属综述性分析；引用基准官方文档、论文及公开 leaderboard 数据"
+  },
+  "conclusion": {
+    "findings": "不存在普适最优基准；不同范式服务于不同研发阶段与验证目标",
+    "impact": "为 Web Agent 社区建立基准认知共识，推动评估方法论标准化与跨基准结果可比性建设",
+    "limitations": "未量化各基准间性能相关性；未覆盖新兴轻量级基准（如 MiniWob++ 变体）"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "WebAgentBen…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "基准选型混乱",
+        "note": "社区缺乏统一分类框架，导致评估结论不可比、复现困难",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "三类范式划分",
+        "note": "沙箱/在线/离线——依据部署方式与数据动态性进行正交分类",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三维评估框架",
+        "note": "提出真实性-可复现性-稳定性三角，辅助研究者按需匹配基准",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "范式权衡矩阵",
+        "note": "沙箱强复现弱真实，在线强真实弱稳定，离线强对齐弱交互",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动评估标准化",
+        "note": "促进 benchmark-aware agent 设计，支撑可信 Web 智能体发展",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
