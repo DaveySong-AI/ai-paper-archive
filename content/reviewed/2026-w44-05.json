@@ -1,0 +1,80 @@
+{
+  "abstract": "OpenAI 宣布其模型在数学基础领域取得三项突破性成果：证明各维度 local smoothing 猜想（从而解决 Kakeya 与 Stein 限制猜想）、在 Lean 中形式化验证 ETH 假设不成立、以及为 QCD 和纯 Yang–Mills 理论提供严格存在性证明。所有成果均通过与学术界协作完成，并以开放方式发布。",
+  "keyPoints": [
+    "首次由AI模型主导完成三项高阶数学猜想的证明或证伪",
+    "local smoothing 猜想的全维证明蕴含 Kakeya 与 Stein 限制猜想的解决",
+    "在定理证明器 Lean 中形式化验证 Exponential Time Hypothesis (ETH) 为假",
+    "为量子色动力学（QCD）与纯 Yang–Mills 理论建立首个严格存在性证明",
+    "强调与数学/理论物理社区协同验证、开源发布与可复现性"
+  ],
+  "method": {
+    "problem": "如何利用大语言模型与形式化工具辅助人类完成前沿数学难题的发现、推理与严格验证",
+    "approach": "结合大模型的数学直觉生成能力、符号推理增强、与交互式定理证明器（如 Lean）的深度集成，辅以领域专家协同评审与迭代修正",
+    "design": [
+      "构建面向数学研究的专用推理提示框架与知识检索增强模块",
+      "开发模型-Lean 双向接口，支持自动引理生成、证明草稿翻译与错误定位",
+      "设计多阶段验证流程：模型提案 → 专家筛选 → 形式化编码 → 社区审查 → 公开发布",
+      "建立跨学科协作平台，整合调和分析、复杂度理论与量子场论专家反馈"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "AI 模型可在高难度数学问题中承担核心推理与构造角色，且其产出可通过形式化方法达到数学界认可的严格性标准",
+    "impact": "推动AI for Science范式转型，确立大模型作为数学新‘合作者’的可行性；促进形式化数学基础设施与跨学科协作机制发展",
+    "limitations": "当前成果高度依赖专家引导与定制化工具链，通用数学发现能力尚未验证；物理理论证明仍限于存在性层面"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "OpenAI数学成果",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "数学难题求解",
+        "note": "聚焦调和分析、复杂度理论、量子场论三大基础难题",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "模型+Lean协同",
+        "note": "大模型生成猜想与路径，Lean执行形式化验证，专家闭环反馈",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三项核心成果",
+        "note": "local smoothing全维证明、ETH证伪、Yang-Mills存在性证明",
+        "children": [
+          {
+            "type": "result",
+            "label": "Kakeya等猜想解决",
+            "note": "local smoothing 成立直接蕴含多个经典猜想的解决",
+            "children": [],
+            "id": "n3-4-5"
+          }
+        ],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "形式化可信度",
+        "note": "所有证明均在Lean中完全编码，支持机器校验与社区复现",
+        "children": [],
+        "id": "n5-6"
+      },
+      {
+        "type": "impact",
+        "label": "科研范式变革",
+        "note": "开创AI与数学家平等协作新模式，推动科学发现流程重构",
+        "children": [],
+        "id": "n6-7"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

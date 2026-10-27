@@ -1,0 +1,73 @@
+{
+  "abstract": "Google DeepMind 论文《The Illusion of Stochasticity in LLMs》指出，大语言模型（LLM）在无外部干预下无法实现符合目标分布的真随机采样；其输出看似随机，实则由确定性解码与训练数据偏差共同导致，本质是伪随机。",
+  "keyPoints": [
+    "LLM 的‘随机采样’并非统计意义上的真随机，而是确定性前向传播与 softmax 温度调节的组合结果",
+    "模型规模增大可提升对目标概率分布的逼近能力，但无法消除系统性偏差",
+    "采样行为高度依赖初始提示、tokenization 及解码策略，缺乏内在随机源",
+    "实验表明，在多选任务中，即使设置相同温度，不同模型或同一模型多次运行仍呈现可复现的偏好模式",
+    "论文提出‘随机性幻觉’概念：用户误将高熵输出等同于真随机，而实际为复杂确定性映射"
+  ],
+  "method": {
+    "problem": "验证 LLM 是否具备自主生成符合指定概率分布的真随机选择能力",
+    "approach": "通过可控多选任务设计，量化模型输出分布与目标分布的偏差，并分析影响因素",
+    "design": [
+      "构建标准化多项选择基准，每个问题对应明确的目标概率向量",
+      "系统性改变温度、top-k、repetition penalty 等解码参数，观测输出分布稳定性",
+      "跨模型规模（从数亿到数百亿参数）对比偏差趋势",
+      "引入种子控制与硬件级熵源隔离，排除外部随机干扰",
+      "使用KL散度与校准误差（ECE）作为核心评估指标"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "LLM 缺乏内在随机机制，其采样行为是确定性函数对离散 logits 的映射，无法满足真随机所需的不可预测性与独立同分布特性",
+    "impact": "挑战当前基于采样的推理范式（如 self-consistency、best-of-n），推动对不确定性建模与外部熵集成的研究",
+    "limitations": "未覆盖所有解码变体（如 nucleus sampling 的动态截断边界），部分实验设定依赖合成任务"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Illusion of…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "随机性本质缺失",
+        "note": "LLM 无真随机源，输出为确定性映射结果",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "多尺度偏差分析",
+        "note": "结合 KL 散度、ECE 与跨模型规模对比实验",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "提出随机性幻觉概念",
+        "note": "揭示用户认知与模型行为间的根本错配",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "规模改善但不解决",
+        "note": "大模型更接近目标分布，仍存在系统性偏差",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重审采样范式",
+        "note": "影响 best-of-n、self-consistency 等主流推理方法可靠性",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

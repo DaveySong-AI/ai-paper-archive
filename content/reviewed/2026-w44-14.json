@@ -1,0 +1,72 @@
+{
+  "abstract": "Epoch AI 发布 Epoch Automation Reports，采用机构内部真实工作任务（如图表设计、研究规划）评估前沿大模型自动化能力，依据人类员工标准打分。Claude Fable 5.1 与 GPT-6 Astra 平均得分仅65%，未达完全自动化所需的100%门槛。",
+  "keyPoints": [
+    "首次使用真实机构内部任务而非合成基准评测AI自动化潜力",
+    "评测覆盖图表设计、研究规划等高价值知识工作环节",
+    "采用人类员工绩效标准作为评分基准，强调实用性而非理论能力",
+    "当前顶尖模型在复杂任务链中仍存在显著执行断点",
+    "提出‘可自动化门槛’概念：100%得分为完全替代人类工作的必要条件"
+  ],
+  "method": {
+    "problem": "评估前沿大模型在真实机构知识工作中的端到端自动化能力",
+    "approach": "将Epoch AI内部高频工作任务转化为标准化评测任务集，由人类专家按实际交付质量评分",
+    "design": [
+      "任务选取：聚焦图表生成、文献综述、实验方案设计等非编码类知识工作",
+      "评分标准：基于交付物完整性、准确性、可复用性及协作适配性四维度",
+      "基线设定：以人类初级研究员完成同一任务的平均表现为100%基准",
+      "模型测试：统一提示工程框架下运行Claude Fable 5.1与GPT-6 Astra"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "当前SOTA模型在真实知识工作场景中平均表现仅为人类基准的65%，尚未达到实用化自动化水平",
+    "impact": "推动AI能力评估从通用基准转向机构级任务效能验证，为AI部署ROI分析提供新范式",
+    "limitations": "任务集覆盖范围有限，未包含跨部门协作与实时反馈迭代等动态场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Epoch Autom…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "自动化能力评估",
+        "note": "真实机构任务 vs 合成基准，聚焦知识工作可替代性",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "人类基准评测",
+        "note": "以人类员工交付质量为100%标尺，四维评分体系",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Epoch Autom…",
+        "note": "首个面向AI工作流落地的机构级评测框架",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "65%平均得分",
+        "note": "Claude Fable 5.1与GPT-6 Astra未达100%自动化门槛",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重新定义AI就绪度",
+        "note": "推动评估范式从能力展示转向任务闭环效能验证",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

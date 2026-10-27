@@ -1,0 +1,72 @@
+{
+  "abstract": "本文系统梳理了当前主流 Web Agent 基准的三类范式：沙箱站点类（如 WebArena）、真实网页在线类（如 WebVoyager、Online-Mind2Web）和离线数据集类（如 Mind2Web）。分析了各类基准在可复现性、真实性、评估稳定性与人类行为对齐度上的权衡，为研究者选型提供结构化参考。",
+  "keyPoints": [
+    "Web Agent 基准分为沙箱站点、真实网页在线、离线数据集三类，目标与约束差异显著",
+    "沙箱类基准（WebArena 等）保障实验可复现与可控性，但存在仿真失真",
+    "真实网页类（WebVoyager、Online-Mind2Web 等）贴近实际浏览器环境，但性能易受网站变更影响导致分数漂移",
+    "离线数据集类（Mind2Web）支持细粒度操作序列对比，但缺乏动态交互与实时反馈",
+    "基准选型需依据研究目标权衡可复现性、真实性、评估鲁棒性与人类行为保真度"
+  ],
+  "method": {
+    "problem": "如何系统评估与比较 Web Agent 的跨网页任务执行能力",
+    "approach": "对现有基准进行范式归类与多维对比分析，建立选型决策框架",
+    "design": [
+      "按部署形态划分为沙箱/在线/离线三类基准体系",
+      "从可复现性、真实性、评估稳定性、人类行为对齐度四维度横向对比",
+      "识别各基准典型代表及其核心设计取舍（如 WebArena 重控制、WebVoyager 重真实）",
+      "提出基准适用场景映射表（如消融实验→沙箱，端到端部署验证→在线）"
+    ],
+    "setup": ""
+  },
+  "conclusion": {
+    "findings": "三类基准无绝对优劣，本质是不同评估目标下的设计权衡；单一基准难以覆盖全部需求，混合使用或分层评估更合理",
+    "impact": "为 Web Agent 领域建立首个系统性基准分类与选型指南，推动评估方法论标准化",
+    "limitations": "未量化各基准间分数不可比性程度；未覆盖新兴基准（如 BrowserGym）"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "WebAgentBen…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "评估不统一",
+        "note": "基准异构导致结果难比较，缺乏选型标准",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "三类范式划分",
+        "note": "沙箱/在线/离线——对应可控性、真实性、可分析性优先级",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "基准选型框架",
+        "note": "基于可复现性、真实性、稳定性、人类对齐四维决策矩阵",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "范式权衡图谱",
+        "note": "WebArena高复现低真实；WebVoyager高真实低稳定；Mind2Web高可分析低交互",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动评估标准化",
+        "note": "为后续基准设计与论文实验设置提供方法论参照",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

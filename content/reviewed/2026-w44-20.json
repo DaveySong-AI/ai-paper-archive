@@ -1,0 +1,72 @@
+{
+  "abstract": "清华与港中文团队开源AKV系统，基于SGLang构建的KV cache工程服务，支持LLM智能体在不修改文本历史前提下，通过Drop和Repos（RoPE旋转重定位）动态丢弃或重排KV缓存条目，提升推理效率与状态管理灵活性。",
+  "keyPoints": [
+    "首创面向LLM智能体的KV cache独立工程服务架构",
+    "提出Drop操作实现KV条目选择性丢弃",
+    "提出Repos操作支持RoPE坐标系下的KV重定位与重排",
+    "完全解耦KV管理与文本生成逻辑，保持历史一致性",
+    "深度集成SGLang运行时，零侵入适配现有智能体框架"
+  ],
+  "method": {
+    "problem": "LLM智能体在长上下文、多步骤推理中面临KV cache冗余膨胀、状态更新低效、历史与缓存不一致等问题",
+    "approach": "将KV cache抽象为可编程服务层，分离存储、调度与变换逻辑",
+    "design": [
+      "Drop机制：基于语义重要性评分动态裁剪KV条目",
+      "Repos机制：在RoPE位置编码空间内重映射KV位置索引",
+      "无状态代理接口：智能体仅发送操作指令，不接触原始KV内存",
+      "SGLang原生集成：通过扩展其backend dispatcher实现透明调度"
+    ],
+    "setup": "基于SGLang v0.3+，支持Llama/Mistral等RoPE系模型；测试涵盖Tool-Use、Multi-Hop QA等智能体场景"
+  },
+  "conclusion": {
+    "findings": "AKV显著降低智能体推理显存占用（平均↓37%）并加速KV更新（延迟↓52%），同时保持生成质量无损",
+    "impact": "推动LLM智能体从‘文本驱动’转向‘状态驱动’范式，为缓存即服务（CaaS）提供新范本",
+    "limitations": "当前依赖RoPE架构，对ALiBi、YaRN等位置编码支持需扩展；动态Drop策略泛化性有待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AKV",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "KV缓存冗余",
+        "note": "智能体多步推理导致KV持续增长，显存与延迟压力剧增",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Drop & Repos",
+        "note": "Drop丢弃低价值KV；Repos在RoPE空间重排位置，不改文本历史",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "KV即服务",
+        "note": "首个将KV cache抽象为可编程网络服务的开源系统，解耦生成与状态管理",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高效低损",
+        "note": "显存↓37%，KV更新延迟↓52%，生成质量无统计显著下降",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "状态驱动范式",
+        "note": "为LLM智能体提供细粒度、可组合、可审计的缓存控制能力",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

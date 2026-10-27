@@ -1,0 +1,72 @@
+{
+  "abstract": "Skyfall AI 发布工程世界模型 SKY-001，支持将文本提示或2D草图直接转化为可在Autodesk Fusion中打开的完整CAD构建序列。该模型采用视觉规划范式，避免反复调用LLM，通过分层分解与状态预测生成有序建模步骤，单例推理耗时仅3.9秒，显著优于GPT-6 Astra的199秒。",
+  "keyPoints": [
+    "首次将世界模型范式落地于工程CAD建模领域，突破传统机器人/视频理解边界",
+    "提出‘构建世界模型’（construction world model），以3D实体状态演化为核心预测目标",
+    "采用视觉规划架构：先语义分解为子装配与零件，再生成带时序的草图与建模操作序列",
+    "端到端输出兼容Autodesk Fusion的原生构建指令，无需人工后处理",
+    "推理速度达3.9秒/例，较GPT-6 Astra提速超50倍"
+  ],
+  "method": {
+    "problem": "如何实现从开放文本/草图到可执行CAD构建序列的高效、可靠、结构化生成",
+    "approach": "构建面向工程软件的视觉-状态联合世界模型，以3D几何演化为内在表征进行端到端规划",
+    "design": [
+      "分层任务分解：输入→子装配拓扑→零件级建模序列",
+      "双流状态建模：同步预测2D草图帧与3D实体中间状态",
+      "Fusion原生操作编码：将建模动作映射为参数化CAD指令集",
+      "轻量视觉规划器：替代LLM循环调用，实现单次前向推理生成完整流程"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "SKY-001验证了世界模型在专业工程软件中的可行性，实现了高精度、低延迟、可执行的CAD生成",
+    "impact": "推动AI从感知层迈向工程决策与制造执行层，为AEC、机械设计等领域提供新型人机协同范式",
+    "limitations": "当前演示限于特定CAD平台（Fusion）与中等复杂度零件；泛化至多软件生态与高自由度曲面建模尚待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SKY-001",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "工程建模生成",
+        "note": "文本/草图→可执行CAD序列的结构化转化难题",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "视觉规划世界模型",
+        "note": "分层分解+双流状态预测+Fusion原生指令编码",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个工程世界模型",
+        "note": "突破机器人/视频范畴，首落地CAD软件链",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "3.9秒端到端生成",
+        "note": "支持Autodesk Fusion直接打开，精度满足工程初稿需求",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI进入制造执行层",
+        "note": "为AEC、机械设计提供新的人机协同基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

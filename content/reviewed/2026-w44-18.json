@@ -1,0 +1,72 @@
+{
+  "abstract": "面壁智能基于 PostTrainBench 数据集分析1338条完整后训练轨迹，发现Agent在执行全流程时极少中途切换初始训练策略，表明其策略层具有高度稳定性；研究将Agent能力解耦为执行层（操作准确性）与策略层（方法选择），揭示当前LLM-based Agent在策略规划上趋于‘一锤定音’。",
+  "keyPoints": [
+    "1338条真实后训练轨迹显示Agent策略切换频率极低，验证策略层的强一致性",
+    "首次将Agent后训练能力解耦为执行层（如调用工具、参数设置）与策略层（如算法选型、阶段划分）",
+    "覆盖7个基准、4类基座模型及3种代码执行环境，在单H100/10小时约束下完成实证",
+    "策略稳定性不依赖于模型规模或基准难度，呈现跨任务鲁棒性",
+    "结果挑战了‘Agent需动态反思与修正策略’的常见假设"
+  ],
+  "method": {
+    "problem": "评估LLM-based Agent在端到端后训练流程中的策略动态性与稳定性",
+    "approach": "对PostTrainBench中1338条完整轨迹进行行为模式挖掘，聚焦策略决策点与执行动作序列的时序关联",
+    "design": [
+      "定义策略节点：首次选定训练方法（如LoRA/QLoRA/Full-Finetune）、数据采样策略、超参配置组合",
+      "标记策略变更事件：任一策略节点参数发生实质性修改即视为切换",
+      "分层标注轨迹：执行层标注API调用、命令执行、错误恢复等原子动作；策略层标注决策依据与上下文快照",
+      "多维归因分析：按模型类型、基准复杂度、执行环境、失败/成功结局交叉统计策略稳定性"
+    ],
+    "setup": "7个后训练基准（如AlpacaEval、MT-Bench）、4个基座模型（Qwen、Llama、Phi、InternLM）、3种执行后端（Claude Code / Codex CLI / OpenCode），单H100 GPU，10小时最大运行时限"
+  },
+  "conclusion": {
+    "findings": "Agent在99.2%的完整轨迹中未发生策略切换，策略层决策具备高度初始确定性；执行层错误多通过局部修复而非策略回溯解决。",
+    "impact": "推动Agent评估范式从‘动作正确性’转向‘策略可信度’，为可信赖AI系统设计提供新基准维度。",
+    "limitations": "未覆盖多GPU分布式训练场景；策略稳定性在长周期（>24h）或开放域任务中表现尚不明确"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "PostTrainBe…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "策略动态性评估",
+        "note": "验证Agent是否在长程后训练中主动调整初始策略",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "双层轨迹分析",
+        "note": "解耦执行层（动作序列）与策略层（决策节点），标注1338条全轨迹",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "策略稳定性发现",
+        "note": "99.2%轨迹无策略切换，挑战‘动态反思’主流假设",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "跨模型鲁棒性",
+        "note": "策略稳定性在Qwen/Llama/Phi/InternLM及7大基准中一致显现",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "评估范式升级",
+        "note": "提出策略可信度（Strategy Trustworthiness）作为新核心指标",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
