@@ -1,0 +1,72 @@
+{
+  "abstract": "英国AI安全研究所（AISI）联合SecureBio发布ReproBAIT评测，旨在评估AI编码智能体能否仅凭论文等公开信息及自身训练数据，低成本复现生物AI工具（BAITs）。该评测聚焦可复现性、代码质量与功能对齐，强调AI智能体在生命科学交叉领域的实际工程能力。",
+  "keyPoints": [
+    "首次系统评测AI编码智能体对生物AI工具（BAITs）的端到端复现能力",
+    "评测基于真实论文与公开资源，不提供源码或API，强调‘从零重建’",
+    "关注低成本、自动化复现路径，区别于传统人工复现或微调范式",
+    "引入多维评估指标：功能正确性、代码可运行性、文档完备性与生物合理性",
+    "揭示当前AI编码智能体在领域知识理解、实验逻辑建模和依赖管理上的瓶颈"
+  ],
+  "method": {
+    "problem": "AI编码智能体能否在无原始代码、仅依赖论文描述与通用训练数据条件下，可靠复现生物AI工具（BAITs）",
+    "approach": "构建标准化评测框架ReproBAIT，选取代表性BAITs论文，由AI智能体独立完成理解、设计、编码、测试全流程",
+    "design": [
+      "论文筛选标准：明确算法描述、可验证输入输出、具备典型生物信息学任务",
+      "智能体执行约束：禁用外部搜索/人工干预，仅允许调用本地推理与代码生成模块",
+      "评估协议：双盲功能测试+专家评审+自动化CI验证",
+      "基线对比：人工复现结果与主流开源LLM驱动智能体（如CodeLlama+Agent框架）"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "部分AI编码智能体可在简单BAITs上实现基础功能复现，但复杂逻辑、生物先验嵌入与环境适配仍显著受限",
+    "impact": "推动AI for Science中‘可复现性即能力’的评估范式转变，为生物AI工具治理提供新基准",
+    "limitations": "评测覆盖BAITs数量有限；未区分模型规模与训练数据影响；缺乏长期维护与迭代能力评估"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ReproBAIT",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "复现可行性",
+        "note": "AI能否仅凭论文重建BAITs？核心是知识提取与工程转化能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "评测框架",
+        "note": "论文驱动、零源码、全自动化流程；含功能/代码/文档三重验证",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个BAITs复现基准",
+        "note": "定义评估维度与协议，填补AI for Biology中智能体能力评测空白",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "能力断层明显",
+        "note": "简单工具可达60%功能复现率，复杂工具普遍失败于实验逻辑建模",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动可信AI for …",
+        "note": "为监管机构提供可量化工具复现能力证据，支撑AI生物安全治理",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

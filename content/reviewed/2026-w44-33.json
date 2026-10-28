@@ -1,0 +1,72 @@
+{
+  "abstract": "Skyfall AI 发布工程世界模型 SKY-001，支持将文本提示或2D草图直接转化为可在Autodesk Fusion中打开的完整CAD构建序列。该模型采用视觉规划机制，避免频繁调用大语言模型，通过分层分解与状态预测实现高效建模，单例推理耗时仅3.9秒，显著优于GPT-6 Astra的199秒。",
+  "keyPoints": [
+    "首次将世界模型范式从机器人/视频领域迁移至工程软件（CAD）",
+    "支持文本+2D草图双模态输入，输出可执行的Fusion CAD构建序列",
+    "采用视觉规划替代LLM反复调用，提升效率与确定性",
+    "引入子装配-零件分层分解与3D实体状态演化预测机制",
+    "实测推理速度达3.9秒/例，较GPT-6 Astra提速超50倍"
+  ],
+  "method": {
+    "problem": "如何在工程设计场景中实现从抽象意图到可执行CAD指令的高效、可靠、端到端生成",
+    "approach": "构建面向工程软件的专用世界模型，以视觉为中心进行结构化规划与状态演化模拟",
+    "design": [
+      "多粒度结构分解：将目标物体解析为子装配体与基础零件层级",
+      "草图-实体联合建模：同步预测有序2D草图序列与对应3D实体状态",
+      "轻量级视觉规划器：替代LLM作为核心控制器，降低延迟与幻觉风险",
+      "Fusion原生指令编译：输出与Autodesk Fusion API兼容的可执行构建序列"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "工程世界模型可显著提升CAD生成效率与可靠性，视觉规划路径优于纯LLM驱动范式",
+    "impact": "为AEC、机械设计等垂直领域开辟新型AI-native工程软件范式，推动世界模型向工业软件纵深落地",
+    "limitations": "当前仅支持Autodesk Fusion生态，泛化至其他CAD平台能力待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SKY-001",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "工程意图转CAD",
+        "note": "解决从自然语言/草图到可执行CAD指令的语义鸿沟与执行不确定性问题",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "视觉规划世界模型",
+        "note": "以视觉为中心分层分解+草图-实体状态联合预测，规避LLM高频调用",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个工程世界模型",
+        "note": "首次将世界模型成功迁移至CAD设计场景，定义工程软件新交互范式",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "3.9秒极速生成",
+        "note": "单例端到端耗时3.9秒，较GPT-6 Astra提速50倍以上，支持实时交互",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI-native C…",
+        "note": "为机械、AEC等领域提供可集成、可验证、低延迟的AI设计基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

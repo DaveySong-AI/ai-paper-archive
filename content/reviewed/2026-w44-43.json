@@ -1,0 +1,72 @@
+{
+  "abstract": "本文系统梳理了2026年前主流Web Agent基准的三类范式：沙箱站点类（如WebArena）、真实网页在线类（如WebVoyager、Online-Mind2Web）和离线数据集类（如Mind2Web），对比其可复现性、真实性与评估稳定性，为Web Agent研究与选型提供方法论指导。",
+  "keyPoints": [
+    "Web Agent基准分为沙箱站点、真实网页在线、离线数据集三类，各具评估优势与局限",
+    "沙箱类基准（WebArena等）环境可控、结果可复现，但存在仿真失真问题",
+    "真实网页类基准（WebVoyager、Online-Mind2Web等）贴近实际交互，但分数易受网站变更影响而漂移",
+    "离线数据集类（Mind2Web）支持细粒度操作对比，但缺乏动态环境反馈与长期任务评估能力",
+    "基准选型需权衡可复现性、真实性、评估稳定性与任务覆盖广度"
+  ],
+  "method": {
+    "problem": "如何系统分类、比较并指导选用当前主流Web Agent评估基准",
+    "approach": "基于评估范式对现有基准进行横向归类分析，结合部署方式、数据来源、评估维度与实践约束展开多维对比",
+    "design": [
+      "按运行环境划分为沙箱/在线/离线三类基准体系",
+      "引入‘评估漂移性’指标衡量真实网页类基准的分数稳定性",
+      "提出‘人类操作对齐度’作为离线数据集类基准的关键评估维度",
+      "构建基准选型决策树，关联任务类型与基准特性"
+    ],
+    "setup": "基于Browser Use平台对WebArena、WebVoyager、Mind2Web等基准的实测经验与社区反馈分析，未开展新实验"
+  },
+  "conclusion": {
+    "findings": "三类基准无绝对优劣，沙箱类适合算法迭代验证，真实网页类适合端到端部署评估，离线类适合行为建模研究",
+    "impact": "为Web Agent领域建立首个基准分类框架与选型指南，推动评估标准化与跨基准结果可比性",
+    "limitations": "未量化各基准在具体模型上的性能差异；部分新兴基准（如BrowseComp）细节依赖原文"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "WebAgentBen…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "基准评估失准",
+        "note": "真实网页变化导致分数漂移，沙箱失真，离线缺乏动态反馈",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "三类范式分类",
+        "note": "沙箱/在线/离线——依据环境可控性与数据生成方式划分",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "选型决策框架",
+        "note": "提出兼顾可复现性、真实性、稳定性的基准匹配原则",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "基准特性对比",
+        "note": "WebArena高复现低真实；WebVoyager高真实低稳定；Mind2Web高对齐低交互",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动评估标准化",
+        "note": "为Web Agent研究提供统一基准认知地图与实践选型依据",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

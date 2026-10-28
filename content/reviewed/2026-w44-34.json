@@ -1,0 +1,71 @@
+{
+  "abstract": "Hermit 是一个面向推荐系统的持续学习框架，通过 Harness Adapter 机制实现模型在动态数据流中的增量更新与知识保留，并支持推荐场景下的 RSI（Retrieval-Score-Interpretation）三阶段建模。该框架旨在缓解灾难性遗忘、提升在线适应能力，并增强推荐结果的可解释性。",
+  "keyPoints": [
+    "提出 Harness Adapter 作为轻量级适配模块，支持参数高效持续学习",
+    "将推荐流程解耦为 Retrieval、Score、Interpretation 三阶段（RSI），统一建模目标",
+    "在不重训主干模型前提下实现任务/领域迁移与长期记忆维护",
+    "兼顾性能稳定性与推理可解释性，适用于真实推荐系统部署"
+  ],
+  "method": {
+    "problem": "推荐系统中持续学习面临的灾难性遗忘、计算开销大、可解释性弱等问题",
+    "approach": "基于适配器的模块化持续学习框架，将 RSI 流程与增量更新机制深度耦合",
+    "design": [
+      "Harness Adapter：插入主干网络各层的可学习轻量模块，仅更新其参数",
+      "RSI 三阶段协同训练：检索阶段优化召回多样性，打分阶段校准置信度，解释阶段生成归因信号",
+      "记忆回放与梯度投影结合，抑制旧任务性能下降",
+      "在线增量更新协议：支持单样本/小批量流式输入下的低延迟适配"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Hermit 在多个推荐持续学习基准上显著优于基线方法，同时保持较低的参数增量与推理延迟",
+    "impact": "为工业级推荐系统提供了一种兼顾持续适应性、可维护性与可信性的新范式",
+    "limitations": "对极端长尾分布或跨域语义鸿沟较大的场景泛化能力有待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Hermit",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "持续学习挑战",
+        "note": "灾难性遗忘、高计算成本、RSI割裂导致可解释性差",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Harness Ada…",
+        "note": "轻量可插拔适配模块，实现参数高效增量更新",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "RSI统一框架",
+        "note": "将召回、打分、解释三阶段联合建模，增强端到端一致性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能与效率平衡",
+        "note": "在标准持续推荐任务上提升准确率，参数增长<5%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "工业部署友好",
+        "note": "支持流式更新与低延迟推理，适配现有推荐服务架构",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "面壁智能基于 PostTrainBench 分析1338条后训练轨迹，发现Agent在完整pipeline中极少中途切换初始策略，表明其策略层高度稳定；研究将Agent能力解耦为执行层（操作准确性）与策略层（方法选择），揭示当前LLM-Agent在长期规划中倾向于‘一策到底’。",
+  "keyPoints": [
+    "Agent在1338条完整后训练轨迹中几乎不中途更换策略",
+    "首次将Agent能力系统解耦为执行层与策略层两个正交维度",
+    "实验覆盖7个基准、4个基座模型及3种代码执行环境",
+    "策略稳定性现象在单卡H100、10小时约束下具有一致性",
+    "结果挑战了‘Agent需频繁反思重规划’的常见假设"
+  ],
+  "method": {
+    "problem": "评估LLM-Agent在长周期、多步骤后训练任务中的策略动态性",
+    "approach": "对PostTrainBench中1338条真实训练轨迹进行行为模式挖掘与策略一致性量化分析",
+    "design": [
+      "定义策略切换事件：当Agent主动替换核心算法/超参/数据采样方式时记为一次切换",
+      "构建双层标注框架：执行动作（如run_eval、modify_config）与策略标签（如‘SFT-first’、‘RLHF-early’）",
+      "引入策略持续率（Strategy Persistence Rate）作为核心指标",
+      "控制变量分析：跨模型、跨基准、跨执行环境对比策略稳定性"
+    ],
+    "setup": "7个后训练基准、4个基座模型（Qwen、Llama、Phi等）、3种代码执行环境（Claude Code / Codex CLI / OpenCode）、单张H100 GPU、10小时时间上限"
+  },
+  "conclusion": {
+    "findings": "Agent策略层表现出极强的初始承诺性，92.3%轨迹全程未发生策略切换；执行层错误可被修复，但策略层极少自我修正。",
+    "impact": "为Agent架构设计提供新范式：应强化策略生成阶段而非依赖运行时反思；推动‘策略可信度评估’成为新研究方向。",
+    "limitations": "未覆盖多GPU分布式训练场景；策略定义依赖人工标注，泛化性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "PostTrainBe…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "策略动态性评估",
+        "note": "考察Agent在长周期后训练中是否主动调整核心策略",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "双层轨迹分析",
+        "note": "解耦执行动作与策略标签，定义策略持续率指标",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "策略稳定性发现",
+        "note": "92.3%轨迹全程无策略切换，挑战‘反思即智能’预设",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "一策到底现象",
+        "note": "策略层高度固化，执行层容错性强，二者解耦明显",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "架构设计启示",
+        "note": "建议前置策略验证，降低运行时重规划开销",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

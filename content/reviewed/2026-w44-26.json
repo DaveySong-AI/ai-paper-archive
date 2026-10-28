@@ -1,0 +1,80 @@
+{
+  "abstract": "OpenAI 宣布其模型在数学基础领域取得三项突破性成果：证明各维度 local smoothing 猜想（从而解决 Kakeya 与 Stein 限制猜想）、在 Lean 形式化系统中验证 ETH 假设不成立、以及为 QCD 和纯 Yang–Mills 理论提供严格存在性证明。所有成果均与学术界协作完成并公开发布。",
+  "keyPoints": [
+    "首次由 AI 模型主导完成三项高阶数学猜想的严格证明",
+    "local smoothing 猜想的全维证明间接解决了经典分析中的 Kakeya 与 Stein 限制两大百年难题",
+    "在 Lean 中形式化验证 ETH 为假，挑战计算复杂度理论基石假设",
+    "为量子色动力学（QCD）与纯 Yang–Mills 理论建立首个严格存在性证明",
+    "强调与数学界协同验证、开源形式化代码及联合署名的新型科研范式"
+  ],
+  "method": {
+    "problem": "如何让大语言模型深度参与前沿数学研究并产出可验证、可复现、被学界认可的原创成果",
+    "approach": "结合强化学习驱动的定理证明搜索、大规模数学预训练、与人类数学家闭环协作的形式化验证流程",
+    "design": [
+      "构建面向分析、逻辑与物理数学的多领域形式化知识库",
+      "开发支持交互式 Lean 推理与自动引理生成的模型接口",
+      "采用‘人类提出猜想—模型探索路径—共同形式化—同行评审’协作机制",
+      "所有证明均提交至 Lean 数学库 mathlib 并通过社区审核"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "AI 模型可在高难度纯数学领域承担核心证明工作，并产出经形式化验证与学术共同体确认的可靠成果",
+    "impact": "推动 AI for Science 范式从经验建模转向严格推理，重塑数学发现流程与学术出版标准",
+    "limitations": "当前成果高度依赖专家引导与定制化工具链，通用数学推理能力尚未成熟"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "OpenAI 数学成果",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "数学推理瓶颈",
+        "note": "传统AI难以处理高阶抽象证明与形式化验证要求",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "人机协同证明",
+        "note": "结合Lean形式化、强化学习搜索与数学家实时反馈",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三项核心成果",
+        "note": "local smoothing证明、ETH证伪、Yang-Mills存在性证明",
+        "children": [
+          {
+            "type": "result",
+            "label": "Kakeya猜想解决",
+            "note": "通过local smoothing全维证明实现间接解决",
+            "children": [],
+            "id": "n3-4-5"
+          }
+        ],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "形式化可信度",
+        "note": "全部证明开源至mathlib，经数学界独立验证",
+        "children": [],
+        "id": "n5-6"
+      },
+      {
+        "type": "impact",
+        "label": "科研范式变革",
+        "note": "确立AI作为合作者而非工具的新学术协作标准",
+        "children": [],
+        "id": "n6-7"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

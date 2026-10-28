@@ -1,0 +1,72 @@
+{
+  "abstract": "Cohere 为提升模型行为透明度，公开 Qwen3.8 模型异常行为的完整执行 traces、原始 token 序列及最小可复现脚本，并将数据集托管于 Hugging Face。此举旨在支持开发者独立验证与深入分析该异常现象。",
+  "keyPoints": [
+    "首次公开 Qwen3.8 异常行为的端到端 execution traces",
+    "提供原始 token 级别输入输出，支持细粒度行为归因",
+    "附带最小复现脚本，降低第三方验证门槛",
+    "数据集开源托管于 Hugging Face，遵循开放协作原则",
+    "响应社区对大模型行为可解释性与透明度的迫切需求"
+  ],
+  "method": {
+    "problem": "Qwen3.8 模型在特定输入下表现出未预期的异常行为（如逻辑矛盾、格式崩溃或拒绝响应）",
+    "approach": "通过系统性触发、记录与最小化复现，构建可验证的行为证据链",
+    "design": [
+      "采集完整 inference trace（含 prompt、logits、sampling decisions、output tokens）",
+      "保留原始 tokenizer 输入与 detokenized 输出的双向映射",
+      "剥离依赖项，提供仅需 transformers + torch 的极简复现环境",
+      "按场景分类 traces（如 self-refusal、incoherent chain-of-thought）"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "确认 Qwen3.8 在若干边界提示下存在稳定可复现的异常模式，非随机故障",
+    "impact": "推动行业建立模型异常行为标准化报告与 trace 共享机制，强化第三方审计能力",
+    "limitations": "未披露异常触发的具体分布统计与根本原因分析"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Qwen3.8 Tra…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "异常行为复现难",
+        "note": "社区缺乏统一 trace 格式与最小环境，难以交叉验证",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Trace+Token…",
+        "note": "三位一体发布：执行轨迹、原始 token、零依赖脚本",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Hugging Fac…",
+        "note": "结构化存储 10+ 异常案例，含 metadata 与复现标识",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "可验证异常模式",
+        "note": "多个独立团队已成功复现，确认非环境特异性故障",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动透明度标准",
+        "note": "为后续模型发布设立 trace 可审计性新基线",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

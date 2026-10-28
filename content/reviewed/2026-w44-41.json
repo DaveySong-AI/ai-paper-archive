@@ -1,0 +1,72 @@
+{
+  "abstract": "清华与港中文团队开源AKV系统，基于SGLang构建，专为LLM智能体设计的KV cache工程服务。支持Drop（丢弃）和Repos（RoPE旋转重定位）操作，实现KV条目的动态裁剪与重排，无需修改文本历史，提升推理效率与灵活性。",
+  "keyPoints": [
+    "首个面向LLM智能体的专用KV cache服务系统",
+    "支持无损Drop操作，按需丢弃冗余KV条目",
+    "引入Repos机制，通过RoPE旋转实现KV位置重排",
+    "深度集成SGLang运行时，降低智能体开发复杂度",
+    "开源实现，强调工程可部署性与模块化设计"
+  ],
+  "method": {
+    "problem": "LLM智能体在长上下文、多步推理中面临KV cache冗余膨胀、位置编码错位与历史耦合过强等问题",
+    "approach": "将KV cache从模型推理中解耦，构建独立可编程的服务层，提供细粒度缓存操作原语",
+    "design": [
+      "定义Drop接口：基于token重要性或滑动窗口策略移除KV条目",
+      "实现Repos操作：利用RoPE的旋转不变性重映射KV位置索引",
+      "设计轻量通信协议：适配SGLang调度器与后端KV存储",
+      "支持异步缓存生命周期管理：分离生成、访问与回收阶段"
+    ],
+    "setup": "基于SGLang v0.3+，测试覆盖Llama-3、Qwen2等主流开源模型，在多智能体对话与工具调用场景验证"
+  },
+  "conclusion": {
+    "findings": "AKV显著降低智能体推理内存开销（平均减少35% KV体积），保持生成质量无损，并支持动态上下文重组",
+    "impact": "推动LLM智能体从‘黑盒推理’走向‘可编辑缓存’范式，为缓存即服务（CaaS）提供新架构参考",
+    "limitations": "当前依赖RoPE类位置编码；对ALiBi、NTK-aware等编码方式支持待扩展"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AKV",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "KV缓存冗余",
+        "note": "智能体多步推理导致KV体积膨胀、位置错位、历史强耦合",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "解耦式缓存服务",
+        "note": "构建独立KV服务层，提供Drop/Repos原语，集成SGLang运行时",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Drop与Repos操作",
+        "note": "Drop实现无损裁剪；Repos利用RoPE旋转重定位KV位置，不改写文本历史",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "内存减35%",
+        "note": "在多智能体任务中平均降低KV内存占用35%，生成质量无损",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "缓存即服务",
+        "note": "确立LLM智能体KV可编程范式，为CaaS架构提供首个开源系统级实现",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
