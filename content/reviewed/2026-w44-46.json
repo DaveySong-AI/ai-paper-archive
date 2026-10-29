@@ -1,0 +1,72 @@
+{
+  "abstract": "LG AI Research 在 ICML 2026 提出 LOAM 方法，首次利用 LLM 直接设计强化学习中的观测空间与动作空间，而非仅优化奖励函数。该方法将环境原始状态/动作映射解耦为任务驱动的智能体专用表示，并结合领域知识（如机器人结构、终止条件）生成可解释、可部署的设计方案，源于工业排程优化实践。",
+  "keyPoints": [
+    "首创将 LLM 应用于 RL 的观测与动作空间联合设计，突破传统仅调奖励函数的范式",
+    "显式区分环境原始空间与智能体感知/执行空间，引入语义对齐约束",
+    "设计过程融合多源结构化提示：任务目标、终止逻辑、物理约束、变量语义",
+    "在 LG Chem 工厂排程任务中验证可行性，显著降低人工特征工程成本",
+    "支持生成带类型标注与边界说明的观测/动作 schema，提升可解释性与调试效率"
+  ],
+  "method": {
+    "problem": "强化学习中观测与动作空间的手工设计高度依赖专家经验，泛化性差且难以迁移",
+    "approach": "将观测/动作空间建模为符号化 schema 生成任务，由 LLM 基于多维度约束进行端到端推理与构造",
+    "design": [
+      "定义双层空间映射：原始环境接口 ↔ LLM 生成的 agent-centric schema",
+      "构建结构化提示模板，整合任务描述、物理约束、变量语义及安全边界",
+      "引入 schema 验证模块，通过轻量规则检查类型一致性与动作可行性",
+      "支持迭代 refinement：基于模拟反馈修正初始设计"
+    ],
+    "setup": "基于 LG Chem NCC 工厂排程仿真环境，对比人工设计基线与奖励优化基线"
+  },
+  "conclusion": {
+    "findings": "LOAM 生成的观测/动作空间在任务完成率与策略收敛速度上优于人工设计，且更鲁棒于传感器噪声",
+    "impact": "推动 RL 系统向‘LLM-augmented system design’范式演进，降低工业场景 RL 落地门槛",
+    "limitations": "依赖高质量领域提示工程；未覆盖连续动作空间的细粒度参数化设计"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "LOAM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "观测动作设计难",
+        "note": "人工依赖强、泛化差、工业场景调试成本高",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "LLM驱动schema…",
+        "note": "双空间映射+结构化提示+规则验证闭环",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个观测动作联合设计框架",
+        "note": "突破奖励函数优化局限，支持语义可解释输出",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "工厂排程验证有效",
+        "note": "相较人工设计提升收敛速度，鲁棒性增强",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动RL系统设计范式变革",
+        "note": "为LLM-Augmented RL提供新路径，降低工业落地门槛",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

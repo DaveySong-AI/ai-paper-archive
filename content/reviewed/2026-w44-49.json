@@ -1,0 +1,72 @@
+{
+  "abstract": "本文系统梳理了 Web Agent 领域主流基准的分类与特性，将其划分为三类：沙箱站点类（如WebArena）、真实网页在线类（如WebVoyager、Online-Mind2Web）和离线数据集类（如Mind2Web）。分析了各类在可复现性、真实性、评估稳定性及人类行为对齐度上的权衡，为研究者选型提供结构化参考。",
+  "keyPoints": [
+    "Web Agent 基准按部署形态分为沙箱、在线真实网页、离线数据集三类",
+    "沙箱类（WebArena等）保障实验可复现但存在仿真失真",
+    "在线真实网页类（WebVoyager等）最贴近实际使用但分数易受网站变更影响",
+    "离线数据集类（Mind2Web）支持细粒度操作对比，但缺乏动态交互能力",
+    "基准选型需权衡可复现性、真实性、评估稳定性与人类行为对齐度"
+  ],
+  "method": {
+    "problem": "如何系统评估与比较 Web Agent 的跨网页任务执行能力",
+    "approach": "对现有 Web Agent 基准进行横向归类与多维对比分析",
+    "design": [
+      "按运行环境划分三类基准范式",
+      "从可复现性、真实性、漂移鲁棒性、人类操作对齐度四维度建模评估",
+      "梳理各基准的构建逻辑、任务类型与典型局限",
+      "提出面向不同研究目标的基准选型建议框架"
+    ],
+    "setup": ""
+  },
+  "conclusion": {
+    "findings": "三类基准本质是不同评估目标下的折衷设计，无绝对优劣，需依研究目的匹配",
+    "impact": "为 Web Agent 研究提供基准认知地图，推动评估标准化与问题定义清晰化",
+    "limitations": "未量化各基准间性能迁移性，未覆盖新兴多模态或长程导航场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "WebAgentBen…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "评估不统一",
+        "note": "缺乏共识性标准，导致模型性能不可比、结论难复现",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "三类范式划分",
+        "note": "沙箱/在线/离线——对应可复现性、真实性、可控性三角权衡",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "选型决策框架",
+        "note": "基于研究目标（如鲁棒性测试 vs. 人类行为建模）推荐适配基准",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "基准特性对比",
+        "note": "WebArena重控制，WebVoyager重真实，Mind2Web重动作解析；详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动评估演进",
+        "note": "促进从单一分数向多维诊断、从静态数据向动态交互评估发展",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

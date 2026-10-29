@@ -1,0 +1,72 @@
+{
+  "abstract": "清华与港中文团队开源AKV系统，基于SGLang构建的KV cache工程服务，支持LLM智能体在不修改文本历史前提下，通过Drop和Repos（RoPE旋转重定位）动态丢弃或重排KV缓存条目，提升推理效率与状态管理灵活性。",
+  "keyPoints": [
+    "首创面向LLM智能体的KV cache独立工程服务架构",
+    "提出Drop操作实现KV条目选择性丢弃",
+    "提出Repos操作支持RoPE坐标系下的KV重定位与重排",
+    "完全解耦KV管理与文本生成逻辑，保持历史一致性",
+    "深度集成SGLang运行时，零侵入适配现有智能体框架"
+  ],
+  "method": {
+    "problem": "LLM智能体在长上下文、多步骤推理中面临KV cache冗余膨胀、状态更新低效及历史-缓存不一致问题",
+    "approach": "将KV cache抽象为可编程服务层，分离存储、调度与变换逻辑",
+    "design": [
+      "Drop机制：基于语义重要性评分动态裁剪KV条目",
+      "Repos机制：在RoPE位置编码空间内重映射KV索引",
+      "无状态代理接口：智能体仅发送操作指令，不接触原始KV内存",
+      "SGLang原生集成：复用其调度器与并行执行引擎"
+    ],
+    "setup": "基于SGLang v0.3+，测试覆盖Llama-3-8B/70B、Qwen2-7B等模型，在AgentBench与ToolQA任务上验证"
+  },
+  "conclusion": {
+    "findings": "AKV显著降低智能体推理显存占用（平均-38%）并提升多步任务吞吐量（+2.1×），同时保持输出一致性",
+    "impact": "推动LLM智能体从‘黑盒生成’走向‘可控缓存编程’，为状态化推理基础设施提供新范式",
+    "limitations": "当前依赖SGLang生态；Drop/Repos策略泛化性需更多任务验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "AKV",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "KV缓存失控",
+        "note": "智能体长程推理中KV冗余、难更新、与文本历史脱节",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "缓存即服务",
+        "note": "KV抽象为远程可编程服务，解耦生成与缓存操作",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Drop & Repos",
+        "note": "Drop丢弃低价值KV；Repos在RoPE空间重排位置，不改文本历史",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高效可控推理",
+        "note": "显存降38%，吞吐升2.1倍，输出一致性严格保持",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "智能体基建范式",
+        "note": "开启KV可编程时代，支撑记忆管理、工具调用等复杂状态逻辑",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
