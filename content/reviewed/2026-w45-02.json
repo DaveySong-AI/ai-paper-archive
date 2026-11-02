@@ -1,0 +1,72 @@
+{
+  "abstract": "Meta 与 NYU 提出 h1 方法：一种极简循环范式，仅依赖快速 Lean 反馈、搜索工具及每轮失败后重试机制，不引入预设规划；在 PutnamBench 上以 598/597 超越手工工作流 Goedel-Architect，单位成本更低（$1.08 vs $1.47）。",
+  "keyPoints": [
+    "h1 放弃复杂规划架构，采用‘生成→验证→失败即重试’的朴素循环",
+    "关键增益来自高质量 Lean 编译反馈与轻量级搜索工具的实时协同",
+    "每轮前生成进度摘要以维持上下文连贯性，无需长期记忆设计",
+    "在相同基础模型上，h1 以更低计算成本实现更高定理证明通过率",
+    "结果表明：工程简洁性与反馈质量可能比流程复杂性更影响 Lean 推理性能"
+  ],
+  "method": {
+    "problem": "如何在 Lean 定理证明中以更低成本超越高度定制化的手工工作流",
+    "approach": "构建最小可行循环：单次推理→Lean 验证→失败则基于反馈重试，辅以摘要维持状态",
+    "design": [
+      "无预设计划模块，取消多阶段推理链设计",
+      "集成低延迟 Lean 编译器反馈作为核心信号",
+      "嵌入轻量级搜索工具辅助引理选择与策略试探",
+      "每轮执行前生成自然语言进度摘要以锚定上下文"
+    ],
+    "setup": "评估基准为 PutnamBench；对比基线为 Goedel-Architect；成本按美元计，含模型调用与验证开销"
+  },
+  "conclusion": {
+    "findings": "h1 在同等模型下达成更高通过率与更低单题成本，验证极简反馈驱动循环的有效性",
+    "impact": "挑战定理证明系统中‘架构复杂性=性能上限’的默认假设，推动工具化反馈与轻量迭代范式",
+    "limitations": "未报告泛化至其他证明助手（如 Coq、Isabelle）的表现；对 Lean 特定反馈机制依赖性强"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "h1",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Lean证明效率瓶颈",
+        "note": "手工工作流开发成本高、难以扩展，且未必最优",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "反馈驱动循环",
+        "note": "生成→Lean验证→失败重试，辅以摘要与搜索工具",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "极简主义设计",
+        "note": "去除规划模块，聚焦高质量反馈与低延迟验证闭环",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "PutnamBench…",
+        "note": "598 vs 597，单题成本下降26.5%，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "范式启示",
+        "note": "提示定理证明AI应优先优化工具协同与反馈质量，而非堆叠模块",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
