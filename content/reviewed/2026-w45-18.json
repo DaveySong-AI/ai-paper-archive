@@ -1,0 +1,72 @@
+{
+  "abstract": "Epoch AI 实验表明，Z.ai 开源模型 GLM 5.3 可从 Firefox 未发布安全补丁中自动识别漏洞模式，连续在6个版本上构建出完整可用的攻击链，全程未被拒绝，揭示开源大模型在漏洞利用自动化方面的潜在风险。",
+  "keyPoints": [
+    "GLM 5.3 能精准定位 Firefox 尚未推送给用户的补丁（patch gap）",
+    "模型无需人工干预即可端到端生成可运行 exploit 链",
+    "在6个连续 Firefox 版本上均成功构建有效攻击",
+    "全程无一次拒绝响应，显示高可靠性与低防御性",
+    "首次实证开源权重模型具备自主漏洞利用能力"
+  ],
+  "method": {
+    "problem": "如何从公开但未发布的安全补丁中自动推导并构造可用 exploit",
+    "approach": "基于代码差异分析与漏洞语义理解，将补丁逆向映射为可利用场景并生成 exploit",
+    "design": [
+      "输入 Firefox 补丁 diff 作为上下文",
+      "微调 GLM 5.3 以增强漏洞模式识别与 payload 生成能力",
+      "引入 exploit 结构化模板约束输出格式",
+      "通过沙箱环境验证 exploit 可执行性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "GLM 5.3 展现出对未发布安全补丁的 exploit 自动化能力，证实 patch gap 可被模型系统性利用",
+    "impact": "挑战当前‘开源模型更安全’的默认假设，推动红蓝对抗范式向 AI 原生方向演进",
+    "limitations": "实验仅覆盖 Firefox 桌面端 C++ 组件，未评估移动端或 JIT 等复杂场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GLM 5.3 Exp…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Patch Gap 利用",
+        "note": "从尚未推送的补丁中提取可利用漏洞信息",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Diff-to-Exp…",
+        "note": "以补丁 diff 为输入，端到端生成可执行 exploit 链",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个开源 exploi…",
+        "note": "证明开源权重模型可独立完成漏洞利用全链路",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "6连击全成功",
+        "note": "在6个连续 Firefox 版本上均生成可用 exploit，零拒绝",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI 安全范式转变",
+        "note": "迫使厂商重新评估补丁发布策略与模型访问控制",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

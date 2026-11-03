@@ -1,0 +1,72 @@
+{
+  "abstract": "MIT CSAIL 提出 Weight-Space Programming（权重空间编程），使 GPT-6 Astra 模型无需训练、反向传播或梯度计算，直接读取并修改另一模型（如 Qwen3.5-0.8B）的权重参数，显著提升其数学推理能力。",
+  "keyPoints": [
+    "首次实现大语言模型对其他模型权重的零训练直接编辑",
+    "提出 Weight-Space Programming 范式，绕过传统微调与梯度优化",
+    "GPT-6 Astra 充当‘权重编辑器’，以自然语言指令驱动参数修改",
+    "在 Qwen3.5-0.8B 上验证有效性，数学任务性能显著提升",
+    "不依赖数据集、不更新自身参数，仅通过前向推理完成权重重写"
+  ],
+  "method": {
+    "problem": "如何在不训练、无梯度、无额外数据条件下提升目标模型性能",
+    "approach": "将模型权重视为可编程对象，利用大模型理解权重语义并生成修改指令",
+    "design": [
+      "定义权重空间中的可解释操作原语（如缩放、偏移、结构化替换）",
+      "构建权重-任务关联提示模板，引导 GPT-6 Astra 理解权重功能",
+      "引入权重定位机制，精准识别影响数学推理的关键层与参数子集",
+      "设计安全约束模块，防止权重修改导致模型崩溃或发散"
+    ],
+    "setup": "实验基于 Qwen3.5-0.8B 进行权重编辑，评估 GSM8K、MATH 等数学基准；GPT-6 Astra 为固定冻结模型"
+  },
+  "conclusion": {
+    "findings": "证明大语言模型可作为通用权重编辑器，在零训练前提下有效增强异构小模型能力",
+    "impact": "挑战传统模型适配范式，为轻量化部署、边缘AI、模型即服务提供新路径",
+    "limitations": "编辑效果依赖权重可解释性假设；未公开具体编辑精度与泛化边界；Qwen3.5-0.8B 外模型验证尚不充分"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MASSIVE",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "零训练模型增强",
+        "note": "解决小模型性能提升需大量训练资源的问题",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "权重空间编程",
+        "note": "用自然语言指令直接读写神经网络权重参数",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "GPT-6 Astra…",
+        "note": "首个无需梯度、不更新自身参数的跨模型权重编辑框架",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "数学能力提升",
+        "note": "Qwen3.5-0.8B 在 GSM8K 等基准上准确率显著提高，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "新AI部署范式",
+        "note": "推动模型即服务、边缘端动态适配与绿色AI发展",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

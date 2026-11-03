@@ -1,0 +1,72 @@
+{
+  "abstract": "Zyphra AI 提出 Zyphra Hierarchical Attention（ZHA），一种新型稀疏注意力机制。其核心是树状索引器，使注意力检索过程本身具备结构性稀疏性，从而实现真正次二次时间复杂度。该方法仅需约4B token即可完成对冻结预训练模型的高效蒸馏，显著降低计算开销。",
+  "keyPoints": [
+    "提出树状索引器，将注意力检索从稠密遍历转为层级稀疏跳转",
+    "首次实现注意力计算与序列长度呈严格次二次关系（非近似或局部）",
+    "支持在冻结预训练模型上直接蒸馏，无需微调主干参数",
+    "仅需约4B token即可完成高质量知识迁移",
+    "设计轻量、可插拔，兼容主流Transformer架构"
+  ],
+  "method": {
+    "problem": "传统注意力机制计算复杂度为O(n²)，制约长序列建模效率",
+    "approach": "通过层级化索引结构约束注意力权重生成路径，使有效计算点呈树状稀疏分布",
+    "design": [
+      "多级哈希树索引器，动态划分token语义空间",
+      "层级门控机制，逐层过滤无关注意力分支",
+      "稀疏梯度回传路径，保障端到端可训练性",
+      "与位置编码解耦的设计，适配任意序列长度"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "ZHA 在保持语言建模能力前提下，将注意力计算降至O(n log n)量级，并验证了冻结模型蒸馏可行性",
+    "impact": "为长上下文大模型提供可扩展注意力范式，推动边缘部署与超长文档理解发展",
+    "limitations": "树构建开销随序列增长而上升；对高度无序文本的索引效率待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ZHA",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "高复杂度瓶颈",
+        "note": "标准Attention O(n²)限制长序列应用，现有稀疏方法多为启发式近似",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "树状索引器",
+        "note": "构建多级哈希树，将token映射至叶节点，注意力仅在路径节点间激活",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "真正次二次",
+        "note": "理论保证O(n log n)复杂度，非滑动窗口或随机采样等经验稀疏",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "4B token蒸馏",
+        "note": "在冻结LLM上实现高效知识注入，无需修改原始权重",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "长上下文突破",
+        "note": "为1M+ token场景提供可行注意力方案，降低推理成本",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,73 @@
+{
+  "abstract": "苹果提出在线密集强化学习框架，用于在真实iOS应用中实现UI导航。该框架将智能体解耦为Planning agent与UI Grounding模型，利用LLM-as-a-Judge生成步级密集反馈与终局奖励，结合PPO算法与步级优势估计进行端到端训练，显著提升导航鲁棒性与泛化能力。",
+  "keyPoints": [
+    "首次实现直接在真实iOS应用上进行在线密集强化学习训练",
+    "解耦设计：Planning agent负责高层动作规划，UI Grounding模型负责像素级界面元素定位",
+    "引入LLM-as-a-Judge机制，提供细粒度步级反馈与终局成功判定",
+    "采用步级优势估计增强PPO训练稳定性，缓解稀疏奖励问题",
+    "无需模拟器或预构建UI树，支持动态、未见过的真实应用界面"
+  ],
+  "method": {
+    "problem": "真实移动应用UI导航中奖励稀疏、状态空间高维、界面动态变化导致RL训练困难",
+    "approach": "构建在线密集RL框架，通过解耦规划与定位模块、引入LLM密集评判、优化步级策略更新",
+    "design": [
+      "Planning agent基于文本指令与界面摘要生成结构化动作序列",
+      "UI Grounding模型将动作映射至屏幕坐标，支持跨App视觉泛化",
+      "LLM-as-a-Judge依据执行轨迹实时评估每步合理性并打分",
+      "融合步级密集奖励与终局二元奖励，采用GAE进行优势估计",
+      "端到端在线训练：在真实设备上采集交互数据并即时更新策略"
+    ],
+    "setup": "在多款未参与训练的iOS App（含系统应用与第三方应用）上评估；使用iPhone真机运行；训练数据完全来自在线交互"
+  },
+  "conclusion": {
+    "findings": "该框架显著提升真实设备上的UI导航成功率与任务完成效率，具备跨应用迁移能力",
+    "impact": "为具身智能在真实操作系统环境中的落地提供新范式，推动RL从仿真走向真实交互",
+    "limitations": "依赖LLM评判质量与延迟；对极端动态UI（如实时渲染动画）鲁棒性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "PG-UI",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "真实UI导航难",
+        "note": "奖励稀疏、界面动态、无模拟器支持，传统RL难以收敛",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "解耦+密集反馈",
+        "note": "Planning agent与UI Grounding分离；LLM-as-Judge提供步级评分",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "在线密集RL框架",
+        "note": "首个支持真机iOS应用端到端在线训练的RL导航系统",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "跨App导航成功",
+        "note": "在未见App上实现稳定任务完成，优于基线方法，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动具身智能落地",
+        "note": "为OS级智能代理提供可扩展训练范式，降低仿真依赖",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

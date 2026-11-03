@@ -1,0 +1,72 @@
+{
+  "abstract": "Cohere 新论文验证投机解码在细粒度 MoE 模型上的有效性，尤其在 batch size = 1 的极低批量场景下仍显著加速推理，挑战了此前认为其仅在高 batch 下才具实用价值的共识。",
+  "keyPoints": [
+    "首次实证表明投机解码在细粒度 MoE 架构上对单样本推理（batch size 1）仍具高效性",
+    "推翻了先前工作关于低批量下投机解码收益有限的理论预测",
+    "揭示 MoE 的稀疏激活特性与投机解码的草稿-验证机制存在天然协同优势",
+    "无需修改 MoE 路由逻辑或模型结构，即可直接部署投机解码",
+    "为资源受限场景（如端侧/实时交互）下的 MoE 推理优化提供新路径"
+  ],
+  "method": {
+    "problem": "如何在细粒度 MoE 模型上实现低延迟、高吞吐的生成式推理，尤其在 batch size = 1 场景下",
+    "approach": "将标准投机解码框架适配至细粒度 MoE 架构，保持原有路由与专家选择机制不变，仅引入轻量级草稿模型与验证逻辑",
+    "design": [
+      "复用同一 MoE 主干网络的子集专家作为草稿模型",
+      "设计专家激活一致性约束，减少草稿与目标模型间分布偏移",
+      "采用 token-level 验证而非 sequence-level，适配 MoE 的动态稀疏性",
+      "支持无额外参数的在线蒸馏式草稿初始化"
+    ],
+    "setup": "在多个细粒度 MoE 语言模型（如 Cohere Command R+ 变体）上测试，对比 batch size 1 与 4/8 场景下的端到端延迟与接受率"
+  },
+  "conclusion": {
+    "findings": "投机解码在细粒度 MoE 上即使 batch size = 1 也能实现稳定加速（平均接受率 >35%，延迟降低 2.1×），且不损害输出质量",
+    "impact": "重塑 MoE 推理优化范式，推动低批量、高响应场景下 MoE 的实际落地，为开源社区提供可即插即用的加速方案",
+    "limitations": "未系统评估跨专家分布偏移严重时的鲁棒性；对非自回归草稿策略的支持尚不明确"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Cohere-MoE-…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "低批量MoE推理慢",
+        "note": "batch size=1时传统加速方法失效，响应延迟高",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "适配投机解码",
+        "note": "复用MoE子专家作草稿，token级验证，零结构修改",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "突破batch限制",
+        "note": "实证证明batch=1仍高效，颠覆 prior work 预期",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "稳定加速2.1×",
+        "note": "平均接受率>35%，质量无损，详见原文实验",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动MoE落地",
+        "note": "为端侧、实时对话等低批量场景提供可行推理方案",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

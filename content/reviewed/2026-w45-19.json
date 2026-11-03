@@ -1,0 +1,72 @@
+{
+  "abstract": "清华与微软提出HarnessMM方法，通过让模型预先生成带校验条件的后续命令，使工具执行结果满足条件时直接执行、跳过LLM调用，显著降低token消耗。在98个HumanEval任务上，DeepSeek Harness成功率提升至85.71%，token减少87.93%；Codex成功率稳定在90.82%，token减少29.54%。",
+  "keyPoints": [
+    "提出HarnessMM框架，实现工具调用与LLM推理的协同优化",
+    "引入前置校验条件生成机制，支持结果自验证后直行跳过LLM",
+    "大幅降低token消耗，DeepSeek Harness节省超87% token",
+    "在HumanEval基准上兼顾成功率提升与效率优化",
+    "方法具有模型无关性，已在DeepSeek与Codex上验证有效"
+  ],
+  "method": {
+    "problem": "大模型工具调用中重复LLM推理导致的高token开销与低效执行",
+    "approach": "通过预生成可验证的工具调用指令，构建条件触发式执行流程，减少冗余LLM介入",
+    "design": [
+      "校验条件前置生成：LLM在调用工具前同步输出结构化校验逻辑",
+      "结果自动验证：工具返回值经轻量解析器匹配校验条件",
+      "执行路径动态分流：校验通过则直行，失败才触发LLM重规划",
+      "指令-校验联合建模：统一prompt模板支持多工具与多条件组合"
+    ],
+    "setup": "98个HumanEval编程任务，对比DeepSeek-V2与Codex在HarnessMM与原版Harness下的成功率及token消耗"
+  },
+  "conclusion": {
+    "findings": "HarnessMM显著降低token用量且不损害甚至提升成功率，验证了校验驱动执行范式的有效性",
+    "impact": "为LLM工具调用提供新范式，推动高效、可控、低成本的Agent系统发展",
+    "limitations": "校验条件生成质量依赖模型能力，复杂逻辑场景泛化性需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "HarnessMM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "工具调用开销高",
+        "note": "LLM频繁介入工具执行，造成冗余推理与token浪费",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "校验驱动执行",
+        "note": "预生成带校验的指令，结果合规则跳过LLM直接执行",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "HarnessMM框架",
+        "note": "支持前置校验生成、自动验证、动态路径分流的端到端方法",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "Token降本增效",
+        "note": "DeepSeek减87.93% token，成功率升至85.71%；Codex减29.54%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "Agent效率新范式",
+        "note": "为构建低延迟、低成本、高可控的工具增强型AI系统提供基础",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
