@@ -1,0 +1,72 @@
+{
+  "abstract": "清华与微软提出HarnessMM方法，通过让模型预先生成带校验条件的后续命令，使工具执行结果满足条件时直接执行、跳过LLM调用，显著降低token消耗。在98个HumanEval任务上，DeepSeek Harness成功率提升至85.71%，token减少87.93%；Codex成功率维持90.82%，token减少29.54%。",
+  "keyPoints": [
+    "提出HarnessMM框架，实现工具调用与LLM推理的协同优化",
+    "引入前置校验条件生成机制，支持结果合规时跳过LLM重推理",
+    "显著降低token消耗：DeepSeek减少87.93%，Codex减少29.54%",
+    "在HumanEval基准上提升DeepSeek成功率（71.43%→85.71%）",
+    "保持高成功率前提下实现计算效率跃升，验证‘条件驱动执行’有效性"
+  ],
+  "method": {
+    "problem": "大模型调用外部工具时重复推理导致token浪费与延迟增加",
+    "approach": "设计条件化执行流程：LLM一次生成含校验逻辑的指令，工具结果满足条件则直通执行，否则触发轻量回退",
+    "design": [
+      "校验条件嵌入：LLM输出中结构化包含预期结果约束",
+      "双路径执行：工具结果自动匹配校验条件，匹配成功则跳过LLM再调用",
+      "轻量回退机制：校验失败时仅局部重生成而非全链重推",
+      "任务适配接口：统一封装不同工具的输入/输出与校验协议"
+    ],
+    "setup": "98个HumanEval编程任务；对比DeepSeek-V2与Codex；评估指标为成功率与总token消耗量"
+  },
+  "conclusion": {
+    "findings": "HarnessMM在保障甚至提升任务成功率的同时，大幅削减token用量，验证条件驱动执行范式的有效性",
+    "impact": "为LLM+工具协同系统提供新优化范式，推动高效、低成本Agent架构发展",
+    "limitations": "校验条件生成质量依赖LLM能力；复杂多步任务中的条件泛化性有待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "HarnessMM",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "工具调用冗余",
+        "note": "LLM频繁重调用工具导致token浪费与延迟",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "条件化执行",
+        "note": "LLM生成带校验指令，工具结果合规则直通执行",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "HarnessMM框架",
+        "note": "含校验嵌入、双路径执行、轻量回退三大设计",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能显著提升",
+        "note": "DeepSeek成功率↑14.28%，token↓87.93%；Codex token↓29.54%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "高效Agent范式",
+        "note": "为LLM+工具系统提供低开销、高可靠新路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

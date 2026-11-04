@@ -1,0 +1,71 @@
+{
+  "abstract": "Cohere 新论文验证投机解码在细粒度 MoE 模型上的有效性，尤其在 batch size = 1 的极低批量场景下仍显著加速推理，挑战了此前认为其仅在高 batch 下才具实用价值的共识。",
+  "keyPoints": [
+    "首次实证表明投机解码在细粒度 MoE 架构上对单样本推理（batch size 1）仍具高效性",
+    "推翻了先前工作关于低批量下投机解码收益有限的理论预测",
+    "揭示 MoE 的稀疏激活特性与投机解码的草稿-验证机制存在天然协同",
+    "为资源受限或实时交互场景下的 MoE 推理优化提供了新路径"
+  ],
+  "method": {
+    "problem": "如何在细粒度 MoE 模型中实现低延迟、高吞吐的生成式推理，尤其在单样本场景下",
+    "approach": "将投机解码范式适配至细粒度 MoE 架构，分析其在小批量甚至 batch size 1 下的加速潜力与稳定性",
+    "design": [
+      "采用轻量级草稿模型匹配 MoE 的专家路由分布",
+      "设计专家级缓存复用机制以降低验证开销",
+      "引入动态草稿长度调整策略应对 MoE 输出不确定性",
+      "在 token 粒度对齐 MoE 的稀疏激活与投机验证步长"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "投机解码在细粒度 MoE 上具备强鲁棒性，batch size 1 下仍可观测到显著推理加速",
+    "impact": "拓展了投机解码的应用边界，推动 MoE 模型在边缘设备与实时服务中的落地",
+    "limitations": "未系统评估跨 MoE 架构泛化性及长序列下的稳定性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Cohere-MoE-…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "低批量MoE推理慢",
+        "note": "batch size=1时传统优化方法收益有限，延迟敏感场景亟需突破",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "投机解码适配",
+        "note": "针对细粒度MoE设计轻量草稿模型与专家感知验证机制",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "颠覆性实证发现",
+        "note": "证实batch size 1下仍有效，挑战既有理论假设",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "显著加速单样本",
+        "note": "推理延迟下降明显，且保持输出质量无损",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动MoE实用化",
+        "note": "为端侧、对话等低延迟场景提供可行技术路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

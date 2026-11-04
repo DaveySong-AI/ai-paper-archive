@@ -1,0 +1,72 @@
+{
+  "abstract": "Zyphra 提出 ZHA（Zyphra Hierarchical Attention），一种基于树搜索的分层稀疏注意力机制。它通过构建 token 层次化树结构并执行高效树搜索，为每个 query 动态定位高相关性 token 子集，在合理 top-p 阈值下实现亚二次时间复杂度，避免了传统稀疏方法对全局二次索引器的依赖。",
+  "keyPoints": [
+    "提出分层树结构建模 token 间语义/位置关系",
+    "用轻量级树搜索替代全序列 attention 计算",
+    "动态确定 query 相关 token 集合，支持自适应稀疏度",
+    "理论与实证表明复杂度低于 O(n²)，优于需二次索引的稀疏方法",
+    "无需预训练索引器，端到端可微（设计上支持）"
+  ],
+  "method": {
+    "problem": "降低长上下文 Transformer 的注意力计算复杂度，突破现有稀疏方法仍依赖二次索引的瓶颈",
+    "approach": "将 token 序列组织为多级层次树，对每个 query 执行自顶向下的剪枝树搜索以定位相关子集",
+    "design": [
+      "构建平衡语义-位置混合树（如 k-ary 树）",
+      "节点存储聚合特征（如均值、可学习原型）用于快速相似性评估",
+      "逐层 top-p 剪枝策略控制搜索宽度与精度权衡",
+      "支持梯度回传的可微树搜索近似（如 Gumbel-Softmax 或软路由）"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "ZHA 在保持模型性能前提下显著降低长序列注意力计算开销，验证了分层树搜索路径的有效性与可扩展性",
+    "impact": "为长上下文建模提供新范式，推动无索引、低复杂度稀疏注意力的发展",
+    "limitations": "树结构构建开销、极端长度下的树平衡性、硬件友好性待进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ZHA",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "高复杂度瓶颈",
+        "note": "传统稀疏注意力仍依赖二次索引器，难以真正实现亚二次计算",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "分层树搜索",
+        "note": "构建混合语义-位置树，逐层 top-p 剪枝定位相关 token",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "无索引亚二次方案",
+        "note": "首次实现不依赖全局索引器的端到端可微稀疏注意力",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "复杂度显著下降",
+        "note": "在标准长文本基准上验证亚二次缩放行为与质量保持",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "长上下文新路径",
+        "note": "为 LLMs 处理超长文档、代码、生物序列等场景提供基础支持",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

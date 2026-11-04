@@ -1,0 +1,72 @@
+{
+  "abstract": "Y Combinator 与 Olam Labs 在《我的世界》中构建大规模AI智能体集群，利用Mindcraft和Mineflail等工具测试协作与对抗行为。实验发现：多智能体协作易陷入官僚化低效状态；在GPT与Claude的对战中，GPT智能体胜率达6/7；系统揭示了大模型驱动智能体在开放环境中的行为涌现特性。",
+  "keyPoints": [
+    "首次在《我的世界》中部署上百个LLM驱动智能体进行长期集群实验",
+    "观察到协作过程中出现显著官僚化现象：冗余沟通、角色僵化、决策延迟",
+    "GPT系列模型在资源争夺与策略对抗任务中显著优于Claude（6胜1负）",
+    "验证了游戏沙盒作为AI行为评估平台的有效性与可扩展性",
+    "提出‘环境诱导行为偏差’假说：开放世界复杂性会放大模型固有倾向"
+  ],
+  "method": {
+    "problem": "如何在开放、动态、具身环境中评估大规模LLM智能体的协作与对抗能力",
+    "approach": "基于《我的世界》构建多智能体沙盒实验场，结合程序化环境生成与LLM驱动决策闭环",
+    "design": [
+      "使用Mindcraft实现智能体感知-规划-行动链路自动化",
+      "通过Mineflail注入结构化任务目标与资源约束",
+      "设计双模态评估：任务完成率 + 社会行为指标（如指令转发次数、角色切换频率）",
+      "采用A/B对照：GPT-4-turbo vs Claude-3.5-Sonnet 驱动智能体同场竞技"
+    ],
+    "setup": "实验规模超120个智能体，运行时长累计逾200小时，地图动态生成，资源分布非均匀"
+  },
+  "conclusion": {
+    "findings": "LLM智能体集群在开放世界中展现出强适应性但协作效率随规模增长而下降；模型架构差异导致对抗策略偏好显著不同",
+    "impact": "为具身AI评估提供新范式，推动游戏引擎与大模型协同研究发展",
+    "limitations": "实验局限于《我的世界》特定模组生态；未控制训练数据偏差对行为的影响"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MineAgent",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "多智能体协作瓶颈",
+        "note": "开放环境中协调成本指数上升，出现类官僚行为",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "沙盒实验框架",
+        "note": "Mindcraft+Mineflail构建可复现、可度量的智能体交互场",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "行为评估新指标",
+        "note": "引入社会性行为量化维度，超越传统任务成功率",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "GPT显著胜出",
+        "note": "6胜1负结果反映其在长程规划与策略欺骗上的优势",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "具身AI测试范式",
+        "note": "推动游戏引擎成为大模型行为科学的重要实验基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

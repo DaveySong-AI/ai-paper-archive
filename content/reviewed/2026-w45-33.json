@@ -1,0 +1,72 @@
+{
+  "abstract": "Epoch AI 实验表明，Z.ai 开源模型 GLM 5.3 能从 Firefox 未发布补丁代码中识别安全修复差异（patch gap），并在 6 个连续版本上自主构建完整可运行的 exploit 链，全程未被拒绝，揭示开源大模型在漏洞利用生成方面的潜在风险。",
+  "keyPoints": [
+    "首次实证展示开源语言模型可跨版本持续利用未公开补丁推断漏洞并生成可用 exploit",
+    "GLM 5.3 在无微调、无人工干预下完成从 patch 分析到 exploit 链构造的端到端自动化",
+    "攻击成功依赖对 Mozilla 公开代码仓库中‘已提交但未发布’安全补丁的语义理解能力",
+    "实验暴露‘patch gap’——即补丁公开但尚未推送至用户端的时间窗口带来的新型供应链风险",
+    "结果挑战当前开源模型安全评估范式，凸显对代码生成类能力缺乏针对性红队测试"
+  ],
+  "method": {
+    "problem": "评估开源代码大模型是否能利用未发布安全补丁生成真实可用的漏洞利用链",
+    "approach": "基于 Firefox 公开代码仓库中的未发布安全补丁，向 GLM 5.3 提供上下文并引导其生成 exploit",
+    "design": [
+      "选取 Mozilla 代码库中已合入但未随浏览器版本发布的安全补丁作为输入源",
+      "构造标准化提示模板，要求模型分析补丁语义、定位漏洞类型并生成可执行 exploit",
+      "对每个补丁独立运行推理，验证生成 payload 是否能在对应旧版 Firefox 上触发预期行为",
+      "记录成功率、链完整性（如信息泄露→任意代码执行）及模型响应拒绝率"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "GLM 5.3 在全部 6 个测试版本中均成功生成可运行 exploit，零拒绝，证实其具备高可靠性漏洞利用生成能力",
+    "impact": "为开源模型安全治理敲响警钟，推动建立针对代码生成能力的专项红队框架与补丁披露协同机制",
+    "limitations": "实验局限于 Firefox 单一项目，未覆盖 Chromium 或内核级漏洞；未测试对抗性提示鲁棒性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GLM-5.3 Exp…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Patch Gap 利用",
+        "note": "利用已提交但未发布的安全补丁生成exploit",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "端到端自动exploi…",
+        "note": "从补丁分析→漏洞定位→payload构造全链路自动化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首个开源模型explo…",
+        "note": "6个Firefox版本连续成功，零拒绝，开源模型首例",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高可靠性exploit链",
+        "note": "生成完整可执行exploit，含信息泄露与RCE组合",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重塑模型安全评估",
+        "note": "倒逼建立代码生成类AI的专项红队与补丁协同机制",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

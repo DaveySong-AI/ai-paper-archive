@@ -1,0 +1,72 @@
+{
+  "abstract": "MIT CSAIL 提出 Weight-Space Programming（WSP），使 GPT-6 Astra 模型无需训练或梯度计算，直接读取并改写 Qwen3.5-0.8B 的权重参数，显著提升其数学推理能力。该方法绕过传统微调范式，探索大模型作为通用权重编辑器的新角色。",
+  "keyPoints": [
+    "首次实现大语言模型（GPT-6 Astra）对另一模型（Qwen3.5-0.8B）权重的零训练直接编辑",
+    "提出 Weight-Space Programming（WSP）新范式，脱离反向传播与数据依赖",
+    "编辑目标聚焦数学任务性能提升，验证权重空间可解释性与可控性",
+    "不依赖梯度、不接触训练数据、不更新自身参数，仅通过前向推理生成权重更新指令",
+    "为模型间知识迁移、轻量级模型增强和神经网络可编程化提供新路径"
+  ],
+  "method": {
+    "problem": "如何在不训练、无梯度、无数据的前提下提升小模型（Qwen3.5-0.8B）的数学推理能力",
+    "approach": "将大模型（GPT-6 Astra）用作权重空间的程序生成器，解析目标模型权重结构并输出参数修改指令",
+    "design": [
+      "权重序列化：将Qwen3.5-0.8B的FP16权重线性化为tokenizable文本序列",
+      "指令提示工程：设计多阶段系统提示，引导Astra理解权重语义与数学能力关联",
+      "局部编辑策略：仅修改与注意力层、MLP中间激活相关的关键子矩阵",
+      "校验重加权机制：插入轻量验证模块确保编辑后权重数值稳定性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "GPT-6 Astra 可稳定提升 Qwen3.5-0.8B 在GSM8K等数学基准上的准确率，且编辑过程完全脱离训练流程",
+    "impact": "挑战‘模型即黑盒’认知，推动大模型向‘通用神经编译器’演进，影响模型压缩、边缘部署与AI协作范式",
+    "limitations": "当前仅验证单一模型对单一任务的编辑效果；权重编辑泛化性、跨架构兼容性及理论保障尚待研究"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "WSP",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "零训练权重编辑",
+        "note": "解决小模型数学能力弱问题，不依赖梯度、数据或训练循环",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "权重空间编程",
+        "note": "将目标模型权重序列化为文本，由GPT-6 Astra生成编辑指令",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "WSP新范式",
+        "note": "首次实现LLM作为权重编辑器，定义权重可编程性新接口",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "数学性能提升",
+        "note": "Qwen3.5-0.8B在GSM8K等基准上取得显著准确率增益",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "神经编译器愿景",
+        "note": "为模型间协作、低资源AI增强与可解释AI提供基础框架",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

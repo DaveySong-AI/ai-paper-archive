@@ -1,0 +1,73 @@
+{
+  "abstract": "苹果提出在线密集强化学习框架，直接在真实iOS应用上训练UI导航智能体。该框架解耦为Planning agent与UI Grounding模型，利用LLM-as-a-Judge生成步级密集反馈与终局奖励，结合PPO算法与步级优势估计实现高效在线训练。",
+  "keyPoints": [
+    "首次实现端到端在线强化学习，在真实iOS应用环境中直接训练UI导航智能体",
+    "采用Planning-Grounding双模块架构，分离高层规划与界面元素定位",
+    "引入LLM-as-a-Judge机制，提供细粒度步级反馈与任务完成信号",
+    "设计步级优势估计方法，提升PPO在稀疏、延迟奖励场景下的收敛性",
+    "无需模拟器或预录轨迹，支持动态更新的App UI与真实交互延迟"
+  ],
+  "method": {
+    "problem": "在真实iOS应用中实现鲁棒、可泛化的端到端UI导航，克服环境不可控、奖励稀疏、界面动态变化等挑战",
+    "approach": "构建在线密集强化学习框架，通过双模块协同与LLM驱动的密集监督，实现真实设备上的闭环训练",
+    "design": [
+      "Planning agent基于文本指令生成结构化动作序列（如'点击设置图标'）",
+      "UI Grounding模型实时解析屏幕截图与可操作元素，完成像素级动作定位",
+      "LLM-as-a-Judge根据当前状态、动作与目标，输出步级合理性评分与终局成功判断",
+      "采用步级优势估计（Step-wise Advantage Estimation）替代传统GAE，适配短周期交互",
+      "在线数据采集与策略更新同步进行，支持热启动与增量适应"
+    ],
+    "setup": "在多款iOS系统版本与真实App（含Settings、Health、Maps）上部署；使用iPhone真机执行交互；训练全程无模拟器介入"
+  },
+  "conclusion": {
+    "findings": "该框架显著提升真实设备UI导航成功率与泛化能力，相比基线方法减少37%无效动作，支持跨App零样本迁移",
+    "impact": "为移动AI代理开辟了免模拟器、强实用性的新范式，推动RL在真实操作系统层的应用落地",
+    "limitations": "依赖LLM判据质量与延迟，对极端低对比度UI或动态遮罩场景鲁棒性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "PG-Nav",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "真实UI导航难",
+        "note": "环境不可控、奖励稀疏、界面动态变化，传统RL难以适用",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "双模块+LLM判据",
+        "note": "Planning agent生成语义动作，UI Grounding定位像素，LLM提供步级反馈",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "在线密集RL框架",
+        "note": "首个支持真机iOS端到端在线训练的RL导航系统，无需模拟器或录制数据",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高效跨App导航",
+        "note": "在Settings/Health等App中达成高成功率，支持零样本迁移，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "移动AI新范式",
+        "note": "推动RL从仿真走向真实OS交互，为个人智能代理奠定工程基础",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

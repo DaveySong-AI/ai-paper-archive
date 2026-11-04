@@ -1,0 +1,72 @@
+{
+  "abstract": "Meta 与 NYU 提出 h1 方法：一种极简循环框架，仅依赖快速 Lean 反馈、搜索工具及每轮失败后重试机制，不引入预设规划；在 PutnamBench 上以 598/600 超越手工构建的 Goedel-Architect（597/600），且单题成本更低（$1.08 vs $1.47）。",
+  "keyPoints": [
+    "h1 是无显式规划的简单循环：生成→验证→失败则摘要+重试",
+    "仅依赖高质量 Lean 工具链与实时反馈，不修改模型架构",
+    "在同等模型基础上，性能超越精心设计的手工工作流",
+    "强调计算资源与工具闭环的价值，而非复杂控制逻辑",
+    "成本效益显著：单题推理成本降低约 26%"
+  ],
+  "method": {
+    "problem": "如何在不增加模型能力前提下，提升大语言模型在形式化定理证明中的成功率与经济性",
+    "approach": "构建轻量级外部循环框架 h1，利用 Lean 验证器提供即时反馈，并通过迭代摘要维持上下文连贯性",
+    "design": [
+      "每次生成 Lean 代码后立即调用 Lean 验证器进行快速检查",
+      "失败时生成简洁进度摘要作为下一轮提示的一部分",
+      "集成外部搜索工具辅助引理检索与上下文增强",
+      "完全放弃多阶段计划生成与子目标分解模块"
+    ],
+    "setup": "评估基准为 PutnamBench；对比系统为 Goedel-Architect；所有实验基于同一基础 LLM"
+  },
+  "conclusion": {
+    "findings": "极简循环 h1 在性能与成本上均优于复杂手工工作流，表明工具闭环与反馈密度比控制逻辑复杂度更关键",
+    "impact": "挑战了‘越复杂越有效’的定理证明工作流设计范式，推动轻量、可复现、高性价比的自动化证明研究",
+    "limitations": "未报告在其他形式化系统（如 Coq、Isabelle）上的泛化性；对 Lean 版本与工具链强依赖"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "h1",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "定理证明效率瓶颈",
+        "note": "现有工作流依赖复杂规划，但成本高、鲁棒性差",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "轻量反馈循环",
+        "note": "生成→Lean验证→失败摘要→重试，无预设计划",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "极简高效框架",
+        "note": "仅需工具链支持与摘要机制，无需模型修改或额外训练",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "SOTA 成本性能比",
+        "note": "PutnamBench 598/600，单题成本$1.08，超Goedel-Architect",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "范式简化启示",
+        "note": "凸显工具闭环与计算密度价值，降低工程门槛",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
