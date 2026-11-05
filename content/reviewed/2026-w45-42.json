@@ -1,0 +1,72 @@
+{
+  "abstract": "MIT CSAIL 提出 Weight-Space Programming 方法，使 GPT-6 Astra 模型无需训练、反向传播或梯度计算，直接读取并修改另一轻量模型（Qwen3.5-0.8B）的权重参数，显著提升其数学推理能力。",
+  "keyPoints": [
+    "首次实现大语言模型对小模型权重的零训练直接编程",
+    "绕过传统微调范式，不依赖数据集、损失函数或优化器",
+    "在权重空间中执行语义化编辑，而非输入/输出层干预",
+    "验证了跨架构权重操作的可行性（GPT-6 → Qwen）",
+    "聚焦数学任务性能提升，体现权重编辑的任务导向性"
+  ],
+  "method": {
+    "problem": "如何在不训练的前提下提升小模型特定能力（如数学推理）",
+    "approach": "将模型权重视为可编辑的‘程序内存’，由大模型生成权重更新指令",
+    "design": [
+      "权重分块语义解析：将目标模型权重划分为功能子模块并标注语义角色",
+      "指令-权重映射协议：定义自然语言指令到权重张量变换的操作符集",
+      "安全写入约束：限制修改范围与幅度，防止模型崩溃",
+      "零样本校准：利用大模型内部知识生成适配小模型结构的权重增量"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Weight-Space Programming 可在无训练条件下定向增强小模型能力，数学任务准确率显著提升",
+    "impact": "挑战传统AI能力迁移范式，开辟模型间‘权重级协作’新路径",
+    "limitations": "当前仅验证单一任务与模型组合；权重编辑泛化性与理论边界尚不明确"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MASSIVE",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "零训练能力迁移",
+        "note": "避免训练开销与数据依赖，实现快速模型增强",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "权重空间编程",
+        "note": "将权重视为可读写内存，用大模型生成编辑指令",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Weight-Spac…",
+        "note": "首个无需梯度、数据或训练的跨模型权重编辑框架",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "数学性能提升",
+        "note": "Qwen3.5-0.8B 在数学基准上取得显著准确率增益",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "新协作范式",
+        "note": "推动模型间直接权重级交互，重构AI系统设计逻辑",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

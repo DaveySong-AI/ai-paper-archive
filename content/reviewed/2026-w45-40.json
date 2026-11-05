@@ -1,0 +1,72 @@
+{
+  "abstract": "Zyphra 提出 ZHA（分层注意力），通过构建多级 token 树并结合树搜索为每个 query 动态定位高相关性 token 子集，避免全连接计算，在合理 top-p 阈值下实现亚二次时间复杂度，显著降低稀疏注意力的索引开销。",
+  "keyPoints": [
+    "提出分层树结构建模 token 相关性，支持高效层级检索",
+    "采用树搜索替代全局 top-k 索引，消除二次复杂度瓶颈",
+    "ZHA 在保持建模能力前提下实现亚二次计算复杂度",
+    "无需预训练索引器或额外参数，端到端可微",
+    "适用于长序列建模，兼顾效率与精度平衡"
+  ],
+  "method": {
+    "problem": "现有稀疏注意力方法依赖二次复杂度索引器（如 FAISS、LSH），难以扩展至超长序列",
+    "approach": "将 token 空间组织为层次化树结构，以 query 为起点进行自顶向下树搜索，动态剪枝低相关分支",
+    "design": [
+      "基于 token embedding 构建平衡 k-ary 分层树",
+      "引入可学习的节点相关性打分函数指导搜索路径",
+      "在每层应用 top-p 阈值控制分支扩展数量",
+      "支持梯度回传的近似搜索优化机制"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "ZHA 在标准长文本基准上验证了亚二次复杂度可行性，推理延迟随序列长度呈次线性增长",
+    "impact": "为大模型长上下文推理提供新范式，推动稀疏注意力从工程启发走向结构化建模",
+    "limitations": "树构建与搜索的最优深度/分支数需任务适配，理论收敛性分析待完善"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "ZHA",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "稀疏索引开销大",
+        "note": "现有方法依赖二次复杂度索引器，制约长序列扩展",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "分层树搜索",
+        "note": "构建 token 层级树，query 驱动自顶向下动态剪枝搜索",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "亚二次复杂度",
+        "note": "在合适 top-p 下实现 O(n log n) 或更优，优于 O(n²) 索引基方法",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高效长序列建模",
+        "note": "实测显示延迟增长趋缓，支持百万级 token 上下文推理",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "结构化稀疏新范式",
+        "note": "推动注意力机制从启发式稀疏转向可学习、可解释的层级建模",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

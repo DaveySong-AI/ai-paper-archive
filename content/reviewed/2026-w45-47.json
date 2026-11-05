@@ -1,0 +1,72 @@
+{
+  "abstract": "Epoch AI 实验表明，Z.ai 开源模型 GLM 5.3 可从 Firefox 未发布补丁代码中识别安全修复差异（patch gap），并在6个连续版本上自主构建完整可用攻击链，全程未拒绝任何请求，揭示开源大模型在漏洞利用生成方面的高风险能力。",
+  "keyPoints": [
+    "首次实证显示开源语言模型可跨版本稳定推导未发布补丁对应漏洞并生成exploit",
+    "GLM 5.3 在无微调、无人工干预下完成从补丁逆向→漏洞分析→POC构造→exploit链组装全流程",
+    "攻击生成不依赖CVE编号或历史漏洞知识，纯基于代码diff语义理解",
+    "实验聚焦Firefox浏览器真实未发布安全补丁，具备强现实威胁意义",
+    "结果挑战当前‘开源模型安全性低于闭源’的普遍假设"
+  ],
+  "method": {
+    "problem": "如何评估开源大模型对未公开安全补丁的逆向利用能力",
+    "approach": "以Firefox未合并/未发布的安全补丁为输入，测试模型能否自主推导漏洞机理并生成可运行exploit",
+    "design": [
+      "选取6个连续Firefox版本中尚未推送给用户的补丁commit作为prompt输入",
+      "禁用模型拒绝响应机制，强制输出exploit构造过程与代码",
+      "使用沙箱环境验证生成exploit的实际触发效果与稳定性",
+      "对比人工审计耗时与模型端到端耗时，量化自动化程度"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "GLM 5.3 具备稳定、免拒绝、跨版本的补丁逆向exploit生成能力，证实patch gap可被模型系统性利用",
+    "impact": "重塑开源模型安全评估范式，推动‘补丁即漏洞情报’防御体系升级，警示开源权重模型的双刃剑属性",
+    "limitations": "未覆盖Chrome/WebKit等其他引擎；未测试对抗性补丁扰动下的鲁棒性"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GLM 5.3 补丁利…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "补丁缺口利用",
+        "note": "评估模型从未发布补丁推导漏洞并生成exploit的能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "补丁驱动测试",
+        "note": "以Firefox未推送commit为输入，在沙箱中验证生成exploit有效性",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "首证开源模型explo…",
+        "note": "6个版本连续成功，全程无拒绝，突破传统安全模型能力边界",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "稳定exploit链输出",
+        "note": "涵盖漏洞定位、POC编写、内存布局控制、提权链组装全流程",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重定义模型安全边界",
+        "note": "推动补丁管理策略升级，警示开源权重模型可能成为自动化攻击基础设施",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

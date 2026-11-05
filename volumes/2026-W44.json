@@ -2,13 +2,13 @@
   "isoWeek": "2026-W44",
   "startDate": "2026-10-26",
   "endDate": "2026-11-01",
-  "windowStart": "2026-10-28",
+  "windowStart": "2026-10-29",
   "windowEnd": "2026-11-01",
-  "poolTotal": 65,
-  "paperCount": 50,
-  "curatedCount": 7,
-  "sourceCount": 17,
-  "selectionRule": "窗口内共 65 篇，按综合评分取前 50 篇（含全部 7 篇编辑精选），按时间倒序展示，不按评分排序。",
+  "poolTotal": 49,
+  "paperCount": 49,
+  "curatedCount": 5,
+  "sourceCount": 16,
+  "selectionRule": "窗口内共 49 篇，按综合评分取前 49 篇（含全部 5 篇编辑精选），按时间倒序展示，不按评分排序。",
   "papers": [
     "2026-w44-01",
     "2026-w44-02",
@@ -58,7 +58,6 @@
     "2026-w44-46",
     "2026-w44-47",
     "2026-w44-48",
-    "2026-w44-49",
-    "2026-w44-50"
+    "2026-w44-49"
   ]
 }
