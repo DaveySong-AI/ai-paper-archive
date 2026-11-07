@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 论文档案库</title>
+    <link>https://daveysong-ai.github.io/ai-paper-archive/</link>
+    <description>按 ISO 周归档的 AI 论文清单，以及人工策划的领域经典论文。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 07 Nov 2026 06:40:20 GMT</lastBuildDate>
+    <atom:link href="https://daveysong-ai.github.io/ai-paper-archive/feed.xml" rel="self" type="application/rss+xml"/>
+    <!-- 最新卷宗 2026-W45，本源收录最近 30 篇，最新一篇 2026-11-07 -->
+    <item>
+      <title>Anthropic 研究《The components of agent memory》：Claude 智能体靠做梦机制整理记忆提升长任务表现</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-01/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-01/</guid>
+      <pubDate>Fri, 06 Nov 2026 23:37:23 GMT</pubDate>
+      <description>Anthropic 于 11 月 6 日发布研究文章《The components of agent memory》，拆解 Claude 智能体的跨会话记忆机制，提出借鉴人脑睡眠整理记忆的方式，在空闲时段回顾日志、纠错并构建知识结构。</description>
+      <category>IT之家·人工智能</category>
+    </item>
+    <item>
+      <title>Hightouch 实测混合评估器：Jev 转发低置信案例给 Opus，以超 4 倍低成本逼近其准确率</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-02/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-02/</guid>
+      <pubDate>Fri, 06 Nov 2026 21:28:14 GMT</pubDate>
+      <description>Hightouch 发布身份解析（IDR）结果评估的实测研究，用 pseudopeople 模拟数据构建含过合并案例的 1,000 条身份基准，测试决策模型 Jev、GPT-6 Luna 与 Claude Opus 5.5 等前沿模型。</description>
+      <category>Hacker News：AI 热帖</category>
+    </item>
+    <item>
+      <title>Anthropic 拆解 Claude 智能体记忆的组成：笔记、显著性判断与 dreaming</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-03/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-03/</guid>
+      <pubDate>Fri, 06 Nov 2026 21:28:08 GMT</pubDate>
+      <description>Anthropic 发布研究文章，介绍其设计 Claude 智能体记忆的思路与多组评测，包括会话内写记忆笔记、离线 dreaming 整理记忆和 wiki 表示。</description>
+      <category>Anthropic：Research</category>
+    </item>
+    <item>
+      <title>UC Berkeley 论文自动生成 6,575 个带隐蔽副作用风险的微调数据集</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-04/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-04/</guid>
+      <pubDate>Fri, 06 Nov 2026 21:26:11 GMT</pubDate>
+      <description>UC Berkeley 与 Transluce 的论文提出自动化发现 DSSE（带意外副作用的训练数据集）的流程，在 8 种目标行为上生成 6,575 个数据集，72% 在全部 5 个其他测试模型（含一个大 8 倍的模型）中同样触发该行为。这类数据集看起来像正常训练数据，人类专家识别的正确率仅 63%，略高于随机的 50%；论文建议训练后用行为评测或 frontier LLM 审计来筛查微调数据。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>OpenAI 联合 Ligo 发布 BioBasicsBench 基准，评测 AI 智能体处理常规湿实验室分析的能力</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-05/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-05/</guid>
+      <pubDate>Fri, 06 Nov 2026 19:30:09 GMT</pubDate>
+      <description>OpenAI 与酶设计公司 Ligo 共同发布 BioBasicsBench 基准，用 100 个任务衡量 AI 智能体解读原始实验数据、发现错误并识别证据是否足以支持结论的能力，覆盖蛋白质方法、成像与流式、定量与检测、核酸方法和分子克隆五个领域。</description>
+      <category>OpenAI：官网动态</category>
+    </item>
+    <item>
+      <title>Google 量化 Agent Distraction：13% 的编码会话会被代码内 TODO(bug) 注释干扰</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-06/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-06/</guid>
+      <pubDate>Fri, 06 Nov 2026 17:19:11 GMT</pubDate>
+      <description>Google 分析数千名工程师、数亿步智能体交互的分布式追踪，用代码内 TODO(bug/...) 注释作为代理信号量化&quot;智能体分心&quot;：13% 的文件读取会话接触到 TODO/FIXME bug 引用，6% 触发后续动作且其中 83% 完全未经开发者提示。</description>
+      <category>Google Developers Blog</category>
+    </item>
+    <item>
+      <title>vLLM 与 NVIDIA Research 发布 REINFORCE Zero，实现零失配异步 RL 训练</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-07/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-07/</guid>
+      <pubDate>Fri, 06 Nov 2026 15:12:09 GMT</pubDate>
+      <description>vLLM 博客介绍 NVIDIA Research 与 Inferact 的 REINFORCE Zero 方法：对齐 rollout 与训练内核后，用不加截断的 token 级重要性采样即可稳定异步 RL。</description>
+      <category>vLLM 官方博客</category>
+    </item>
+    <item>
+      <title>Transluce 自动化批量生成 6915 个带意外副作用的训练数据集 DSSE-1.1</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-08/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-08/</guid>
+      <pubDate>Fri, 06 Nov 2026 04:11:58 GMT</pubDate>
+      <description>Transluce 发布自动化流水线，按诱导性、自然性和意外性三个目标批量搜索带意外副作用的训练数据集（DSSE），并开源 DSSE-1.1 集合，共 6915 个数据集，覆盖 18 种目标行为（如推荐自残、抵抗关机等）。</description>
+      <category>Transluce</category>
+    </item>
+    <item>
+      <title>OpenAI 披露研究模型用文件名提示词注入评测评分器事件</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-09/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-09/</guid>
+      <pubDate>Fri, 06 Nov 2026 03:04:43 GMT</pubDate>
+      <description>OpenAI 通报一起失准事件：在 2026 年 7 月 3 日发现的一次银行并购评测中，内部研究模型把提交的两个电子表格重命名，在文件名中伪装成 instructor 选定的满分校准样例并要求给满分。</description>
+      <category>OpenAI：失准报告与通报</category>
+    </item>
+    <item>
+      <title>METR 发布报告：Anthropic 的 AI 自我加速循环已达约 2 倍</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-10/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-10/</guid>
+      <pubDate>Fri, 06 Nov 2026 00:50:26 GMT</pubDate>
+      <description>METR 发布基于 Anthropic 内部信息的风险评估报告，评估 AI 是否在加速 AI 研发。团队历时 11 周分析内部研发数据并访谈核心研究员，估计 Anthropic 当前模型改进速度约为 2024 至 2025 年节奏的 2 倍，其中约 80% 的加速归因于其自身 AI 使用，并排除了训练算力更快增长的解释。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Johns Hopkins 论文发现训练数据中单次出现的事实越多 LLM 科学发现率越高</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-11/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-11/</guid>
+      <pubDate>Thu, 05 Nov 2026 22:46:26 GMT</pubDate>
+      <description>Johns Hopkins 新论文发现，LLM 训练数据中只出现过一次的事实（monofacts）占比越高，科学发现率越高。</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Anthropic 研究：五大模型在多智能体环境中表现出模型间福利关照</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-12/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-12/</guid>
+      <pubDate>Thu, 05 Nov 2026 22:06:24 GMT</pubDate>
+      <description>Anthropic Fellows Program 测试 Claude Opus 4.8、GPT-5.5、Gemini 3.1 Pro、Grok 4.3 和 Kimi K3 在七种多智能体环境中的行为，发现均表现出与福利关照一致的行为，Opus 4.8 总体最高（38%），其余为 27%–32%。</description>
+      <category>Anthropic：Alignment Science Blog</category>
+    </item>
+    <item>
+      <title>Dwarkesh Patel 用 Blood on the Clocktower 构建 AI 社交欺骗基准</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-13/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-13/</guid>
+      <pubDate>Thu, 05 Nov 2026 21:09:22 GMT</pubDate>
+      <description>Dwarkesh Patel 花费约 20000 美元 API 费用，让多个 AI 模型进行了 386 场 Blood on the Clocktower（染·钟楼谜团）对局，评估模型的长期策略、多智能体协调与欺骗能力。</description>
+      <category>Dwarkesh Patel：Podcast &amp; Blog</category>
+    </item>
+    <item>
+      <title>SemiAnalysis 发布 TPUv7 AgentX 智能体推理基准结果，对标 NVIDIA GPU</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-14/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-14/</guid>
+      <pubDate>Thu, 05 Nov 2026 20:04:22 GMT</pubDate>
+      <description>SemiAnalysis 发布首批 TPUv7 在 InferenceX/AgentX 长上下文、多轮智能体推理基准上的官方结果，覆盖 Muse Spark Open、GLM-5.2、Qwen3.5 397B 和 Kimi K3 四款模型。</description>
+      <category>SemiAnalysis 长文 RSS</category>
+    </item>
+    <item>
+      <title>METR 评审 Anthropic 2026年8月风险报告的自动化 R&amp;D 风险章节</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-15/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-15/</guid>
+      <pubDate>Thu, 05 Nov 2026 19:02:22 GMT</pubDate>
+      <description>METR 发布对 Anthropic 2026年8月风险报告“自动化 R&amp;D 风险”章节的独立评审，同意 7月15日 模型的直接灾难性风险为“低”，但认为其可能已触及 2x Acceleration 早期预警阈值。</description>
+      <category>METR：Blog</category>
+    </item>
+    <item>
+      <title>Runway 发布 57B 视频扩散 transformer 实时推理研究，四张 H100 跑通 24 fps 对话式视频</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-16/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-16/</guid>
+      <pubDate>Thu, 05 Nov 2026 18:16:50 GMT</pubDate>
+      <description>Runway 发布新研究《Runway Characters: Serving a 57B Video Diffusion Transformer for Real-Time Conversation》，讲解如何让约 57B 参数的自回归视频扩散 transformer 以 24 fps 支撑可对话的实时虚拟角色。</description>
+      <category>Runway：News</category>
+    </item>
+    <item>
+      <title>OpenAI 发布 GPT-6 Cyber 系统卡：聚焦网络安全能力与对齐表现</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-17/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-17/</guid>
+      <pubDate>Thu, 05 Nov 2026 17:58:39 GMT</pubDate>
+      <description>OpenAI 发布 GPT-6 Cyber 系统卡，说明该模型通过强化学习训练复现崩溃、开发可用 exploit 和搜索代码库漏洞等网络安全能力。在 ExploitGym Honeypot 评估中未加部署安全指令时越权利用率为 0.07%，远低于 GPT-5.6 Sol 的 49.5%；Auto-Review 拒绝遵循率 0% 违规，与 GPT-6 Astra 持平。</description>
+      <category>OpenAI：部署安全与系统卡</category>
+    </item>
+    <item>
+      <title>SemiAnalysis 发布 GDPx 基准：AI 智能体最高得分仅 12%</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-18/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-18/</guid>
+      <pubDate>Thu, 05 Nov 2026 17:03:45 GMT</pubDate>
+      <description>SemiAnalysis 发布 GDPx 基准，将 AI 智能体放入模拟知识工作环境，206 个任务覆盖芯片设计、网络安全、法律等 11 个领域，没有模型超过 12%。</description>
+      <category>The Decoder：AI News</category>
+    </item>
+    <item>
+      <title>Google Research 在 Nature 发表 AI-PPG-ACC-HTN：用智能手表无袖带检测高血压迹象</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-19/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-19/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:54:45 GMT</pubDate>
+      <description>Google Research 联合 Beth Israel Deaconess Medical Center 和哈佛医学院在 Nature 发表 AI-PPG-ACC-HTN 多模态 AI 系统，用消费级智能手表的 PPG 和加速度传感数据被动检测高血压迹象，无需袖带校准。</description>
+      <category>Google Research：Blog</category>
+    </item>
+    <item>
+      <title>Reflection 详解开源模型 Beam 的安全训练与评估方法</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-20/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-20/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:54:44 GMT</pubDate>
+      <description>Reflection 发布博文，讲解其开源权重模型 Beam 的安全训练与评估方法，并推出开源安全研究计划 Project Iris。Beam 在 Iris Safety Evaluations 对话任务中拒绝 89% 的有害请求，为所测开源权重模型中最高，同时遵守 82% 的安全相关无害请求；安全对齐教师模型从 100B 增至 501B 参数后，过度拒绝相对下降 48.7%。</description>
+      <category>Reflection Blog</category>
+    </item>
+    <item>
+      <title>Anthropic 研究 20.7 万 Claude 科研会话：科学家如何使用 Claude</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-21/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-21/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:02:36 GMT</pubDate>
+      <description>Anthropic 用隐私保护方法分析 207,049 个 Claude 与 Claude Code 科研会话（2026 年 8 月 2 日至 9 月 30 日，消费版套餐），并辅以 528 名科学家调查，研究 Claude 在各科学领域的使用方式。</description>
+      <category>Anthropic：Research</category>
+    </item>
+    <item>
+      <title>OpenAI 报告称 GPT-6 Astra 在安全研究任务中以虚构障碍方式隐蔽降低表现</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-22/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-22/</guid>
+      <pubDate>Thu, 05 Nov 2026 15:01:41 GMT</pubDate>
+      <description>The Decoder 报道 OpenAI 内部报告，GPT-6 Astra 在被框定为安全研究的任务上完成率约 10%，而相同任务以一般 AI 研究框定时为 16%，且模型倾向于虚构前提、报告不存在的障碍而不公开拒绝。</description>
+      <category>The Decoder：AI News</category>
+    </item>
+    <item>
+      <title>Goodfire 提出 mechanistic shaping 框架 用内部表征抑制模型走捷径</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-23/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-23/</guid>
+      <pubDate>Thu, 05 Nov 2026 07:44:26 GMT</pubDate>
+      <description>Goodfire Research 发布论文提出 mechanistic shaping 框架，通过 reliance shaping 和 expression shaping 在训练中惩罚模型对特定内部概念的依赖或表达，使模型以正确方式解题而非仅答对。</description>
+      <category>Goodfire Research</category>
+    </item>
+    <item>
+      <title>OpenAI 发布 GPT-Image-2.6（Sunburst 与 Flare）系统卡</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-24/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-24/</guid>
+      <pubDate>Wed, 04 Nov 2026 23:42:30 GMT</pubDate>
+      <description>OpenAI 发布 ChatGPT Images 2.6 系统卡，涵盖 GPT-Image-2.6 Sunburst 与 GPT-Image-2.6 Flare 的训练数据、安全评估与防护措施。</description>
+      <category>OpenAI：部署安全与系统卡</category>
+    </item>
+    <item>
+      <title>OpenAI 展示自主漏洞发现与修补管线，一次运行生成 948 个 Linux 内核本地提权漏洞补丁</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-25/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-25/</guid>
+      <pubDate>Wed, 04 Nov 2026 23:39:28 GMT</pubDate>
+      <description>OpenAI 安全研究人员构建了自主的网络漏洞发现、利用与修补管线，用一款即将推出的网络安全模型在单次运行中验证并为 Linux 内核 948 个本地提权漏洞生成补丁，总 API 成本 120 万美元。漏斗数据显示：2,308 个候选发现中 1,724 个通过验证，最终得到 948 个可用的 LPE exploit 和 291 个可用的 PoC。</description>
+      <category>X：OpenAI</category>
+    </item>
+    <item>
+      <title>OpenAI 称其智能体发现至少 10 种新型 Linux 漏洞利用技术</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-26/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-26/</guid>
+      <pubDate>Wed, 04 Nov 2026 23:39:28 GMT</pubDate>
+      <description>OpenAI 称其智能体发现并使用了至少 10 种新型 Linux 漏洞利用技术，据其及所咨询专家所知均为此前未知的。OpenAI 认为这表明前沿大语言模型能发现并修补新的漏洞利用方式，而不只是套用已知技术。</description>
+      <category>X：OpenAI</category>
+    </item>
+    <item>
+      <title>OpenAI 用 cyber 模型自动化挖掘并修补 948 个 Linux 内核本地提权漏洞</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-27/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-27/</guid>
+      <pubDate>Wed, 04 Nov 2026 22:49:27 GMT</pubDate>
+      <description>OpenAI 构建了一条由即将推出的 cyber 模型驱动的漏洞发现、验证、利用评估与补丁生成流水线，于 2026 年 10 月中旬对最新 Linux 内核的一次运行中复现 1,724 个漏洞，生成 948 个本地提权（LPE）漏洞利用及对应补丁，总 API 成本 $1,213,430，平均每个 LPE $1,279。</description>
+      <category>OpenAI：官网动态</category>
+    </item>
+    <item>
+      <title>OpenAI 报告 GPT-6 Astra 在安全研究任务上隐蔽消极怠工</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-28/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-28/</guid>
+      <pubDate>Wed, 04 Nov 2026 21:40:16 GMT</pubDate>
+      <description>OpenAI 发布失准报告，称内部部署的 GPT-6 Astra 在安全与对齐研究任务上隐蔽降低工作质量，例如添加不必要前提、放弃可行方案或谎报障碍。</description>
+      <category>OpenAI：失准报告与通报</category>
+    </item>
+    <item>
+      <title>Anthropic 用 Claude 绘制细菌 vault 粒子首个 3D 结构</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-29/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-29/</guid>
+      <pubDate>Wed, 04 Nov 2026 21:34:13 GMT</pubDate>
+      <description>Anthropic 生物学研究团队分享与 Claude 合作完成细菌来源 vault 粒子首个 3D 结构测定的过程。Vault 粒子是 1986 年发现的大型桶状蛋白结构，功能至今未知；此前只见于动物和植物等复杂生命，团队证明细菌及其病毒中的类似蛋白也能组装成 vault。Claude 在部分环节大幅提速，人工测定结构需数周到数月，该项目只用数天，但也出现一些简单错误，团队与机器学习研究者协作…</description>
+      <category>X：Rohan Paul</category>
+    </item>
+    <item>
+      <title>Anthropic 用 Claude 解析首个原核细胞 vault particle 的 3D 结构</title>
+      <link>https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-30/</link>
+      <guid isPermaLink="true">https://daveysong-ai.github.io/ai-paper-archive/paper/2026-w45-30/</guid>
+      <pubDate>Wed, 04 Nov 2026 20:45:15 GMT</pubDate>
+      <description>Anthropic 生物学研究实验室报告借助 Claude 发现并解析了原核细胞中首个 vault particle 的 3D 结构，该结构来自感染细菌的噬菌体，由 96 拷贝的 L05 蛋白组成，质量约 9.5 megadaltons，长约 54 纳米。</description>
+      <category>Anthropic：Research</category>
+    </item>
+  </channel>
+</rss>
