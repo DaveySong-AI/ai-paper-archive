@@ -1,0 +1,72 @@
+{
+  "abstract": "Artificial Analysis 发布 Decision Index v2，核心更新为引入 Decision Score——一种融合奖励正确性与模型输出置信度校准能力的新型头条评估指标；私有数据集占比由25%提升至45%，增强评估鲁棒性与现实适用性。",
+  "keyPoints": [
+    "推出全新 headline metric Decision Score，联合奖励准确率与置信度校准质量",
+    "Decision Index v2 采用更高比例私有数据（45%），相较 v1（25%）显著提升数据专属性",
+    "属 proprietary evaluation 框架，未公开完整方法论细节",
+    "强调模型在决策类任务中‘不仅答对，更要答得有把握’的双重能力",
+    "配套更新基准测试集，但具体 benchmark 名称与规模未披露"
+  ],
+  "method": {
+    "problem": "现有大模型评估指标（如准确率、胜率）难以刻画模型决策过程的可靠性与校准性",
+    "approach": "构建端到端私有评估框架，将奖励建模与置信度校准统一量化为单一可比分数",
+    "design": [
+      "定义 Decision Score 为奖励正确性与预测置信度之间校准误差的加权函数",
+      "采用私有标注数据驱动奖励建模，覆盖多场景决策任务",
+      "引入温度缩放与分位数校准等技术优化置信度输出",
+      "混合公有与私有数据构建评测集，私有数据占比达45%"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Decision Score 能更全面反映模型在真实决策场景中的可信表现",
+    "impact": "推动评估范式从‘结果导向’转向‘过程+结果双导向’，影响行业评测标准制定",
+    "limitations": "私有数据与算法细节未开源，复现与横向对比受限"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "DAI v2",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "评估片面性",
+        "note": "传统指标忽略置信度校准，无法衡量决策可信度",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Decision Sc…",
+        "note": "奖励正确性与置信度校准联合建模的私有指标",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "45%私有数据",
+        "note": "提升评估专属性与现实任务适配性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "新基准发布",
+        "note": "配套更新评测集与headline metric排名",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "评估范式升级",
+        "note": "推动可信AI评估从结果正确向决策可靠演进",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
