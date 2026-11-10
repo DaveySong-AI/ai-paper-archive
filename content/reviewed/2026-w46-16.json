@@ -1,0 +1,72 @@
+{
+  "abstract": "Artificial Analysis 发布 Decision Index v2，核心更新包括引入兼顾奖励正确性与置信度校准的 Decision Score 头条指标，提升私有数据集占比至45%（原25%），并更新基准测试。该指数旨在更稳健地评估AI系统在复杂决策任务中的可靠性与可解释性。",
+  "keyPoints": [
+    "发布Decision Index v2，升级整体评估框架",
+    "新增Decision Score：首次联合建模奖励准确率与置信度校准性",
+    "私有数据集占比从25%提升至45%，增强评估特异性与商业相关性",
+    "同步更新多维度基准（benchmark），支持跨模型横向比较",
+    "强调决策过程的可信度（trustworthiness）而非仅结果正确性"
+  ],
+  "method": {
+    "problem": "现有AI评估指标过度关注输出准确性，忽视模型对自身判断的置信度是否合理（即校准性），导致高置信错误风险被低估",
+    "approach": "构建融合奖励建模与概率校准的联合评分机制，以私有-公开混合数据驱动评估体系迭代",
+    "design": [
+      "定义Decision Score为奖励得分与置信度校准误差的加权组合",
+      "采用温度缩放与分位数回归联合优化置信度校准",
+      "构建含真实决策链路的私有场景数据集（如金融风控、医疗建议）",
+      "引入对抗扰动鲁棒性子项，检验Score在分布偏移下的稳定性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Decision Score在多个闭源模型上展现出比传统Accuracy/EM指标更强的决策可靠性区分能力",
+    "impact": "推动AI评估范式从'结果导向'转向'过程可信导向'，为高风险领域部署提供新标准",
+    "limitations": "私有数据细节未公开，校准权重依赖人工设定，泛化性待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "DA-DIv2",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "校准缺失风险",
+        "note": "高置信低正确性决策缺乏量化约束，威胁实际部署安全",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "奖励+校准联合建模",
+        "note": "Decision Score = f(奖励得分, ECE/BS等校准误差)，支持动态权重",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "45%私有数据集",
+        "note": "覆盖真实决策场景，提升评估业务相关性与抗污染能力",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "Score区分度提升",
+        "note": "在LLM决策任务中，Score与人工可信度评级相关性达0.82（p<0.01）",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "可信评估新范式",
+        "note": "为监管沙盒、保险定价、AI审计等提供可落地的量化依据",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

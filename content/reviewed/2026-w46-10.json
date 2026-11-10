@@ -1,0 +1,72 @@
+{
+  "abstract": "UCLA与东北大学联合研究发现，当前AI智能体约18%的输出token属于可移除的冗余内容（如重复、填充、冗余思考步骤），在6个前沿模型和4个benchmark上验证表明，剪除此类浪费token后任务成功率几乎不变；例如在Kimi-K3模型的SWE-bench Verified任务中，输出token减少41%，成功率仅从89.0%微降至89.5%。",
+  "keyPoints": [
+    "约18%的AI智能体输出token被实证为可安全移除的冗余内容",
+    "冗余类型主要包括重复生成、模板化填充、非必要推理回溯",
+    "剪枝策略需结合具体任务与评估harness定位浪费，而非全局截断",
+    "不同模型与benchmark间浪费比例存在差异，需定制化分析",
+    "减少冗余token可显著提升推理效率，且对任务成功率影响极小"
+  ],
+  "method": {
+    "problem": "AI智能体输出中存在大量不影响最终任务结果的冗余token，导致计算与延迟浪费",
+    "approach": "基于任务执行轨迹的细粒度token级归因分析，识别并量化可移除冗余",
+    "design": [
+      "构建token级浪费标注框架，覆盖重复、填充、无效反思三类模式",
+      "在4个主流benchmark（含SWE-bench Verified）上开展跨模型实验",
+      "采用动态剪枝策略：按harness反馈与任务阶段自适应移除冗余token",
+      "对比剪枝前后任务成功率、token消耗量及响应延迟变化"
+    ],
+    "setup": "实验涵盖6个前沿开源与闭源模型（含Kimi-K3），使用标准agent harness进行可控评估"
+  },
+  "conclusion": {
+    "findings": "AI智能体输出中存在系统性冗余，平均约18% token可移除而不显著损害性能；冗余分布高度依赖任务类型与评估框架",
+    "impact": "为高效AI智能体设计提供新范式——从‘压缩模型’转向‘净化输出’，推动token经济性优化与绿色AI发展",
+    "limitations": "浪费模式定义依赖人工标注与harness可观测性，泛化至开放世界任务尚需验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "UCLA-18%Was…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "输出冗余问题",
+        "note": "AI智能体生成中存在大量不贡献任务结果的token，造成资源浪费",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "token级归因剪枝",
+        "note": "基于任务轨迹与harness反馈，识别重复/填充/无效推理三类冗余并动态移除",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "18%冗余实证",
+        "note": "首次在多模型多benchmark上量化输出浪费比例，并验证其可移除性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能几乎不变",
+        "note": "Kimi-K3在SWE-bench上token减41%，成功率89.5% vs 原89.0%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动token经济性",
+        "note": "倡导面向输出净化的智能体优化范式，助力高效与绿色AI部署",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
