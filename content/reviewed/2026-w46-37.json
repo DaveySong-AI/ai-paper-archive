@@ -1,0 +1,72 @@
+{
+  "abstract": "UCLA与东北大学联合研究发现，当前AI智能体约18%的输出token属于可移除的冗余内容（如重复、填充、无信息量表述），在6个前沿模型和4个基准测试中系统性剪除后，任务成功率几乎不受影响；例如在Kimi-K3模型的SWE-bench Verified任务中，输出token减少41%，成功率仅从89.5%微降至89.0%。",
+  "keyPoints": [
+    "AI智能体输出中约18%的token为可安全移除的冗余内容",
+    "冗余类型主要包括重复生成、模板化填充语句及无功能过渡表达",
+    "剪枝策略需结合具体任务与评估harness定位浪费源，而非全局截断",
+    "多模型（含Kimi-K3）与多benchmark验证了方法鲁棒性",
+    "token精简对成功率影响极小，凸显输出效率优化的巨大潜力"
+  ],
+  "method": {
+    "problem": "AI智能体输出中存在大量低信息量或重复token，导致推理成本高、响应延迟大、部署开销增加",
+    "approach": "基于任务导向的细粒度token冗余识别与条件化剪枝",
+    "design": [
+      "构建任务-输出对齐分析框架，区分功能性token与冗余token",
+      "定义三类冗余模式：语义重复、结构填充、上下文无关过渡",
+      "在harness层嵌入轻量级冗余检测模块，支持动态剪枝决策",
+      "采用保留关键指令、API调用、结果标识等最小必要token集策略"
+    ],
+    "setup": "实验覆盖6个主流AI智能体模型（含Kimi-K3）、4个benchmark（含SWE-bench Verified），使用标准评估协议"
+  },
+  "conclusion": {
+    "findings": "约18%输出token可被移除且不显著损害任务成功率；在SWE-bench Verified上实现41% token压缩率，成功率变化<0.5%",
+    "impact": "为AI智能体推理效率优化提供实证基础，推动‘精简输出’成为模型部署新范式",
+    "limitations": "冗余判定依赖任务harness设计，泛化至开放域对话场景需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "UCLA冗余Token…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "输出冗余严重",
+        "note": "约18% token无功能，抬高计算与延迟成本",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "任务导向剪枝",
+        "note": "基于harness识别重复/填充/过渡类冗余token",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "量化冗余比例",
+        "note": "首次在多模型多benchmark上实证18%可移除率",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "高效无损压缩",
+        "note": "SWE-bench上减41% token，成功率仅降0.5%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动精简输出",
+        "note": "建议按任务与harness定制优化，非粗粒度截断",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

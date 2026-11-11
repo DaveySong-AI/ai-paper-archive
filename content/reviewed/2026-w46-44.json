@@ -1,0 +1,72 @@
+{
+  "abstract": "斯坦福与DeepMind提出TURTLE方法，利用AlphaEvolve对AppWorld等静态工具调用基准任务进行自动化变异，通过引入过滤条件、额外步骤和隐藏查询等方式提升难度，使原本过易的基准转变为更具挑战性但仍可解的评估测试。",
+  "keyPoints": [
+    "提出TURTLE方法，首次将AlphaEvolve用于工具调用基准的难度进化",
+    "针对AppWorld等静态基准实施任务级变异，而非模型微调",
+    "引入三类难度增强机制：过滤条件、额外操作步骤、隐藏用户查询",
+    "保持任务可解性，确保新基准仍能被强模型正确求解",
+    "验证了现有工具调用基准存在严重难度塌陷问题"
+  ],
+  "method": {
+    "problem": "现有工具调用基准（如AppWorld）过于简单，无法有效区分模型能力",
+    "approach": "用AlphaEvolve对原始任务进行黑盒进化式变异，生成更难但语义一致、仍可解的新任务",
+    "design": [
+      "基于任务描述与执行轨迹定义可进化单元",
+      "引入约束感知变异算子（如添加must-pass过滤条件）",
+      "插入隐式依赖步骤以增强推理链深度",
+      "混淆用户意图表达（如隐藏真实查询目标）"
+    ],
+    "setup": "在AppWorld及类似静态工具环境上开展变异实验；评估对象为多阶段工具调用模型"
+  },
+  "conclusion": {
+    "findings": "经TURTLE变异后的基准显著提升区分度，暴露当前SOTA模型在多步隐式推理上的短板",
+    "impact": "为工具调用评估范式提供动态难度演进新框架，推动构建更鲁棒的评测体系",
+    "limitations": "变异过程依赖原始任务结构完整性；未覆盖实时API交互类动态基准"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "TURTLE",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "基准难度塌陷",
+        "note": "AppWorld等静态工具基准过于简单，无法反映真实工具使用能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "AlphaEvolve…",
+        "note": "基于任务描述与轨迹，用进化算法生成更难但可解的新任务",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三类难度增强",
+        "note": "过滤条件、额外步骤、隐藏查询——系统化提升任务认知负荷",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "提升模型区分度",
+        "note": "变异后基准能有效识别SOTA模型在隐式推理链中的失败模式",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "评测范式革新",
+        "note": "开启‘可进化基准’方向，支持持续难度适配与能力精准刻画",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

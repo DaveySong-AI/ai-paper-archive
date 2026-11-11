@@ -1,0 +1,72 @@
+{
+  "abstract": "UC Berkeley 论文《Evolving Agent Teams》提出，单个编码智能体在GPU kernel优化任务中易陷入性能瓶颈，而通过动态监督器（supervisor）持续重组编码智能体团队，可显著提升协同优化能力；实验表明该方法在MLA decode kernel上超越FlashInfer，达其1.96倍性能（相较Claude Code仅0.51倍），验证了团队演化范式对系统级编程…",
+  "keyPoints": [
+    "单智能体在GPU kernel优化中存在性能停滞问题",
+    "引入动态supervisor机制实现智能体团队的持续重组与演化",
+    "团队协同优化显著超越单智能体及专家手工kernel（如FlashInfer）",
+    "在MLA decode kernel场景下实现端到端性能突破",
+    "为AI驱动的系统软件开发提供了新范式"
+  ],
+  "method": {
+    "problem": "GPU kernel自动优化中单智能体探索能力有限、易局部收敛",
+    "approach": "构建可演化的多智能体团队，由supervisor动态评估、淘汰、重组成员以维持多样性与适应性",
+    "design": [
+      "分层团队架构：supervisor + 多个异构编码agent",
+      "基于执行反馈的在线评估与淘汰策略",
+      "跨agent的代码片段交换与融合机制",
+      "针对kernel性能指标（如latency、throughput）的专用奖励函数"
+    ],
+    "setup": "实验基于MLA decode kernel优化任务，对比Claude Code、FlashInfer等基线；硬件环境详见原文"
+  },
+  "conclusion": {
+    "findings": "supervisor驱动的智能体团队在GPU kernel优化中实现性能跃迁，超越专家级手工实现",
+    "impact": "推动AI for Systems研究，为编译器、运行时、硬件协同设计提供新路径",
+    "limitations": "当前实验规模有限，泛化至其他kernel类型与硬件平台需进一步验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Evolving Ag…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "单智能体性能瓶颈",
+        "note": "在GPU kernel优化中易陷入局部最优，无法逼近专家水平",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Supervisor动…",
+        "note": "通过在线评估、淘汰、融合实现团队结构持续演化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "团队演化新范式",
+        "note": "首次将群体智能演化机制系统应用于GPU kernel自动优化",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "超越FlashInfer",
+        "note": "MLA decode kernel性能达FlashInfer的1.96倍，显著优于Claude Code",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI for Syst…",
+        "note": "为AI驱动的底层系统软件开发提供可扩展方法论",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,72 @@
+{
+  "abstract": "Nvidia 等机构新论文指出，提示中无关文本损害模型性能的主要机制并非直接抑制正确答案的 logits，而是削弱模型对问题部分的有效利用；该效应可归因于少量特定 attention heads（intrusion heads），其激活会干扰问题-上下文关联建模。",
+  "keyPoints": [
+    "无关文本主要通过削弱问题利用而非压制答案来降低性能",
+    "机制可定位至少数 attention heads，命名为 intrusion heads",
+    "intrusion heads 在处理无关文本时异常激活，破坏问题引导的注意力流",
+    "该现象在多个主流大模型中具有一致性",
+    "为提示鲁棒性与注意力可解释性提供新分析视角"
+  ],
+  "method": {
+    "problem": "解释无关文本如何损害大语言模型在问答任务中的表现",
+    "approach": "结合注意力机制归因、头级干预实验与问题利用度量化分析",
+    "design": [
+      "定义并测量模型对问题部分的利用强度（question utilization）",
+      "识别在无关文本存在时显著激活且与性能下降强相关的 attention heads",
+      "对 intrusion heads 进行 ablation 和 patching 实验验证因果性",
+      "跨模型、跨任务验证 intrusion heads 的泛化性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "无关文本主要通过激活 intrusion heads 削弱问题利用，而非直接干扰答案生成",
+    "impact": "推动面向鲁棒提示设计的注意力机制诊断框架，启发 head-level 干预方法",
+    "limitations": "intrusion heads 的触发条件与文本语义关系尚不明确"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Intrusion H…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "无关文本干扰机制",
+        "note": "核心问题是解释为何无关文本显著降低问答准确率",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "注意力归因分析",
+        "note": "通过头级激活追踪与干预，定位关键干扰组件",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "提出 intrusio…",
+        "note": "首次命名并验证一类专门削弱问题利用的 attention heads",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "问题利用度下降",
+        "note": "无关文本主要降低模型对问题的关注与依赖，非答案压制",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "提示鲁棒性新路径",
+        "note": "为设计抗干扰提示、可解释微调提供机制级依据",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
