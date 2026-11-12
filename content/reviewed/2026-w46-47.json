@@ -1,0 +1,71 @@
+{
+  "abstract": "Artificial Analysis 发布 Decision Index v2，核心更新包括引入 Decision Score——一种融合奖励正确性与置信度校准的新型头条评估指标；私有数据集占比由25%提升至45%，增强评估鲁棒性与专有性；同步更新基准测试体系。",
+  "keyPoints": [
+    "推出Decision Score作为 headline metric，联合奖励正确性与置信度校准",
+    "Decision Index v2采用更高比例私有数据（45%），较v1显著提升数据专有性",
+    "更新整体评估基准，支持更细粒度的模型决策能力分析",
+    "属Artificial Analysis自研私有评估框架，未公开完整方法论细节"
+  ],
+  "method": {
+    "problem": "现有AI决策评估指标难以兼顾行为正确性与置信度合理性",
+    "approach": "构建多维私有评估框架，以校准后的奖励信号驱动综合打分",
+    "design": [
+      "设计Decision Score：加权融合奖励得分与置信度校准偏差惩罚项",
+      "扩充私有测试集，覆盖更多高风险/低频决策场景",
+      "引入置信度-准确率一致性检验模块（如ECE类校准评估）",
+      "采用动态权重机制适配不同任务类型对置信度敏感度的差异"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "Decision Score在私有基准上展现出比传统准确率/奖励分数更强的模型区分能力",
+    "impact": "为AI安全与可信决策评估提供新范式，推动行业关注置信度校准维度",
+    "limitations": "私有数据与评分逻辑未开源，复现与第三方验证受限"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "DAI v2",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "评估失衡",
+        "note": "传统指标忽略置信度合理性，导致高置信错误难识别",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "Decision Sc…",
+        "note": "奖励正确性与置信度校准联合建模，含偏差惩罚机制",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "私有数据升级",
+        "note": "私有数据占比升至45%，强化领域特异性与抗过拟合能力",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "指标区分力提升",
+        "note": "在内部基准中对模型决策质量排序更敏感、更稳定",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "可信AI新标尺",
+        "note": "推动评估从‘是否答对’转向‘是否答得既对且稳’",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
