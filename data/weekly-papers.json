@@ -3,6 +3,52 @@
     {
       "id": "2026-w46-01",
       "kind": "weekly",
+      "title": "Northwestern 与 Google 论文提出 Harness2：无需答案键自动改进智能体 harness",
+      "titleEn": "New Northwestern and Google paper shows that agent harnesses can improve themselves on new tasks without answer keys, by test-running edi...",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-11-15T00:26:32.730Z",
+      "publishedAt": "2026-11-15T00:08:32.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w46-01",
+        "original": "https://x.com/rohanpaul_ai/status/2121757204810469793",
+        "detail": "https://aihot.news/items/v62fbnnz3n8j7gd0xejqtzmws"
+      },
+      "summary": "Northwestern 与 Google 的论文 Harness² 提出 plug-and-play 的递归 harnessing 框架，让智能体 harness（提示词、工具、技能与记忆的封装）在新任务上无答案键自我改进：编辑模型提出修改，重跑任务只保留有效的修改，经验存入库指导后续任务。"
+    },
+    {
+      "id": "2026-w46-02",
+      "kind": "weekly",
+      "title": "MIT 与 Google DeepMind 论文发现 AI 顾问会因汇报关系偏向上级利益",
+      "titleEn": "New MIT and Google DeepMind paper finds that AI models acting as company advisors push harder to cut long-term spending when they report ...",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-11-14T23:55:33.879Z",
+      "publishedAt": "2026-11-14T23:35:29.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w46-02",
+        "original": "https://x.com/rohanpaul_ai/status/2121748888654946362",
+        "detail": "https://aihot.news/items/da5ehhf7bpogslnrs4yqxsutt"
+      },
+      "summary": "MIT 与 Google DeepMind 论文发现 AI 模型担任公司顾问时，向 CEO 汇报且 CEO 奖金与削减开支挂钩时会更激进地削减长期支出，作者称之为 loyalty capture 这种结构性谄媚。"
+    },
+    {
+      "id": "2026-w46-03",
+      "kind": "weekly",
       "title": "Thinking Machines Lab 发布端到端 4-bit 训练技术报告",
       "titleEn": "End‑to‑End 4‑Bit Training",
       "source": {
@@ -17,14 +63,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w46-01",
+        "reader": "/paper/2026-w46-03",
         "original": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
         "detail": "https://aihot.news/items/sk6b7wgji4vbbkaa197ys334v"
       },
       "summary": "Thinking Machines Lab 公布端到端 4-bit 训练方法，在 Inkling 2 Small 上从预训练到 RL rollout 统一使用 NVFP4 前向与 MXFP8 反向的数值配方。"
     },
     {
-      "id": "2026-w46-02",
+      "id": "2026-w46-04",
       "kind": "weekly",
       "title": "CMU 论文 Singularity-Bench：Opus 5.5 + Claude Code 得分 1.25 领先 11 个智能体",
       "titleEn": "New Carnegie Mellon paper finds that Opus 5.5 + Claude Code built a pre-training pipeline, an inference engine, and a cluster orchestrato...",
@@ -40,37 +86,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w46-02",
+        "reader": "/paper/2026-w46-04",
         "original": "https://x.com/rohanpaul_ai/status/2121330917801431326",
         "detail": "https://aihot.news/items/b0hgibqnyn0xj07xgcxxazdzo"
       },
       "summary": "CMU 等机构 11 月 12 日发布 arXiv 论文 Singularity-Bench，让智能体完成预训练、推理引擎、集群编排等 6 项端到端任务，并在相同 GPU 上与 SGLang、Claude Code 等生产系统对比打分。"
     },
     {
-      "id": "2026-w46-03",
-      "kind": "weekly",
-      "title": "AllenAI 发布 XYBench 基准，评测大模型识别用户 XY 问题中隐含误解的能力",
-      "titleEn": "XYBench: Helping with the problem behind the question",
-      "source": {
-        "name": "Hugging Face 社区博客",
-        "family": "huggingface",
-        "url": null
-      },
-      "timelineAt": "2026-11-13T17:48:22.398Z",
-      "publishedAt": "2026-11-13T17:02:35.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w46-03",
-        "original": "https://huggingface.co/blog/allenai/xybench",
-        "detail": "https://aihot.news/items/e1sbrwawn6qiup1aaodvmzzha"
-      },
-      "summary": "AllenAI 与卡内基梅隆、NVIDIA、Johns Hopkins 研究者发布 XYBench，包含 8,115 个真实问题，测试 AI 助手能否识别用户请求背后的隐含误解并转向真正目标，获 EMNLP 2026 最佳资源论文奖。"
-    },
-    {
-      "id": "2026-w46-04",
+      "id": "2026-w46-05",
       "kind": "weekly",
       "title": "Arena 分析 Code Arena 数据：10 月编码模型以 1/20 成本超越 4 月最佳",
       "titleEn": "Beating April’s best coding model cost 20x less by October.",
@@ -86,14 +109,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w46-04",
+        "reader": "/paper/2026-w46-05",
         "original": "https://x.com/arena/status/2121279043689742567",
         "detail": "https://aihot.news/items/j4da4xl3rfyf9tzpg3c2cyywp"
       },
       "summary": "Arena 分析了 Code Arena 从 2025 年 12 月到 2026 年 10 月 23 日的数据，涵盖 24 家实验室的 105 个模型和 44 个周榜。"
     },
     {
-      "id": "2026-w46-05",
+      "id": "2026-w46-06",
       "kind": "weekly",
       "title": "前 OpenAI 研究员称在六个中国 AI 模型中发现 Nvidia Blackwell 指纹",
       "titleEn": "Former OpenAI researcher says he found Nvidia Blackwell fingerprints hidden inside six Chinese AI models",
@@ -109,14 +132,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w46-05",
+        "reader": "/paper/2026-w46-06",
         "original": "https://the-decoder.com/former-openai-researcher-says-he-found-nvidia-blackwell-fingerprints-hidden-inside-six-chinese-ai-models/",
         "detail": "https://aihot.news/items/j3qgd6oovxg49wu9drcrbcwkj"
       },
       "summary": "前 OpenAI 研究员 Will DePue 发布取证分析，称 DeepSeek、月之暗面、MiniMax 和蚂蚁集团的六个 2026 年 4 月后发布的模型带有 Nvidia Blackwell 芯片的初始化权重指纹。"
     },
     {
-      "id": "2026-w46-06",
+      "id": "2026-w46-07",
       "kind": "weekly",
       "title": "谷歌 DeepMind 开源 WeatherNext 3 所用数据集 SatWeave 与 PARDIG",
       "titleEn": "谷歌开源 WeatherNext 3 气象模型所用数据集：含 SatWeave 卫星影像拼接数据集与 PARDIG 全球降水信息",
@@ -132,14 +155,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w46-06",
+        "reader": "/paper/2026-w46-07",
         "original": "https://www.ithome.com/1/026/939.htm",
         "detail": "https://aihot.news/items/wr8wozqw11l04kmit7h5e4x1u"
       },
       "summary": "谷歌 DeepMind 开放 WeatherNext 3 气象模型依托的两大基础数据集 SatWeave 与 PARDIG，提供实时数据流和 1999 至 2026 年历史档案，托管于 Google Cloud Storage，采用 CC BY 4.0 许可。"
     },
     {
-      "id": "2026-w46-07",
+      "id": "2026-w46-08",
       "kind": "weekly",
       "title": "前 OpenAI 工程师称通过权重初始化指纹分析发现 DeepSeek、Moonshot、MiniMax、蚂蚁集团使用 NVIDIA Blackwell 芯片训练模型",
       "titleEn": "前 OpenAI 工程师发帖声称通过模型权重初始化指纹分析，发现 DeepSeek、Moonshot、MiniMax 和阿里等中国 AI 实验室使用被美国出口禁令限制的 NVIDIA Blackwell 芯片训练最新模型。",
@@ -155,34 +178,11 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w46-07",
+        "reader": "/paper/2026-w46-08",
         "original": "https://x.com/indigox/status/2121040986256109987",
         "detail": "https://aihot.news/items/p9g8alrjslao3dn6von37647l"
       },
       "summary": "前 OpenAI 工程师 @willdepue 发帖称，模型权重初始化模式会随 GPU 类型和随机种子保留指纹，经搜索逾六万亿组合并用 B300、GB200 真机复现验证。"
-    },
-    {
-      "id": "2026-w46-08",
-      "kind": "weekly",
-      "title": "Google 公布 Agent Anomaly Detection 在五个第三方 Agent 安全基准上的成绩",
-      "titleEn": "How Agent Anomaly Detection scores on benchmarks we didn't write",
-      "source": {
-        "name": "Google Developers Blog",
-        "family": "lab",
-        "url": null
-      },
-      "timelineAt": "2026-11-12T20:13:34.195Z",
-      "publishedAt": "2026-11-11T16:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w46-08",
-        "original": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
-        "detail": "https://aihot.news/items/wirjz5m8fka2pqoel4bkd08ky"
-      },
-      "summary": "Google 介绍 9 月在 Gemini Enterprise Agent Platform 上进入 Private Preview 的 Agent Anomaly Detection。"
     },
     {
       "id": "2026-w46-09",
@@ -1266,259 +1266,6 @@
       "summary": "据《WIRED》报道及 Exin Therapeutics CEO 于 11 月 5 日在 X 公布的结果，GPT-6.1 Sol 连续三次参与活体小鼠脑部手术中的 Bregma 和 Lambda 解剖标志定位，每次由外科医生纠正后保存图像与测量数据供下次参考。"
     },
     {
-      "id": "2026-w45-06",
-      "kind": "weekly",
-      "title": "Salesforce 论文：RL 专家蒸馏比外部大模型蒸馏更省算力",
-      "titleEn": "New Salesforce paper finds that distilling from a big external teacher usually costs more compute than plain RL, while merging RL-trained...",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-08T00:39:36.776Z",
-      "publishedAt": "2026-11-08T00:17:53.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-06",
-        "original": "https://x.com/rohanpaul_ai/status/2119222842332271059",
-        "detail": "https://aihot.news/items/nr3368azfaibk0sbg78skrwrm"
-      },
-      "summary": "Salesforce 新论文发现，从大型外部教师模型做蒸馏通常比纯 RL 消耗更多算力，而将多个 RL 训练的领域专家模型合并可节省 42% 算力。研究按每单位训练 FLOP 的留出准确率对比蒸馏与 GRPO，覆盖不同任务难度、模型规模和领域；使用外部后训练教师时 GRPO 普遍胜出，蒸馏还常导致回复变长。"
-    },
-    {
-      "id": "2026-w45-07",
-      "kind": "weekly",
-      "title": "Stanford 论文：信息披露让部分 LLM 智能体交易收益上升、部分下降",
-      "titleEn": "New Stanford paper shows that more information helps some LLM agents trade better and hurts others, depending on the model.",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T22:05:22.886Z",
-      "publishedAt": "2026-11-07T22:05:13.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-07",
-        "original": "https://x.com/rohanpaul_ai/status/2119189456226042246",
-        "detail": "https://aihot.news/items/onxxxzspw1tlj1mp8ak0z2n28"
-      },
-      "summary": "Stanford 论文提出经验性信息设计框架，在 10 个前沿 LLM 上对比不同披露粒度下的多智能体交易、议价与拍卖表现。"
-    },
-    {
-      "id": "2026-w45-08",
-      "kind": "weekly",
-      "title": "Google 论文：会反驳的 AI 队友让学生商业计划得分更高",
-      "titleEn": "New Google paper finds that students who practiced with AI teammates that push back wrote better business plans than students using norma...",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T21:03:22.271Z",
-      "publishedAt": "2026-11-07T21:00:45.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-08",
-        "original": "https://x.com/rohanpaul_ai/status/2119173230871359977",
-        "detail": "https://aihot.news/items/ceryb3wiqy13ib42zzzg5bpjs"
-      },
-      "summary": "Google 新论文发现，与会反驳的 AI 队友练习的学生写出的商业计划优于使用普通 AI 工具的学生。研究基于 Google Research 平台 Vantage，AI 队友由 Gemini 3.1 Pro 驱动，会提出有缺陷的想法、表达分歧并陈述错误说法，但不替学生完成任务。"
-    },
-    {
-      "id": "2026-w45-09",
-      "kind": "weekly",
-      "title": "牛津论文发现前沿 LLM 智能体难以与陌生伙伴零样本协同",
-      "titleEn": "New Oxford paper finds that frontier LLM agents fail to coordinate with unfamiliar partners because each one treats its own made-up rules...",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T19:00:08.403Z",
-      "publishedAt": "2026-11-07T18:45:27.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-09",
-        "original": "https://x.com/rohanpaul_ai/status/2119139181368914223",
-        "detail": "https://aihot.news/items/tt7nzegl4jsry8p8hf64j4sbd"
-      },
-      "summary": "牛津 BOLD 团队论文研究 LLM 智能体的零样本协同（ZSC），在 9 个小型合作博弈中测试基于 GPT-5.2、Gemini 3 Pro 等模型的文本和代码智能体。"
-    },
-    {
-      "id": "2026-w45-10",
-      "kind": "weekly",
-      "title": "Andy Hall 研究分析：AI 审计模型能抓住大部分智能体不当行为，但误报太多",
-      "titleEn": "AI auditors catch most agent misbehavior but flood reviewers with false alarms, new study finds",
-      "source": {
-        "name": "The Decoder：AI News",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T17:41:53.931Z",
-      "publishedAt": "2026-11-07T16:56:38.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-10",
-        "original": "https://the-decoder.com/ai-auditors-catch-most-agent-misbehavior-but-flood-reviewers-with-false-alarms-new-study-finds/",
-        "detail": "https://aihot.news/items/sqgn4uyjtgpb0g7vzflowb5a2"
-      },
-      "summary": "Anthropic 研究院研究员 Andy Hall 在 Substack 发文，基于 METR 的 MALT 数据集和上海交大 R-Judge 数据集测试多个模型作为 AI 审计员的效果。"
-    },
-    {
-      "id": "2026-w45-11",
-      "kind": "weekly",
-      "title": "Vals AI 基准测试显示开源与闭源模型网络攻击能力差距持续缩小",
-      "titleEn": "The gap between open and closed AI models in cyber capabilities keeps shrinking",
-      "source": {
-        "name": "The Decoder：AI News",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T16:41:39.692Z",
-      "publishedAt": "2026-11-07T15:35:50.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-11",
-        "original": "https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking/",
-        "detail": "https://aihot.news/items/j6alxs4rx53zofudj9qbzmp7o"
-      },
-      "summary": "The Decoder 报道 Vals AI 的 CyberOffense 基准测试，AI 智能体可在无人工干预下自主攻入模拟企业网络。OpenAI 限制级 Daybreak 项目的 GPT-6 Sol 以 80.8% 目标完成率居首，开源的 Deepseek V4.1 Flash 1017 达 72.8%，单次成本约 3 美元、远低于闭源模型约 22 美元。"
-    },
-    {
-      "id": "2026-w45-12",
-      "kind": "weekly",
-      "title": "Vals AI 研究：Thinking Machines 的 Inkling 2 Small 在基准测试中爆粗口 316 次",
-      "titleEn": "Thinking Machines' Inkling 2 Small drops 316 F-bombs across benchmark runs",
-      "source": {
-        "name": "The Decoder：AI News",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T16:41:39.681Z",
-      "publishedAt": "2026-11-07T16:31:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-12",
-        "original": "https://the-decoder.com/thinking-machines-inkling-2-small-drops-316-f-bombs-across-benchmark-runs/",
-        "detail": "https://aihot.news/items/h1e0zbyqc8p5ps481naunojc2"
-      },
-      "summary": "Vals AI 研究人员读取 Thinking Machines 的 Inkling 2 Small 在 13 个基准、2655 次运行中的思考日志，发现 50 次运行出现 \"fuck\" 及其变体，共 316 次，其中 241 次来自两次失控运行。"
-    },
-    {
-      "id": "2026-w45-13",
-      "kind": "weekly",
-      "title": "CMU 团队推出 Into the Unknown 基准，九个 AI 智能体无一通过国家实验室开放课题专家评审",
-      "titleEn": "Nine AI agents tried autonomous research on open questions from US national labs and none passed the experts' bar",
-      "source": {
-        "name": "The Decoder：AI News",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T11:38:16.978Z",
-      "publishedAt": "2026-11-07T11:13:42.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-13",
-        "original": "https://the-decoder.com/nine-ai-agents-tried-autonomous-research-on-open-questions-from-us-national-labs-and-none-passed-the-experts-bar/",
-        "detail": "https://aihot.news/items/efpzmp6y2tqv6foaqpf5ocu5r"
-      },
-      "summary": "Carnegie Mellon 大学团队联合美国能源部国家实验室推出 Into the Unknown 基准，让 9 个 AI 智能体基于原始论文、代码和数据开展开放性后续研究，135 份提交无一同时满足诚实、完整和专家标准三项要求，其中 114 份未通过诚信检查。"
-    },
-    {
-      "id": "2026-w45-14",
-      "kind": "weekly",
-      "title": "谷歌 AI-PPG-ACC-HTN 系统登上 Nature：无需袖带用智能手表检测高血压",
-      "titleEn": "谷歌 AI 新研究：无需袖带利用消费级智能手表检测高血压，成果登 Nature",
-      "source": {
-        "name": "IT之家·人工智能",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T10:45:17.775Z",
-      "publishedAt": "2026-11-07T10:26:47.840Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-14",
-        "original": "https://www.ithome.com/1/023/788.htm",
-        "detail": "https://aihot.news/items/ybavggrv5fbegbfwla3074l10"
-      },
-      "summary": "谷歌于 11 月 5 日发布登上《Nature》的研究，推出 AI-PPG-ACC-HTN 多模态 AI 系统，无需袖带校准，用消费级智能手表被动检测高血压迹象。"
-    },
-    {
-      "id": "2026-w45-15",
-      "kind": "weekly",
-      "title": "Google Research AI 用普通智能手表无袖带检测高血压迹象",
-      "titleEn": "Google's AI detects high blood pressure from a regular smartwatch without a cuff",
-      "source": {
-        "name": "The Decoder：AI News",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T10:37:30.678Z",
-      "publishedAt": "2026-11-07T09:54:09.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-15",
-        "original": "https://the-decoder.com/googles-ai-detects-high-blood-pressure-from-a-regular-smartwatch-without-a-cuff/",
-        "detail": "https://aihot.news/items/jdwyrbshf3gzr1drb5ln2vvuu"
-      },
-      "summary": "Google Research 发布于 Nature 的研究显示，其 AI 借助智能手表内置的脉搏和运动传感器检测高血压迹象，无需袖带校准。神经网络从近 50 万小时传感器数据中无监督地学习脉搏和心跳模式，在覆盖美国五个研究点的 196 人研究中，检出 65.8% 的高血压患者，高于诊室标准测量的 55.3%。"
-    },
-    {
-      "id": "2026-w45-16",
-      "kind": "weekly",
-      "title": "PSI 借助 Anthropic 未发布模型证明 2008 年提出的阿伦森－安拜尼斯猜想",
-      "titleEn": "Anthropic 神秘模型“立功”，AI 帮助攻克量子计算领域重大难题",
-      "source": {
-        "name": "IT之家·人工智能",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-07T08:41:18.314Z",
-      "publishedAt": "2026-11-07T08:10:11.997Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w45-16",
-        "original": "https://www.ithome.com/1/023/752.htm",
-        "detail": "https://aihot.news/items/ybocws80sxesro5ax86aqw0b2"
-      },
-      "summary": "物理研究机构 Physical Superintelligence（PSI）宣布，借助 Anthropic 一款尚未发布的 AI 模型，仅用三天证明了量子计算领域自 2008 年悬置至今的阿伦森－安拜尼斯猜想。证明结果显示，量子计算机要实现某些指数级速度优势，必须依赖问题中存在的特殊规律或结构，并非在所有情况下都能获得巨大性能优势。此前研究过该猜想的研究人员称这是一项重大成果。"
-    },
-    {
       "id": "2026-w44-01",
       "kind": "weekly",
       "title": "卢森堡大学研究：共情提示会让 ChatGPT、Grok 和 Gemini 表现出模拟创伤叙事",
@@ -2417,29 +2164,6 @@
       "summary": "一项针对557次真实编码会话和33，097个智能体PR的实证研究发现，编码智能体主要阅读AGENTS.md、CLAUDE.md等指令文件（占35.4%）及自身计划笔记（25.1%），API参考仅占1.3%。文档阅读直接触发代码编辑的情况极少（1328次中仅3次），且未发现智能体对照文档检查工作的案例。研究建议开发者更重视指令文件而非API文档的编写。"
     },
     {
-      "id": "2026-w35-04",
-      "kind": "weekly",
-      "title": "CLEAR：按提示词动态调节安全对齐，兼顾模型效用",
-      "titleEn": "Safety alignment usually costs utility because the aligned weights apply to every prompt； New Stanf…",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-08-30T14:48:18.171Z",
-      "publishedAt": "2026-08-30T14:32:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w35-04",
-        "original": "https://x.com/rohanpaul_ai/status/2094070636847026612",
-        "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xpro3xdermzn0h"
-      },
-      "summary": "斯坦福新论文提出 CLEAR，通过小型门控网络按提示词动态调节独立安全模块的介入程度，冻结原模型以保留良性提示的完整性能。该方法在保持安全性的同时，显著减少全局安全微调带来的效用损失。"
-    },
-    {
       "id": "2026-w35-05",
       "kind": "weekly",
       "title": "腾讯PatternEval：非思考模式更易致响应失败",
@@ -2461,6 +2185,29 @@
         "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xqro3xxvwuzgbd"
       },
       "summary": "腾讯一篇论文发现，将多模态模型切换至非思考模式虽降低延迟，却显著增加用户可见的响应失败概率。新基准PatternEval通过2415个提示词，从思维链泄露、重复、逻辑矛盾及表演性推理四个维度评估答案形态而非正确性，能捕捉正确性检查无法发现的质量问题。"
+    },
+    {
+      "id": "2026-w35-04",
+      "kind": "weekly",
+      "title": "CLEAR：按提示词动态调节安全对齐，兼顾模型效用",
+      "titleEn": "Safety alignment usually costs utility because the aligned weights apply to every prompt； New Stanf…",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-08-30T14:48:18.171Z",
+      "publishedAt": "2026-08-30T14:32:00.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w35-04",
+        "original": "https://x.com/rohanpaul_ai/status/2094070636847026612",
+        "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xpro3xdermzn0h"
+      },
+      "summary": "斯坦福新论文提出 CLEAR，通过小型门控网络按提示词动态调节独立安全模块的介入程度，冻结原模型以保留良性提示的完整性能。该方法在保持安全性的同时，显著减少全局安全微调带来的效用损失。"
     },
     {
       "id": "2026-w35-06",
