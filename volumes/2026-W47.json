@@ -1,0 +1,18 @@
+{
+  "isoWeek": "2026-W47",
+  "startDate": "2026-11-16",
+  "endDate": "2026-11-22",
+  "windowStart": "2026-11-16",
+  "windowEnd": "2026-11-16",
+  "poolTotal": 4,
+  "paperCount": 4,
+  "curatedCount": 1,
+  "sourceCount": 4,
+  "selectionRule": "窗口内共 4 篇，按综合评分取前 4 篇（含全部 1 篇编辑精选），按时间倒序展示，不按评分排序。 本周尚未结束，数据仍在累积中。",
+  "papers": [
+    "2026-w47-01",
+    "2026-w47-02",
+    "2026-w47-03",
+    "2026-w47-04"
+  ]
+}

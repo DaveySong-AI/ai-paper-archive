@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出BTTF框架，将超10GB芯片仿真波形文件转换为紧凑SQLite数据库，支持多智能体协同调试：通过自然语言理解生成SQL查询、验证设计规则、审计结果，显著提升硬件验证效率与可解释性。",
+  "keyPoints": [
+    "首创将大规模芯片波形数据结构化为SQLite数据库，实现高效索引与查询",
+    "引入多智能体协作范式，分工完成NL→SQL转换、规则检查与答案审计",
+    "突破传统波形调试依赖GUI与人工经验的瓶颈，增强自动化与可追溯性",
+    "聚焦硬件验证场景， bridging AI reasoning with RTL-level simulation artifacts",
+    "轻量级部署（SQLite）适配EDA工具链，降低工业落地门槛"
+  ],
+  "method": {
+    "problem": "芯片仿真波形文件体积庞大（>10GB）、非结构化、难以直接用于AI推理与自动化调试",
+    "approach": "将波形时序数据映射为关系型数据库表结构，构建面向AI代理的可查询知识层",
+    "design": [
+      "波形到SQLite的无损时序压缩与schema自动推导",
+      "多角色智能体协同架构（Query Generator / Rule Verifier / Auditor）",
+      "基于设计规则约束的SQL生成器，保障语义正确性",
+      "审计模块对SQL结果进行跨信号一致性与时序合规性验证"
+    ],
+    "setup": "使用工业级RTL设计案例与对应仿真波形，对比传统调试工具链与BTTF在问题定位耗时、准确率及人工介入率上的表现"
+  },
+  "conclusion": {
+    "findings": "BTTF显著加速芯片bug定位流程，支持复杂自然语言问题的端到端解答，且结果具备可验证性与可审计性",
+    "impact": "为AI for EDA开辟新路径，推动硬件验证从‘观察波形’迈向‘查询数据库’范式转变",
+    "limitations": "当前依赖波形dump格式标准化；对动态时序断言的支持尚不完善"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "BTTF",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "波形数据难用",
+        "note": ">10GB非结构化波形文件阻碍AI自动化分析与调试",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "波形转SQL",
+        "note": "将时序波形无损映射为SQLite表，支持高效索引与多智能体查询",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "多智能体协同",
+        "note": "分工执行NL→SQL、规则检查、结果审计，保障可靠性与可解释性",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "端到端调试",
+        "note": "支持自然语言提问并返回经验证的波形证据，大幅减少人工介入",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "EDA范式革新",
+        "note": "推动芯片验证从GUI驱动转向数据库查询驱动，助力AI for Hardware",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
