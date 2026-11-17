@@ -1,0 +1,72 @@
+{
+  "abstract": "Apple 联合 OpenEvidence 启动 Health AI Usage Study，计划招募最多 20 万名 Apple 用户，通过真实场景使用对话式健康 AI 工具，系统评估其回答的准确性、细节度与临床相关性，以推动健康 AI 的有效性与可信度提升。",
+  "keyPoints": [
+    "首个大规模真实世界健康AI使用行为研究，聚焦用户交互与反馈",
+    "采用自然对话方式收集用户对AI健康建议的实际使用体验",
+    "核心评估维度为准确性、信息细节和临床相关性",
+    "合作方OpenEvidence提供循证医学框架与临床验证能力",
+    "研究结果将用于优化AI健康工具的设计与监管路径"
+  ],
+  "method": {
+    "problem": "缺乏真实世界中用户如何使用及评价对话式健康AI工具的实证数据",
+    "approach": "通过大规模纵向观察性研究，采集用户在日常场景中与健康AI交互的行为与反馈数据",
+    "design": [
+      "基于Apple设备生态招募参与者，覆盖多样化人群",
+      "集成OpenEvidence临床知识图谱进行AI响应质量人工标注",
+      "设计标准化评估问卷与会话日志分析双轨机制",
+      "匿名化处理敏感健康数据并符合HIPAA与GDPR要求"
+    ],
+    "setup": "招募上限20万人，研究周期未公开，平台为iOS端Health App扩展模块"
+  },
+  "conclusion": {
+    "findings": "详见原文",
+    "impact": "为健康AI产品落地提供首个大规模真实使用证据，影响行业评估标准与FDA数字健康指南演进",
+    "limitations": "未说明对照组设置、基线健康状态分层及长期效果追踪机制"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Apple Healt…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "健康AI实效缺失",
+        "note": "现有评估多依赖实验室测试，缺乏真实用户行为与临床适配性证据",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "真实世界观察",
+        "note": "通过Apple设备端采集自然对话日志与结构化反馈，结合临床专家标注",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "规模与生态整合",
+        "note": "依托Apple硬件生态实现高参与度、低干扰数据采集，样本量达20万级",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "多维评估框架",
+        "note": "建立准确性、细节度、相关性三维指标，支持AI健康工具迭代优化",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "监管与标准推动",
+        "note": "研究成果或成为数字健康AI临床验证新范式，影响全球监管机构评估路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

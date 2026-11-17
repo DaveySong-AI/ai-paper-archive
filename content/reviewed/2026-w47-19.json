@@ -1,0 +1,72 @@
+{
+  "abstract": "Meta 将 LLM 驱动的即时测试生成系统 JiTTests 投入生产，针对高风险代码变更（diff）自动生成可执行、预期失败的测试用例，以在合入前主动暴露隐私缺陷。2026 年上半年该系统捕获 74 起隐私 SEV，推动隐私缺陷发生率下降 20%。",
+  "keyPoints": [
+    "JiTTests 是面向代码 diff 的即时（Just-in-Time）测试生成系统，聚焦隐私敏感场景",
+    "测试目标明确为‘预期失败’，即在风险代码合入前触发隐私违规行为",
+    "从研究原型升级为 Meta 内部核心 CI/CD 生产基础设施",
+    "采用 LLM 对代码变更上下文进行语义理解与测试意图建模",
+    "以隐私 SEV 捕获数与发生率下降为关键效果指标"
+  ],
+  "method": {
+    "problem": "高风险代码变更中隐蔽隐私缺陷难以被传统静态分析或人工测试覆盖",
+    "approach": "在代码审查阶段（diff 级）实时调用 LLM 生成针对性强、可执行、预期失败的隐私测试",
+    "design": [
+      "diff-centric 输入建模：提取变更代码、上下文函数、调用链及隐私敏感 API 标签",
+      "失败导向提示工程：引导 LLM 生成能触发隐私泄露路径（如 PII 泄露、越权访问）的测试断言",
+      "轻量级执行沙箱：在隔离环境中快速运行生成测试并反馈结果至 PR 流程",
+      "反馈闭环机制：将误报/漏报案例用于迭代优化 LLM 提示与过滤策略"
+    ],
+    "setup": "集成于 Meta 内部 Monorepo CI 系统，覆盖移动端与后端服务关键隐私域"
+  },
+  "conclusion": {
+    "findings": "JiTTests 在生产环境验证了 LLM 生成‘失败测试’的有效性，显著提升隐私缺陷左移检测能力",
+    "impact": "为工业界提供首个大规模落地的 LLM 原生测试生成范式，推动测试从‘验证正确’转向‘证伪风险’",
+    "limitations": "对非结构化 diff（如配置变更、文档更新）覆盖有限；LLM 生成测试的可维护性与可解释性需持续优化"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "JiTTests",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "隐私缺陷难左移",
+        "note": "传统方法在 diff 阶段对隐私违规路径检出率低，人工评审易遗漏",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "LLM 生成失败测试",
+        "note": "基于 diff 上下文，用定制化提示生成可执行、预期失败的隐私测试用例",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "生产级测试基建",
+        "note": "首个在超大规模代码库中常态化运行的 LLM 原生 JIT 测试系统",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "74 起 SEV 捕获",
+        "note": "2026 上半年在 diff 阶段拦截 74 起隐私严重事件，SEV 发生率降 20%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "范式转变",
+        "note": "推动测试目标从‘验证功能正确’转向‘主动证伪安全风险’",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

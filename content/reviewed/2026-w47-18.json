@@ -1,0 +1,72 @@
+{
+  "abstract": "面壁智能提出长上下文训练的新经验缩放定律，将 log(LongPPL) 建模为训练步数 N、短上下文数据量 Ds 和长上下文数据量 Dl 的加性幂律函数，在留出规模上外推 R² 达 0.97；配套 Constant-Last4 监控协议支持单轨迹稳定评估，泛化至 128K 上下文，并在 SFT 后及智能体任务中保持有效性。",
+  "keyPoints": [
+    "首次建立长上下文性能（LongPPL）的经验缩放定律，形式为 log(LongPPL) = a·N^α + b·Ds^β + c·Dl^γ",
+    "提出 Constant-Last4 协议，实现单条训练轨迹上的稳定长上下文监控",
+    "缩放律在未见规模上外推精度高（R²=0.97），支持从 32K 到 128K 的跨长度迁移",
+    "验证该规律在监督微调（SFT）后阶段及长上下文智能体任务中仍具一致性",
+    "为长上下文模型训练提供可预测、可监控、可扩展的量化指导框架"
+  ],
+  "method": {
+    "problem": "长上下文语言建模性能缺乏可外推的量化缩放规律，训练过程难以稳定监控",
+    "approach": "基于大规模控制变量实验，拟合 log(LongPPL) 关于训练步数、短/长上下文数据量的经验幂律关系",
+    "design": [
+      "定义 LongPPL 为长上下文窗口下的负对数似然均值",
+      "采用加性而非乘性结构建模多因素耦合效应",
+      "设计 Constant-Last4 协议：固定最后4个长上下文评估点以抑制波动",
+      "在多长度（32K/64K/128K）、多阶段（预训练/SFT/智能体）设置下验证泛化性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "log(LongPPL) 遵循 N、Ds、Dl 的加性幂律，Constant-Last4 协议显著提升监控稳定性与跨长度迁移能力",
+    "impact": "为长上下文大模型训练提供首个高精度外推缩放律，推动高效、可控、可复现的长上下文优化范式",
+    "limitations": "依赖特定评估协议与数据分布，未覆盖极端稀疏长上下文场景"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Long-contex…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "长上下文监控难",
+        "note": "传统指标波动大，缺乏跨长度可外推规律",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "加性幂律建模",
+        "note": "log(LongPPL) = Σc_i·x_i^{α_i}，三变量解耦拟合",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "Constant-La…",
+        "note": "单轨迹稳定监控，支持32K→128K迁移",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "R²=0.97外推",
+        "note": "在留出规模上高度吻合，验证泛化鲁棒性",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "训练范式升级",
+        "note": "推动长上下文模型向可预测、可扩展、可复现演进",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

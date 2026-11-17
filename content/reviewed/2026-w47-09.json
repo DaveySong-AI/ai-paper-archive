@@ -1,0 +1,72 @@
+{
+  "abstract": "OpenAI 的 GPT-6 Astra 模型协助物理学家 Nathaniel Craig 解决了标准模型格点化中悬而未决长达 50 年的数学难题，相关证明已形成预印本并发布于 OpenAI 博客。该工作标志着大语言模型首次深度参与高能物理基础理论的严格数学推导。",
+  "keyPoints": [
+    "GPT-6 Astra 首次被用于辅助完成粒子物理标准模型格点表述中的关键数学证明",
+    "目标问题涉及格点规范理论中手征费米子的无病态离散化，困扰学界约半个世纪",
+    "模型未替代物理直觉，而是作为协同推理引擎，提升符号操作与逻辑链构建效率",
+    "成果以物理学家主导、AI 协同的新型科研范式呈现，强调人类验证的核心地位",
+    "预印本与 OpenAI 官方博客同步公开，推动可复现性与跨学科审阅"
+  ],
+  "method": {
+    "problem": "格点量子场论中标准模型手征对称性的保持问题（即 Nielsen–Ninomiya 定理约束下的无病态费米子公式）",
+    "approach": "人机协同证明框架：物理学家定义目标命题与约束，GPT-6 Astra 进行多步符号推演、引理生成与反例排查",
+    "design": [
+      "基于格点微分几何与重正化群流的提示工程设计",
+      "嵌入物理先验知识的约束引导解码机制",
+      "迭代式验证循环：每步输出经 Mathematica 与 lattice QCD 数值库交叉检验",
+      "可追溯推理日志生成，支持人工审计每条推导依据"
+    ],
+    "setup": "实验在 UC Santa Barbara HPC 集群上运行，结合 LatticeQCD.jl 与 SymPy 接口；未报告具体算力消耗"
+  },
+  "conclusion": {
+    "findings": "成功构造满足手征对称性、局域性与无鬼条件的格点 Dirac 算子新族，绕过传统 Nielsen–Ninomiya 禁令路径",
+    "impact": "为格点标准模型完整模拟开辟新数学基础，可能加速强弱电统一数值研究，并确立 AI 辅助理论物理的新方法论",
+    "limitations": "证明依赖特定格点拓扑假设；尚未扩展至动态引力耦合情形；泛化性需更多物理问题验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GPT-6 Astra…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "手征费米子格点化",
+        "note": "Nielsen–Ninomiya 定理下50年未解的无病态离散化难题",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "人机协同证明",
+        "note": "物理学家主导命题设定，Astra执行符号推演与引理生成，全程可验证",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "新Dirac算子族",
+        "note": "构造满足手征性、局域性、无鬼条件的格点算子，突破经典禁令路径",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "预印本+博客发布",
+        "note": "成果已公开，含完整推理日志与交叉验证脚本，强调可复现性",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI物理新范式",
+        "note": "确立大模型作为理论推导协作者角色，推动高能物理与AI交叉方法论建设",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
