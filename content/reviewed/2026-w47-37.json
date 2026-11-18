@@ -1,0 +1,72 @@
+{
+  "abstract": "TokenEconomizer 是微软研究院联合加州大学伯克利分校与微软安全团队推出的开源插件，通过复用同一代码仓库中 AI 编码 Agent 的历史会话经验，在不修改 Agent 架构或底层大模型的前提下，显著降低后续会话的 token 消耗（降幅达18.4–30.9%）。其核心是轻量级、可插拔的经验学习机制。",
+  "keyPoints": [
+    "无需修改 Agent 或基础模型，纯插件式部署",
+    "基于同仓库历史会话自动提取可复用的上下文片段与推理模式",
+    "支持动态缓存与检索，兼顾效率与准确性",
+    "在真实 GitHub 仓库上验证，token 节省效果稳定",
+    "开源实现，兼容主流 LLM 编程 Agent 框架"
+  ],
+  "method": {
+    "problem": "AI 编码 Agent 在重复性任务中频繁生成冗余 token，导致高成本与低效",
+    "approach": "从历史会话中挖掘结构化经验知识，并在新会话中智能复用",
+    "design": [
+      "历史会话分块与语义摘要生成",
+      "基于仓库路径与任务类型的双维度索引",
+      "轻量级相似度匹配与上下文注入机制",
+      "渐进式缓存更新策略以保障时效性"
+    ],
+    "setup": "在多个活跃开源 GitHub 仓库上进行端到端评估，对比基线 Agent 的 token 使用量与任务完成率"
+  },
+  "conclusion": {
+    "findings": "TokenEconomizer 在保持功能正确性的前提下，显著降低 token 消耗，验证了经验复用对 Agent 效率提升的有效性",
+    "impact": "为构建低成本、可持续演化的 AI 编程 Agent 提供新范式，推动 Agent 工程向‘记忆增强’方向发展",
+    "limitations": "依赖同仓库历史数据质量与密度；跨仓库泛化能力尚未充分验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "TokenEconom…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "Agent token…",
+        "note": "重复任务中生成冗余上下文与推理，推高调用成本",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "历史经验复用",
+        "note": "从同仓库历史会话中提取、索引、匹配并注入可复用片段",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "轻量插件架构",
+        "note": "零侵入集成，兼容现有 Agent，无需重训练或模型修改",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "降本18.4–30.9%",
+        "note": "在真实仓库任务中稳定节省 token，任务成功率无显著下降",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "Agent 记忆工程化",
+        "note": "启发后续研究将长期记忆、经验沉淀作为 Agent 核心能力模块",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

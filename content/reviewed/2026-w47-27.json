@@ -1,0 +1,72 @@
+{
+  "abstract": "UC Berkeley 与微软联合提出外部控制器 TokenEconomizer，通过学习历史执行轨迹动态优化编程智能体的 token 使用策略。在 SWE-Bench 的 277 个任务上验证，其在 Claude Code、Codex 和 GitHub Copilot CLI 上实现每任务平均 token 成本降低 18.4%–30.9%，显著提升推理经济性。",
+  "keyPoints": [
+    "引入轻量级外部控制器 TokenEconomizer，解耦决策逻辑与主模型",
+    "控制器基于历史运行轨迹进行在线学习，自适应调整 token 分配策略",
+    "无需修改底层大模型或训练流程，即插即用，兼容多种编程智能体",
+    "在真实 CLI 环境（GitHub Copilot CLI）中验证有效性，非纯模拟设置",
+    "成本下降源于减少冗余生成、提前终止低效尝试及重用可信中间结果"
+  ],
+  "method": {
+    "problem": "编程智能体在复杂软件工程任务中 token 消耗高、成本不可控",
+    "approach": "设计外部控制器，在不干预主模型的前提下，通过轨迹回溯与策略微调优化 token 使用",
+    "design": [
+      "轨迹缓存与关键状态标记机制",
+      "基于成功率与 token 效率的双目标奖励建模",
+      "轻量级 RNN 控制器实时预测最优截断点与重试策略",
+      "跨任务迁移学习支持快速适配新代码库"
+    ],
+    "setup": "SWE-Bench 277 个真实 GitHub issue；评估平台：Claude Code、Codex、GitHub Copilot CLI"
+  },
+  "conclusion": {
+    "findings": "TokenEconomizer 在保持任务解决率基本不变前提下，稳定降低 token 成本 18.4%–30.9%",
+    "impact": "为生产环境编程智能体提供低成本部署新范式，推动经济型 AI 工程化落地",
+    "limitations": "控制器泛化能力依赖历史轨迹质量；对零样本任务增益有限；未报告延迟开销"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "TokenEconom…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "token 成本过高",
+        "note": "编程智能体在 SWE-Bench 等长程任务中 token 消耗失控，制约实际部署",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "外部控制器",
+        "note": "独立于主模型的轻量控制器，基于历史轨迹学习 token 分配策略",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "即插即用优化",
+        "note": "无需微调主模型，兼容 Claude Code/Codex/Copilot CLI 等多平台",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "成本降 18.4–30…",
+        "note": "在 277 个 SWE-Bench 任务上验证，解决率波动 <1%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "经济型编程AI",
+        "note": "为 CLI 场景下的智能编码代理提供可扩展、低成本推理框架",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

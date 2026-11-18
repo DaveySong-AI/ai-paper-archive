@@ -1,0 +1,72 @@
+{
+  "abstract": "本文提出BTTF框架，将超10GB芯片仿真波形文件转换为轻量SQLite数据库，支持多智能体协同调试：将自然语言问题解析为SQL查询，自动检查硬件设计规则，并审计查询结果的正确性，显著提升芯片仿真调试效率与可解释性。",
+  "keyPoints": [
+    "首创将大规模芯片波形数据结构化为SQLite数据库，实现高效存取与跨工具互操作",
+    "引入多智能体协作范式，分工完成NL→SQL转换、规则验证与答案审计",
+    "突破传统波形调试依赖GUI和手动探查的瓶颈，支持自然语言交互式调试",
+    "聚焦硬件设计验证场景，强调可解释性与设计规则合规性保障",
+    "框架开源且适配现有EDA流程，具备工程落地潜力"
+  ],
+  "method": {
+    "problem": "芯片仿真产生的TB级波形文件难以直接分析，传统调试工具缺乏语义理解与自动化推理能力",
+    "approach": "将波形数据关系化建模，构建面向调试任务的SQL接口，通过多智能体协同执行NL2SQL、规则检查与结果验证",
+    "design": [
+      "波形到SQLite的无损压缩映射：按时间戳、信号名、值三元组建表",
+      "分层智能体架构：Query Agent、Rule Checker Agent、Audit Agent各司其职",
+      "设计规则嵌入SQL约束与自定义函数，支持断言式验证",
+      "审计模块基于信号因果图与黄金参考生成反事实解释"
+    ],
+    "setup": "使用工业级RISC-V核仿真波形（>10GB）、OpenTitan验证套件；评估指标含SQL准确率、规则覆盖度、调试路径缩短比"
+  },
+  "conclusion": {
+    "findings": "BTTF将平均调试时间缩短68%，NL2SQL准确率达92.3%，规则违规检出率超99.1%，且支持可追溯的审计日志",
+    "impact": "为硬件验证领域提供首个端到端AI原生调试框架，推动EDA向语义化、交互式、可验证方向演进",
+    "limitations": "依赖波形信号命名规范性；对时序异常的深层根因定位能力有限；多智能体协调开销未量化"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "BTTF",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "波形调试低效",
+        "note": "TB级二进制波形难分析，GUI交互繁琐，缺乏语义理解能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "波形SQL化",
+        "note": "将时间-信号-值三元组映射为SQLite表，支持标准SQL查询与索引优化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "多智能体协同",
+        "note": "Query/Rule/Audit三类Agent分工，实现NL→SQL→验证→解释闭环",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "调试效率跃升",
+        "note": "平均调试时间缩短68%，NL2SQL准确率92.3%，违规检出率>99.1%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "EDA范式革新",
+        "note": "推动硬件验证从脚本驱动转向AI原生、可解释、可审计的新范式",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
