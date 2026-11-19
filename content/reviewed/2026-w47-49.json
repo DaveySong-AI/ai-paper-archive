@@ -1,0 +1,71 @@
+{
+  "abstract": "本文提出BTTF框架，将超10GB芯片仿真波形文件转换为紧凑SQLite数据库，支持多智能体协同调试：通过自然语言理解生成SQL查询、验证设计规则、审计结果，显著提升硬件验证效率与可解释性。",
+  "keyPoints": [
+    "首创将大规模芯片波形数据结构化为SQLite数据库，实现高效索引与查询",
+    "引入多智能体协作范式，分工完成NL→SQL转换、规则检查与答案审计",
+    "突破传统波形调试依赖GUI与手动分析的瓶颈，支持自动化、可复现验证",
+    "强调数据库作为‘时间机器’，支持回溯任意仿真时刻状态以定位时序错误"
+  ],
+  "method": {
+    "problem": "芯片仿真波形文件体积庞大（>10GB）、非结构化、难以直接查询与调试",
+    "approach": "将波形数据建模为时序关系表，构建轻量SQLite数据库，并设计多智能体SQL驱动调试流程",
+    "design": [
+      "波形到数据库的无损时序关系建模（信号/周期/值三元组）",
+      "NL2SQL智能体采用微调LLM+领域语法约束生成可靠SQL",
+      "规则检查智能体加载设计规范（如CDC、reset同步）并执行SQL断言",
+      "审计智能体交叉验证多查询结果一致性并定位矛盾时间点"
+    ],
+    "setup": "基于工业级RTL设计（含AXI总线、多时钟域）的仿真波形；对比传统FSDB/VCD工具链"
+  },
+  "conclusion": {
+    "findings": "BTTF在调试准确率、问题定位速度和资源开销上优于现有波形分析方法；SQLite抽象使LLM能有效参与硬件验证闭环",
+    "impact": "为AI for EDA开辟新路径，推动芯片验证从‘人工波形狩猎’转向‘数据库驱动推理’",
+    "limitations": "当前依赖预定义信号映射与规则模板；对未标注异步跨时钟域场景泛化能力待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "BTTF",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "波形调试低效",
+        "note": "10GB+非结构化VCD/FSDB文件，GUI交互慢、难自动化",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "波形转SQL库",
+        "note": "信号-周期-值三元组建模，SQLite轻量存储与时序索引",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "多智能体协同",
+        "note": "NL2SQL、规则检查、结果审计三智能体分工闭环",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "调试提速显著",
+        "note": "实测定位时序违规耗时降低，错误复现率提升，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI for EDA新…",
+        "note": "数据库成为AI与芯片验证的通用接口，推动验证民主化",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
