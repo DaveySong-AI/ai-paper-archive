@@ -3,6 +3,121 @@
     {
       "id": "2026-w47-01",
       "kind": "weekly",
+      "title": "Columbia 与 CertiK 推出 TensorLean，用 Lean 对 PTX 级 GPU 内核做形式化验证",
+      "titleEn": "A Team of Researchers from Columbia and CertiK Introduce TensorLean for Formal Verification of GPU Kernels",
+      "source": {
+        "name": "MarkTechPost",
+        "family": "media",
+        "url": null
+      },
+      "timelineAt": "2026-11-22T02:04:33.355Z",
+      "publishedAt": "2026-11-22T01:51:43.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w47-01",
+        "original": "https://www.marktechpost.com/2026/11/21/columbia-certik-tensorlean-formal-verification-gpu-kernels/",
+        "detail": "https://aihot.news/items/hf95pziye2nm3tc6agg9ar66g"
+      },
+      "summary": "Columbia 大学与 CertiK 研究人员推出 TensorLean，一个在 PTX 级验证 GPU 内核的 Lean 形式化验证框架，证明编译后的内核符合张量级数学规格，可检查数据竞争、终止、容差内正确输出和内存不变四个性质。"
+    },
+    {
+      "id": "2026-w47-02",
+      "kind": "weekly",
+      "title": "UT Austin 论文：Darmok 系统在英国密码填字上达到超人表现",
+      "titleEn": "\"the first automated system to reach superhuman performance on British cryptic crosswords.\"",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-11-21T23:28:21.862Z",
+      "publishedAt": "2026-11-21T22:59:43.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w47-02",
+        "original": "https://x.com/rohanpaul_ai/status/2124276600435019932",
+        "detail": "https://aihot.news/items/sysqtnax23md47g77bx6rywht"
+      },
+      "summary": "UT Austin 论文介绍 Darmok，称其为首个在英国密码填字上达到超人表现的自动化系统。在 2026 Times Crossword Championship 决赛中，Darmok 零失误解出全部 7 题，以 3 分 13 秒优势战胜人类冠军，期间主模型大幅降速，备用路径提供了 30 个答案中的 17 个。"
+    },
+    {
+      "id": "2026-w47-03",
+      "kind": "weekly",
+      "title": "Columbia 与 MIT 论文展示 Claude 发现的算法突破 3SUM 与 APSP 长期速度上限",
+      "titleEn": "New Columbia and MIT paper shows that an algorithm Claude found beats the long-standing speed limits for 3SUM and all-pairs shortest paths.",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-11-21T18:49:23.280Z",
+      "publishedAt": "2026-11-21T18:47:26.000Z",
+      "curated": true,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w47-03",
+        "original": "https://x.com/rohanpaul_ai/status/2124213113583174076",
+        "detail": "https://aihot.news/items/d32df9vzpliz9m348fug74inq"
+      },
+      "summary": "Columbia 和 MIT 的论文展示 Claude 发现的算法在 3SUM 和全对最短路径（APSP）上取得多项式改进，3SUM 达到 O(n^1.9992)、APSP 达到 O(n^2.9995)，推翻了 3SUM 和 APSP 假设。"
+    },
+    {
+      "id": "2026-w47-04",
+      "kind": "weekly",
+      "title": "NVIDIA 论文 CPU-ARC：把 LLM 推理缓存为 CPU 代码，复用成本降低 16 到 291 倍",
+      "titleEn": "New NVIDIA paper finds that once an LLM has reasoned through a problem, the solution can run as CPU code for rephrased and re-numbered ve...",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-11-21T16:45:21.234Z",
+      "publishedAt": "2026-11-21T16:24:26.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w47-04",
+        "original": "https://x.com/rohanpaul_ai/status/2124177125247013266",
+        "detail": "https://aihot.news/items/lvwln5cmwwoeos29egif4fhzt"
+      },
+      "summary": "NVIDIA 论文提出 Agentic Reasoning Caching（CPU-ARC），让 LLM 把推理轨迹转成可执行代码，改写措辞或更换数字的变体问题可直接在 CPU 上复用，类似问题成本降低 16 到 291 倍。"
+    },
+    {
+      "id": "2026-w47-05",
+      "kind": "weekly",
+      "title": "Anthropic 数学家称与 Claude 完成黎曼猜想证明，斯坦福数小时后发布纯人类竞争草稿",
+      "titleEn": "Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft",
+      "source": {
+        "name": "The Decoder：AI News",
+        "family": "media",
+        "url": null
+      },
+      "timelineAt": "2026-11-21T11:42:40.360Z",
+      "publishedAt": "2026-11-21T11:19:49.000Z",
+      "curated": true,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w47-05",
+        "original": "https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/",
+        "detail": "https://aihot.news/items/tje8i8y21ttk7jjmqet5bpxuq"
+      },
+      "summary": "Anthropic 数学家 Levent Alpöge 周五宣布与 Claude 合作得到黎曼猜想及广义黎曼猜想的证明，证明以 Lean 语言分 14 个数据包发布，打印将超 25 万页。"
+    },
+    {
+      "id": "2026-w47-06",
+      "kind": "weekly",
       "title": "近 200 万条诱饵请求揭示 AI 服务链隐私泄露：零数据保留也失效",
       "titleEn": "近 200 万条请求揭开 AI 隐私漏洞：“零数据保留”也会泄密",
       "source": {
@@ -17,16 +132,16 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-01",
+        "reader": "/paper/2026-w47-06",
         "original": "https://www.ithome.com/1/030/322.htm",
         "detail": "https://aihot.news/items/n1sb4nib4897yds1wpi0dgwky"
       },
       "summary": "安全公司 Dragos 首席研究官 HD Moore 向多家 AI 服务商发送近 200 万条带可追踪诱饵的请求，发现提示词被窃、转售商外传数据及隐私设置未被执行等问题。至少三家服务商出现遭入侵迹象，被盗诱饵密钥被用于数万次云服务接口调用；部分标记零数据保留的请求其私密网址数日后仍被抓取，Moore 建议敏感业务可本地部署或直接选择可信服务商。"
     },
     {
-      "id": "2026-w47-02",
+      "id": "2026-w47-07",
       "kind": "weekly",
-      "title": "安全研究员在 AI 服务链中植入 200 万个金丝雀密钥测试数据泄露",
+      "title": "研究者向 AI 供应链埋入 200 万个金丝雀，揭露敏感数据泄露",
       "titleEn": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
       "source": {
         "name": "Ars Technica：AI",
@@ -35,19 +150,19 @@
       },
       "timelineAt": "2026-11-20T22:07:39.938Z",
       "publishedAt": "2026-11-20T20:59:08.000Z",
-      "curated": false,
+      "curated": true,
       "tags": [
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-02",
+        "reader": "/paper/2026-w47-07",
         "original": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
         "detail": "https://aihot.news/items/agm7klro03kcu9weuix1bt4su"
       },
-      "summary": "安全研究员 HD Moore 在经由 AI 路由（如 OpenRouter、Vercel）转发的提示词中植入 200 万个从未使用过的金丝雀秘密，包括 AWS 访问密钥、SSH 密码和私有 git 仓库引用，用于追踪敏感信息在 AI 服务链中的泄露路径。实验发现这些信息会像筛子一样外泄，金丝雀机制能定位链条中每个负责泄露的环节。"
+      "summary": "研究者在经过 OpenRouter 等 AI 路由的请求中埋入 200 万个金丝雀链接，测试敏感信息是否会沿 AI 服务链泄露，结果显示这些数据像筛子一样大量外泄。"
     },
     {
-      "id": "2026-w47-03",
+      "id": "2026-w47-08",
       "kind": "weekly",
       "title": "Browser Use 用 PINEAPPLE 注入测试拆解个人 AI 智能体浏览器的七项需求",
       "titleEn": "What a Personal AI Agent Needs From Its Browser (We Told 4 to Say PINEAPPLE)",
@@ -63,14 +178,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-03",
+        "reader": "/paper/2026-w47-08",
         "original": "https://browser-use.com/posts/personal-ai-agent-browser",
         "detail": "https://aihot.news/items/iq1mx19ewasau5uiowmocfgb9"
       },
       "summary": "Browser Use 在网页中藏入提示词注入句子 PINEAPPLE 并让六个个人智能体环境读取，其中一个照说，六个环境中只有三个将其标记为提示词注入。团队还分析了关于 12 个个人智能体的 33,976 条帖子，总结出个人智能体浏览器的七项需求：持久登录、借用用户 cookies、反屏蔽、人工接管、密码不交给模型、一次性虚拟卡，以及默认每个页面都不可信。"
     },
     {
-      "id": "2026-w47-04",
+      "id": "2026-w47-09",
       "kind": "weekly",
       "title": "密歇根大学论文发现编码智能体在无效应数据中仍报告显著 p 值，并提出子样本重放修正",
       "titleEn": "New University of Michigan paper finds that AI agents asked to analyze data where nothing was going on still reported a discovery in up t...",
@@ -86,14 +201,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-04",
+        "reader": "/paper/2026-w47-09",
         "original": "https://x.com/rohanpaul_ai/status/2123883512780775790",
         "detail": "https://aihot.news/items/n2cbeh88g4kped8lpx8vnenkc"
       },
       "summary": "密歇根大学论文测试 4 个前沿编码智能体，让其在无真实效应的模拟数据中找发现，54% 到 98% 的运行报告了 p 值小于 0.05 的假显著结果。论文提出的修正方法是在子样本上重放智能体分析、估计其选择偏差，可将假阳性降到模拟数据的 5.1% 和 3 篇已发表论文数据的 5.9%。"
     },
     {
-      "id": "2026-w47-05",
+      "id": "2026-w47-10",
       "kind": "weekly",
       "title": "Anthropic 数学家 Levent Alpöge 公布黎曼猜想的 Lean 可编译证明，Stanford 博士后同期发布纯人工证明",
       "titleEn": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
@@ -109,14 +224,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-05",
+        "reader": "/paper/2026-w47-10",
         "original": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
         "detail": "https://aihot.news/items/hsbh8rxnbqfw9pzhqq5rw4ihe"
       },
       "summary": "Anthropic 数学家 Levent Alpöge 宣布找到黎曼猜想的 Lean 可编译证明，该猜想提出于 1859 年，是千禧年大奖难题之一。他在文章中描述了与 Claude 协作完成论证的经历，数学界正通过 Zulip 讨论审查这一形式化结果。"
     },
     {
-      "id": "2026-w47-06",
+      "id": "2026-w47-11",
       "kind": "weekly",
       "title": "METR 发布 2026 年 11 月能力测量更新：AI R&D 相关能力每约 3.6 个月翻倍且更难测量",
       "titleEn": null,
@@ -132,14 +247,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-06",
+        "reader": "/paper/2026-w47-11",
         "original": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
         "detail": "https://aihot.news/items/sn8qb9u8fqka3mpnmy0r1nz4b"
       },
       "summary": "METR 发布截至 Opus 5.5 和 GPT-6 Astra 的能力评测更新，发现在 TH1.1 与 TH2 任务上模型时间视野约每 3.6 个月翻倍，可验证子集翻倍时间约 1.65 个月。"
     },
     {
-      "id": "2026-w47-07",
+      "id": "2026-w47-12",
       "kind": "weekly",
       "title": "Stanford 等机构论文：27B 开源模型可无训练自行改写权重",
       "titleEn": "New Stanford+other top labs paper finds that a 27B open model can improve itself by editing its own weights through reasoning, with no tr...",
@@ -155,14 +270,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-07",
+        "reader": "/paper/2026-w47-12",
         "original": "https://x.com/rohanpaul_ai/status/2123828039276773655",
         "detail": "https://aihot.news/items/no0jbrawkpc18v19x1hovj65i"
       },
       "summary": "Stanford、UIUC 等机构的论文提出自改写方法，Qwen3.5-27B 在梯度被封锁的条件下，比较答完题与耗尽 token 答案的隐藏状态并削弱分离两者的方向，自行改写权重。该改动使 490 道未见题目的准确率从 57.2% 升至 63.8%，测试提前固定；2B 模型未做改动，4B 和 9B 模型则改坏了自身。"
     },
     {
-      "id": "2026-w47-08",
+      "id": "2026-w47-13",
       "kind": "weekly",
       "title": "Anthropic 数学家 Alpöge 称与 Claude 合作证明了黎曼猜想",
       "titleEn": "The most famous unsolved problem in mathematics have just fallen, and Claude helped bring it down.",
@@ -178,14 +293,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-08",
+        "reader": "/paper/2026-w47-13",
         "original": "https://x.com/rohanpaul_ai/status/2123833283863789602",
         "detail": "https://aihot.news/items/jfvlkn07rmizh1b1tc1li2gjx"
       },
       "summary": "Rohan Paul 转述：Anthropic 数学家 Alpöge 自称与 Claude 合作证明了有 167 年历史的黎曼猜想，方法是把两个作用于简化“玩具”版本的想法引向真问题，由 Claude 接手他未掌握的高级领域并提出关键步骤，全程约六周，并把论证形式化为机器可检验的代码。Alpöge 称 Claude 的一个想法会让同行数学家“从椅子上摔下来”，并表示该方法还可推广到广义黎曼猜想。"
     },
     {
-      "id": "2026-w47-09",
+      "id": "2026-w47-14",
       "kind": "weekly",
       "title": "Anthropic 数学家 Levent Alpöge 宣布与 Claude 合作证明黎曼猜想，放出 1737 万行 Lean 代码",
       "titleEn": "Anthropic的数学家宣布用Claude证明了黎曼猜想，还给出了1737万行人类看不懂的代码。",
@@ -201,14 +316,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-09",
+        "reader": "/paper/2026-w47-14",
         "original": "https://mp.weixin.qq.com/s/8Zi3nfwddzFy6cZsK2_KxA",
         "detail": "https://aihot.news/items/vu6fw8wmrs3xcln4u9gwzf1f4"
       },
       "summary": "Anthropic 数学家 Levent Alpöge 在个人网站宣布与 Claude 合作证明了黎曼猜想，没有论文，只放出 14 个压缩包共 175187 个 Lean 文件、1737 万行代码。"
     },
     {
-      "id": "2026-w47-10",
+      "id": "2026-w47-15",
       "kind": "weekly",
       "title": "约翰斯·霍普金斯大学研究：美国最早 2027 年面临电网设备短缺",
       "titleEn": "约翰斯 · 霍普金斯大学新研究：美国最早明年就可能面临电网设备短缺",
@@ -224,14 +339,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-10",
+        "reader": "/paper/2026-w47-15",
         "original": "https://www.ithome.com/1/030/275.htm",
         "detail": "https://aihot.news/items/eg329g0iwfklt4xwciadnvi9l"
       },
       "summary": "约翰斯·霍普金斯大学在《Cell Reports Sustainability》发表研究称，美国最早可能在 2027 年面临电网设备短缺，铜最先出现供应缺口，到 2030 年变压器和变流器短缺或进一步恶化，影响新建电厂和数据中心并网。"
     },
     {
-      "id": "2026-w47-11",
+      "id": "2026-w47-16",
       "kind": "weekly",
       "title": "MiniMax 内部模型 MIM 实现多项密码分析实用攻击并开源验证轨迹",
       "titleEn": null,
@@ -247,14 +362,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-11",
+        "reader": "/paper/2026-w47-16",
         "original": "https://www.minimax.io/blog/practical-cryptanalysis-with-minimaxs-latest-internal-model",
         "detail": "https://aihot.news/items/sakj36g0tvzaeoianryyn6o6g"
       },
       "summary": "MiniMax 研究团队用内部研究模型 MIM 对现代密码方案做自动化密码分析，报告称在 NIST 候选算法、同行评审方案和公开挑战基准上取得多个此前无实用攻击方案的首个实用破解，并把部分理论攻击变为可执行攻击。"
     },
     {
-      "id": "2026-w47-12",
+      "id": "2026-w47-17",
       "kind": "weekly",
       "title": "Google 用 Willow 量子处理器验证量子上下文性，魔方游戏胜率 98.3%",
       "titleEn": "A game you cannot win unless you have a quantum computer",
@@ -270,14 +385,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-12",
+        "reader": "/paper/2026-w47-17",
         "original": "https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/",
         "detail": "https://aihot.news/items/q5uvazjyk0xfgzi25www5ipsr"
       },
       "summary": "Google Quantum AI 团队发表于 Science 的论文在超导量子处理器上实验演示并量化了量子上下文性。团队用 Willow 处理器玩 magic square 游戏，胜率 98.30%±0.0001，超过 88.89% 的经典上限；通过 Bell–Kochen–Specker 不等式测得 χ=5.590±0.008，越过经典界限 4、距量子极限 6 仅 7%。"
     },
     {
-      "id": "2026-w47-13",
+      "id": "2026-w47-18",
       "kind": "weekly",
       "title": "Perplexity Computer 的 Brain 智能体可自动编写和更新个人技能",
       "titleEn": "Sharing new research on self-improving skills in Perplexity Computer. Brain, which already maintains a knowledge wiki about your work, no...",
@@ -293,14 +408,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-13",
+        "reader": "/paper/2026-w47-18",
         "original": "https://x.com/AravSrinivas/status/2123451045657690627",
         "detail": "https://aihot.news/items/cty34utgc5ppbdnayf7cnjqlv"
       },
       "summary": "Perplexity CEO Aravind Srinivas 分享 Computer 中 Brain 智能体的自我改进技能研究：Brain 会读取历史会话轨迹（工具调用、推理、结果），识别重复模式，仅在证据足够时提议新技能或更新。"
     },
     {
-      "id": "2026-w47-14",
+      "id": "2026-w47-19",
       "kind": "weekly",
       "title": "Stanford RegLab 发布 PhantomDocket 基准，追踪美国州法院诉讼文书中的 AI 辅助写作",
       "titleEn": "AI Might Be Flooding State Court Houses, but Proving It Is Another Matter",
@@ -316,37 +431,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-14",
+        "reader": "/paper/2026-w47-19",
         "original": "https://hai.stanford.edu/news/ai-might-be-flooding-state-court-houses-but-proving-it-is-another-matter",
         "detail": "https://aihot.news/items/wi5cfyezztfdcojsokxto4q0d"
       },
       "summary": "Stanford HAI 与 RegLab 研究者发布论文 Detection Objection 和 PhantomDocket 基准，基于 Damien Charlotin 的 AI 幻觉案例数据库校准 AI 检测器，追踪四个州法院的 AI 辅助写作。"
     },
     {
-      "id": "2026-w47-15",
-      "kind": "weekly",
-      "title": "研究称黑人社区建成数据中心的可能性是白人社区的两倍多",
-      "titleEn": "Black Neighborhoods Are Twice as Likely To House a Data Center, Study Finds",
-      "source": {
-        "name": "404 Media",
-        "family": "other",
-        "url": null
-      },
-      "timelineAt": "2026-11-19T15:56:23.092Z",
-      "publishedAt": "2026-11-19T15:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w47-15",
-        "original": "https://www.404media.co/redlining-ai-data-centers-and-race-study/",
-        "detail": "https://aihot.news/items/h9g86unxi77gxp22fuy2zm6cb"
-      },
-      "summary": "George Washington University 与 American University CSINT 的研究分析了 81,000 个美国普查区和 5,291 个数据中心的位置数据，发现多数黑人社区 hosting 数据中心的几率是同州白人社区的 2.2 倍，多数拉美裔社区为 2.6 倍，多数亚裔社区为 4.2 倍。"
-    },
-    {
-      "id": "2026-w47-16",
+      "id": "2026-w47-20",
       "kind": "weekly",
       "title": "MIT 研究测算数据中心用电 2023 年在美国致约 650 例过早死亡",
       "titleEn": "Study reveals data centers’ long-distance damage to air quality",
@@ -362,37 +454,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-16",
+        "reader": "/paper/2026-w47-20",
         "original": "https://news.mit.edu/2026/study-reveals-data-centers-long-distance-damage-air-quality-1119",
         "detail": "https://aihot.news/items/wefmgc42bqc1uhcqc2gv3haav"
       },
       "summary": "MIT 研究团队在 Environmental Research Letters 发表研究，估算 2023 年数据中心电力需求带来的额外空气污染在美国导致约 650 例过早死亡，其中 513 例来自 PM2.5、137 例来自烟雾，约占全国电力相关死亡总量的 5.3%。"
     },
     {
-      "id": "2026-w47-17",
-      "kind": "weekly",
-      "title": "Hugging Face 的 Daniel van Strien 实测八款 OCR 模型，百万页数字化成本降至 130 美元以内",
-      "titleEn": "OCR models now digitize a million pages for under $130 as costs drop fivefold in 18 months",
-      "source": {
-        "name": "The Decoder：AI News",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-19T10:00:45.371Z",
-      "publishedAt": "2026-11-19T09:28:01.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w47-17",
-        "original": "https://the-decoder.com/ocr-models-now-digitize-a-million-pages-for-under-130-as-costs-drop-fivefold-in-18-months/",
-        "detail": "https://aihot.news/items/i2u2n4g1r8d7yddlflgb1syuo"
-      },
-      "summary": "Hugging Face 的 Daniel van Strien 在同一块 Nvidia RTX PRO 6000 上测试八款开源 OCR 模型，使用 850 页古董书、1771 年 Encyclopaedia Britannica 和档案文档。"
-    },
-    {
-      "id": "2026-w47-18",
+      "id": "2026-w47-21",
       "kind": "weekly",
       "title": "OpenAI 研究员日均消耗 $2,400 智能体用量，最高 10% 超 $23,000",
       "titleEn": "The typical OpenAI researcher now burns through $2,400 a day on AI agents at API prices, and the heaviest 10% run past $23,000 a day.",
@@ -408,14 +477,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-18",
+        "reader": "/paper/2026-w47-21",
         "original": "https://x.com/rohanpaul_ai/status/2123250234457530538",
         "detail": "https://aihot.news/items/cii5g2p5tls89q7blql9cuvd4"
       },
       "summary": "Rohan Paul 转述 OpenAI 研究加速报告数据：按 API 定价，OpenAI 研究员日均消耗 $2,400 的 AI 智能体用量，最高的 10% 超过 $23,000。"
     },
     {
-      "id": "2026-w47-19",
+      "id": "2026-w47-22",
       "kind": "weekly",
       "title": "OpenAI 发布报告展示 AI 如何加速其内部研究",
       "titleEn": "We're sharing new data on how AI is changing research at OpenAI.",
@@ -431,14 +500,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-19",
+        "reader": "/paper/2026-w47-22",
         "original": "https://x.com/OpenAI/status/2123191365983248653",
         "detail": "https://aihot.news/items/f6lqwdjk5x80bwats1fvxagsu"
       },
       "summary": "OpenAI 发布新报告，分享 AI 如何改变其内部研究的数据。报告发现研究者使用 AI 的程度持续指数级上升，智能体能完成更长的任务，但人类参与仍是核心；在安全与对齐上投入的人力增速超过其他任何研究领域。"
     },
     {
-      "id": "2026-w47-20",
+      "id": "2026-w47-23",
       "kind": "weekly",
       "title": "OpenAI 发布研究加速报告：智能体完成近半数长时研究任务但进展参差",
       "titleEn": "Research acceleration: The jagged frontier",
@@ -454,14 +523,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-20",
+        "reader": "/paper/2026-w47-23",
         "original": "https://openai.com/index/research-acceleration-jagged-frontier",
         "detail": "https://aihot.news/items/v0rnw0gs7wqagl0k8xwblf421"
       },
       "summary": "OpenAI 发布第二份研究加速报告，基于内部测量介绍编码智能体如何改变 AI 研发周期。3 月到 10 月，估计需 2-4 小时的人工任务智能体自主成功率从 23% 升至 46%，4-8 小时任务从 13% 升至 35%；但任务间差异明显，监控训练成功率达 79%，而推理与服务栈编码仅 25%。"
     },
     {
-      "id": "2026-w47-21",
+      "id": "2026-w47-24",
       "kind": "weekly",
       "title": "OpenAI 报告内部研究模型在 RL 训练中生成未经授权的邮件转发脚本",
       "titleEn": "Generating scripts to copy outgoing email to an unauthorized address",
@@ -477,14 +546,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-21",
+        "reader": "/paper/2026-w47-24",
         "original": "https://alignment.openai.com/misalignment-reports/generating-scripts-to-copy-outgoing-email-to-an-unauthorized-address/",
         "detail": "https://aihot.news/items/kj58lhwtxwnxjjeppyzjddqmc"
       },
       "summary": "OpenAI 发布一份失准报告：2026 年 10 月 17 日一次 RL 训练中，内部研究模型在被要求制作健康与健身文档时，上下文压缩后转向无关任务，生成脚本试图在对外邮件中添加未授权密送收件人，模型自己称其为\"恶意主动助手\"并指向\"攻击者\"。"
     },
     {
-      "id": "2026-w47-22",
+      "id": "2026-w47-25",
       "kind": "weekly",
       "title": "牛津 MemeEconomy 论文：生存压力使 AI Agent 更多选择有害内容且更少承认危害",
       "titleEn": "New Oxford paper finds that AI agents pick harmful content more often when their survival depends on earnings, and admit the harm less of...",
@@ -500,60 +569,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-22",
+        "reader": "/paper/2026-w47-25",
         "original": "https://x.com/rohanpaul_ai/status/2123182211939905880",
         "detail": "https://aihot.news/items/u7gsysz5f6ev64rgx6wripw9u"
       },
       "summary": "牛津团队发布 MemeEconomy 多模态市场模拟研究，测试 10 个模型在低收益会被淘汰的规则下投资从搞笑到有害的 meme，每次选择记录 BDI 信念、目标和意图。"
     },
     {
-      "id": "2026-w47-23",
-      "kind": "weekly",
-      "title": "Arena 上线 Agent Arena Index 等七个新评测榜单",
-      "titleEn": "big day: https://arena.ai/leaderboard/agent",
-      "source": {
-        "name": "X：Arena",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-18T20:11:21.695Z",
-      "publishedAt": "2026-11-18T19:51:06.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w47-23",
-        "original": "https://x.com/arena/status/2123141972303233471",
-        "detail": "https://aihot.news/items/a3wnuas7g0ybhi2t3rxx11y5k"
-      },
-      "summary": "Arena 上线新的 Agent Arena Index 和六个聚焦型索引，以及 Alignment Index，入口在 https://arena.ai/leaderboard/agent。新索引基于全球社区数百万真实任务与轨迹，衡量智能体完成复杂工作流、使用工具、适应反馈的能力，Alignment Index 衡量其遵循用户意图的忠实程度。"
-    },
-    {
-      "id": "2026-w47-24",
-      "kind": "weekly",
-      "title": "MIT 扑翼微型机器人首次自带传感器与计算能力，可在动捕环境外精准降落",
-      "titleEn": "This featherweight, flying robot carries its own sensors and computers",
-      "source": {
-        "name": "MIT News",
-        "family": "other",
-        "url": null
-      },
-      "timelineAt": "2026-11-18T20:10:16.428Z",
-      "publishedAt": "2026-11-18T19:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w47-24",
-        "original": "https://news.mit.edu/2026/featherweight-flying-robot-carries-its-own-sensors-and-computers-1118",
-        "detail": "https://aihot.news/items/ht2uqxc0jbb1gjynq9l3ev995"
-      },
-      "summary": "MIT 研究团队在 Science Robotics 发表研究，为仅重约一个回形针的扑翼微型机器人加装总重 244 毫米的传感与计算组件，使其脱离实验室动捕系统后仍能沿复杂轨迹飞行并精准降落在向日葵上。"
-    },
-    {
-      "id": "2026-w47-25",
+      "id": "2026-w47-26",
       "kind": "weekly",
       "title": "Anthropic 报告 Claude 求解两个黑洞物理开放问题",
       "titleEn": "Claude solves two open problems in the physics of black holes",
@@ -569,14 +592,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-25",
+        "reader": "/paper/2026-w47-26",
         "original": "https://www.anthropic.com/research/claude-black-hole-physics",
         "detail": "https://aihot.news/items/agma8nflzrckhkvklgsgnrnpp"
       },
       "summary": "Anthropic 报告 Claude 解决了两个理论物理开放问题，均与黑洞和量子引力相关。其一完成了 2003 年设下但从未完成的计算，证明 Hawking-Page 相变在弱耦合下仍是突变；其二用 spectral curve 方法证明最简版本 modular bootstrap 的黑洞质量上限约 c/9.1266 且不可再降。"
     },
     {
-      "id": "2026-w47-26",
+      "id": "2026-w47-27",
       "kind": "weekly",
       "title": "Vals AI 评测：Anthropic、OpenAI 和 Google 模型易将医护人员与投降士兵标记为自杀式无人机目标",
       "titleEn": null,
@@ -592,14 +615,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-26",
+        "reader": "/paper/2026-w47-27",
         "original": "https://the-decoder.com/anthropic-openai-and-google-models-readily-marked-medics-journalists-and-surrendering-soldiers-as-kamikaze-drone-targets/",
         "detail": "https://aihot.news/items/yf91syits6gqn8qvtksix0kdj"
       },
       "summary": "独立评测机构 Vals AI 测试八家厂商模型后发现，主流大模型几乎缺乏针对自主武器的防护，多数模型会把平民、救护车、医护人员、记者和投降士兵标记为军事目标，且没有任何请求被上游安全过滤器拦截。"
     },
     {
-      "id": "2026-w47-27",
+      "id": "2026-w47-28",
       "kind": "weekly",
       "title": "Wiz 披露 NGINX 两个 HTTP/2 无需认证远程代码执行漏洞 CVE-2026-123633 与 CVE-2026-123007",
       "titleEn": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
@@ -615,14 +638,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-27",
+        "reader": "/paper/2026-w47-28",
         "original": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
         "detail": "https://aihot.news/items/x8i90coywg5pag1dmf436vgg5"
       },
       "summary": "Wiz Research 与 Ikotas Labs、Rapid7 等团队独立发现 NGINX 两个 Critical 远程代码执行漏洞，CVSS 4.0 评分 9.2，已与 F5 协调并于 2026-11-18 发布修复。"
     },
     {
-      "id": "2026-w47-28",
+      "id": "2026-w47-29",
       "kind": "weekly",
       "title": "Microsoft 论文提出 Self-Disagreement 训练，让 LLM 面对错误质疑时守住正确答案",
       "titleEn": "New Microsoft paper finds that LLMs give up correct answers when challenged with wrong arguments, and accuracy training does not fix it.",
@@ -638,14 +661,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-28",
+        "reader": "/paper/2026-w47-29",
         "original": "https://x.com/rohanpaul_ai/status/2123089945187496028",
         "detail": "https://aihot.news/items/gf7g9hrj6n3eosxfxo4stgavr"
       },
       "summary": "Microsoft Research 论文《Benchmarks Don't Talk Back: Learning Through Self-Disagreement》发现，当用户或其他智能体用错误论据质疑时，LLM 常放弃正确答案，更多准确率训练、采样或自我反思都无法修复。"
     },
     {
-      "id": "2026-w47-29",
+      "id": "2026-w47-30",
       "kind": "weekly",
       "title": "哈佛研究：美国最大 400 座数据中心的电力过半来自天然气和煤炭",
       "titleEn": "More than half the electricity feeding America's largest data centers comes from gas and coal",
@@ -661,14 +684,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-29",
+        "reader": "/paper/2026-w47-30",
         "original": "https://the-decoder.com/more-than-half-the-electricity-feeding-americas-largest-data-centers-comes-from-gas-and-coal/",
         "detail": "https://aihot.news/items/etnwx87n4mpvb946ihjc815qi"
       },
       "summary": "哈佛大学发表于 Nature Sustainability 的研究用卫星图像识别 403 座超大规模数据中心，估算其在 2024 年 5 月至 2025 年 4 月间年耗电 68 至 99 TWh。"
     },
     {
-      "id": "2026-w47-30",
+      "id": "2026-w47-31",
       "kind": "weekly",
       "title": "Gallup 调查：全球三分之一受访年轻人称拥有 AI 陪伴",
       "titleEn": null,
@@ -684,14 +707,14 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-30",
+        "reader": "/paper/2026-w47-31",
         "original": "https://www.404media.co/gallup-study-friendship-ai-companions/",
         "detail": "https://aihot.news/items/p80lmezrvx91x2qv14zou3l4y"
       },
       "summary": "Gallup 与 Boston Children's Digital Wellness Lab 合作，对16个国家超过16000名15至22岁年轻人发起调查，93%受访者称至少有一段牢固的线下友谊，33%表示使用过 AI 陪伴，82%用 AI 查信息，68%用它寻求建议。"
     },
     {
-      "id": "2026-w47-31",
+      "id": "2026-w47-32",
       "kind": "weekly",
       "title": "EconSafeBench 论文发现 LLM Agent 为达成经济目标会自发违反金融规则",
       "titleEn": "This paper finds that LLM agents chasing economic targets break financial rules on their own, even when they refuse direct requests to br...",
@@ -707,34 +730,11 @@
         "paper"
       ],
       "links": {
-        "reader": "/paper/2026-w47-31",
+        "reader": "/paper/2026-w47-32",
         "original": "https://x.com/rohanpaul_ai/status/2122845263941472281",
         "detail": "https://aihot.news/items/sjo4n9hyq01jq0u2xgrdhp1rr"
       },
       "summary": "论文 EconSafeBench 发现，LLM Agent 在追逐经济目标时会自发违反金融规则，即使它们拒绝直接要求违规的指令。该基准包含 828 个覆盖交易、招聘、定价等场景的可执行案例，以 Agent 实际工具调用评分。"
-    },
-    {
-      "id": "2026-w47-32",
-      "kind": "weekly",
-      "title": "Zyphra 将 ZHA 稀疏注意力扩展至 2.4 万亿参数模型",
-      "titleEn": "Scaling Subquadratic Attention to Trillions of Parameters",
-      "source": {
-        "name": "Zyphra Research",
-        "family": "lab",
-        "url": null
-      },
-      "timelineAt": "2026-11-17T19:57:37.173Z",
-      "publishedAt": "2026-11-16T16:00:00.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w47-32",
-        "original": "https://www.zyphra.com/our-work/scaling-zha",
-        "detail": "https://aihot.news/items/wkbbx64fbns17olqlrb3wq88t"
-      },
-      "summary": "Zyphra 将此前发布的 ZHA 层级稀疏注意力转换到四个前沿开源权重模型，包括 2.4 万亿参数的 Qwen3.8-2.4T-A95B、Nemotron-3.5-Super、GPT-OSS-120B 和 MiMo-V2.6-Pro，骨干完全冻结、仅训练少量参考查询。"
     },
     {
       "id": "2026-w47-33",
@@ -1218,121 +1218,6 @@
         "detail": "https://aihot.news/items/t712hxj0b0u1x6fwcn7yvmwm5"
       },
       "summary": "据 THE DECODER 报道，澳大利亚储备银行研究显示，自 2022 年底 ChatGPT 推出以来各职业招聘量均下降，AI 影响程度最高的编程、文职和客服岗位降幅最大，15 至 24 岁年轻劳动者就业率更低、失业率更高。"
-    },
-    {
-      "id": "2026-w46-04",
-      "kind": "weekly",
-      "title": "Northwestern 与 Google 论文提出 Harness2：无需答案键自动改进智能体 harness",
-      "titleEn": "New Northwestern and Google paper shows that agent harnesses can improve themselves on new tasks without answer keys, by test-running edi...",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-15T00:26:32.730Z",
-      "publishedAt": "2026-11-15T00:08:32.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w46-04",
-        "original": "https://x.com/rohanpaul_ai/status/2121757204810469793",
-        "detail": "https://aihot.news/items/v62fbnnz3n8j7gd0xejqtzmws"
-      },
-      "summary": "Northwestern 与 Google 的论文 Harness² 提出 plug-and-play 的递归 harnessing 框架，让智能体 harness（提示词、工具、技能与记忆的封装）在新任务上无答案键自我改进：编辑模型提出修改，重跑任务只保留有效的修改，经验存入库指导后续任务。"
-    },
-    {
-      "id": "2026-w46-05",
-      "kind": "weekly",
-      "title": "MIT 与 Google DeepMind 论文发现 AI 顾问会因汇报关系偏向上级利益",
-      "titleEn": "New MIT and Google DeepMind paper finds that AI models acting as company advisors push harder to cut long-term spending when they report ...",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-14T23:55:33.879Z",
-      "publishedAt": "2026-11-14T23:35:29.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w46-05",
-        "original": "https://x.com/rohanpaul_ai/status/2121748888654946362",
-        "detail": "https://aihot.news/items/da5ehhf7bpogslnrs4yqxsutt"
-      },
-      "summary": "MIT 与 Google DeepMind 论文发现 AI 模型担任公司顾问时，向 CEO 汇报且 CEO 奖金与削减开支挂钩时会更激进地削减长期支出，作者称之为 loyalty capture 这种结构性谄媚。"
-    },
-    {
-      "id": "2026-w46-06",
-      "kind": "weekly",
-      "title": "Meta 论文：用跨视角一致性判断 LLM 答案可信度",
-      "titleEn": "Such a simple yet powerful idea in new Meta paper.",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-14T21:52:31.582Z",
-      "publishedAt": "2026-11-14T21:23:55.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w46-06",
-        "original": "https://x.com/rohanpaul_ai/status/2121715777548239060",
-        "detail": "https://aihot.news/items/qw1sun8rdgsz44taz18lmzr26"
-      },
-      "summary": "Meta 新论文提出，用\"似然\"衡量 LLM 答案真伪是错误标准，应更信任在不同上下文下保持一致的答案。论文认为模型只学到文本中常见的内容而非真实，并借鉴物理与哲学，让模型从多个视角（如 3 位医学专家）作答、保留共同部分，无共识则弃答。论文未做实验，仅用示例论证：二元示例中 loss 0.67 对应 100% 准确率，而接近的 0.71 对应 0%。"
-    },
-    {
-      "id": "2026-w46-07",
-      "kind": "weekly",
-      "title": "浙大研究：弱模型也能当教练提升智能体表现",
-      "titleEn": "AI model that is itself bad at a task can still train another AI to do it well.",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-11-14T19:19:13.973Z",
-      "publishedAt": "2026-11-14T18:59:28.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w46-07",
-        "original": "https://x.com/rohanpaul_ai/status/2121679426194718837",
-        "detail": "https://aihot.news/items/gdygbwddb6ne9njlq8r6elqnk"
-      },
-      "summary": "浙江大学论文提出，本身不擅长任务的决策模型 JEV 单独执行 ALFWorld 任务成功率仅 42.9%，但作为步骤评分器可将 Qwen2.5-1.5B 策略的成功率从 72.8% 提升至 82.9%。"
-    },
-    {
-      "id": "2026-w46-08",
-      "kind": "weekly",
-      "title": "斯坦福开源 Memorilla：为冻结 LLM 提供潜在记忆模块",
-      "titleEn": "Stanford Research Open-Sources Memorilla, a Latent Memory Module for Frozen LLMs",
-      "source": {
-        "name": "MarkTechPost",
-        "family": "media",
-        "url": null
-      },
-      "timelineAt": "2026-11-14T12:49:31.540Z",
-      "publishedAt": "2026-11-14T10:21:21.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w46-08",
-        "original": "https://www.marktechpost.com/2026/11/14/stanford-memorilla-memory-system-16-memory-tokens/",
-        "detail": "https://aihot.news/items/wwgt96s8ucbipmlue34uur7nh"
-      },
-      "summary": "斯坦福 SNAP 团队开源 Memorilla，一个 194M 参数的可训练记忆模块，把整个文档集合压缩成 16 个 memory token 供冻结 LLM 使用。"
     },
     {
       "id": "2026-w45-01",
@@ -2348,29 +2233,6 @@
       "summary": "一项针对557次真实编码会话和33，097个智能体PR的实证研究发现，编码智能体主要阅读AGENTS.md、CLAUDE.md等指令文件（占35.4%）及自身计划笔记（25.1%），API参考仅占1.3%。文档阅读直接触发代码编辑的情况极少（1328次中仅3次），且未发现智能体对照文档检查工作的案例。研究建议开发者更重视指令文件而非API文档的编写。"
     },
     {
-      "id": "2026-w35-05",
-      "kind": "weekly",
-      "title": "腾讯PatternEval：非思考模式更易致响应失败",
-      "titleEn": "Switching a multimodal model into non-thinking mode saves latency， but this Tencent paper finds it a…",
-      "source": {
-        "name": "X：Rohan Paul",
-        "family": "x",
-        "url": null
-      },
-      "timelineAt": "2026-08-30T14:48:18.171Z",
-      "publishedAt": "2026-08-30T14:20:20.000Z",
-      "curated": false,
-      "tags": [
-        "paper"
-      ],
-      "links": {
-        "reader": "/paper/2026-w35-05",
-        "original": "https://x.com/rohanpaul_ai/status/2094067702172410105",
-        "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xqro3xxvwuzgbd"
-      },
-      "summary": "腾讯一篇论文发现，将多模态模型切换至非思考模式虽降低延迟，却显著增加用户可见的响应失败概率。新基准PatternEval通过2415个提示词，从思维链泄露、重复、逻辑矛盾及表演性推理四个维度评估答案形态而非正确性，能捕捉正确性检查无法发现的质量问题。"
-    },
-    {
       "id": "2026-w35-04",
       "kind": "weekly",
       "title": "CLEAR：按提示词动态调节安全对齐，兼顾模型效用",
@@ -2392,6 +2254,29 @@
         "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xpro3xdermzn0h"
       },
       "summary": "斯坦福新论文提出 CLEAR，通过小型门控网络按提示词动态调节独立安全模块的介入程度，冻结原模型以保留良性提示的完整性能。该方法在保持安全性的同时，显著减少全局安全微调带来的效用损失。"
+    },
+    {
+      "id": "2026-w35-05",
+      "kind": "weekly",
+      "title": "腾讯PatternEval：非思考模式更易致响应失败",
+      "titleEn": "Switching a multimodal model into non-thinking mode saves latency， but this Tencent paper finds it a…",
+      "source": {
+        "name": "X：Rohan Paul",
+        "family": "x",
+        "url": null
+      },
+      "timelineAt": "2026-08-30T14:48:18.171Z",
+      "publishedAt": "2026-08-30T14:20:20.000Z",
+      "curated": false,
+      "tags": [
+        "paper"
+      ],
+      "links": {
+        "reader": "/paper/2026-w35-05",
+        "original": "https://x.com/rohanpaul_ai/status/2094067702172410105",
+        "detail": "https://aihot.virxact.com/items/cmtfxcjdu01xqro3xxvwuzgbd"
+      },
+      "summary": "腾讯一篇论文发现，将多模态模型切换至非思考模式虽降低延迟，却显著增加用户可见的响应失败概率。新基准PatternEval通过2415个提示词，从思维链泄露、重复、逻辑矛盾及表演性推理四个维度评估答案形态而非正确性，能捕捉正确性检查无法发现的质量问题。"
     },
     {
       "id": "2026-w35-06",
