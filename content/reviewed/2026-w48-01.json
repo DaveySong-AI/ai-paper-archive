@@ -1,0 +1,72 @@
+{
+  "abstract": "本文介绍AMD与vLLM团队合作，利用AMD开源MoRI库的UMBPs技术，将大语言模型智能体（Agentic）推理中的KV缓存池直接部署于NVMe存储，绕过DRAM层级。在AgentX和kvlab负载下，1.8 TB NVMe KV池在Kimi-K3模型上实现接近DRAM的吞吐性能，误差控制在±1%以内。",
+  "keyPoints": [
+    "首次实现KV缓存池直存NVMe，跳过DRAM缓存层",
+    "基于AMD MoRI库的UMBPs（Unified Memory Block Pools）提供低开销NVMe内存抽象",
+    "在真实智能体负载（AgentX/kvlab）下验证端到端性能可比性",
+    "支持高并发会话（48–96），吞吐相对DRAM仅偏差±0.8%",
+    "与vLLM深度集成，无需修改用户推理代码"
+  ],
+  "method": {
+    "problem": "KV缓存随智能体会话增长呈线性膨胀，DRAM容量与成本成为推理扩展瓶颈",
+    "approach": "将KV缓存池从DRAM迁移至高性能NVMe，通过软硬件协同抽象屏蔽I/O延迟",
+    "design": [
+      "UMBPs统一内存块池：跨DRAM/NVMe的透明地址空间管理",
+      "异步预取+局部性感知分块：降低随机访问延迟影响",
+      "vLLM PagedAttention适配层：重定向page table至NVMe物理页",
+      "MoRI内核旁路驱动：绕过VFS与页缓存，实现μs级NVMe访问"
+    ],
+    "setup": "测试平台：Kimi-K3模型；负载：AgentX、kvlab智能体轨迹；存储：1.8 TB NVMe（对比同容量DRAM）；并发：48/70/96会话"
+  },
+  "conclusion": {
+    "findings": "NVMe可作为KV缓存主存储介质，在真实智能体场景下吞吐逼近DRAM，打破‘DRAM-only’设计范式",
+    "impact": "为长上下文、多会话、低成本大模型智能体推理提供新基础设施路径，推动存储-计算协同架构演进",
+    "limitations": "依赖高性能NVMe（PCIe 5.0+）与定制驱动；对超低延迟单token生成场景未充分验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MoRI-UMBPs-…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "KV缓存扩容瓶颈",
+        "note": "智能体会话导致KV线性膨胀，DRAM成本与容量制约推理扩展",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "UMBPs NVMe直存",
+        "note": "MoRI提供统一块池抽象，vLLM通过PagedAttention适配NVMe页表",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "零修改兼容vLLM",
+        "note": "用户无需改代码，自动启用NVMe KV池，保持API与调度逻辑不变",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "吞吐逼近DRAM",
+        "note": "1.8TB NVMe在48–96并发下吞吐差≤±0.8%，详见原文实验数据",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "重构存储栈范式",
+        "note": "推动LLM推理从‘内存中心’转向‘存储-计算协同’架构",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

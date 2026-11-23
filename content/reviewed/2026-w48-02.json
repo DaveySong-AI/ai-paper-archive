@@ -1,0 +1,72 @@
+{
+  "abstract": "SpaceXAI 团队发布论文，介绍 X 社区笔记（Community Notes）系统中 AI Note Writer API 的开放及首个大规模客户端 Community Writer 的设计。该工具基于两个 Grok 模型生成初稿，通过过滤弱稿与淘汰早期评分不佳的笔记提升质量，但所有 AI 生成笔记仍需人工评分后方可展示。",
+  "keyPoints": [
+    "9月2日起向开发者开放 AI Note Writer API，支持第三方构建 AI 笔记生成工具",
+    "Community Writer 是当前最大客户端，采用双 Grok 模型协同起草与筛选机制",
+    "引入自动过滤策略：剔除低质量初稿，并动态淘汰早期人工评分差的笔记",
+    "AI 生成笔记已占‘有帮助’社区笔记的显著比例，但展示权完全依赖人工评分",
+    "强调人机协作范式：AI 负责高效产出与初筛，人类保留最终判断与责任"
+  ],
+  "method": {
+    "problem": "如何在保障社区笔记可信度前提下，规模化提升高质量笔记供给效率",
+    "approach": "构建可扩展的 AI 辅助写作框架，将模型生成、自动筛选与人工评审深度耦合",
+    "design": [
+      "双 Grok 模型分工：一模型生成多候选稿，另一模型评估并排序",
+      "基于早期人工评分反馈的笔记动态淘汰机制",
+      "API 接口标准化，支持外部开发者接入并复用评分与反馈数据",
+      "所有 AI 笔记强制进入现有人工评级流程，无直发通道"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "AI 已成为社区笔记的重要生产者，尤其在‘有帮助’笔记中占比显著提升；但人工评审仍是不可替代的质量守门员。",
+    "impact": "为内容审核与社区治理领域提供了可落地的‘AI 增效+人类把关’新范式，推动平台级事实核查基础设施升级。",
+    "limitations": "未披露具体产出占比数值、模型微调细节及人工评分一致性指标"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SpaceXAI",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "笔记供给瓶颈",
+        "note": "人工撰写速度慢、覆盖议题有限，难以应对海量内容的事实核查需求",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "双模型协同框架",
+        "note": "Grok-1 生成多稿，Grok-2 过滤排序；结合早期人工评分动态淘汰",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "开放AI Note W…",
+        "note": "首个面向社区事实核查的公开AI笔记生成接口，支持生态共建",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "AI占比显著提升",
+        "note": "AI生成笔记已占‘有帮助’社区笔记的较大份额，具体数值详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "人机责任分离范式",
+        "note": "确立AI为‘高效协作者’、人类为‘最终裁决者’的平台治理新共识",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
