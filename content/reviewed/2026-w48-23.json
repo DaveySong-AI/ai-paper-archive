@@ -1,0 +1,72 @@
+{
+  "abstract": "Google Research 在 ICML 2025 提出 DeepCrossAttention（DCA），通过动态 token 级路由机制替代传统固定残差连接，使当前层能自适应融合前序多层的历史特征表示，提升 Transformer 建模能力与训练稳定性。",
+  "keyPoints": [
+    "提出动态残差路由机制，取代标准恒等映射残差连接",
+    "按 token 粒度选择性聚合历史层特征，增强表征多样性",
+    "引入轻量级跨层注意力模块（Cross-Attention）实现层间信息交互",
+    "在语言建模与长序列任务中验证有效性与泛化性",
+    "保持模型参数量与计算开销基本不变"
+  ],
+  "method": {
+    "problem": "传统 Transformer 残差连接缺乏对历史层特征的动态利用能力，限制深层网络的信息流动与表达灵活性",
+    "approach": "将残差连接重构为可学习的、token-wise 的跨层注意力门控机制，实现历史层特征的动态加权融合",
+    "design": [
+      "设计 Cross-Attention Router 模块，以当前层输出为 query，历史层输出为 key/value",
+      "引入 layer-wise gating score，实现每 token 对不同历史层的软选择",
+      "采用低秩投影降低跨层注意力计算复杂度",
+      "保留原始残差路径作为可选基线分支，支持渐进式训练"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "DCA 显著提升深层 Transformer 在语言建模、长程依赖建模与下游迁移任务中的性能，同时缓解梯度消失与训练不稳定性问题",
+    "impact": "为 Transformer 架构设计提供新范式——从静态残差走向动态历史感知连接，推动高效深层模型研究",
+    "limitations": "跨层注意力引入轻微延迟开销；对极深网络（>100 层）的扩展性尚待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "DCA",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "残差连接僵化",
+        "note": "标准恒等残差无法动态利用历史层特征，制约深层Transformer表达能力",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "动态跨层路由",
+        "note": "用token级Cross-Attention替代固定残差，实现历史层特征的自适应加权融合",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "DeepCrossAt…",
+        "note": "轻量、可微、即插即用的残差增强模块，兼容现有Transformer架构",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能显著提升",
+        "note": "在多个基准上超越标准Transformer及Residual Attention等变体，训练更稳定",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "残差范式革新",
+        "note": "推动从静态跳跃连接向动态历史感知连接演进，影响后续架构设计方向",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

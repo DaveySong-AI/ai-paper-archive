@@ -1,0 +1,79 @@
+{
+  "abstract": "Ai2发布RoboTrack点跟踪基准与数据集，包含307段人工标注视频、2522条真实点轨迹的RoboTrack-Bench，以及基于MolmoSpaces生成的1500万合成样本RoboTrack-15M；同步推出轻量级RoboTracker模型，专为真实机器人操作场景下的高精度、低延迟点跟踪任务设计。",
+  "keyPoints": [
+    "首个面向真实机器人操作场景的点跟踪基准RoboTrack-Bench",
+    "引入大规模合成训练集RoboTrack-15M，缓解真实标注数据稀缺问题",
+    "RoboTracker模型兼顾精度与实时性，适配边缘部署需求",
+    "数据覆盖多视角、遮挡、形变、光照变化等真实操作挑战",
+    "开源全部基准、数据与模型，推动机器人视觉跟踪标准化"
+  ],
+  "method": {
+    "problem": "真实机器人操作中长期、鲁棒的稀疏点跟踪问题",
+    "approach": "构建真实+合成混合数据驱动的端到端学习框架",
+    "design": [
+      "人工精标RoboTrack-Bench用于严格评估",
+      "基于MolmoSpaces的物理感知合成管线生成RoboTrack-15M",
+      "RoboTracker采用轻量时空注意力架构",
+      "引入运动一致性正则化提升轨迹稳定性"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "RoboTracker在RoboTrack-Bench上显著优于现有通用跟踪器，且推理延迟满足实时操作要求",
+    "impact": "为机器人灵巧操作提供可复现的视觉跟踪评测标准与实用模型基线",
+    "limitations": "合成数据与真实域间存在分布偏移，复杂接触动力学建模仍待加强"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "RoboTrack",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "点跟踪难题",
+        "note": "真实机器人操作中遮挡、形变、低纹理导致跟踪失败频发",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "混合数据驱动",
+        "note": "结合人工标注真实数据与物理感知合成数据训练模型",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "RoboTrack-B…",
+        "note": "307段视频、2522条轨迹，首个面向机器人操作的点跟踪基准",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "contribution",
+        "label": "RoboTrack-1…",
+        "note": "基于MolmoSpaces生成的大规模合成训练集，含1500万样本",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "result",
+        "label": "RoboTracker…",
+        "note": "轻量高效，在精度与延迟间取得平衡，支持边缘部署",
+        "children": [],
+        "id": "n5-6"
+      },
+      {
+        "type": "impact",
+        "label": "推动标准化",
+        "note": "开源全套资源，促进机器人视觉跟踪研究可复现与公平比较",
+        "children": [],
+        "id": "n6-7"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

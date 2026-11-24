@@ -1,0 +1,72 @@
+{
+  "abstract": "本文介绍 AMD MoRI 库与 vLLM 合作实现的 UMBP（Unified Memory Block Pool）方案，首次将大模型推理中的 KV 缓存池直接部署于 NVMe 存储，绕过 DRAM 中间层。在 AgentX 和 kvlab 智能体负载下，1.8 TB NVMe KV 池在 Kimi-K3 上吞吐表现与同容量 DRAM 池基本持平（误差±1%），验证了 NVMe 直接承载 KV…",
+  "keyPoints": [
+    "提出 NVMe 原生 KV 缓存架构，跳过传统 DRAM 缓存层",
+    "基于 AMD 开源 MoRI 库构建 UMBP 统一内存块池管理机制",
+    "支持智能体（Agentic）长上下文、高并发会话场景下的低延迟访问",
+    "在真实 AgentX/kvlab 负载下实现 NVMe 与 DRAM 吞吐性能对齐",
+    "UMBP 兼容 vLLM 运行时，无需修改模型或调度逻辑"
+  ],
+  "method": {
+    "problem": "KV 缓存容量受限于昂贵且易失的 DRAM，制约长上下文与多会话智能体推理的扩展性",
+    "approach": "将 KV 缓存池从 DRAM 迁移至高性能 NVMe，并通过软硬件协同优化访存路径与局部性",
+    "design": [
+      "MoRI 库提供细粒度、可持久化的内存块抽象与生命周期管理",
+      "UMBP 实现跨设备（NVMe/DRAM）统一寻址与按需加载的缓存策略",
+      "vLLM 运行时集成 UMBP 接口，透明支持 KV 页级预取与异步换入换出",
+      "针对智能体负载的访问模式（如跳跃式 token 访问）优化块布局与预取启发式"
+    ],
+    "setup": "测试平台：Kimi-K3；负载：AgentX、kvlab；对比组：1.8 TB DRAM vs 1.8 TB NVMe；并发会话数：48/70/96"
+  },
+  "conclusion": {
+    "findings": "NVMe 可作为主 KV 缓存介质，在智能体推理中实现与 DRAM 相当的吞吐性能（偏差≤1%）",
+    "impact": "为大模型智能体系统提供低成本、高容量、近持久化的 KV 存储新范式，推动推理基础设施去 DRAM 化",
+    "limitations": "依赖高性能 NVMe（如 PCIe 5.0）与定制固件支持；冷启动延迟略高；暂未覆盖所有量化格式"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MoRI-UMBP",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "KV 容量瓶颈",
+        "note": "DRAM 昂贵易失，限制长上下文与多会话智能体扩展",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "NVMe 原生存储",
+        "note": "MoRI 提供块抽象，UMBP 实现统一寻址与按需加载",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "UMBP-vLLM 集成",
+        "note": "零修改接入 vLLM，支持智能体负载下的低开销 KV 管理",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "吞吐追平 DRAM",
+        "note": "1.8TB NVMe 在48/70/96并发下吞吐偏差仅±0.3%~0.8%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推理基础设施革新",
+        "note": "开启去 DRAM 化路径，降低智能体系统 TCO 与宕机风险",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

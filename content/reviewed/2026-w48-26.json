@@ -1,0 +1,72 @@
+{
+  "abstract": "SpaceXAI 团队发布论文，介绍 X 社区笔记（Community Notes）系统中 AI Note Writer API 的设计与应用。重点阐述最大客户端 Community Writer 的架构：采用双 Grok 模型协同起草笔记，通过自动过滤弱稿及剔除早期评分不佳内容提升质量，但所有 AI 生成笔记仍需人工评分后方可展示。",
+  "keyPoints": [
+    "X 社区笔记于 9 月 2 日开放 AI Note Writer API，支持第三方开发 AI 笔记撰写工具",
+    "Community Writer 是当前最大 AI 客户端，基于两个 Grok 模型分工协作",
+    "采用动态过滤机制：自动筛除低质量初稿，并删除早期人工评分差的笔记",
+    "AI 生成笔记已占‘有帮助’社区笔记的较大比例，但无一可绕过人工评分环节",
+    "设计强调人机协同：AI 负责规模化起草，人类负责最终可信度把关"
+  ],
+  "method": {
+    "problem": "如何在保障社区笔记可信度前提下，规模化提升高质量笔记供给效率",
+    "approach": "构建可扩展的 AI 辅助写作接口体系，以人类评审为强制终审环节",
+    "design": [
+      "开放标准化 AI Note Writer API，支持多模型、多策略接入",
+      "Community Writer 采用双 Grok 模型：一主稿生成，一辅助评估与重写",
+      "引入实时反馈过滤：基于早期人工评分信号动态淘汰低分笔记草稿",
+      "所有 AI 输出必须经完整人工评分流程，未达阈值者不展示"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "AI 已成为社区笔记重要生产来源，显著提升‘有帮助’笔记供给量，但人类评审仍是不可替代的质量守门员",
+    "impact": "为内容审核与社区治理领域提供可落地的‘AI 增效+人类把关’范式参考",
+    "limitations": "未公开具体产出占比数值、人工评分延迟与一致性数据"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SpaceXAI",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "笔记供给瓶颈",
+        "note": "人工撰写速度慢、覆盖窄，难以应对海量争议内容",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "API+双模型架构",
+        "note": "开放接口供接入；Community Writer用两Grok分工起草与筛选",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "动态过滤机制",
+        "note": "基于早期人工评分信号实时淘汰低分草稿，提升有效产出比",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "AI占比显著提升",
+        "note": "AI撰写的‘有帮助’笔记已占较大份额，但100%需人工终审",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "人机协同新范式",
+        "note": "为平台级事实核查系统提供可扩展、可问责的AI增强路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

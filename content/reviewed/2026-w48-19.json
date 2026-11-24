@@ -1,0 +1,72 @@
+{
+  "abstract": "微软AI发布自研强化学习框架Rocket，用于对3万亿参数基座模型MAI Base 2进行端到端RL后训练，无需依赖第三方模型蒸馏。Rocket支持大规模分布式RL训练，集成策略优化、奖励建模与安全对齐能力，旨在提升模型在复杂任务中的推理与决策水平。",
+  "keyPoints": [
+    "自研RL框架Rocket专为超大规模语言模型设计，支持3万亿参数模型的端到端强化学习训练",
+    "摒弃传统知识蒸馏路径，直接在基座模型上开展RLHF/RLAIF等后训练范式",
+    "强调系统级工程创新：高吞吐rollout、低延迟reward建模、异步策略更新",
+    "深度融合安全对齐机制，将价值观约束嵌入RL训练闭环",
+    "已支撑MAI Base 2在代码生成、数学推理等任务中实现显著能力跃升"
+  ],
+  "method": {
+    "problem": "如何在超大规模基座模型上高效、稳定、可控地开展强化学习后训练",
+    "approach": "构建统一、可扩展、安全优先的端到端RL基础设施",
+    "design": [
+      "分层异步架构：分离rollout、reward inference、policy update三阶段计算流",
+      "动态批处理与梯度压缩技术以降低通信开销",
+      "模块化奖励建模接口，支持多源（人工、模型、规则）混合信号融合",
+      "在线安全过滤器，在生成过程中实时拦截有害输出"
+    ],
+    "setup": "基于Azure AI超级计算集群，使用MAI Base 2（3T参数）作为基座模型；训练任务涵盖代码补全、数学证明、多跳问答"
+  },
+  "conclusion": {
+    "findings": "Rocket验证了超大规模模型可直接通过RL实现能力跃迁，且训练稳定性与对齐可控性优于蒸馏路径",
+    "impact": "为大模型能力演进提供新范式，推动工业级RL基础设施标准化与开源生态建设",
+    "limitations": "高度依赖微软定制硬件与集群调度系统，通用性与轻量化部署能力待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Rocket",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "大模型RL训练难",
+        "note": "参数规模大、样本效率低、安全对齐难、系统开销高",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "分层异步RL架构",
+        "note": "解耦rollout/reward/policy三阶段，支持弹性扩缩容",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "端到端RL基础设施",
+        "note": "集成策略优化、奖励建模、安全过滤，不依赖蒸馏",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "MAI Base 2能…",
+        "note": "在代码与数学任务上显著超越监督微调基线，详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "定义工业RL新标准",
+        "note": "推动大模型从‘预训练+微调’迈向‘预训练+RL’范式",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

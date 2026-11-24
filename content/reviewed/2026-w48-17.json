@@ -1,0 +1,72 @@
+{
+  "abstract": "Ai2 发布 RoboTrack，一个面向真实世界机器人操作的点跟踪基准与数据套件，包含人工标注的 RoboTrack-Bench（307 段视频、2522 条轨迹）和大规模合成数据集 RoboTrack-15M（1500 万条轨迹），并推出 RoboTracker 系列模型，旨在提升机器人在复杂动态场景中对关键操作点的鲁棒跟踪能力。",
+  "keyPoints": [
+    "首个专为机器人操作设计的点跟踪基准 RoboTrack-Bench，覆盖多源真实第一/第三人称操作视频",
+    "提出首个千万级点跟踪合成数据集 RoboTrack-15M，基于 MolmoSpaces 场景生成",
+    "发布 RoboTracker 系列模型，支持端到端可微分点跟踪与机器人动作闭环",
+    "统一评估协议涵盖遮挡恢复、跨视角一致性、运动模糊鲁棒性等机器人关键挑战",
+    "所有资源（基准、数据、模型）完全开源，集成于 Hugging Face 平台"
+  ],
+  "method": {
+    "problem": "真实机器人操作场景下关键点（如夹爪尖端、物体接触点）的长期、鲁棒、跨视角点跟踪",
+    "approach": "构建面向机器人任务的专用点跟踪基准与数据生成范式，结合人工精标+大模型驱动合成，训练轻量可部署的视觉跟踪器",
+    "design": [
+      "多源异构视频整合：融合 DROID、Ego-Exo4D、MolmoAct 2、EgoVerse 四类机器人操作数据",
+      "物理感知合成：利用 MolmoSpaces 的 3D 场景先验生成符合运动学约束的点轨迹",
+      "双阶段标注协议：人工校验关键帧 + 光流传播+交互验证保证轨迹质量",
+      "RoboTracker 架构：以 ViT 为骨干，引入操作意图提示模块与轨迹置信度门控机制"
+    ],
+    "setup": "评估在 RoboTrack-Bench 上进行，指标包括 PCK@0.1、遮挡恢复成功率、跨视角匹配准确率；训练使用 RoboTrack-15M 预训练 + Bench 微调"
+  },
+  "conclusion": {
+    "findings": "RoboTracker 在 RoboTrack-Bench 上显著优于通用点跟踪方法（如RAFT, PIPs），尤其在遮挡与快速运动场景下提升明显；合成数据有效缓解真实标注稀缺问题。",
+    "impact": "为机器人视觉-动作联合学习建立新标准，推动具身智能中细粒度视觉理解与控制的协同演进。",
+    "limitations": "RoboTrack-15M 的物理真实性依赖 MolmoSpaces 仿真精度；Bench 规模仍受限于人工标注成本。"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "RoboTrack",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "机器人点跟踪",
+        "note": "解决真实操作中关键点长期鲁棒跟踪难题，强调遮挡、运动模糊、跨视角一致性",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "基准+数据+模型",
+        "note": "构建 RoboTrack-Bench 基准、RoboTrack-15M 合成数据集、RoboTracker 系列模型",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "三大开源组件",
+        "note": "含人工标注基准、千万级合成数据、轻量可微分跟踪器，全部 Hugging Face 开源",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能显著提升",
+        "note": "在关键指标上超越通用方法，验证合成数据有效性与架构针对性设计优势",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动具身智能",
+        "note": "为机器人视觉-动作闭环提供标准化评估与训练基础，促进细粒度操作理解发展",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

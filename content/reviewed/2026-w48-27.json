@@ -1,0 +1,72 @@
+{
+  "abstract": "MIT 提出 SLIC（Small LM Iterating on Circuits）方法，利用带可验证奖励的多轮强化学习，训练轻量级语言模型自主设计模拟集成电路。该方法使小模型在本地部署时性能逼近前沿大模型 GPT-6-Astra，同时显著降低计算开销与设计成本。",
+  "keyPoints": [
+    "首创将小语言模型（SLM）用于端到端模拟芯片设计任务",
+    "引入电路行为可验证奖励机制，保障生成方案的功能正确性",
+    "采用多轮迭代式强化学习框架，逐步提升模型电路建模能力",
+    "无需全尺寸仿真环境，支持资源受限场景下的本地化部署",
+    "在关键指标上接近 GPT-6-Astra，但参数量与推理成本大幅降低"
+  ],
+  "method": {
+    "problem": "模拟芯片设计高度依赖专家经验，自动化工具缺乏泛化性与可验证性",
+    "approach": "以小语言模型为代理，在闭环强化学习中迭代生成、评估与优化电路描述",
+    "design": [
+      "构建电路语法感知的tokenization与约束解码机制",
+      "设计基于SPICE可执行性与功能指标的稀疏奖励函数",
+      "采用课程学习策略，从基础单元电路逐步过渡至复杂拓扑",
+      "集成符号化验证模块，实时过滤不可实现的设计提案"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "SLIC 方法使百亿参数级模型在模拟电路设计任务中达到接近GPT-6-Astra的性能水平",
+    "impact": "推动AI for EDA范式变革，为边缘端芯片设计自动化提供新路径",
+    "limitations": "对超大规模混合信号系统支持尚不充分；依赖高质量电路描述数据集"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SLIC",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "模拟芯片设计难",
+        "note": "高度依赖专家经验，自动化工具泛化弱、验证难",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "多轮RL+可验证奖励",
+        "note": "小模型通过带电路可执行性反馈的强化学习迭代优化",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "轻量模型本地部署",
+        "note": "数十亿参数模型实现接近GPT-6-Astra性能，资源消耗显著降低",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "性能接近GPT-6-A…",
+        "note": "在基准电路设计任务中达成相似功能指标与收敛速度",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI for EDA新…",
+        "note": "为边缘端芯片设计自动化与教育级EDA工具提供可行技术路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
