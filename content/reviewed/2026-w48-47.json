@@ -1,0 +1,72 @@
+{
+  "abstract": "SpaceXAI 团队发布论文，介绍 X 社区笔记（Community Notes）系统中 AI Note Writer API 的设计与应用。重点阐述最大客户端 Community Writer 的架构：基于两个 Grok 模型生成初稿、自动过滤低质量草稿，并剔除早期人工评分不佳的笔记；所有 AI 生成笔记仍需经人类评分员审核后方可展示。",
+  "keyPoints": [
+    "X 社区笔记于 9 月 2 日正式开放 AI Note Writer API",
+    "Community Writer 是当前最大 AI 客户端，采用双 Grok 模型协同工作",
+    "AI 负责起草、初筛与动态淘汰低分草稿，不替代人工最终判定",
+    "AI 已贡献社区笔记中‘有帮助’笔记的显著比例",
+    "人类评分员仍为每条笔记是否上线的唯一决策者"
+  ],
+  "method": {
+    "problem": "如何在保障社区笔记可信度前提下，规模化提升高质量笔记产出效率",
+    "approach": "构建人机协同流水线：AI 起草+预筛+淘汰，人类终审",
+    "design": [
+      "开放标准化 AI Note Writer API 接口",
+      "Community Writer 使用双 Grok 模型分工起草与重写",
+      "引入实时反馈机制，自动删除早期评分低于阈值的笔记草稿",
+      "严格隔离 AI 生成与人工评分权限，确保决策权归属人类"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "AI 已承担社区笔记中相当比例的‘有帮助’内容生产，但人类评分不可替代",
+    "impact": "为众包事实核查系统提供可扩展的 AI 协同范式，推动平台级内容治理演进",
+    "limitations": "未披露具体产出占比数值、模型微调细节及人工评分一致性指标"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "SpaceXAI",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "可信扩产瓶颈",
+        "note": "社区笔记需兼顾规模与可信度，纯人工难以满足增长需求",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "人机协同流水线",
+        "note": "AI起草→自动过滤→淘汰低分草稿→人类终审，权责分离",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "AI Note Wri…",
+        "note": "首个面向社区事实核查系统的开放AI接口，支持第三方接入",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "AI贡献显著占比",
+        "note": "AI撰写的笔记已占‘有帮助’社区笔记的较大部分，具体数值详见原文",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "治理范式升级",
+        "note": "确立AI辅助、人类主导的事实核查新协作标准，具平台推广价值",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

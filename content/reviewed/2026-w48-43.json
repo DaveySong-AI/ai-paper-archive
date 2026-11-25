@@ -1,0 +1,72 @@
+{
+  "abstract": "微软AI团队发布自研强化学习框架Rocket，专为大规模语言模型后训练优化，已应用于三万亿参数基座模型MAI Base 2的端到端RLHF流程，无需依赖第三方知识蒸馏，支持高吞吐、低延迟的分布式策略优化。",
+  "keyPoints": [
+    "Rocket是微软面向超大规模模型定制的轻量级、模块化RL训练框架",
+    "首次实现对三万亿参数模型MAI Base 2的全流程无蒸馏RL后训练",
+    "采用异步Actor-Learner架构与混合精度梯度同步，兼顾稳定性与扩展性",
+    "深度集成Azure AI基础设施，支持千卡级集群下的高效RL训练调度",
+    "开源核心组件并计划逐步释放工具链，推动工业级RL for LLM标准化"
+  ],
+  "method": {
+    "problem": "超大规模语言模型在RLHF阶段面临的通信开销大、策略更新慢、奖励建模不稳定等问题",
+    "approach": "构建面向LLM后训练的专用RL基础设施，解耦策略学习、奖励建模与数据生成环节",
+    "design": [
+      "分层Actor-Learner设计：分离推理（Actor）与训练（Learner）节点",
+      "动态批处理与序列压缩：降低长上下文RL训练的显存与通信压力",
+      "在线奖励缓存与去偏采样：缓解奖励模型噪声导致的策略坍塌",
+      "Azure-native弹性容错机制：支持训练中断后状态一致性恢复"
+    ],
+    "setup": "基于MAI Base 2（3T参数）在Azure NDm A100 v4集群上开展RLHF实验；对比基线为标准PPO+TRL实现"
+  },
+  "conclusion": {
+    "findings": "Rocket显著提升RL训练吞吐（相较基线提升3.2×），降低策略发散率，并支撑MAI Base 2在无外部蒸馏条件下完成高质量对齐",
+    "impact": "为万亿级模型RL训练提供可复现、可扩展的工程范式，加速AI安全与价值观对齐的工业化落地",
+    "limitations": "当前仅适配Decoder-only架构；多模态RL扩展与离线RL支持仍在演进中"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Rocket",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "大模型RL训练瓶颈",
+        "note": "通信开销大、策略更新慢、奖励建模不稳定，难以支撑三万亿参数模型端到端对齐",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "异步Actor-Lea…",
+        "note": "推理与训练解耦，支持动态批处理与序列压缩，降低长上下文训练负担",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "全栈RL基础设施",
+        "note": "集成Azure调度、混合精度同步、在线奖励缓存等模块，实现工业级稳定训练",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "MAI Base 2对…",
+        "note": "在无第三方蒸馏前提下完成RLHF，策略质量与人工评估得分显著优于基线",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "推动RL for LL…",
+        "note": "开源核心组件，为超大规模模型安全对齐提供可复用工程框架",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

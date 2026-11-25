@@ -1,0 +1,72 @@
+{
+  "abstract": "AMD 与 vLLM 团队提出 MoRI UMBP 方案，将大模型智能体（Agent）推理中的 KV 缓存池直接部署于 NVMe 存储，绕过 DRAM 层。在 AgentX 和 kvlab 负载下，1.8 TB NVMe KV 池在 Kimi-K3 上实现与同容量 DRAM 池近乎一致的吞吐性能，误差控制在 ±1% 内。",
+  "keyPoints": [
+    "首次实现 KV 缓存池全量落盘至 NVMe，无需 DRAM 作为缓存层",
+    "基于 AMD 开源 MoRI 库构建 UMBP（Unified Memory-Bypass Protocol）协议栈",
+    "在真实智能体负载（AgentX/kvlab）和多并发场景（48–96 会话）下验证性能可比性",
+    "消除 DRAM 容量瓶颈，支持超大规模 KV 缓存扩展（如 1.8 TB+）",
+    "vLLM 原生集成，零修改适配现有推理服务框架"
+  ],
+  "method": {
+    "problem": "大模型智能体推理中 KV 缓存规模爆炸式增长，DRAM 容量与成本成为瓶颈，传统分层缓存引入延迟与复杂性",
+    "approach": "跳过 DRAM 层，将 KV 缓存池直接映射至高性能 NVMe 设备，并通过软硬协同协议保障低延迟访问",
+    "design": [
+      "UMBP 协议：绕过内核 I/O 栈，实现用户态直通 NVMe QoS 控制",
+      "MoRI 内存抽象层：提供统一虚拟地址空间，支持细粒度 KV 分块按需加载",
+      "vLLM 插件式集成：复用 PagedAttention 逻辑，仅替换内存分配器后端",
+      "智能预取与驱逐策略：基于智能体行为模式优化 NVMe 访问局部性"
+    ],
+    "setup": "测试平台：Kimi-K3（AMD EPYC + 8×NVMe SSD），负载：AgentX、kvlab；对比基线：同容量 DRAM KV 池；指标：吞吐（tokens/sec）"
+  },
+  "conclusion": {
+    "findings": "NVMe 直接承载 KV 缓存池在真实智能体负载下可达成与 DRAM 池几乎等效的吞吐性能（偏差 ≤1%）",
+    "impact": "重塑大模型智能体基础设施范式，推动存储级内存（Storage-Class Memory）成为 KV 缓存新标准，降低千亿参数级智能体部署门槛",
+    "limitations": "依赖高性能 NVMe 硬件与低延迟 PCIe 互联；对极低延迟单 token 生成场景未充分验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "MoRI-UMBPNV…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "KV 缓存容量瓶颈",
+        "note": "智能体推理中 KV 规模激增，DRAM 成本与扩展性受限",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "UMBP 直通协议",
+        "note": "用户态 NVMe 直驱，绕过内核 I/O 栈，MoRI 提供虚拟地址抽象",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "vLLM 原生 NVM…",
+        "note": "零修改集成，复用 PagedAttention，支持现有服务无缝迁移",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "吞吐逼近 DRAM",
+        "note": "1.8TB NVMe 在 48–96 并发下吞吐偏差仅 ±0.2%~+0.8%",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "存储即内存范式",
+        "note": "为超大规模智能体提供低成本、高扩展 KV 缓存新路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

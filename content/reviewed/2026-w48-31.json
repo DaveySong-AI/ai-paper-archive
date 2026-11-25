@@ -1,0 +1,72 @@
+{
+  "abstract": "OpenAI 研究人员利用 GPT-6 Cyber 模型辅助开源安全工作，单次运行验证了 948 个可获本地 root 权限的 Linux 内核漏洞，并生成待审查补丁；部分修复已通过与内核维护者协作合入上游主线。",
+  "keyPoints": [
+    "GPT-6 Cyber 是 OpenAI 面向网络安全任务优化的专用大模型",
+    "首次系统性应用于 Linux 内核高危漏洞（本地 root）的自动化识别与修复",
+    "单次运行覆盖近千个真实漏洞，体现规模化安全分析潜力",
+    "强调人机协同：模型生成补丁需经人工审查与上游合并",
+    "研究聚焦‘减少通往 root 的路径’这一核心安全目标"
+  ],
+  "method": {
+    "problem": "Linux 内核中大量本地提权（LPE）漏洞长期未被及时修复，人工分析成本高、覆盖不全",
+    "approach": "将大语言模型深度集成至开源安全工作流，实现漏洞复现、根因分析与补丁生成闭环",
+    "design": [
+      "基于真实 exploit 和内核代码构建面向 LPE 的专项微调数据集",
+      "引入符号执行与动态沙箱验证补丁有效性，避免误修",
+      "设计维护者友好的补丁格式与上下文摘要，降低合入门槛",
+      "建立与 kernel.org 维护者的轻量协作机制"
+    ],
+    "setup": "详见原文"
+  },
+  "conclusion": {
+    "findings": "GPT-6 Cyber 可在真实内核生态中稳定生成可审查、可合入的 LPE 补丁，显著提升高危漏洞响应效率",
+    "impact": "为开源基础设施安全提供新型 AI 协同范式，推动自动化修复从 PoC 迈向生产级落地",
+    "limitations": "补丁生成依赖高质量漏洞报告与内核版本兼容性，对零日漏洞泛化能力尚不明确"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "GPT-6 Cyber",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "内核LPE漏洞修复滞后",
+        "note": "948个本地root漏洞长期未被系统性处理，人工维护成本高",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "AI+安全工作流",
+        "note": "结合微调模型、沙箱验证与维护者协作，形成闭环修复流程",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "千级漏洞验证与补丁生成",
+        "note": "单次运行完成大规模真实漏洞复现与可审补丁输出",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "上游合入实践",
+        "note": "部分修复已通过 kernel.org 维护者审核并合入主线",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "开源安全新范式",
+        "note": "确立AI辅助关键基础设施维护的可行性路径与协作标准",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}

@@ -1,0 +1,73 @@
+{
+  "abstract": "谷歌 DeepMind 与 Google Quantum AI 合作，提出基于 Gemini 4 智能体的协同优化框架，结合 Lean 定理证明器对量子算法进行形式化验证，显著提升算法设计效率与数学正确性保障；开源了配套 Lean 库及已验证方案。",
+  "keyPoints": [
+    "首次将多智能体协作范式引入量子算法优化流程",
+    "Gemini 4 智能体分工执行算法生成、简化、等价性检验与性能评估",
+    "所有优化结果均通过 Lean 形式化验证，确保数学严谨性",
+    "端到端流程实现最高 290 倍加速，缓解量子计算资源瓶颈",
+    "开源 Lean 验证库与已验证算法方案，支持社区复现与扩展"
+  ],
+  "method": {
+    "problem": "量子算法人工设计周期长、验证成本高、易出错，难以适配快速迭代需求",
+    "approach": "构建多智能体协同系统，将算法优化任务分解为可验证子任务，并由 Lean 提供形式化担保",
+    "design": [
+      "Gemini 4 智能体角色化分工（生成/简化/验证/评估）",
+      "智能体间结构化通信协议与共识机制",
+      "Lean 驱动的自动定理验证流水线",
+      "算法等价性与正确性双轨验证策略",
+      "轻量级接口桥接 LLM 输出与 Lean 语法"
+    ],
+    "setup": "实验基于典型量子算法（如 QFT、Grover 变体）开展，对比基线为人手工优化版本与单智能体方法"
+  },
+  "conclusion": {
+    "findings": "多智能体协同+Lean 验证显著提升量子算法开发效率与可信度，最高提速达 290 倍",
+    "impact": "为 AI for Science 提供可验证智能体范式，推动量子软件工程向形式化、自动化演进",
+    "limitations": "依赖 Gemini 4 的推理能力与 Lean 编程生态成熟度，对复杂算法泛化性有待验证"
+  },
+  "mindmap": {
+    "type": "root",
+    "label": "Gemini-Quan…",
+    "note": null,
+    "children": [
+      {
+        "type": "problem",
+        "label": "量子算法验证难",
+        "note": "人工设计周期长、数学验证成本高、易引入逻辑错误",
+        "children": [],
+        "id": "n1-2"
+      },
+      {
+        "type": "method",
+        "label": "多智能体+Lean",
+        "note": "Gemini 4 分工协作，Lean 全流程形式化验证",
+        "children": [],
+        "id": "n2-3"
+      },
+      {
+        "type": "contribution",
+        "label": "开源验证库",
+        "note": "提供 Lean 库与已验证量子算法方案，支持社区复用",
+        "children": [],
+        "id": "n3-4"
+      },
+      {
+        "type": "result",
+        "label": "最高提速290倍",
+        "note": "相较人工优化，在典型量子算法上实现显著加速",
+        "children": [],
+        "id": "n4-5"
+      },
+      {
+        "type": "impact",
+        "label": "AI for Scie…",
+        "note": "确立可验证智能体在科学计算中的可行性路径",
+        "children": [],
+        "id": "n5-6"
+      }
+    ],
+    "id": "n1"
+  },
+  "status": "reviewed",
+  "generatedBy": "llm",
+  "reviewedAt": null
+}
